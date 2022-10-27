@@ -1,0 +1,42 @@
+{
+    "entities": {
+      "users":{
+          "1":{
+            "id": 1,
+            "username": "user_1",
+            "logged_in": "true",
+            "email": "user_1@gmail.com"
+          }
+      },
+      "posts": {
+        "1": {
+          "id": 1,
+          "title": "beautiful seaside escape....",
+          "body": ".....",
+          "author_Id": 1
+        }
+      },
+      "reviews": {
+          "1": {
+             "id": 1, 
+             "userId": 2,
+             "post_id": 1,
+             "booking_Id": 1
+          }
+      },
+      "images":{
+        "1": {
+            "post_id": "1",
+            "image_url": "www...."
+        }
+      },
+      "bookings":{
+          "1": {
+              "id": "1",
+              "start_date": "jan/01/2022",
+              "end_date": "jan/03/2022",
+              "user_id": "1",
+              "post_id": "100"
+          }
+      }
+  }
