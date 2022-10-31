@@ -3,7 +3,7 @@ import LoginFormPage from '../LoginFormPage'
 import LogOutButton from '../LogoutButton'
 import SignupFormPage from '../SignupFormPage'
 import { NavLink } from "react-router-dom";
-import { getUser, logout } from '../../store/session';
+import { getUser, login, logout } from '../../store/session';
 
 export default function Navigation(){
     const dispatch = useDispatch();
@@ -22,12 +22,15 @@ export default function Navigation(){
         "logout":{
             path: "/login",
             component: <LogOutButton/>,
-            handleClick: () => alert("hello")
         }
     }
 
     if(user === undefined){
-        options = {"login": options["login"], "signup":options["signup"]}
+        options = {
+            "login": options["login"], 
+            "signup":options["signup"],
+            "demo-login": options["login"]
+        }
     }else{
         options = {"logout":options["logout"]}
     }
@@ -43,6 +46,12 @@ export default function Navigation(){
     const handleSelect = (e) => {
         if(e.target.innerHTML === "logout"){
             dispatch(logout())
+        }
+        if(e.target.innerHTML === "demo-login"){
+            dispatch(login({
+                credential: "test@gmail.com",
+                password: "password"
+            }))
         }
     }
 
