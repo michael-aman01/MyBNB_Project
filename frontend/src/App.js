@@ -9,17 +9,18 @@ import Navigation from "./components/Navigation";
 function App() {
 
   return (
-    <Switch>
+    <>
+      <Navigation/>
+        <Switch>
       <Route path="/login">
         <LoginFormPage />
       </Route>
       <Route path="/signup">
         <SignupFormPage />
       </Route>
-      <Route path="/">
-        <Navigation/>
-      </Route>
     </Switch>
+    </>
+
   );
 }
 
