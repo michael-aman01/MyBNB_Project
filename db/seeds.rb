@@ -11,15 +11,18 @@ ApplicationRecord.transaction do
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
-      username: 'Demo-lition', 
       email: 'demo@user.io', 
       password: 'password'
+    )
+
+    User.create!(
+      email: 'test@gmail.com',
+      password: "password"
     )
   
     # More users
     10.times do 
       User.create!({
-        username: Faker::Internet.unique.username(specifier: 3),
         email: Faker::Internet.unique.email,
         password: 'password'
       }) 

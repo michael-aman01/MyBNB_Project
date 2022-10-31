@@ -50,15 +50,6 @@ function SignupFormPage() {
         />
       </label>
       <label>
-        Username
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-      </label>
-      <label>
         Password
         <input
           type="password"

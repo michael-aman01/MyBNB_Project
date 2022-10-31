@@ -14,19 +14,13 @@ class User < ApplicationRecord
     has_secure_password # NOTE: takes care of password=, is_password -> .authenticate, presence validation, adds password_confirmation functionality
     before_validation :ensure_session_token
   
-    validates :username, length: { in: 3..30 }, format: { without: URI::MailTo::EMAIL_REGEXP, message: 'cannot be email' }
+
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: { in: 6..255 }, allow_nil: true
   
-    def self.find_by_credentials(credential, password)
-  
-      if URI::MailTo::EMAIL_REGEXP.match?(credential)
-        @user = User.find_by(email: credential)
-      else
-        @user = User.find_by(username: credential)
-      end
-      
+    def self.find_by_credentials(email, password)
+      @user = User.find_by(email: email)      
       if @user&.authenticate(password)
         @user
       else
