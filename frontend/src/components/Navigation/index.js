@@ -48,7 +48,7 @@ export default function Navigation(){
 
     return(
         <>
-            <ul id="nav-list" onClick={handleClick}>test
+            <ul id="nav-list" onClick={handleClick}>Nav Options
                 {Object.keys(options).map((key,i) => 
                 <li key={i} hidden class="nav-option" onClick={handleSelect}>
                         <NavLink to={options[key].path}>{key}</NavLink>
