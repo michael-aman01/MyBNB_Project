@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: listings
+#
+#  id             :bigint           not null, primary key
+#  user_id        :bigint           not null
+#  street_address :string           not null
+#  city           :string           not null
+#  zip_code       :string           not null
+#  state          :string           not null
+#  country        :string           not null
+#  listing_type   :string           not null
+#  max_guests     :integer          not null
+#  price          :float            not null
+#  cleaning_fee   :float            not null
+#  description    :text             not null
+#  num_beds       :integer          not null
+#  num_bedrooms   :integer          not null
+#  num_baths      :float            not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+class Listing < ApplicationRecord
+    validates :user_id, :street_address, :city, :zip_code, :state, :country, :listing_type, :max_guests, :price,
+    :cleaning_fee, :description, :num_beds, :num_bedrooms, :num_baths, presence: true
+    validates :street_address, uniqueness: {scope: [:city, :zip_code]}
+
+end
