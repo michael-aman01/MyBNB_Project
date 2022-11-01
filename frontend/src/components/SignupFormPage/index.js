@@ -21,11 +21,11 @@ function SignupFormPage() {
     let tag = document.getElementById("modal-content")
     let i = 100
     const slideIn = setInterval(() => {
-      let newVal = `${i}%`
+      let newVal = `${i}vh`
       console.log(newVal)
       tag.style.marginTop = newVal
       i -= 1
-      if(newVal === "20%"){
+      if(newVal === "20vh"){
         clearInterval(slideIn)
       }
     },1)
