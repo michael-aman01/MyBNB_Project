@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import "./LoginForm.css"
 function LoginFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
@@ -30,31 +30,59 @@ function LoginFormPage() {
       });
   }
 
+  const showLabel = (e) => {
+    let inputField = `${e.target.id}-label`
+    let tag = document.getElementById(e.target.id)
+    let label = document.getElementById(inputField)
+    if(label.style.opacity < 0.99){
+      let currentPercent = 1;
+      const fadeIn = setInterval(() => {
+        label.style.opacity = `${currentPercent}%`
+        currentPercent += 1
+        console.log(label.style.opacity)
+        if(currentPercent === 100){
+          clearInterval(fadeIn)
+        }
+      },1)
+    }
+
+  }
+  const hideLabel = (e) => {
+    let inputField = `${e.target.id}-label`
+    let tag = document.getElementById(e.target.id)
+    let label = document.getElementById(inputField)
+    if(e.target.value.length === 0){
+      label.style.opacity = 0
+    }
+  }
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-      <label>
-        Email
-        <input
-          type="email"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <>
+    
+
+  <div id="modal">
+    <div id="modal-background">
+      <div id="modal-content">
+
+      <div id="form-container">
+        <div>
+        <form>
+          <div id="email-container" >
+            <label className="input-hidden-label" id="email-label" for="email">Email </label>
+            <input className="input-field" type="text" placeholder='Email' id="email"  onBlur={hideLabel} onClick={showLabel} ></input>
+          </div>
+          <br></br>
+          <div id="submit-container">
+            <button id="submit-button">
+              <span>Submit</span>
+            </button>
+          </div>
+        </form>
+        </div>
+      </div>
+      </div>
+    </div>  
+    </div>
+    </>
   );
 }
 

@@ -7,7 +7,6 @@ import Navigation from "./components/Navigation";
 
 
 function App() {
-
   return (
     <>
       <Navigation/>
@@ -18,6 +17,9 @@ function App() {
       <Route path="/signup">
         <SignupFormPage />
       </Route>
+
+
+
     </Switch>
     </>
 

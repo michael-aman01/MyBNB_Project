@@ -19,12 +19,12 @@ if (process.env.NODE_ENV !== 'production') {
 const renderApplication = () => {
   ReactDOM.render(
     <React.StrictMode>
-  
-        <Provider store={store}>
+  <Provider store={store}>
           <BrowserRouter>
             <App />
           </BrowserRouter>
         </Provider>
+
 
     </React.StrictMode>,
     document.getElementById('root')

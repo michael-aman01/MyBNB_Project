@@ -5,6 +5,7 @@ import SignupFormPage from '../SignupFormPage'
 import { NavLink } from "react-router-dom";
 import { getUser, login, logout } from '../../store/session';
 
+
 export default function Navigation(){
     const dispatch = useDispatch();
     const user = useSelector(getUser);
@@ -59,8 +60,9 @@ export default function Navigation(){
         <>
             <ul id="nav-list" onClick={handleClick}>Nav Options
                 {Object.keys(options).map((key,i) => 
-                <li key={i} hidden class="nav-option" onClick={handleSelect}>
+                <li key={i} hidden className="nav-option" onClick={handleSelect}>
                         <NavLink to={options[key].path}>{key}</NavLink>
+                
                 </li>
             
                 )}
