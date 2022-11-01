@@ -16,6 +16,23 @@ function SignupFormPage() {
   const history = useHistory()
   console.log(show)
 
+
+  useEffect(() => {
+    let tag = document.getElementById("modal-content")
+    let i = 100
+    const slideIn = setInterval(() => {
+      let newVal = `${i}%`
+      console.log(newVal)
+      tag.style.marginTop = newVal
+      i -= 1
+      if(newVal === "20%"){
+        clearInterval(slideIn)
+      }
+    },1)
+    console.log(tag.style.marginTop)
+
+  },[])
+
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {

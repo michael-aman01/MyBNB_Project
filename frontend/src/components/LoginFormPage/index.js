@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import xMark from "../../assets/iconmonstr-x-mark-1.svg"
 import "./LoginForm.css"
 import { useHistory } from 'react-router-dom';
+import { combineReducers } from 'redux';
 
 
 function LoginFormPage() {
@@ -15,6 +16,22 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
   const [show, setShow] = useState(true)
   const history = useHistory()
+
+  useEffect(() => {
+    let tag = document.getElementById("modal-content")
+    let i = 100
+    const slideIn = setInterval(() => {
+      let newVal = `${i}%`
+      console.log(newVal)
+      tag.style.marginTop = newVal
+      i -= 1
+      if(newVal === "20%"){
+        clearInterval(slideIn)
+      }
+    },1)
+    console.log(tag.style.marginTop)
+
+  },[])
 
   if (sessionUser) return <Redirect to="/" />;
 
