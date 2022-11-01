@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+
 import "./LoginForm.css"
+
+
 function LoginFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
@@ -30,31 +33,36 @@ function LoginFormPage() {
       });
   }
 
-  const showLabel = (e) => {
-    let inputField = `${e.target.id}-label`
-    let tag = document.getElementById(e.target.id)
-    let label = document.getElementById(inputField)
-    if(label.style.opacity < 0.99){
-      let currentPercent = 1;
-      const fadeIn = setInterval(() => {
-        label.style.opacity = `${currentPercent}%`
-        currentPercent += 1
-        console.log(label.style.opacity)
-        if(currentPercent === 100){
-          clearInterval(fadeIn)
-        }
-      },1)
-    }
+  // const showLabel = (e) => {
+  //   let inputField = `${e.target.id}-label`
+  //   let tag = document.getElementById(e.target.id)
+  //   let label = document.getElementById(inputField)
 
-  }
-  const hideLabel = (e) => {
-    let inputField = `${e.target.id}-label`
-    let tag = document.getElementById(e.target.id)
-    let label = document.getElementById(inputField)
-    if(e.target.value.length === 0){
-      label.style.opacity = 0
-    }
-  }
+  //   if(label.style.opacity < 0.99){
+  //     let currentPercent = 1;
+  //     const fadeIn = setInterval(() => {
+  //       label.style.opacity = `${currentPercent}%`
+  //       tag.style.opacity =  `${1 - currentPercent}%`
+  //       currentPercent += 1
+  //       console.log(label.style.opacity)
+  //       if(currentPercent === 100){
+  //         clearInterval(fadeIn)
+  //       }
+  //     },10)
+  //   }
+
+  // }
+  // const hideLabel = (e) => {
+  //   let inputField = `${e.target.id}-label`
+  //   let tag = document.getElementById(e.target.id)
+  //   let label = document.getElementById(inputField)
+  //   if(e.target.value.length === 0){
+  //     label.style.opacity = 0
+  //     tag.style.opacity = 100
+  //   }
+  // }
+
+  if(sessionUser === null){
   return (
     <>
     
@@ -62,18 +70,24 @@ function LoginFormPage() {
   <div id="modal">
     <div id="modal-background">
       <div id="modal-content">
-
       <div id="form-container">
         <div>
-        <form>
-          <div id="email-container" >
-            <label className="input-hidden-label" id="email-label" for="email">Email </label>
-            <input className="input-field" type="text" placeholder='Email' id="email"  onBlur={hideLabel} onClick={showLabel} ></input>
+          <ul>
+            {errors.map(err => <li>{err}</li>)}
+          </ul>
+        <form onSubmit={handleSubmit}>
+          <div className="input-container" >
+            <label className="input-hidden-label" id="email-label">Email </label>
+            <input className="input-field" type="text" placeholder='Email' id="email"  value={credential} onChange={(e) => setCredential(e.target.value)}></input>
+          </div>
+          <div className="input-container" >
+            <label className="input-hidden-label" id="password-label">Password </label>
+            <input className="input-field" id="password" type="text"onChange={(e) => setPassword(e.target.value)} placeholder='password' value={password}   ></input>
           </div>
           <br></br>
           <div id="submit-container">
             <button id="submit-button">
-              <span>Submit</span>
+              <span>Continue</span>
             </button>
           </div>
         </form>
@@ -84,6 +98,7 @@ function LoginFormPage() {
     </div>
     </>
   );
+  }
 }
 
 export default LoginFormPage;

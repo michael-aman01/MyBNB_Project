@@ -79,7 +79,7 @@
 }
 
 
-#email-container {
+.input-container {
   position: relative !important;
   cursor: text !important;
   display: flex !important;
