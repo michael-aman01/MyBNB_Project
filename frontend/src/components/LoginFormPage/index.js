@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import xMark from "../../assets/iconmonstr-x-mark-1.svg"
 import "./LoginForm.css"
+import { useHistory } from 'react-router-dom';
 
 
 function LoginFormPage() {
@@ -12,6 +13,8 @@ function LoginFormPage() {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
+  const [show, setShow] = useState(true)
+  const history = useHistory()
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -32,6 +35,7 @@ function LoginFormPage() {
         else setErrors([res.statusText]);
       });
   }
+  
 
   // const showLabel = (e) => {
   //   let inputField = `${e.target.id}-label`
@@ -61,15 +65,23 @@ function LoginFormPage() {
   //     tag.style.opacity = 100
   //   }
   // }
-
-  if(sessionUser === null){
+  const toggleModal = () => {
+    setShow(false)
+    history.push("/")
+  }
+  if(sessionUser === null && show === true){
   return (
     <>
     
-
   <div id="modal">
     <div id="modal-background">
       <div id="modal-content">
+        <div id="modal-header">
+          <div id="close-modal-button-container" onClick={toggleModal}>
+            <img src={xMark}></img>
+          </div>
+          <div>2</div>
+        </div>
       <div id="form-container">
         <div>
           <ul>

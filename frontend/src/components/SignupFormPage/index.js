@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import xMark from "../../assets/iconmonstr-x-mark-1.svg"
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -11,6 +12,9 @@ function SignupFormPage() {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [errors, setErrors] = useState([]);
+  const [show, setShow] = useState(true)
+  const history = useHistory()
+  console.log(show)
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -40,14 +44,29 @@ function SignupFormPage() {
     }
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
-  if(sessionUser === null){
+
+  const toggleModal = () => {
+    setShow(false)
+    history.push("/")
+  }
+
+
+  if(sessionUser === null && show === true){
     return (
       <>
-      
-  
+    
     <div id="modal">
       <div id="modal-background">
         <div id="modal-content">
+          <div id="modal-header">
+            <div id="close-modal-button-container" onClick={toggleModal}>
+              <div >
+                <img src={xMark}></img>
+              </div>
+            </div>
+            <div>2</div>
+            <div>3</div>
+          </div>
         <div id="form-container">
           <div>
             <ul>

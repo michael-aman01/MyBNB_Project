@@ -130,7 +130,14 @@ input::placeholder {
   font-size: 20px;
 }
 
-
+#close-modal-button-container {
+  position: absolute !important;
+  display: flex !important;
+  top: 16px !important;
+  left: 24px !important;
+  z-index: 1 !important;
+  background-color: white;
+}
 
 #submit-button {
   cursor: pointer !important;
