@@ -1,0 +1,22 @@
+#search-bar-container {
+    display: flex;
+    width: 30vw;
+    justify-content: space-around;
+     background-color: bisque;
+     margin-top: 20px;
+     border: 1px solid;
+     border-color: gray;
+     margin-bottom: 20px;
+     border-radius: 21px;
+ }
+ #calendar-container {
+    padding: 20px;
+  
+  }
+  
+  #search-bar {
+    border-left: 1px solid black;
+    justify-content: center;
+    width: 100vw;
+    padding: 20px;
+  }

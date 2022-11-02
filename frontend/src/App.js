@@ -3,13 +3,13 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import LogOutButton from "./components/LogoutButton";
-import Navigation from "./components/Navigation";
+import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
 
 function App() {
   return (
     <>
-      <Navigation/>
+      <NavigationBar/>
         <Switch>
       <Route path="/login">
         <LoginFormPage />

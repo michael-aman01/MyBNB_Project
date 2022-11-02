@@ -1,29 +1,9 @@
-#nav-container {
-    display: flex;
-    height: 10vh;
-    width: 100vw;
-    justify-content: space-between;
 
-}
-
-#search-bar-container {
-    background-color: bisque;
-}
-
-#logo-container {
-    width: 20vw;
-    margin-left: 20px;
-    padding: 15px;
-}
-#logo {
-  width: 80px;
-  height: 70px;
-  
-}
 
 #dropdown-container {
   margin-right: 100px;
 }
+
 .button-image {
     width: 25px;
     height: 30px;
@@ -57,9 +37,10 @@
   .dropdown-content {
     position: absolute;
     padding-right: 50px;
-
     background-color: #f1f1f1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
   
+
+

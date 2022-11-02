@@ -1,14 +1,16 @@
 import {useDispatch, useSelector } from 'react-redux'
-import LoginFormPage from '../LoginFormPage'
-import LogOutButton from '../LogoutButton'
-import SignupFormPage from '../SignupFormPage'
+import LoginFormPage from '../../LoginFormPage'
+import LogOutButton from '../../LogoutButton'
+import SignupFormPage from '../../SignupFormPage'
 import { NavLink } from "react-router-dom";
-import { getUser, login, logout } from '../../store/session';
-import "./Navigation.css"
-import stripes from "../../assets/navigation-button-stripes.svg"
-import buttonImage from "../../assets/navigation-button.svg"
-import logo from "../../assets/logo.jpg"
-export default function Navigation(){
+import { getUser, login, logout } from '../../../store/session'
+import "./NavOptionsDropdown.css"
+import stripes from '../../../assets/navigation-button-stripes.svg'
+import buttonImage from "../../../assets/navigation-button.svg"
+
+
+
+export default function NavOptionsDropdown(){
     const dispatch = useDispatch();
     const user = useSelector(getUser);
 
@@ -61,13 +63,6 @@ export default function Navigation(){
 
     return(
         <>
-
-      
-         <div id="nav-container">
-            <div id="logo-container">
-                <img id="logo" src={logo}></img>
-            </div>
-            <div id="search-bar-container">search</div>
             <div id="dropdown-container">
             <div className="dropdown">
                         <button className="dropbtn"  onClick={handleClick}>
@@ -82,12 +77,7 @@ export default function Navigation(){
                                     )}
                         </div>
                 </div>
-            </div>
-             
-        </div> 
-     
-
-
+                </div>
         </>
     )
 }
