@@ -1,0 +1,27 @@
+#item-container{
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0px 40px;
+    padding: 0px 30px;
+}
+#image-container {
+    background-color: black;
+    width: 260px;
+    height: 260px;
+    color: white
+}
+#info-container {
+    display: flex;
+    
+}
+#info-box {
+    background-color: aqua;
+    width: 200px;
+}
+
+#rating-box {
+    background-color: red;
+    text-align: center;
+    padding-top: 15px;
+    width: 60px;
+}

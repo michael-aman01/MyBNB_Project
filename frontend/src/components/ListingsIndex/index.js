@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { fetchListings, getListings } from "../../store/data";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-
+import ListingsIndexItem from "../ListingsIndexItem";
+import "./listingsIndex.css"
 export default function ListingsIndex(){
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
@@ -14,23 +15,34 @@ export default function ListingsIndex(){
         }
     },[dispatch])
     console.log(listings)
-    if(!listings) return null
-    return (
-        <>
-        <div>
-            <ul className="listing-item">
-                <li>image</li>
-               <li>{listings[0].street_address}</li>
-               <li>{listings[0].city}, {listings[0].state} </li>
-                </ul>
+    if(!listings){
+        return null
+    }else{
+        return (
+            <>
+            <div id="listings-container">
+                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
+                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
+                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
+                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
+                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
+                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
             </div>
-        </>
-    )
+            </>
+        )
+    }
+
 
 
 }
 
-
+{/* <div>
+<ul className="listing-item">
+    <li>image</li>
+   <li>{listings[0].street_address}</li>
+   <li>{listings[0].city}, {listings[0].state} </li>
+    </ul>
+</div> */}
 // city
 // : 
 // "San Rafael"
