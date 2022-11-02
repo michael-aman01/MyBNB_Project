@@ -4,7 +4,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import LogOutButton from "./components/LogoutButton";
 import Navigation from "./components/Navigation";
-
+import ListingsIndex from "./components/ListingsIndex";
 
 function App() {
   return (
@@ -17,7 +17,9 @@ function App() {
       <Route path="/signup">
         <SignupFormPage />
       </Route>
-
+      <Route path="/listings">
+        <ListingsIndex></ListingsIndex>
+      </Route>
 
 
     </Switch>
