@@ -3,37 +3,17 @@ import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 import { getImages } from "../../store/data";
 import { fetchImages, fetchListings, getListings } from "../../store/data";
 import { useDispatch, useSelector } from "react-redux";
-import { useDebugValue, useEffect } from "react";
+import { useDebugValue, useEffect, useRef } from "react";
 
 export default function ListingsIndexItem({listing}){
     //add image fetch here
     const dispatch = useDispatch()
-    let images = useSelector(getImages())
-    const listingImage = []
+    const listings = useSelector(getListings())
     useEffect(() => {
-        images = dispatch(fetchImages())
-        images.then(data => {
-            return data.images
-        }).then(images => {
-
-            
-            return images.map(image => {
-                if(image.id === listing.id){
-                    return image
-                }
-            })
-          
-            
-        })
-    },[dispatch])
-    if(images){
-        
-    }
-
-    
-
-
+        dispatch(fetchListings())
+    },[])
     if(!listing){
+
         return null
     }else{
         return(
