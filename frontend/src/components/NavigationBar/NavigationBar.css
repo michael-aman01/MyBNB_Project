@@ -1,10 +1,9 @@
 #nav-container {
     display: flex;
-    height: 10vh;
+    height: 20vh;
     width: 100vw;
     justify-content: space-between;
     border-bottom: 1px solid rgb(212, 211, 211);
-
 }
 
 
@@ -12,12 +11,12 @@
 #logo-container {
     width: 20vw;
     margin-left: 20px;
-    padding: 15px;
+    padding: 10px;
 }
 #logo {
   width: 80px;
   height: 70px;
-  
+
 }
 
 

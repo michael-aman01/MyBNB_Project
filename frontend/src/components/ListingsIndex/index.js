@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
-import { fetchListings, getListings } from "../../store/data";
+import { fetchImages, fetchListings, getListings } from "../../store/data";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { getImages } from "../../store/data";
 import ListingsIndexItem from "../ListingsIndexItem";
+
 import "./listingsIndex.css"
 export default function ListingsIndex(){
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
+
     const listings = useSelector(getListings());
     console.log(listings)
+  
     useEffect(( ) =>{
         if(sessionUser){
             dispatch(fetchListings())
+         
         }
     },[dispatch])
     console.log(listings)
@@ -21,12 +26,8 @@ export default function ListingsIndex(){
         return (
             <>
             <div id="listings-container">
-                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
-                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
-                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
-                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
-                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
-                <ListingsIndexItem listing={listings[0]}></ListingsIndexItem>
+          
+                {listings.map(listing =>     <ListingsIndexItem listing={listing} ></ListingsIndexItem> )}
             </div>
             </>
         )

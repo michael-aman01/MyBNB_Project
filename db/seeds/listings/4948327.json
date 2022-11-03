@@ -1,0 +1,27 @@
+{
+    "id": "4948327",
+    "price": 77,
+    "info": "Our cozy bedroom sits in a Victorian home dating back to 1900.  It is centrally located in the Richmond District of San Francisco and retains the original San Franciscan flavor. With a queen bed and a sofa, it comfortably accommodates one person or a couple. \n\nIt's within walking distance to the Golden Gate Park, Lake Park, Presidio, and bus stops that connect you to major attractions the city has to offer.\n\nIt has a beautiful black Yamaha YU-30'upright piano that you can play.\n\n\nIt's strategically and conveniently located in the Inner Richmond District of San Francisco. Only 6 blocks from the Golden Gate Park, two blocks from Presidio Park and Lake Park and 5- minute bus ride (Muni #28) to the Golden Gate Bridge. \n\nThe room is on the second floor and there are about 11 steps up from the street level.  The house has a total of 5 bedrooms, two on the second floor and three on the third floor. Three of us live on the third floor.",
+    "title": "Private room in home hosted by Budi",
+    "num_bedrooms": 1,
+    "num_baths": 1,
+    "guests": 2,
+    "type": "1 bedroom",
+    "city": "San Francisco",
+    "state": " California",
+    "country": " United States",
+    "photo_urls": [
+        "https://a0.muscache.com/im/pictures/449d1eef-bdd8-4e1a-9cee-47a449816456.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/628a372f-9036-45b8-9400-9f8d98ecd282.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/461ca9dc-96b9-4b9c-ae38-b375d05f7ee9.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/a8aa93b4-aed4-47aa-afb2-633675dc122f.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/7d57d340-1948-4b60-b1f8-e2175d3e6ddb.jpg?im_w=720"
+    ],
+    "bucket_urls": [
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51409857/image_0.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51409857/image_1.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51409857/image_2.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51409857/image_3.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51409857/image_4.jpg"
+    ]
+}

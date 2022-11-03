@@ -1,0 +1,27 @@
+{
+    "id": "51409857",
+    "price": 138,
+    "info": "The Dorel is your perfect escape from the hustle and bustle of city life. Newly remodeled in 2019, our partially furnished efficiency units were built with your comfort in mind with the necessities needed to settle into urban life including a private bathroom, full or double Murphy beds, sofa, microwave and mini-fridge. The building features a gourmet community kitchen, an outdoor patio deck, on-site laundry and high-speed Wi-Fi.\n\n\nEnjoy your studio with a private bathroom, full Murphy bed, sofa, smart TV, microwave and mini-fridge.\n\nThe building features a gourmet community kitchen, an outdoor patio deck, on-site laundry and high-speed Wi-Fi. Each door is equipped with Key Fob locks to ensure the safety of our guests.",
+    "title": "Room in aparthotel hosted by Dorel SF",
+    "num_bedrooms": 1,
+    "num_baths": 1,
+    "guests": 2,
+    "type": "Studio",
+    "city": "San Francisco",
+    "state": " California",
+    "country": " United States",
+    "photo_urls": [
+        "https://a0.muscache.com/im/pictures/5e8222d1-c172-46b6-b48c-1f9add6b3eac.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-52070505/original/5df92c89-aec0-4dcc-ab37-8c15600d9ba2.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-52070505/original/65f8a470-9ccb-4b02-bd58-124b82ddfeb0.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-52070505/original/0c03fa5f-b099-43ce-9502-b69a9a34f8fe.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-52070505/original/dc96a914-a9c6-4add-bf0e-3d2bfaae2935.jpeg?im_w=720"
+    ],
+    "bucket_urls": [
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/690749773349217396/image_0.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/690749773349217396/image_1.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/690749773349217396/image_2.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/690749773349217396/image_3.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/690749773349217396/image_4.jpg"
+    ]
+}

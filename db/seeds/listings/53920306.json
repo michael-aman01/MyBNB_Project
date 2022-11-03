@@ -1,0 +1,39 @@
+{
+    "id": "53920306",
+    "price": 86,
+    "info": "All 24 apartments in the building are full-time Airbnb's and hosted by me!\n\n*Surgery friendly \n\nThis property is right next to the airport! If you\u2019re in Miami and looking for convenience, location and want to enjoy the city with all it\u2019s possibilities but have to stick to a tight budget look no further! Minutes away from the beach, sports venues, world renowned medical facilities, port of Miami, downtown and more! It is my goal provide a home for you during your stay!\n\n\nI\u2019m available to my guests at any time before and during their stay! This starts with the inquiry and ends at checkout, I\u2019m committed to providing the best possible service at all times!",
+    "title": "Entire condo hosted by Eduardo",
+    "num_bedrooms": 2,
+    "num_baths": 1,
+    "guests": 4,
+    "type": "1 bedroom",
+    "city": "Miami",
+    "state": " Florida",
+    "country": " United States",
+    "ammenities": [
+        "Kitchen",
+        "Wifi",
+        "Dedicated workspace",
+        "Free parking on premises",
+        "HDTV",
+        "Elevator",
+        "Central air conditioning",
+        "Patio or balcony",
+        "Luggage dropoff allowed",
+        "Unavailable: Carbon monoxide alarm\nCarbon monoxide alarm"
+    ],
+    "photo_urls": [
+        "https://a0.muscache.com/im/pictures/21bdcdf4-2934-47aa-9ba1-81c8ae3c7bd6.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/2ce28c6f-c4f9-4b01-afd5-193717a029cc.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/5d166e4d-acf9-4ea1-9f4f-21618fd6d3d4.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/c21bb55f-bb3c-4e9f-b216-f57853f86553.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/6116ce55-c203-4e6f-9836-ffa14b05f5af.jpg?im_w=720"
+    ],
+    "bucket_urls": [
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/32924989/image_0.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/32924989/image_1.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/32924989/image_2.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/32924989/image_3.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/32924989/image_4.jpg"
+    ]
+}

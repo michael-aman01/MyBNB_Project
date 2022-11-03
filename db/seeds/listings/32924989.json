@@ -1,0 +1,27 @@
+{
+    "id": "32924989",
+    "price": 68,
+    "info": "Mini cottage w/ free parking.\n\nThis small cottage is located in our beautiful backyard. It is close to everything. A 15 min drive to downtown San Francisco and SF airport. A 15 min walk to Westlake shopping center and Bart station to San Francisco. The beautiful unit has a private entrance, one bedroom with a queen bed and a private bathroom. \nWe provide Wi-fi, towels, instant coffee, tea, and snack. More amenities for you to use: TV, microwave,  refrigerator, hair dryer & electric kettle.\n\n\nOur beautiful backyard.",
+    "title": "Entire cottage hosted by En",
+    "num_bedrooms": 1,
+    "num_baths": 1,
+    "guests": 2,
+    "type": "1 bedroom",
+    "city": "Daly City",
+    "state": " California",
+    "country": " United States",
+    "photo_urls": [
+        "https://a0.muscache.com/im/pictures/8903f5cd-1e7c-4818-9786-eca95441ae0c.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/2aae46a9-0591-45c0-aadb-93eebdb64c93.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/548b9892-0dd4-411a-b228-508839ce96c9.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/b25da200-a15c-461c-9e4a-590f5b0a4952.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/2f51d7c0-35e1-4811-95fc-28ecc843ae6b.jpg?im_w=720"
+    ],
+    "bucket_urls": [
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/33405043/image_0.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/33405043/image_1.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/33405043/image_2.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/33405043/image_3.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/33405043/image_4.jpg"
+    ]
+}
