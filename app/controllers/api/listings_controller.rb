@@ -3,7 +3,7 @@ class Api::ListingsController < ApplicationController
     def show
         @listings = Listing.all
         if(@listings)
-            render json: @listings.last.images
+            render json: @listings
         else
             render json: @listings.errors.full_messages
         end
@@ -13,7 +13,9 @@ class Api::ListingsController < ApplicationController
         file = File.open(params[:photo])
         @listings = Listing.create!({
               id: 10030,
-              user_id: 1,
+              property_type: "apartment",
+              space_type: "shared room",
+              user_id: params[:user_id],
               street_address: '123 sea.',
               city: 'San Rfael',
               zip_code: '94901',

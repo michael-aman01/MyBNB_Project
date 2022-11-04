@@ -1,3 +1,4 @@
+import { notInitialized } from 'react-redux/es/utils/useSyncExternalStore';
 import csrfFetch from './csrf';
 
 const SET_CURRENT_USER = 'session/SET_CURRENT_USER';
@@ -100,7 +101,37 @@ const sessionReducer = (state = initialState, action) => {
 };
 
 
+const ADD_ACTIVE_FORM = "forms/ADD_ACTIVE_FORM"
+const REMOVE_ACTIVE_FORM = "forms/REMOVE_ACTIVE_FORM"
+export const addActiveForm = formObj => {
+  return ({
+    type: ADD_ACTIVE_FORM,
+    formObj
+  })
+}
+const removeActiveForm = ()=> {
+  return ({
+    type: REMOVE_ACTIVE_FORM
 
+  })
+}
+export const getActiveForm = () => state => {
+  if(state.activeForm){
+    return Object.values(state.activeForm)
+  }
+}
+
+export const FormReducer = (state={activeForm: null},action) => {
+  switch(action.type){
+    case ADD_ACTIVE_FORM:
+      return {...state, activeForm: action.formObj}
+    case REMOVE_ACTIVE_FORM:
+      
+        return {...state, activeForm: null}
+    default:
+      return state
+  }
+}
 
 
 export default sessionReducer;

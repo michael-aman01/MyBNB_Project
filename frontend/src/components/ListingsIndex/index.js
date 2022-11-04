@@ -7,6 +7,7 @@ import ListingsIndexItem from "../ListingsIndexItem";
 
 import "./listingsIndex.css"
 export default function ListingsIndex(){
+   
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
 
@@ -14,6 +15,7 @@ export default function ListingsIndex(){
     console.log(listings)
   
     useEffect(( ) =>{
+
         if(sessionUser){
             dispatch(fetchListings())
          

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_03_162451) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_04_012654) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,27 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_162451) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "image_tables", force: :cascade do |t|
-    t.string "image_url", null: false
-    t.string "string", null: false
-    t.bigint "listings_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["listings_id"], name: "index_image_tables_on_listings_id"
-    t.index ["user_id"], name: "index_image_tables_on_user_id"
-  end
-
-  create_table "images", force: :cascade do |t|
-    t.string "image_url", null: false
-    t.bigint "listings_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["listings_id"], name: "index_images_on_listings_id"
-    t.index ["user_id"], name: "index_images_on_user_id"
-  end
-
   create_table "listings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "city", null: false
@@ -83,6 +62,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_162451) do
     t.string "title"
     t.string "street_address"
     t.bigint "image_id"
+    t.string "property_type"
+    t.string "space_type"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
@@ -100,9 +81,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_162451) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "image_tables", "listings", column: "listings_id"
-  add_foreign_key "image_tables", "users"
-  add_foreign_key "images", "listings", column: "listings_id"
-  add_foreign_key "images", "users"
   add_foreign_key "listings", "users"
 end

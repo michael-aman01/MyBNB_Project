@@ -1,0 +1,16 @@
+.nav-toggle {
+    margin-top: 20px;
+
+    height: 30px;
+    width: 300px;
+    margin-right: 20px;
+
+    align-items: center;
+    background-color:transparent;
+    
+
+    position: relative;
+
+    border-radius: 21px;
+    
+  }

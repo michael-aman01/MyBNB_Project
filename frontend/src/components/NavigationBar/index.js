@@ -1,6 +1,6 @@
 
 import "./NavigationBar.css"
-
+import NavigationToggle from "../NavigationToggle";
 import logo from "../../assets/logo.jpg"
 
 import SearchBar from './SearchBar';
@@ -13,7 +13,9 @@ export default function NavigationBar(){
             <div id="logo-container">
                 <img id="logo" src={logo}></img>
             </div>
+
             <SearchBar />
+            <NavigationToggle/>
             <NavOptionsDropdown/>
         </div> 
         </>
