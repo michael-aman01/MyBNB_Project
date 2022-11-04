@@ -25,9 +25,10 @@
 #
 class Listing < ApplicationRecord
     validates :user_id, :street_address, :city, :zip_code, :state, :country, :listing_type, :max_guests, :price,
-    :cleaning_fee, :description, :num_beds, :num_bedrooms, :num_baths, presence: true
+    :cleaning_fee, :description, :num_beds, :num_bedrooms, :num_baths, presence: false
     validates :street_address, uniqueness: {scope: [:city, :zip_code]}
 
-    # has_many_attached :images
+    has_many_attached :images
+    
 
 end

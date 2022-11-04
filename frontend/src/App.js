@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import LogOutButton from "./components/LogoutButton";
 import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
+import CreateListing from "./components/CreateListing";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
       <Route path="/listings">
         <ListingsIndex></ListingsIndex>
       </Route>
-
+<Route path="/create">
+  <CreateListing></CreateListing>
+</Route>
 
     </Switch>
     </>

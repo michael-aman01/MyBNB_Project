@@ -38,11 +38,11 @@ export default function SearchBar(){
 
 <div id="search-bar-container" onClick={handleClick}>
            
-                <div class="calendar-container" id="checkin">calendar</div>
-                 <div class="calendar-container" id="checkout">calendar</div>
+                <div class="calendar-container" id="checkin"></div>
+                 <div class="calendar-container" id="checkout"></div>
                  <div id="icon-container">
-                    <img src={searchicon} id="search-icon"></img>
-                    </div>
+                    <div></div>
+                </div>
 
 </div>
         
