@@ -5,6 +5,7 @@ import { getActiveForm, getUser,addAv } from "../../store/session";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {addActiveForm} from "../../store/session"
+
 export default function NavigationToggle(){
     const history = useHistory()
     const dispatch = useDispatch()
@@ -23,10 +24,8 @@ export default function NavigationToggle(){
 
     }
     return (
-        <button className="nav-toggle"  onClick={handleClick}>
-        <p></p>
-            <p>SWITCH TO HOSTING</p>
-        <p></p>
-        </button>
+        <span className="nav-toggle"  onClick={handleClick}>
+            switch to hosting
+        </span>
     )
 }

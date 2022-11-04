@@ -13,10 +13,15 @@ export default function NavigationBar(){
             <div id="logo-container">
                 <img id="logo" src={logo}></img>
             </div>
-
+            <div id="search-box">
             <SearchBar />
+            </div>
+ 
+            <div id="option-box">
             <NavigationToggle/>
             <NavOptionsDropdown/>
+            </div>
+
         </div> 
         </>
     )

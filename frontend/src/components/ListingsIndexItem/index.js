@@ -10,7 +10,7 @@ export default function ListingsIndexItem({listing}){
     const dispatch = useDispatch()
 
     useEffect(() => {
-
+      
     },[])
     if(!listing){
 
@@ -21,26 +21,33 @@ export default function ListingsIndexItem({listing}){
             <>
                 <div id="item-container">
                 <div id="image-container">
-                    <img src={listing.image_urls[0]}></img>
+                    <div>
+                    <img className="listing-image"src={listing.image_urls[0]}></img>
+                    </div>
+
                 </div>
                 <div id="info-container">
                     <div id="info-box">
                         <p>
                            <b>{listing.city}, {listing.state}</b> 
+                           <p id="distance-dates">
+                  
+                              distance
                             <br></br>
-                            distance
-                            <br></br>
-                            dates
-                            <br></br>
-                            <b>${listing.price} per night</b>
+                                dates
+                           </p>
+          
+                
+                             <b>${listing.price} per night</b>
                         </p>
            
                     </div>
                     <div id="rating-box">
-                        <b>
+                    <img id="review-star" src={reviewStar} width="1px" height="10px"></img>
+                        <b>     5.0
                          
-                            <img id="review-star" src={reviewStar}></img>
-                            {listing.rating === null ? "N/A" : listing.rating}
+                          
+                     
                         </b>
                     </div>
                 </div>

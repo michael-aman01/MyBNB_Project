@@ -18,9 +18,13 @@
   width: 80px;
   height: 70px;
 
+
 }
 
-
+#search-box {
+    display: flex;
+    padding-left: 30px;
+}
 .button-image {
     width: 25px;
     height: 30px;
@@ -28,5 +32,11 @@
     opacity: 59%;
 }
 
+#option-box {
 
+    display: flex;
+    width: 400px;
+    padding: 0px;
+    margin-right: 20px;
+}
 
