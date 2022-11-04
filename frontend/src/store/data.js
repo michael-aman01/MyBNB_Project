@@ -1,13 +1,21 @@
 
 
-export const ADD_LISTINGS = "listings/GET_LISTINGS"
-export const ADD_IMAGES = "listings/GET_IMAGES"
-export const ADD_IMAGE = "listings/GET_IMAGE"
+export const ADD_LISTINGS = "listings/ADD_LISTINGS"
+export const ADD_LISTING = "listings/ADD_LISTING"
+export const ADD_IMAGES = "listings/ADD_IMAGES"
+export const ADD_IMAGE = "listings/ADD_IMAGE"
 
 export const addListings = listings => {
     return({
         type: ADD_LISTINGS,
         listings
+    })
+}
+
+export const addListing = listing => {
+    return({
+        type: ADD_LISTING,
+        listing
     })
 }
 
@@ -19,41 +27,21 @@ export const removeListings = () => {
     })
 }
 
-export const addImages = images => {
-    return ({
-        type: ADD_IMAGES,
-        images
-    })
-}
-
-export const addImage = image => {
-    return ({
-        type: ADD_IMAGE,
-        image
-    })
-}
 
 
 
-export const getImages = () => state => {
-    if(state.images){
-        return state.images
-    }
-}
+
+
 export const getListings = () => state => {
-    
     return Object.values(state.listings)
-
 }
 
+export const getListing = listingId => state => {
+    
+    return state.listings[listingId]
+    
+} 
 
-export const fetchImages = () => async dispatch => {
-    const res = await fetch("/api/images")
-    const data = await res.json()
-    if(data){
-        return dispatch(addImages(data))
-    }
-}
 
 
 
@@ -65,12 +53,22 @@ export const fetchListings = () => async dispatch => {
     } 
 }
 
+export const fetchListing = listingId => async dispatch => {
+    const res = await fetch(`/api/listings/${listingId}`)
+    const data = await res.json()
+    if(data){
+        return dispatch(addListing(data))
+    } 
+}
+
 
 
 export default function ListingsReducer(state={listings: null}, action){
     switch(action.type){
         case ADD_LISTINGS:
             return {...action.listings}
+        case ADD_LISTING:
+            return {...state, ...action.listing}
         case REMOVE_LISTINGS:
             const newState = {...state, listings: null}
             return newState
@@ -81,11 +79,3 @@ export default function ListingsReducer(state={listings: null}, action){
 
 }
 
-export function ImageReducer(state={images:null}, action){
-    switch(action.type){
-        case ADD_IMAGES:
-            return {...state, ...action.images}
-        default:
-            return state
-    }
-}

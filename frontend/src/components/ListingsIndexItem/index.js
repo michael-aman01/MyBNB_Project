@@ -4,14 +4,21 @@ import { getImages } from "../../store/data";
 import { fetchImages, fetchListings, getListings } from "../../store/data";
 import { useDispatch, useSelector } from "react-redux";
 import { useDebugValue, useEffect, useRef } from "react";
+import { NavLink, useHistory } from "react-router-dom";
+import ShowPage from "../ShowPage";
+import { Routes, Route, useParams } from 'react-router-dom';
 
 export default function ListingsIndexItem({listing}){
     //add image fetch here
     const dispatch = useDispatch()
+    const history = useHistory()
 
     useEffect(() => {
       
     },[])
+    const handleClick = (e) => {
+        history.push(`/listings/${listing.id}`)
+    }
     if(!listing){
 
         return null
@@ -19,12 +26,14 @@ export default function ListingsIndexItem({listing}){
 
         return(
             <>
-                <div id="item-container">
-                <div id="image-container">
+
+            <div id="item-container" onClick={handleClick}>
+                 <div id="image-container">
                     <div>
                     <img className="listing-image"src={listing.image_urls[0]}></img>
                     </div>
-
+  
+       
                 </div>
                 <div id="info-container">
                     <div id="info-box">
@@ -51,7 +60,10 @@ export default function ListingsIndexItem({listing}){
                         </b>
                     </div>
                 </div>
+
+
             </div>
+
             </>
     
         )

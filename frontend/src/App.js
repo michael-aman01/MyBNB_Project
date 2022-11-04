@@ -6,7 +6,7 @@ import LogOutButton from "./components/LogoutButton";
 import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
 import CreateListingPhotos from "./components/CreateListingPhotos";
-
+import ShowPage from './components/ShowPage'
 function App() {
 
   useEffect(() =>{
@@ -28,9 +28,13 @@ function App() {
       <Route path="/signup">
         <SignupFormPage />
       </Route>
-      <Route path="/listings">
+      <Route exact path="/listings">
         <ListingsIndex></ListingsIndex>
       </Route>
+      <Route path={`/listings/:id`}>
+        <ShowPage />
+      </Route>
+      
 <Route path="/create/photos">
   <CreateListingPhotos></CreateListingPhotos>
 </Route>

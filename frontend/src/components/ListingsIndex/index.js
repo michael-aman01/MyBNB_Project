@@ -4,8 +4,9 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { getImages } from "../../store/data";
 import ListingsIndexItem from "../ListingsIndexItem";
-
+import { NavLink, useHistory } from "react-router-dom";
 import "./listingsIndex.css"
+import ShowPage from "../ShowPage";
 export default function ListingsIndex(){
    
     const sessionUser = useSelector(state => state.session.user);
@@ -27,10 +28,12 @@ export default function ListingsIndex(){
     }else{
         return (
             <>
+
+
             <div id="listings-container">
-          
-                {listings.map(listing =>     <ListingsIndexItem listing={listing} ></ListingsIndexItem> )}
+                {listings.map(listing =>  <ListingsIndexItem listing={listing} ></ListingsIndexItem>)}
             </div>
+
             </>
         )
     }
