@@ -1,12 +1,9 @@
 import "./listingsIndexItem.css"
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
-import { getImages } from "../../store/data";
-import { fetchImages, fetchListings, getListings } from "../../store/data";
 import { useDispatch, useSelector } from "react-redux";
-import { useDebugValue, useEffect, useRef } from "react";
-import { NavLink, useHistory } from "react-router-dom";
-import ShowPage from "../ShowPage";
-import { Routes, Route, useParams } from 'react-router-dom';
+import { useEffect} from "react";
+import {  useHistory } from "react-router-dom";
+
 
 export default function ListingsIndexItem({listing}){
     //add image fetch here
@@ -30,7 +27,7 @@ export default function ListingsIndexItem({listing}){
             <div id="item-container" onClick={handleClick}>
                  <div id="image-container">
                     <div>
-                    <img className="listing-image"src={listing.image_urls[0]}></img>
+                    <img className="listing-image"src={listing.image_urls[0]} alt=""></img>
                     </div>
   
        
@@ -52,7 +49,7 @@ export default function ListingsIndexItem({listing}){
            
                     </div>
                     <div id="rating-box">
-                    <img id="review-star" src={reviewStar} width="1px" height="10px"></img>
+                    <img alt="" id="review-star" src={reviewStar} width="1px" height="10px"></img>
                         <b>     5.0
                          
                           

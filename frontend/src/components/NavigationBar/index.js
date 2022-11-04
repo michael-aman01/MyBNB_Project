@@ -2,7 +2,6 @@
 import "./NavigationBar.css"
 import NavigationToggle from "../NavigationToggle";
 import logo from "../../assets/logo.jpg"
-
 import SearchBar from './SearchBar';
 import NavOptionsDropdown from './NavOptionsDropdown';
 import { useHistory } from "react-router-dom";
@@ -16,7 +15,7 @@ export default function NavigationBar(){
         <>
          <div id="nav-container">
             <div id="logo-container" onClick={handleClick}>
-                <img id="logo" src={logo}></img>
+                <img alt="" id="logo" src={logo}></img>
             </div>
             <div id="search-box">
             <SearchBar />

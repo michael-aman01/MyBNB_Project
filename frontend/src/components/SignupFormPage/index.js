@@ -78,7 +78,7 @@ function SignupFormPage() {
           <div id="modal-header">
             <div id="close-modal-button-container" onClick={toggleModal}>
               <div >
-                <img src={xMark}></img>
+                <img alt="" src={xMark}></img>
               </div>
             </div>
             <div>2</div>

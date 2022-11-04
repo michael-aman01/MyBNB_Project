@@ -66,8 +66,8 @@ export default function NavOptionsDropdown(){
             <div id="dropdown-container">
             <div className="dropdown">
                         <button className="dropbtn"  onClick={handleClick}>
-                                <img className='button-image' src={stripes}></img>
-                                <img className='button-image' src={buttonImage}></img>
+                                <img alt="" className='button-image' src={stripes}></img>
+                                <img alt="" className='button-image' src={buttonImage}></img>
                         </button>
                         <div className="dropdown-content">
                                 {Object.keys(options).map((key,i) => 

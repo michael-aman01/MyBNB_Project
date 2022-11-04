@@ -1,4 +1,3 @@
-import { notInitialized } from 'react-redux/es/utils/useSyncExternalStore';
 import csrfFetch from './csrf';
 
 const SET_CURRENT_USER = 'session/SET_CURRENT_USER';

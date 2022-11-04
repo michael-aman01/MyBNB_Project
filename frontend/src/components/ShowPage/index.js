@@ -1,7 +1,7 @@
 import "./ShowPage.css"
-import {fetchListing, fetchListings, getListing} from "../../store/data";
+import {fetchListing, getListing} from "../../store/data";
 import {useSelector, useDispatch } from "react-redux";
-import { Route, Switch, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { useEffect } from "react";
 

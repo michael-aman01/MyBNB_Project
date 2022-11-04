@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
-import LogOutButton from "./components/LogoutButton";
 import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
 import CreateListingPhotos from "./components/CreateListingPhotos";
