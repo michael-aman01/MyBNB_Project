@@ -8,19 +8,20 @@ import { useDebugValue, useEffect, useRef } from "react";
 export default function ListingsIndexItem({listing}){
     //add image fetch here
     const dispatch = useDispatch()
-    const listings = useSelector(getListings())
+
     useEffect(() => {
-        dispatch(fetchListings())
+
     },[])
     if(!listing){
 
         return null
     }else{
+
         return(
             <>
                 <div id="item-container">
                 <div id="image-container">
-            
+                    <img src={listing.image_urls[0]}></img>
                 </div>
                 <div id="info-container">
                     <div id="info-box">

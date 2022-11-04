@@ -74,14 +74,13 @@ export default function CreateListingPhotos(){
                 <div id="video-overlay">
                     Next, let's add some photos of your place
                 </div>
-                 <video loop="true" autoplay="true"muted="muted" src={ListingVideo}  id="video" ></video></div>
+                 <video loop="true" autoplay="true"muted="muted" src={ListingVideo}  id="video" ></video>
+         </div>
        
 
             <div id="submit-container">
                 <div id="submit-form">
-                    <div id="submit-icon">
                     
-                    </div>
                     <form onSubmit={handleSubmit}>
                         <label>Upload from your device
                         <input type="file" id="file-input" onChange={handleFile} />
