@@ -11,7 +11,7 @@ export default function NavigationToggle(){
     const dispatch = useDispatch()
     const currentUser = useSelector(getUser)
     const activeForm = useSelector(getActiveForm())
-    console.log(activeForm)
+
     
     function handleClick(){
         if(currentUser){
