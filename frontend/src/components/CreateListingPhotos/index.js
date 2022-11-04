@@ -1,10 +1,12 @@
 import { getActiveForm, getUser } from "../../store/session"
 import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
-import "./CreateListing.css"
+import "./CreateListingPhotos.css"
 import { useEffect, useState } from "react"
 import ListingVideo from "../../assets/listing_video.webm"
-export default function CreateListing(){
+
+
+export default function CreateListingPhotos(){
     const history = useHistory()
     const currentUser = useSelector(getUser)
     const activeForm = useSelector(getActiveForm())[0]
@@ -68,7 +70,11 @@ export default function CreateListing(){
     return (
         <div id="upload-container">
 
-            <div id="video-container"> <video loop="true" autoplay="true"muted="muted" src={ListingVideo}  id="video" ></video></div>
+            <div id="video-container">
+                <div id="video-overlay">
+                    Next, let's add some photos of your place
+                </div>
+                 <video loop="true" autoplay="true"muted="muted" src={ListingVideo}  id="video" ></video></div>
        
 
             <div id="submit-container">
@@ -82,9 +88,14 @@ export default function CreateListing(){
                         </label>
                     </form>
                 </div>
-
+                <div id="bottom-nav">
+                    <div id="back">Back</div>
+                    <div id="next-container">
+                       <button id="next-button">Next</button> 
+                    </div>
+                </div>
             </div>
-         
+       
         </div>
     )
 }

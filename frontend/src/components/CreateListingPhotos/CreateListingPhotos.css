@@ -1,0 +1,115 @@
+html {
+    max-width: 100%; overflow-x: hidden; 
+    max-height: 100%; overflow-y: hidden;
+    font-family:  sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+#upload-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+#side-container {
+    height: 100vh;
+    width:  50vw;
+    background-color: blue   
+}
+
+video {
+    width: 480px;
+    height: 950px;
+    object-fit: fill;
+    object-position: 0px 25%;
+    position: relative;
+}
+
+
+
+#video-overlay {
+    width: 480px;
+    padding: 14px;
+    word-wrap:normal;
+    font-weight: 800;
+    position: fixed;
+    padding: 20px;
+    margin-top: 700px;
+    z-index: 2;
+    color: white;
+    font-size: 50px;
+
+
+}
+#submit-form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dotted black;
+    background-color: white;
+    margin-left: 40px;
+    margin-top: 15vh;
+    height: 500px;
+    width: 400px
+}
+form {
+    margin-top: 200px;
+
+}
+#page-toggle{
+    margin-top: 700px;
+    height: 10vh;
+    width: 50vw;
+    background-color: red;
+}
+
+#submit-icon {
+    display: flex;
+   justify-content: space-between;
+    text-align: center;
+    margin-right: 10;
+}
+#file-input {
+    opacity: 0%;
+}
+
+#bottom-nav {
+    display: flex;
+    margin-top: 220px;
+    height: 100%;
+    width: 100vw;
+}
+#next-container {
+
+    width: 300px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+
+}
+
+#next-button {
+    width: 90px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 800;
+    margin-left: 120px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: black;
+    opacity: 90%;
+    box-shadow: none;
+    border: 0;
+    color: white;
+    
+
+}
+#back {
+    display: flex;
+    border-top: 2px solid black;
+    padding: 10px;
+    padding-top: 40px;
+    justify-content: center;
+
+    color: black;
+    width: 200px;
+}
