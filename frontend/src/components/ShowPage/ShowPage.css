@@ -1,0 +1,175 @@
+
+#root-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+#content {
+    max-width: 70vw;
+    height: 100vh;
+}
+
+#l-wing {
+    background-color: black;
+    width: 10vw;
+
+}
+#r-wing{
+    background-color: black;
+
+    width: 20vw;
+}
+
+#header-container{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    min-height: 10vh;
+
+    padding-top: 1vh;
+}
+#header-title{
+    font-weight: 900;
+    font-size: 35px;
+}
+
+
+#images-container {
+    display: flex;
+    background-color: gray;
+    height: 45vh;
+
+}
+
+#host-details-container {
+    display: flex;
+    background-color: yellow;
+
+}
+#stay-details-container {
+    display: flex;
+    background-color: aqua;
+}
+
+#calendar-container {
+    display: flex;
+    height: 500px;
+    background-color: blue;
+ 
+}
+
+#mid {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+#details-box {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
+
+#reviews-container {
+    height: 1000px;
+}
+#reservation-box {
+    display: flex;
+
+    width: 90vw;
+    background-color: greenyellow;    
+    padding-left: 50px;
+
+}
+
+
+#host-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 8vh;
+    padding-top: 30px;
+    padding-left: 30px;
+    line-height: 1.6;
+}
+
+
+#details-title {
+    font-size: 25px
+}
+
+#details-items-container{
+    display: flex;
+}
+
+.details-item {
+    padding-right: 5px;
+    padding-bottom: 1px;
+}
+
+#spacer {
+    height: 2.5vh;
+}
+
+#stay-details-container {
+    display: flex;
+    height: 30vh;
+    padding-top: 30px;
+    padding-left: 30px;
+    line-height: 1.6;
+}
+
+.modal-hide {
+    height: 0px;
+    width: 0px;
+    display: none;
+}
+.modal-show {
+    -webkit-box-pack: center;
+    -webkit-box-align: end;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    z-index: 2000;
+    position: fixed;
+    inset: 0px;
+    max-height: calc(var(--vh, 1vh) * 100);
+    padding-top: calc(12px + env(safe-area-inset-top, 0));
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end ;
+    justify-content: center;
+    
+}
+  
+  
+    .closing-x {
+        width: 10px;
+        padding-bottom: 10px;
+    }
+    .modal-background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      width: 400px;
+      margin-left: 33vw;
+      margin-top: 0vh;
+      position: absolute;
+      background-color:white;
+      padding: 40px;
+      border-radius: 20px 
+    }
+  
+  
+  

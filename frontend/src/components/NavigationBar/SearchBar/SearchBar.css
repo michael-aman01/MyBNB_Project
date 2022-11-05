@@ -4,14 +4,16 @@
     height: 35px;
     justify-content: space-around;
      background-color: transparent;
-     margin-top: 25px;
+     margin-top: 15px;
      border: 1px solid;
-     border-color: gray;
-     margin-bottom: 20px;
+     border-color: rgb(158, 156, 156);
+     margin-bottom: 10px;
      border-radius: 21px;
      margin-right: 200px;
      text-align: center;
      align-items: center;
+     box-shadow: 5px 5px 5px rgb(192, 191, 191);
+
  }
  .calendar-container {
     padding: 20px;

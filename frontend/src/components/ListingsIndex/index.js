@@ -1,5 +1,5 @@
 import { useEffect} from "react";
-
+import NavigationBar from "../NavigationBar";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import {fetchListings, getListings} from "../../store/data"
@@ -27,7 +27,6 @@ export default function ListingsIndex(){
     }else{
         return (
             <>
-
 
             <div id="listings-container">
                 {listings.map((listing,i) =>  <ListingsIndexItem listing={listing} key={i}></ListingsIndexItem>)}

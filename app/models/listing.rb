@@ -24,7 +24,7 @@
 #  image_id       :bigint
 #
 class Listing < ApplicationRecord
-    validates :user_id, :street_address, :city, :zip_code, :state, :country, :listing_type, :max_guests, :price,
+    validates :user_id, :street_address, :city, :zip_code, :state, :country, :listing_type, :max_guests, :price, :title,
     :cleaning_fee, :description, :num_beds, :num_bedrooms, :num_baths, presence: false
     # validates :street_address, uniqueness: {scope: [:city, :zip_code]}
 

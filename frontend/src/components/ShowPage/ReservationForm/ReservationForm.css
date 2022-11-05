@@ -1,0 +1,39 @@
+
+#reservation-widget {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-top: 15px;
+    padding-right: 20px;
+    max-width: 1120px;
+    min-width: 250px;
+    max-height: 450px;
+    border-radius: 21px;
+    background-color: white;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+#reservation-header-container {
+    background-color: aquamarine;
+    height: 50px;
+}
+#reservation-selection-container {
+    background-color: red;
+    height: 100px;
+}
+#reservation-button-container {
+    background-color: purple;
+    color: white;
+    height: 40px;
+}
+#reservation-fee-container {
+    background-color: yellow;
+    height: 120px;
+}
+
+#reservation-total-container {
+    background-color: orange;
+    padding: 20px;
+}
