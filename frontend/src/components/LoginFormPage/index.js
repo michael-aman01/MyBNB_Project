@@ -95,7 +95,7 @@ function LoginFormPage() {
       <div id="modal-content">
         <div id="modal-header">
           <div id="close-modal-button-container" onClick={toggleModal}>
-            <img src={xMark}></img>
+            <img alt="" src={xMark}></img>
           </div>
           <div>2</div>
         </div>

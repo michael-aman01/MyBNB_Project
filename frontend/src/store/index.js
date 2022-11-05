@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import  thunk from 'redux-thunk'
 import sessionReducer from './session';
 import ListingsReducer from './data';
-import { ImageReducer } from './data';
+
 import {FormReducer} from "./session"
 const rootReducer = combineReducers({
   session: sessionReducer,

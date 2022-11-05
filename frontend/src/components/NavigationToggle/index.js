@@ -1,6 +1,6 @@
 import "./navigationToggle.css"
 import { useHistory } from "react-router-dom";
-import { getActiveForm, getUser,addAv } from "../../store/session";
+import { getUser } from "../../store/session";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {addActiveForm} from "../../store/session"
@@ -9,7 +9,6 @@ export default function NavigationToggle(){
     const history = useHistory()
     const dispatch = useDispatch()
     const currentUser = useSelector(getUser)
-    const activeForm = useSelector(getActiveForm())
 
     
     function handleClick(){

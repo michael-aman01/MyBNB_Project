@@ -108,12 +108,7 @@ export const addActiveForm = formObj => {
     formObj
   })
 }
-const removeActiveForm = ()=> {
-  return ({
-    type: REMOVE_ACTIVE_FORM
 
-  })
-}
 export const getActiveForm = () => state => {
   if(state.activeForm){
     return Object.values(state.activeForm)

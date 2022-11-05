@@ -11,7 +11,7 @@ export default function CreateListingPhotos(){
     const currentUser = useSelector(getUser)
     const activeForm = useSelector(getActiveForm())[0]
    
-    console.log(currentUser)
+
     
     const [photo, setPhoto] = useState("")
 
@@ -23,7 +23,7 @@ export default function CreateListingPhotos(){
             fileReader.readAsDataURL(file);
             fileReader.onload = () => {
               setPhoto(file);
-              let url = fileReader.result;
+
               if(activeForm["photos"].length >= 5){
                 alert("only five images")
                 

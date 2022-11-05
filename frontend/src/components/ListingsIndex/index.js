@@ -2,9 +2,8 @@ import { useEffect} from "react";
 
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-
+import {fetchListings, getListings} from "../../store/data"
 import ListingsIndexItem from "../ListingsIndexItem";
-
 import "./listingsIndex.css"
 
 export default function ListingsIndex(){
@@ -21,7 +20,7 @@ export default function ListingsIndex(){
             dispatch(fetchListings())
          
         }
-    },[dispatch])
+    },[dispatch,sessionUser])
     console.log(listings)
     if(!listings){
         return null
@@ -31,7 +30,7 @@ export default function ListingsIndex(){
 
 
             <div id="listings-container">
-                {listings.map(listing =>  <ListingsIndexItem listing={listing} ></ListingsIndexItem>)}
+                {listings.map((listing,i) =>  <ListingsIndexItem listing={listing} key={i}></ListingsIndexItem>)}
             </div>
 
             </>

@@ -1,13 +1,13 @@
 import "./listingsIndexItem.css"
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
-import { useDispatch, useSelector } from "react-redux";
+
 import { useEffect} from "react";
 import {  useHistory } from "react-router-dom";
 
 
 export default function ListingsIndexItem({listing}){
     //add image fetch here
-    const dispatch = useDispatch()
+   
     const history = useHistory()
 
     useEffect(() => {

@@ -37,7 +37,7 @@ function SignupFormPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === password ) {
+    if (password.length > 0) {
       setErrors([]);
       let reqParams = {
         "email":credential,
