@@ -4,7 +4,7 @@ export default function ReservationForm({listing}){
 <div id="reservation-widget">
 <div id="reservation-header-container">
     <p>${listing.price} night</p>
-    <p>reviews</p>
+    <p>reviewsrails</p>
 </div>
 <div id="reservation-selection-container">dates</div>
 <br></br>

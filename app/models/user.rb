@@ -21,6 +21,8 @@ class User < ApplicationRecord
     validates :password, length: { in: 6..255 }, allow_nil: true
 
     has_many_attached :images
+
+    has_many :reservations
   
     def self.find_by_credentials(email, password)
       @user = User.find_by(email: email)      

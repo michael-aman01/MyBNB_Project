@@ -22,6 +22,8 @@
 #  title          :string
 #  street_address :string
 #  image_id       :bigint
+#  property_type  :string
+#  space_type     :string
 #
 class Listing < ApplicationRecord
     validates :user_id, :street_address, :city, :zip_code, :state, :country, :listing_type, :max_guests, :price, :title,
@@ -29,6 +31,8 @@ class Listing < ApplicationRecord
     # validates :street_address, uniqueness: {scope: [:city, :zip_code]}
 
     has_many_attached :images
+
+    has_many :reservations
     
 
 end
