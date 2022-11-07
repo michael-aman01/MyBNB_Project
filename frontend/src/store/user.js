@@ -1,9 +1,17 @@
 
 import { ADD_USER } from "./session"
 import { useSelector } from "react-redux"
-export const getUser = state => {
-    if(state.session.user){
+
+
+  export const getUser = state => {
+    if(state.session){
       return state.session.user
+    }
+  }
+
+  export const getCurrentUser = state => {
+    if(state.user){
+      return state.user.user
     }
   }
   

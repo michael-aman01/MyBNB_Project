@@ -68,6 +68,10 @@ export default function ReservationsReducer(state={},action){
             return {...action.reservations}
         case ADD_RESERVATION:
             return {...state, ...action.reservation}
+        case REMOVE_RESERVATION:
+            let newState = {...state}
+            delete newState[action.reservation.id]
+            return newState
         default:
             return state
     }

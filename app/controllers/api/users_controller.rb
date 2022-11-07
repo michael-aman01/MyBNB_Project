@@ -15,7 +15,19 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     if @user
-      render :show
+      data = {
+        id: @user.id,
+        reservations: @user.reservations,
+        reservation_images: @user.reservations.map {|res| res.listing.images.map{|l| l.url}},
+        reservations_listings: @user.reservations.map {|res| res.listing},
+        email: @user.email,
+        last_name: @user.last_name,
+        first_name: @user.first_name,
+        session_token: @user.session_token,
+        updated_at: @user.updated_at,
+        created_at: @user.created_at
+      }
+      render json: data
     else
       render json: :error  
     end
