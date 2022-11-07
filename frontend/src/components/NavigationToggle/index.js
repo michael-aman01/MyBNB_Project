@@ -1,6 +1,6 @@
 import "./navigationToggle.css"
 import { useHistory } from "react-router-dom";
-import { getUser } from "../../store/session";
+import { getUser } from "../../store/user";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {addActiveForm} from "../../store/session"

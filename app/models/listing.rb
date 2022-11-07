@@ -30,9 +30,11 @@ class Listing < ApplicationRecord
     :cleaning_fee, :description, :num_beds, :num_bedrooms, :num_baths, presence: false
     # validates :street_address, uniqueness: {scope: [:city, :zip_code]}
 
-    has_many_attached :images
+    has_many_attached :images,
+        dependent: :destroy
 
-    has_many :reservations
+    has_many :reservations,
+        dependent: :destroy
     
 
 end

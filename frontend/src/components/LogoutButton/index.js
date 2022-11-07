@@ -1,6 +1,6 @@
 import { useSelector, useDispatch  } from "react-redux";
 import { Redirect } from "react-router-dom";
-import {getUser} from "../../store/session"
+import {getUser} from "../../store/user"
 import { logout } from "../../store/session";
 
 export default function LogOutButton(){
@@ -11,7 +11,7 @@ export default function LogOutButton(){
     const handleLogout = (e) => {
         e.preventDefault()
         dispatch(logout())
-        return <Redirect to="/login"/>
+        return <Redirect to="/listings"/>
     }
 
     

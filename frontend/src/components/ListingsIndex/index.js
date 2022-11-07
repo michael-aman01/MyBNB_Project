@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import {fetchListings, getListings} from "../../store/data"
 import ListingsIndexItem from "../ListingsIndexItem";
 import "./listingsIndex.css"
+import { fetchRerservations } from "../../store/reservation";
 
 export default function ListingsIndex(){
    
@@ -18,8 +19,9 @@ export default function ListingsIndex(){
 
         if(sessionUser){
             dispatch(fetchListings())
-         
+            dispatch(fetchRerservations())
         }
+        
     },[dispatch,sessionUser])
     console.log(listings)
     if(!listings){

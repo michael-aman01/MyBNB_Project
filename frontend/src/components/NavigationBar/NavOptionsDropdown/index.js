@@ -3,10 +3,12 @@ import LoginFormPage from '../../LoginFormPage'
 import LogOutButton from '../../LogoutButton'
 import SignupFormPage from '../../SignupFormPage'
 import { NavLink } from "react-router-dom";
-import { getUser, login, logout } from '../../../store/session'
+import { login, logout } from '../../../store/session'
+import { getUser } from '../../../store/user';
 import "./NavOptionsDropdown.css"
 import stripes from '../../../assets/navigation-button-stripes.svg'
 import buttonImage from "../../../assets/navigation-button.svg"
+import ProfilePage from '../../ProfilePage';
 
 
 
@@ -37,7 +39,14 @@ export default function NavOptionsDropdown(){
             "demo-login": options["login"]
         }
     }else{
-        options = {"logout":options["logout"]}
+        options["account"] = {
+            path: `/account/${user.id}`,
+            component: <ProfilePage />
+        }
+        options = {
+            "logout":options["logout"],
+        "account":options["account"]
+    }
     }
     
     const handleClick= (e) => {

@@ -1,0 +1,14 @@
+#main-container {
+    display:  flex;
+    width: 100vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#reservation-widget{
+    display: flex;
+    justify-content: space-between;
+
+}

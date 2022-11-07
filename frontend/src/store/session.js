@@ -1,7 +1,10 @@
+import { useSelector } from 'react-redux';
 import csrfFetch from './csrf';
+
 
 const SET_CURRENT_USER = 'session/SET_CURRENT_USER';
 const REMOVE_CURRENT_USER = 'session/REMOVE_CURRENT_USER';
+export const ADD_USER = 'user/ADD_USER'
 
 const setCurrentUser = (user) => {
   return {
@@ -41,11 +44,6 @@ export const restoreSession = () => async dispatch => {
   return response;
 };
 
-export const getUser = state => {
-  if(state.session.user){
-    return state.session.user
-  }
-}
 
 
 export const login = ({ credential, password }) => async dispatch => {
@@ -93,7 +91,7 @@ const sessionReducer = (state = initialState, action) => {
       return { ...state, user: action.payload };
     case REMOVE_CURRENT_USER:
       return { ...state, user: null };
-
+    
     default:
       return state;
   }
@@ -122,6 +120,15 @@ export const FormReducer = (state={activeForm: null},action) => {
     case REMOVE_ACTIVE_FORM:
       
         return {...state, activeForm: null}
+    default:
+      return state
+  }
+}
+
+export const UserReducer = (state={user:null},action) => {
+  switch(action.type){
+    case ADD_USER:
+      return {...state, user: action.user}
     default:
       return state
   }

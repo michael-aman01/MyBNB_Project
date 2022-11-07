@@ -1,4 +1,5 @@
-import { getActiveForm, getUser } from "../../store/session"
+import {getUser } from "../../store/user"
+import { getActiveForm } from "../../store/session";
 import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
 import "./CreateListingPhotos.css"

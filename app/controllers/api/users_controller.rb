@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  
   wrap_parameters include: User.attribute_names + ['password']
 
   def create
@@ -8,6 +9,15 @@ class Api::UsersController < ApplicationController
       render :show
     else
       render json: { errors: @user.errors.full_messages }
+    end
+  end
+
+  def show
+    @user = User.find_by(id: params[:id])
+    if @user
+      render :show
+    else
+      render json: :error  
     end
   end
 

@@ -6,25 +6,9 @@ export const ADD_LISTING = "listings/ADD_LISTING"
 export const ADD_IMAGES = "listings/ADD_IMAGES"
 export const ADD_IMAGE = "listings/ADD_IMAGE"
 
-export const ADD_RESERVATION = "listings/ADD_RESERVATION"
-export const ADD_RESERVATIONS = "listings/ADD_RESERVATIONS"
 
 
 
-export const addReservation = reservation => {
-    return({
-        type: ADD_RESERVATION,
-        reservation
-    })
-}
-
-
-export const addReservations = reservations => {
-    return({
-        type: ADD_RESERVATIONS,
-        reservations
-    })
-}
 export const addListings = listings => {
     return({
         type: ADD_LISTINGS,
@@ -47,10 +31,6 @@ export const removeListings = () => {
     })
 }
 
-
-export const getReservations = () => state => {
-    return state.reservations
-}
 
 
 export const getListings = () => state => {
@@ -84,17 +64,6 @@ export const fetchListing = listingId => async dispatch => {
 
 
 
-
-export const makeReservation = reservation => async dispatch => {
-    const res = await csrfFetch(`/api/listings/${reservation.listing_id}/reservations`,{
-        method: "POST",
-        body: JSON.stringify(reservation)
-    })
-    const data = await res.json()
-    if(data){
-        return dispatch(addReservation(data))
-    }
-}
 
 
 

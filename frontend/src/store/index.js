@@ -1,14 +1,17 @@
 import { createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import  thunk from 'redux-thunk'
-import sessionReducer from './session';
-import ListingsReducer, { ReservationsReducer } from './data';
-
+import sessionReducer, { UserReducer } from './session';
+import ListingsReducer from './data';
+import ReservationsReducer from './reservation';
 import {FormReducer} from "./session"
+
+
 const rootReducer = combineReducers({
   session: sessionReducer,
   listings: ListingsReducer,
   activeForm: FormReducer,
-
+  reservations: ReservationsReducer,
+  user: UserReducer
 })
 
 let enhancer;

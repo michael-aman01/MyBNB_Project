@@ -7,6 +7,7 @@ import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
 import CreateListingPhotos from "./components/CreateListingPhotos";
 import ShowPage from './components/ShowPage'
+import ProfilePage from "./components/ProfilePage";
 function App() {
 
   useEffect(() =>{
@@ -33,6 +34,9 @@ function App() {
       </Route>
       <Route path={`/listings/:id`}>
         <ShowPage />
+      </Route>
+      <Route path="/account/:user_id">
+        <ProfilePage />
       </Route>
       
 <Route path="/create/photos">

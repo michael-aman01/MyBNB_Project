@@ -4,7 +4,9 @@ import {useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import X from "../../assets/iconmonstr-x-mark-1.svg"
 import { useEffect } from "react";
-import ReservationForm from "./ReservationForm";
+import ReservationForm from "../ReservationForm";
+import { fetchRerservations } from "../../store/reservation";
+
 export default function ShowPage(){
     const dispatch = useDispatch()
     const {id} = useParams()
@@ -14,8 +16,7 @@ export default function ShowPage(){
         if(!listing){
             dispatch(fetchListings())
         }
-  
-
+        dispatch(fetchRerservations(id))
     },[dispatch,id])
 
     const closeModal = () => {

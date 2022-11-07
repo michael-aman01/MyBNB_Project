@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux";
-import {getUser} from '../../../store/session'
+import {fetchUser, getUser} from '../../store/user'
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { fetchListings, makeReservation } from "../../../store/data";
-
+import { fetchRerservations, makeReservation } from "../../store/reservation";
 import "./ReservationForm.css"
+
 export default function ReservationForm({listing}){
     const dispatch = useDispatch()
     const {id} = useParams();
@@ -14,6 +14,7 @@ export default function ReservationForm({listing}){
     const [endDate, setEndDate] = useState("");
     console.log(listing.reservations)
     console.log(listing.reservations)
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const date = new Date()
@@ -38,6 +39,7 @@ export default function ReservationForm({listing}){
             alert("please add ddates")
         }else{
             dispatch(makeReservation(reservationData))
+            dispatch(fetchRerservations(id))
         }
   
     }
