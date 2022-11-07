@@ -1,5 +1,5 @@
 import "./ShowPage.css"
-import {fetchListing, getListing} from "../../store/data";
+import {fetchListings, getListing} from "../../store/data";
 import {useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import X from "../../assets/iconmonstr-x-mark-1.svg"
@@ -12,7 +12,7 @@ export default function ShowPage(){
     const listing = useSelector(getListing(id))
     useEffect(() => {
         if(!listing){
-            dispatch(fetchListing(id))
+            dispatch(fetchListings())
         }
   
 
@@ -29,67 +29,68 @@ export default function ShowPage(){
     }else{
   
             return (
-                <div id="root-container">
-                    <div  id="l-wing">left</div>
+                <ReservationForm listing={listing} />
+                // <div id="root-container">
+                //     <div  id="l-wing">left</div>
             
-                    <div id="content">
+                //     <div id="content">
                  
-                    <div id="top">
-                        <div id="header-container">
-                            <p id="header-title">Title</p>
-                            <p>reviews</p>
-                        </div>
-                        <div id="images-container">Images</div>
-                    </div>
-                   <div id="mid">
-                   <div id="details-box">
+                //     <div id="top">
+                //         <div id="header-container">
+                //             <p id="header-title">Title</p>
+                //             <p>reviews</p>
+                //         </div>
+                //         <div id="images-container">Images</div>
+                //     </div>
+                //    <div id="mid">
+                //    <div id="details-box">
    
-                            <div id="host-details-container">
-                                <p id="details-title">details</p>
+                //             <div id="host-details-container">
+                //                 <p id="details-title">details</p>
 
-                                <div id="details-items-container">
-                                    <p className="details-item">{listing.max_guests} guests</p>
-                                    <p className="details-item">{listing.num_bedrooms} bedrooms</p>
-                                    <p className="details-item">{listing.num_beds} beds</p>
-                                    <p className="details-item">{listing.num_baths} baths</p>
-                                </div>
-                            </div>
-                            <div id="spacer">spacer</div>
-                            <div id="stay-details-container">
-                                   <div id="stay-description">
-                                    {listing.description.split("").slice(0,250).join("") + "..."}
-                                    <br></br>
-                                    <br></br>
+                //                 <div id="details-items-container">
+                //                     <p className="details-item">{listing.max_guests} guests</p>
+                //                     <p className="details-item">{listing.num_bedrooms} bedrooms</p>
+                //                     <p className="details-item">{listing.num_beds} beds</p>
+                //                     <p className="details-item">{listing.num_baths} baths</p>
+                //                 </div>
+                //             </div>
+                //             <div id="spacer">spacer</div>
+                //             <div id="stay-details-container">
+                //                    <div id="stay-description">
+                //                     {listing.description.split("").slice(0,250).join("") + "..."}
+                //                     <br></br>
+                //                     <br></br>
                                  
-                                        <div className="modal-hide" id="description-modal">
-                                            <div className="modal-background">
+                //                         <div className="modal-hide" id="description-modal">
+                //                             <div className="modal-background">
                                            
-                                                <div className="modal-content">
-                                                <span onClick={closeModal}><img  className="closing-x" src={X}></img></span>
-                                                    {listing.description}
-                                                </div>
-                                            </div>
+                //                                 <div className="modal-content">
+                //                                 <span onClick={closeModal}><img  className="closing-x" src={X}></img></span>
+                //                                     {listing.description}
+                //                                 </div>
+                //                             </div>
                                
-                                    </div>
+                //                     </div>
                             
-                                    <span onClick={showModal}>Show more {">"}</span>
-                            </div>
-                            </div>
-                            <div id="calendar-container">calendar</div>
-                            <div id="reviews-container">reviews</div>
+                //                     <span onClick={showModal}>Show more {">"}</span>
+                //             </div>
+                //             </div>
+                //             <div id="calendar-container">calendar</div>
+                //             <div id="reviews-container">reviews</div>
                   
 
                             
-                        </div>
-                        <div id="reservation-box">
-                                <ReservationForm listing={listing} />
-                        </div>
-                   </div>
+                //         </div>
+                //         <div id="reservation-box">
+                //                 <ReservationForm listing={listing} />
+                //         </div>
+                //    </div>
         
-                    </div>
+                //     </div>
           
                     
-                </div>
+                // </div>
  
                
             )

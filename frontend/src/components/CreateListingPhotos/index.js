@@ -81,7 +81,7 @@ export default function CreateListingPhotos(){
             <div id="submit-container">
                 <div id="submit-form">
                     
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} id="photo-form">
                         <label>Upload from your device
                         <input type="file" id="file-input" onChange={handleFile} />
                         </label>

@@ -3,9 +3,9 @@ class Api::ListingsController < ApplicationController
     def index
         @listings = Listing.all
         if(@listings)
-            data = []
+            data = {}
             @listings.map do |listing|
-                data << {
+                data[listing.id] = {
                     id: listing.id,
                     property_type: listing.property_type,
                     space_type: listing.space_type,
@@ -23,7 +23,8 @@ class Api::ListingsController < ApplicationController
                     num_bedrooms: listing.num_bedrooms,
                    num_beds: listing.num_beds,
                    num_baths: listing.num_baths,
-                   image_urls: listing.images.map{|image| image.url}
+                   image_urls: listing.images.map{|image| image.url},
+                   reservations: listing.reservations.map{|reservation| reservation}
             }
         end
             render json: data
@@ -34,7 +35,7 @@ class Api::ListingsController < ApplicationController
 
     def show
         @listing = Listing.find_by(id: params[:id])
-   
+        
         if @listing
             render json: {
                     id: @listing.id,
@@ -54,7 +55,8 @@ class Api::ListingsController < ApplicationController
                     num_bedrooms: @listing.num_bedrooms,
                    num_beds: @listing.num_beds,
                    num_baths: @listing.num_baths,
-                   image_urls: @listing.images.map{|image| image.url}
+                   image_urls: @listing.images.map{|image| image.url},
+                   reservations: @listing.reservations.map{|reservation| reservation}
             }
         else
             render json: "NO USER"
