@@ -1,0 +1,29 @@
+#date-container {
+    height: 400px;
+    width: 600px;
+    background-color: aqua;
+}
+
+
+
+#calendar-header {
+    display: flex;
+}
+
+#calendar-title {
+    width: 300px;
+
+}
+
+
+#date-inputs {
+    padding-left: 100px;
+    padding-top: 10px;
+}
+
+#calendar {
+    display: flex;
+    background-color: black;
+    margin-top: 50px;
+   
+}

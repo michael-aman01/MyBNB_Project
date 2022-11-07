@@ -1,14 +1,28 @@
-#main-container {
+#profile-container {
     display:  flex;
+    flex-direction: column;
     width: 100vh;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    
+    height: 20vh;
+    background-color: aqua;
+    border-bottom: 1px solid gray;
 }
 
-#reservation-widget{
+#profile-header-container{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    min-height: 2vh;
+    padding: 50px;
+    padding-bottom:30px;
+    border-bottom: 1px solid gray;
+    
+}
+#profile-header-title{
 
+    white-space: pre-line !important;
+    max-width: 100% !important;
+    font-size: var(--tl-font-size, 32px) !important;
+    font-weight: var(--tl-font-weight, 800) !important;
+    letter-spacing: var(--tl-letter-spacing, 0em) !important;
+    line-height: var(--tl-line-height, 36px) !important;
+    color: var(--tl-color, #222222) !important;
 }

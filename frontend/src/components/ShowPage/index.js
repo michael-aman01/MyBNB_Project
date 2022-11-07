@@ -6,7 +6,7 @@ import X from "../../assets/iconmonstr-x-mark-1.svg"
 import { useEffect } from "react";
 import ReservationForm from "../ReservationForm";
 import { fetchRerservations } from "../../store/reservation";
-
+import DatePicker from "../DatePicker";
 export default function ShowPage(){
     const dispatch = useDispatch()
     const {id} = useParams()
@@ -30,7 +30,7 @@ export default function ShowPage(){
     }else{
   
             return (
-                <ReservationForm listing={listing} />
+                <DatePicker />
                 // <div id="root-container">
                 //     <div  id="l-wing">left</div>
             
@@ -39,7 +39,7 @@ export default function ShowPage(){
                 //     <div id="top">
                 //         <div id="header-container">
                 //             <p id="header-title">Title</p>
-                //             <p>reviews</p>
+                //             <p> # reviews</p>
                 //         </div>
                 //         <div id="images-container">Images</div>
                 //     </div>

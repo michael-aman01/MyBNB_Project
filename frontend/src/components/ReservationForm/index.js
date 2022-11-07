@@ -4,6 +4,7 @@ import {fetchUser, getUser} from '../../store/user'
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchRerservations, makeReservation } from "../../store/reservation";
+import DatePicker from "../DatePicker";
 import "./ReservationForm.css"
 
 export default function ReservationForm({listing}){
@@ -52,8 +53,8 @@ export default function ReservationForm({listing}){
 </div>
 <div id="reservation-selection-container">
     <form id="reservation-form" onSubmit={handleSubmit}>
-        <input id="start-date"value="startDate" type="date" onChange={(e) => setStartDate(e.target.value)}></input>
-        <input id="start-date"value="endDate" type="date"  onChange={(e) => setEndDate(e.target.value)}></input>
+        {/* <input id="start-date"value="startDate" type="date" onChange={(e) => setStartDate(e.target.value)}></input>
+        <input id="start-date"value="endDate" type="date"  onChange={(e) => setEndDate(e.target.value)}></input> */}
 
     <button>Submit</button>
     </form>
@@ -68,8 +69,15 @@ export default function ReservationForm({listing}){
 <p>you wont be charged yet</p>
 <br></br>
 
-<div id="reservation-fee-container">fees</div>
-<div id="reservation-total-container">total-price</div>
+<div id="reservation-fee-container">
+    <p>{listing.price} X # nights</p>
+    <p>{listing.cleaning_fee}</p>
+    <p>service fee</p>
+    </div>
+<div id="reservation-total-container">
+    <p>Total before taxes</p>
+    <p>{listing.price + listing.cleaning_fee}</p>
+</div>
 </div>
     )
 }
