@@ -23,6 +23,7 @@ class Api::UsersController < ApplicationController
         email: @user.email,
         last_name: @user.last_name,
         first_name: @user.first_name,
+        reviews: @user.reviews, 
         session_token: @user.session_token,
         updated_at: @user.updated_at,
         created_at: @user.created_at

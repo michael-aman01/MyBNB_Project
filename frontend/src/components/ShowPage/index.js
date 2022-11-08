@@ -70,6 +70,7 @@ export default function ShowPage(){
                             <img src={listing.image_urls[0]}></img>
                             <img src={listing.image_urls[0]} ></img>
                     </div>
+                    <div id="mid-container">
                     <div id="details-container">
                               <div className="header-title">details</div>
                               <br></br>
@@ -77,6 +78,10 @@ export default function ShowPage(){
                                 <p>{listing.max_guests} guests {listing.num_bedrooms} bedrooms {listing.num_beds} beds {listing.num_bedrooms} bathrooms</p>    
                               </div>
                     </div>
+
+                    </div>
+                        
+                
                     <div className="description-container">
                     {listing.description.split("").slice(0,250).join("") + "..."}
                                     <br></br>
@@ -99,11 +104,17 @@ export default function ShowPage(){
                             <span id="modal-button" onClick={showModal}>Show more {">"}</span>
                             </div>
                             <div>
-                            </div>
-                    </div> 
- 
-                    </div>
+            
                   
+                            </div>
+                            
+                    </div> 
+
+                    </div>
+                    <div>
+                        {/* <ReservationForm listing={listing}/> */}
+                    </div>
+            
                 
                </>
             )

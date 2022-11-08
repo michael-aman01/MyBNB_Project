@@ -24,7 +24,8 @@ class Api::ListingsController < ApplicationController
                    num_beds: listing.num_beds,
                    num_baths: listing.num_baths,
                    image_urls: listing.images.map{|image| image.url},
-                   reservations: listing.reservations.map{|reservation| reservation}
+                   reservations: listing.reservations.map{|reservation| reservation},
+                   reviews: listing.reviews.map{|review| review}
             }
         end
             render json: data
@@ -56,7 +57,8 @@ class Api::ListingsController < ApplicationController
                    num_beds: @listing.num_beds,
                    num_baths: @listing.num_baths,
                    image_urls: @listing.images.map{|image| image.url},
-                   reservations: @listing.reservations.map{|reservation| reservation}
+                   reservations: @listing.reservations.map{|reservation| reservation},
+                   reviews: listing.reviews.map{|review| review}
             }
         else
             render json: "NO USER"

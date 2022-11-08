@@ -4,8 +4,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import ReservationIndexPage from "../ReservationsIndex"
 import { getUser, getCurrentUser } from "../../store/user"
-
-
+import DateSelector from "../DateSelector"
 export default function ProfilePage(){
     const dispatch = useDispatch()
     const currentUser = useSelector(getUser)
@@ -18,7 +17,8 @@ export default function ProfilePage(){
                <p id="profile-header-title" >Trips</p>
         </div>
         <div id="profile-container">
-        <ReservationIndexPage />
+            <DateSelector />
+        {/* <ReservationIndexPage /> */}
         </div>
 </>
     )

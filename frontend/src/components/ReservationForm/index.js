@@ -4,7 +4,6 @@ import {fetchUser, getUser} from '../../store/user'
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchRerservations, makeReservation } from "../../store/reservation";
-import DatePicker from "../DatePicker";
 import "./ReservationForm.css"
 
 export default function ReservationForm({listing}){
@@ -53,8 +52,8 @@ export default function ReservationForm({listing}){
 </div>
 <div id="reservation-selection-container">
     <form id="reservation-form" onSubmit={handleSubmit}>
-        {/* <input id="start-date"value="startDate" type="date" onChange={(e) => setStartDate(e.target.value)}></input>
-        <input id="start-date"value="endDate" type="date"  onChange={(e) => setEndDate(e.target.value)}></input> */}
+        <input id="start-date"value="startDate" type="date" onChange={(e) => setStartDate(e.target.value)}></input>
+        <input id="start-date"value="endDate" type="date"  onChange={(e) => setEndDate(e.target.value)}></input>
 
     <button>Submit</button>
     </form>
