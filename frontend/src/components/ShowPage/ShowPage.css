@@ -1,69 +1,84 @@
 
 #root-container {
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 
+}
+
+#main-image {
+    width: 460px;
+    height: 600px;
+    object-fit: cover;
+    vertical-align: bottom;
+    border-radius: 12px;
+    border: 4px solid white;
+}
+
+.small-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    vertical-align: bottom;
+    border-radius: 12px;
+    border: 2px solid white;
 }
 
 #content {
-    max-width: 70vw;
-    height: 100vh;
+    max-width: 70%;
+    height: 100%;
 }
 
 #l-wing {
-    background-color: black;
-    width: 10vw;
+
+    width: 20%;
 
 }
 #r-wing{
-    background-color: black;
-
-    width: 20vw;
+    width: 20%;
 }
 
 #header-container{
     display: flex;
     flex-direction: column;
-    background-color: red;
-    min-height: 10vh;
 
+    min-height: 10vh;
+    margin-top: 20px;
     padding-top: 1vh;
 }
 #header-title{
     font-weight: 900;
-    font-size: 35px;
+    font-size: 30px;
 }
+
 
 
 #images-container {
     display: flex;
-    background-color: gray;
+    width: 900px;
     height: 45vh;
-
+    position: relative;
 }
 
 #host-details-container {
     display: flex;
-    background-color: yellow;
-
+    margin-top: 100px;
 }
 #stay-details-container {
     display: flex;
-    background-color: aqua;
 }
 
 #calendar-container {
     display: flex;
-    height: 500px;
-    background-color: blue;
- 
+    height: 500px; 
 }
 
 #mid {
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    margin-top: 100px;
+    margin-right: 0px;
+    height: 100%;
+    width: 100%;
     justify-content: space-between;
 }
 
@@ -71,19 +86,23 @@
     display: flex;
     flex-direction: column;
     width: 70vw;
+    border-bottom: 10px solid gray;
 }
 
+#details-title{
+    font-weight: 900;
+    font-size: 20px;
+
+}
 #reviews-container {
     height: 1000px;
 }
 #reservation-box {
     display: flex;
-
     width: 90vw;
-    background-color: greenyellow;    
     padding-left: 50px;
-
 }
+
 
 
 #host-details-container {
@@ -94,15 +113,14 @@
     padding-top: 30px;
     padding-left: 30px;
     line-height: 1.6;
+    margin-right: 0px;
 }
 
 
-#details-title {
-    font-size: 25px
-}
 
 #details-items-container{
     display: flex;
+
 }
 
 .details-item {
@@ -112,6 +130,7 @@
 
 #spacer {
     height: 2.5vh;
+    border-bottom: 1px solid gray;
 }
 
 #stay-details-container {
