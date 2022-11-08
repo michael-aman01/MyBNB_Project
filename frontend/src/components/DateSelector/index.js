@@ -2,6 +2,8 @@ import './DateSelector.css'
 import { useState } from 'react'
 import left from "../../assets/left-arrow.png"
 import right from "../../assets/right-arrow.png"
+
+
 export default function DateSelector(){
 
         const today = new Date()
@@ -32,30 +34,15 @@ export default function DateSelector(){
      
         const handleClick = (e) => {
             e.preventDefault()
-            console.log(e.target.id)
+            alert(e)
+            console.log(selectedMonth)
+            console.log(e)
             if(e.target.id === "up"){
-                if(selectedMonth === calendarMonths.length -1){
-                    setSelectedMonth(calendarMonths.length - 1)
-                    setYear(calendarYears[selectedMonth -1])
-                }else{
-                    setSelectedMonth(selectedMonth + 1)
-                    setYear(calendarYears[selectedMonth + 1])
-                }
-                setMonth(calendarMonths[selectedMonth])
-                setYear(calendarYears[selectedMonth])
-                console.log(calendarDates)
+                setSelectedMonth(selectedMonth + 1)
             }else{
-                if(selectedMonth  === 0){
-                    setSelectedMonth(0)
-                    setYear(0)
-                }else{
-                    setSelectedMonth(selectedMonth -1)
-                    setYear(selectedMonth - 1)
-                }
-                setMonth(calendarMonths[selectedMonth])
-                setYear(calendarYears[selectedMonth])
-              
+                setSelectedMonth(selectedMonth - 1)
             }
+            console.log(selectedMonth)
         }
 
         const getDates = (m, y) => {
@@ -87,9 +74,14 @@ export default function DateSelector(){
         return(
             <div id="date-selector-container">
                 <div id="calendar-header">
-                <button placeholder='<' id="down"  onClick={handleClick}> <img className='arrow' src={left}></img></button>
-                <span>{month.toUpperCase()} {year}</span>
-                <button id="up" onClick={handleClick}><img className='arrow' src={right}></img></button>
+                    <div>
+                    <button id="down"  onClick={() => selectedMonth > 0 ? setSelectedMonth(selectedMonth - 1): null}> <img className='arrow' src={left}></img></button>
+
+                    </div>
+                <span>{calendarMonths[selectedMonth].toUpperCase()} {calendarYears[selectedMonth]} </span>
+                <div>
+                <button id="up" onClick={() => selectedMonth < calendarMonths.length - 1 ?  setSelectedMonth(selectedMonth + 1) : null}><img className='arrow' src={right}></img></button>
+                </div>
             </div>
             <div id="calendar-container">
                 {calendarHeader.map((day,i) => 

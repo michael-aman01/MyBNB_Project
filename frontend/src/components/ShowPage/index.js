@@ -6,7 +6,7 @@ import X from "../../assets/iconmonstr-x-mark-1.svg"
 import { useEffect } from "react";
 import ReservationForm from "../ReservationForm";
 import { fetchRerservations } from "../../store/reservation";
-
+import DateSelector from "../../components/DateSelector"
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 
@@ -100,20 +100,33 @@ export default function ShowPage(){
                                     </div>
                                     
                             </div>
+                           
                             <div className="description-container">
                             <span id="modal-button" onClick={showModal}>Show more {">"}</span>
                             </div>
-                            <div>
-            
-                  
+                            <div>               
                             </div>
-                            
+                            <div>
+                            <div className="border-line"></div>
+                        <div id="show-calendar" className="description-container">
+                            <p className="header-title">
+                                Select checkout date
+                                <br></br>
+                                <span className="small-print">add your travel dates for exact pricing</span>
+                                </p>
+                    
+                 
+                        </div>
+         
+                      <div id="calendar-container">
+                        
+                        <DateSelector />
+                      </div>
+                    </div>
                     </div> 
 
                     </div>
-                    <div>
-                        {/* <ReservationForm listing={listing}/> */}
-                    </div>
+
             
                 
                </>
