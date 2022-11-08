@@ -6,16 +6,16 @@ import X from "../../assets/iconmonstr-x-mark-1.svg"
 import { useEffect } from "react";
 import ReservationForm from "../ReservationForm";
 import { fetchRerservations } from "../../store/reservation";
-import DatePicker from "../DatePicker";
-import pic from "../../assets/image_12.jpg"
-import { useState } from "react";
 
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
 
 export default function ShowPage(){
     const dispatch = useDispatch()
     const {id} = useParams()
-    const [windowSize, setWindowSize] = useState(window.innerWidth)
+    const [windowSize, setWindowSize] = useState(document.documentElement.clientWidth)
     const listing = useSelector(getListing(id))
+    const [value, onChange] = useState(new Date());
     useEffect(() => {
         if(!listing){
             dispatch(fetchListings())
@@ -35,13 +35,13 @@ export default function ShowPage(){
         const contentContainer = document.getElementById("content")
         const detailsContainer = document.getElementById("details-container")
      
-        if(window.innerWidth === windowSize){
+        if(window.innerWidth >= windowSize){
      
             contentContainer.style.marginRight = "20%"
             contentContainer.style.marginLeft = "20%"
             contentContainer.style.gridTemplateColumns = "repeat(4,1fr)"
             contentContainer.style.gridTemplateRows = "repeat(2,1fr)"
-            detailsContainer.style.marginTop = "250px"
+    
          
             //max
         }else{
@@ -49,7 +49,7 @@ export default function ShowPage(){
             contentContainer.style.marginLeft = "5%"
             contentContainer.style.gridTemplateColumns = "repeat(4,25%)"
             contentContainer.style.gridTemplateRows = "repeat(2,80%)"
-            detailsContainer.style.marginTop = "200px"
+      
         }
     })
     if(!listing){
@@ -74,10 +74,7 @@ export default function ShowPage(){
                               <div className="header-title">details</div>
                               <br></br>
                               <div className="details-items">
-                                <p>{listing.max_guests} guests</p>
-                                <p>{listing.num_bedrooms} bedrooms</p>
-                                <p>{listing.num_beds} beds</p>
-                                <p>{listing.num_bedrooms} bathrooms</p>
+                                <p>{listing.max_guests} guests {listing.num_bedrooms} bedrooms {listing.num_beds} beds {listing.num_bedrooms} bathrooms</p>    
                               </div>
                     </div>
                     <div className="description-container">
@@ -101,11 +98,8 @@ export default function ShowPage(){
                             <div className="description-container">
                             <span id="modal-button" onClick={showModal}>Show more {">"}</span>
                             </div>
-                       
-
-           
-              
-              
+                            <div>
+                            </div>
                     </div> 
  
                     </div>
