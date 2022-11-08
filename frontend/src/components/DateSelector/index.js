@@ -68,13 +68,21 @@ export default function DateSelector(){
                 5:[],
                 6:[]
             }
-             dates.map(date => weekDays[date.getDay()].push(date))
+             dates.map(date => weekDays[date.getDay()].push(date.getDate().toString()))
              return weekDays
         }
         const calendarHeader = ["SUN","MON","TUES","WED","THURS","FRI","SAT"]
-        const dates = getDates(month,year)
-        console.log(typeof dates[0][0].toString())
-        
+        let dates = getDates(month,year)
+        console.log(dates)
+        dates = Object.values(dates).map(date => {
+            if(date.length < 5){
+                return    [...Array(5 - dates[0].length).keys()].map(i => 0).concat(date)
+            }else{
+                return date
+            }
+    
+        })
+        console.log(dates)
         return(
             <div id="date-selector-container">
                 <div id="calendar-header">
@@ -89,8 +97,7 @@ export default function DateSelector(){
                     {day}
               
                     <ul>
-                        {dates[i].map(date  => <li>{date.getDate().toString()}</li>)}
-                
+                        {dates[i].map(date => date === 0 ?  <li><br></br></li> : <li>{date}</li> )}
                     </ul>
 
                 </div>)}
