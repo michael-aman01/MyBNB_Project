@@ -35,7 +35,7 @@ export default function ShowPage(){
         const contentContainer = document.getElementById("content")
         const detailsContainer = document.getElementById("details-container")
      
-        if(window.innerWidth > windowSize){
+        if(window.innerWidth === windowSize){
      
             contentContainer.style.marginRight = "20%"
             contentContainer.style.marginLeft = "20%"
@@ -60,7 +60,7 @@ export default function ShowPage(){
       <>
                 <div id="root-container">        
                 <div id="content">
-                    <div class="header-container">
+                    <div id="header-container">
                         <p className="header-title">header</p>
                     </div>
                     <div class="images-grid">
@@ -71,8 +71,38 @@ export default function ShowPage(){
                             <img src={listing.image_urls[0]} ></img>
                     </div>
                     <div id="details-container">
-                              <p className="header-title">details</p>
+                              <div className="header-title">details</div>
+                              <br></br>
+                              <div className="details-items">
+                                <p>{listing.max_guests} guests</p>
+                                <p>{listing.num_bedrooms} bedrooms</p>
+                                <p>{listing.num_beds} beds</p>
+                                <p>{listing.num_bedrooms} bathrooms</p>
+                              </div>
                     </div>
+                    <div className="description-container">
+                    {listing.description.split("").slice(0,250).join("") + "..."}
+                                    <br></br>
+                                    <br></br>
+                                 
+                                        <div className="modal-hide" id="description-modal">
+                                            <div className="modal-background">
+                                           
+                                                <div className="modal-content">
+                                                <span onClick={closeModal}><img  className="modal-closing-x" src={X}></img></span>
+                                                    {listing.description}
+                                                </div>
+                                            </div>
+                               
+                                         
+                                    </div>
+                                    
+                            </div>
+                            <div className="description-container">
+                            <span id="modal-button" onClick={showModal}>Show more {">"}</span>
+                            </div>
+                       
+
            
               
               
