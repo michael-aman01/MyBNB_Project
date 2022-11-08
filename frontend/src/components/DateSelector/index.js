@@ -1,7 +1,7 @@
 import './DateSelector.css'
 import { useState } from 'react'
-
-
+import left from "../../assets/left-arrow.png"
+import right from "../../assets/right-arrow.png"
 export default function DateSelector(){
 
         const today = new Date()
@@ -32,6 +32,7 @@ export default function DateSelector(){
      
         const handleClick = (e) => {
             e.preventDefault()
+            console.log(e.target.id)
             if(e.target.id === "up"){
                 if(selectedMonth === calendarMonths.length -1){
                     setSelectedMonth(calendarMonths.length - 1)
@@ -53,7 +54,7 @@ export default function DateSelector(){
                 }
                 setMonth(calendarMonths[selectedMonth])
                 setYear(calendarYears[selectedMonth])
-                console.log(calendarDates)
+              
             }
         }
 
@@ -73,7 +74,7 @@ export default function DateSelector(){
         }
         const calendarHeader = ["SUN","MON","TUES","WED","THURS","FRI","SAT"]
         let dates = getDates(month,year)
-        console.log(dates)
+
         dates = Object.values(dates).map(date => {
             if(date.length < 5){
                 return    [...Array(5 - dates[0].length).keys()].map(i => 0).concat(date)
@@ -82,14 +83,13 @@ export default function DateSelector(){
             }
     
         })
-        console.log(dates)
+   
         return(
             <div id="date-selector-container">
                 <div id="calendar-header">
-                <button placeholder='<' id="down"  onClick={handleClick}> </button>
-                <span>{month} {year}</span>
-
-                <button placeholder='<' id="up" onClick={handleClick}> </button>
+                <button placeholder='<' id="down"  onClick={handleClick}> <img className='arrow' src={left}></img></button>
+                <span>{month.toUpperCase()} {year}</span>
+                <button id="up" onClick={handleClick}><img className='arrow' src={right}></img></button>
             </div>
             <div id="calendar-container">
                 {calendarHeader.map((day,i) => 
@@ -97,17 +97,10 @@ export default function DateSelector(){
                     {day}
               
                     <ul>
-                        {dates[i].map(date => date === 0 ?  <li><br></br></li> : <li>{date}</li> )}
+                        {dates[i].map(date => date === 0 ?  <div className='calendar-square'><br></br></div> : <div className='calendar-square'>{date}</div> )}
                     </ul>
 
                 </div>)}
-                        {/* <div>sun</div>
-                        <div>mon</div>
-                        <div>tue</div>
-                        <div>wed</div>
-                        <div>thurs</div>
-                        <div>fri</div>
-                        <div>sat</div> */}
             </div>
 
             </div>

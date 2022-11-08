@@ -7,6 +7,27 @@
     justify-content: space-evenly;
 }
 
+
+.calendar-square {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    width: 40px;
+    height: 30px;
+    border: 1px solid transparent;
+
+    cursor: pointer;
+}
+
+.calendar-square:hover{
+    border-color: black;
+    border-radius: 50%;
+}
+.arrow {
+    height: 15px;
+    width: 10px;
+}
 #date-selector-container button {
     height: 20px;
     width: 20px;
@@ -16,3 +37,20 @@
     justify-content: space-between;
 
 }
+
+#calendar-header {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+#calendar-header button {
+    background-color: transparent;
+    border: none;
+    width: 25px;
+    cursor: pointer;
+
+}
+
