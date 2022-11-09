@@ -1,19 +1,5 @@
 
-#reservation-widget {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-top: 15px;
-    padding-right: 15px;
-    width: 400px;
-    border-radius: 21px;
-    background-color: white;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    border: 1px solid gray;
-    box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset !important;
-}
+
 
 .dates {
     border:1px solid black;

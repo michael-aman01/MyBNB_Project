@@ -100,9 +100,8 @@ export default function DateSelector({listing}){
         if(month){
         return(
             <>
-            <div id="overlay">
-                <ReservationForm listing={listing} checkInDate={checkInDate} checkOutDate={checkOutDate}/>
-            </div>
+
+
             <div id="date-selector-container">
                 <div id="calendar-header">
                 <button placeholder='<' id="down" onClick={e => selectedMonth > 0  ? setSelectedMonth(selectedMonth - 1) :null}> <img className='arrow' src={left}></img></button>
@@ -124,7 +123,13 @@ export default function DateSelector({listing}){
 
                 </div>)}
             </div>
+ 
 
+      
+
+            </div>
+            <div id="overlay">
+                <ReservationForm listing={listing} checkInDate={checkInDate} checkOutDate={checkOutDate}/>
             </div>
             </>
         )

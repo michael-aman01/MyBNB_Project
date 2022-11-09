@@ -60,7 +60,7 @@
     margin-top: 0px;
     margin-left: 950px;
     display: flex;
-    width: 90vw;
+    width: 20vw;
     padding-left: 50px;
 }
 
@@ -70,16 +70,15 @@
     padding-left: 40px;
     padding-top: 15px;
     padding-right: 20px;
-    max-width: 1120px;
-    min-width: 250px;
-    max-height: 450px;
     border-radius: 21px;
     background-color: white;
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 0;
     border: 1px solid gray;
-
+    height: 600px;
+    width: 400px;
+    top:  0;
+    bottom: 0;
     box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset !important;
 }
 .images-grid > *:first-child {
@@ -109,13 +108,13 @@
     /* background-color:aqua; */
     padding: 10px;
 
-    width: 90%;    
+    width:100%;    
 }
 
 .description-container{
     display: flex;
     font-size: 16px;
-    width: 50%;
+    width: 100%;
     text-justify:inter-word;
     line-height: 1.6;
     padding: 10px;
@@ -139,7 +138,7 @@
 .details-items {
     display: flex;
     min-width: 33%;
-    width: 50%;
+    width: 100%;
     font-size: 15px;
     border-bottom: 1px solid gray;
     justify-content: space-between;
@@ -199,7 +198,7 @@
     #calendar-container {
         display: flex;
         padding: 10px;
-        width: 50%;
+        width: 100%;
         margin-top: 20px;
     }
   
@@ -219,13 +218,12 @@
   }
 
   #widget-container {
-
-    width: 40%;
+    width: 42%;
     height: 100%;
     margin-left: 10%;
     background-color: aqua;
     position: -webkit-sticky; /* Safari */
-    position: sticky;
+
     top: 0;
     border: 1px solid gray;
     box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset !important;
@@ -256,22 +254,11 @@
     height: 100%;
     width: 100%;
   }
-  .arrow {
+.arrow {
     height: 15px;
     width: 10px;
 }
-  #overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: flex; /* Hidden by default */
-    padding: 100px;
-    margin-top: 50%;
-    width: 100%; /* Full width (cover the whole page) */
-    height: 50%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 50%;
-    right: 0;
-    bottom: 0;
 
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-  }
+
+
+

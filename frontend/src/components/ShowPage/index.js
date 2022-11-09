@@ -33,7 +33,6 @@ export default function ShowPage(){
         window.addEventListener("resize",() =>{
             const contentContainer = document.getElementById("content")
             const detailsContainer = document.getElementById("details-container")
-            const overlay = document.getElementById("overlay")
             if(window.screen.availWidth === window.outerWidth){
          
     
@@ -42,7 +41,7 @@ export default function ShowPage(){
                 contentContainer.style.marginLeft = "20%"
                 contentContainer.style.gridTemplateColumns = "repeat(4,1fr)"
                 contentContainer.style.gridTemplateRows = "repeat(2,1fr)"
-                overlay.style.marginTop = "30%"
+   
              
                 //max
             }else{
@@ -51,8 +50,16 @@ export default function ShowPage(){
                 contentContainer.style.marginLeft = "5%"
                 contentContainer.style.gridTemplateColumns = "repeat(4,25%)"
                 contentContainer.style.gridTemplateRows = "repeat(2,80%)"
+              
             }    })
     },[windowSize])
+    const overlay = document.getElementById("overlay")
+
+    // if(window.screen.availWidth === window.outerWidth){
+    //     overlay.style.marginTop = "30%"
+    // }else{
+    //     overlay.style.marginTop = "20%"
+    // }
 
     if(!listing){
         return null
@@ -73,6 +80,9 @@ export default function ShowPage(){
                             <img src={listing.image_urls[0]}></img>
                             <img src={listing.image_urls[0]} ></img>
                     </div>
+                    <div id="bottom-half">
+
+               
                     <div id="mid-container">
                     <div id="details-container">
                               <div className="header-title">details</div>
@@ -80,6 +90,7 @@ export default function ShowPage(){
                               <div className="details-items">
                                 <p>{listing.max_guests} guests {listing.num_bedrooms} bedrooms {listing.num_beds} beds {listing.num_bedrooms} bathrooms</p>    
                               </div>
+                        
                     </div>
 
                     </div>
@@ -126,7 +137,8 @@ export default function ShowPage(){
                       </div>
                     </div>
                     </div> 
-
+                    </div>
+                    <div id="right-container">test</div>
                     </div>
 
             
