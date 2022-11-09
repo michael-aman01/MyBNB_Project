@@ -2,7 +2,8 @@ import './DateSelector.css'
 import { useEffect, useState } from 'react'
 import left from "../../assets/left-arrow.png"
 import right from "../../assets/right-arrow.png"
-export default function DateSelector(){
+import ReservationForm from '../ReservationForm'
+export default function DateSelector({listing}){
 
         const today = new Date()
 
@@ -11,15 +12,12 @@ export default function DateSelector(){
         const calendarMonths = [...new Set(calendar.map(date => date.getMonth()))].map(i => months[i])
         const calendarYears = [...Array(12).keys()].map(i => 2022).concat( [...Array(12).keys()].map(i => 2023)).slice(calendarMonths.length -2,)
         
-        console.log(calendarYears)
-        const [selectedMonth, setSelectedMonth] = useState(0)
-        const [month, setMonth] = useState(calendarMonths[selectedMonth])
-        const [year, setYear] = useState(calendarYears[selectedMonth])
 
         function getCalendar(){
             const today = new Date()
             const tomorrow = new Date()
             const year = [...Array(365).keys()].map(i => new Date(tomorrow.setDate(today.getDate() + i)))
+   
             const calendar = []
             for(let i = 0; i < 365; i++){
                 // console.log(today+ i)
@@ -27,6 +25,12 @@ export default function DateSelector(){
             }
             return calendar
         }
+
+        console.log(calendarYears)
+        const [selectedMonth, setSelectedMonth] = useState(0)
+        const [month, setMonth] = useState(calendarMonths[selectedMonth])
+        const [year, setYear] = useState(calendarYears[selectedMonth])
+        const [checkInDate,setCheckInDate] = useState('')
 
         const calendarDates = calendar.filter(date => months[date.getMonth()] === month && date.getFullYear() === today.getFullYear() ||  date.getFullYear() === today.getFullYear()).map(date => date.getDate())
      
@@ -62,6 +66,8 @@ export default function DateSelector(){
             
         }
 
+
+
         const getDates = (m, y) => {
             const dates =  calendar.filter(date => months[date.getMonth()] === m && date.getFullYear() === y)
             const weekDays = {
@@ -73,7 +79,7 @@ export default function DateSelector(){
                 5:[],
                 6:[]
             }
-             dates.map(date => weekDays[date.getDay()].push(date.getDate().toString()))
+             dates.map(date => weekDays[date.getDay()].push(date))
              return weekDays
         }
         const calendarHeader = ["SUN","MON","TUES","WED","THURS","FRI","SAT"]
@@ -98,10 +104,12 @@ export default function DateSelector(){
 
 
 
-   
+        if(month){
         return(
             <>
-            <div id="overlay"></div>
+            <div id="overlay">
+                <ReservationForm listing={listing} checkInDate={checkInDate}/>
+            </div>
             <div id="date-selector-container">
                 <div id="calendar-header">
                 <button placeholder='<' id="down" onClick={e => selectedMonth > 0  ? setSelectedMonth(selectedMonth - 1) :null}> <img className='arrow' src={left}></img></button>
@@ -114,7 +122,11 @@ export default function DateSelector(){
                     {day}
               
                     <ul>
-                        {dates[i].map(date => date === 0 ?  <div className='calendar-square'><br></br></div> : <div className='calendar-square'>{date}</div> )}
+                    {dates[i].map(date => date === 0 ?  <div className='calendar-square'><br></br></div> : <div 
+                    className='calendar-square' 
+                    id={`${date.getMonth().toString()}/${date.getDate().toString()}/${date.getFullYear().toString()}`}
+                    onClick={(e) => setCheckInDate(e.target.id)}
+                    >{date.getDate().toString()}</div> )}
                     </ul>
 
                 </div>)}
@@ -123,5 +135,5 @@ export default function DateSelector(){
             </div>
             </>
         )
-
+                }
 }
