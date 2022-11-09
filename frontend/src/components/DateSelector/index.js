@@ -2,9 +2,9 @@ import './DateSelector.css'
 import { useState } from 'react'
 import left from "../../assets/left-arrow.png"
 import right from "../../assets/right-arrow.png"
+import ReservationForm from '../ReservationForm'
 
-
-export default function DateSelector(){
+export default function DateSelector({listing}){
 
         const today = new Date()
 
@@ -12,12 +12,14 @@ export default function DateSelector(){
         const calendar = [].concat(...Object.values(getCalendar()))
         const calendarMonths = [...new Set(calendar.map(date => date.getMonth()))].map(i => months[i])
         const calendarYears = [...Array(12).keys()].map(i => 2022).concat( [...Array(12).keys()].map(i => 2023)).slice(calendarMonths.length -2,)
-        
+        const [checkInDate,setCheckInDate] = useState('')
+
         console.log(calendarYears)
         const [selectedMonth, setSelectedMonth] = useState(0)
         const [month, setMonth] = useState(calendarMonths[selectedMonth])
         const [year, setYear] = useState(calendarYears[selectedMonth])
 
+    
         function getCalendar(){
             const today = new Date()
             const tomorrow = new Date()
@@ -56,11 +58,19 @@ export default function DateSelector(){
                 5:[],
                 6:[]
             }
-             dates.map(date => weekDays[date.getDay()].push(date.getDate().toString()))
+             dates.map(date => weekDays[date.getDay()].push(date))
              return weekDays
         }
         const calendarHeader = ["SUN","MON","TUES","WED","THURS","FRI","SAT"]
         let dates = getDates(month,year)
+
+
+
+        const handleSelect = (e) => {
+            e.preventDefault()
+            setCheckInDate(e.target.id)
+
+        }
 
         dates = Object.values(dates).map(date => {
             if(date.length < 5){
@@ -72,6 +82,10 @@ export default function DateSelector(){
         })
    
         return(
+            <>
+            <div id="overlay">
+            <ReservationForm listing={listing} checkInDate={checkInDate}></ReservationForm>
+            </div>
             <div id="date-selector-container">
                 <div id="calendar-header">
                     <div>
@@ -89,13 +103,16 @@ export default function DateSelector(){
                     {day}
               
                     <ul>
-                        {dates[i].map(date => date === 0 ?  <div className='calendar-square'><br></br></div> : <div className='calendar-square'>{date}</div> )}
+                        {dates[i].map(date => date === 0 ?  <div className='calendar-square' ><br></br></div> : <div className='calendar-square' id={`${date.getMonth().toString()}/${date.getDate().toString()}/${date.getFullYear().toString()}`} onClick={handleSelect}>{date.getDate().toString()}</div> )}
                     </ul>
 
                 </div>)}
             </div>
 
             </div>
+            
+
+            </>
         )
 
 }

@@ -217,3 +217,61 @@
     color: gray;
 
   }
+
+  #widget-container {
+
+    width: 40%;
+    height: 100%;
+    margin-left: 10%;
+    background-color: aqua;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    border: 1px solid gray;
+    box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset !important;
+  }
+
+  #reservation-header {
+    background-color: blue;
+    height: 300px;
+  }
+
+  #reservation-dates {
+    background-color: red;
+  }
+  #reservation-button {
+    background-color: gray;
+  }
+
+  #reservation-details{
+    background-color: green;
+  }
+
+  #reservation-totals{
+    background-color: purple;
+  }
+
+  #mid-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  .arrow {
+    height: 15px;
+    width: 10px;
+}
+  #overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: flex; /* Hidden by default */
+    padding: 100px;
+    margin-top: 50%;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 50%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }

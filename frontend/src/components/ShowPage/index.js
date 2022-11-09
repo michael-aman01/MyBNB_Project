@@ -8,12 +8,12 @@ import ReservationForm from "../ReservationForm";
 import { fetchRerservations } from "../../store/reservation";
 import DateSelector from "../../components/DateSelector"
 import React, { useState } from 'react';
-import Calendar from 'react-calendar';
 
 export default function ShowPage(){
+
     const dispatch = useDispatch()
     const {id} = useParams()
-    const [windowSize, setWindowSize] = useState(document.documentElement.clientWidth)
+    const [windowSize, setWindowSize] = useState(window.innerHeight)
     const listing = useSelector(getListing(id))
     const [value, onChange] = useState(new Date());
     useEffect(() => {
@@ -29,29 +29,31 @@ export default function ShowPage(){
     const showModal = (e) => {
        document.getElementById("description-modal").setAttribute("class","modal-show")
     }
-
-
-    window.addEventListener("resize",() =>{
-        const contentContainer = document.getElementById("content")
-        const detailsContainer = document.getElementById("details-container")
-     
-        if(window.innerWidth >= windowSize){
-     
-            contentContainer.style.marginRight = "20%"
-            contentContainer.style.marginLeft = "20%"
-            contentContainer.style.gridTemplateColumns = "repeat(4,1fr)"
-            contentContainer.style.gridTemplateRows = "repeat(2,1fr)"
-    
+    useEffect(()=>{
+        window.addEventListener("resize",() =>{
+            const contentContainer = document.getElementById("content")
+            const detailsContainer = document.getElementById("details-container")
+            const overlay = document.getElementById("overlay")
+            if(window.screen.availWidth === window.outerWidth){
          
-            //max
-        }else{
-            contentContainer.style.marginRight = "5%"
-            contentContainer.style.marginLeft = "5%"
-            contentContainer.style.gridTemplateColumns = "repeat(4,25%)"
-            contentContainer.style.gridTemplateRows = "repeat(2,80%)"
-      
-        }
-    })
+    
+    
+                contentContainer.style.marginRight = "20%"
+                contentContainer.style.marginLeft = "20%"
+                contentContainer.style.gridTemplateColumns = "repeat(4,1fr)"
+                contentContainer.style.gridTemplateRows = "repeat(2,1fr)"
+                overlay.style.marginTop = "30%"
+             
+                //max
+            }else{
+                console.log(contentContainer.style.marginRight)
+                contentContainer.style.marginRight = "5%"
+                contentContainer.style.marginLeft = "5%"
+                contentContainer.style.gridTemplateColumns = "repeat(4,25%)"
+                contentContainer.style.gridTemplateRows = "repeat(2,80%)"
+            }    })
+    },[windowSize])
+
     if(!listing){
         return null
     }else{
@@ -60,6 +62,7 @@ export default function ShowPage(){
       <>
                 <div id="root-container">        
                 <div id="content">
+     
                     <div id="header-container">
                         <p className="header-title">header</p>
                     </div>
@@ -119,8 +122,7 @@ export default function ShowPage(){
                         </div>
          
                       <div id="calendar-container">
-                        
-                        <DateSelector />
+                        <DateSelector listing={listing}/>
                       </div>
                     </div>
                     </div> 
