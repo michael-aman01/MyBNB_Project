@@ -1,10 +1,8 @@
 import './DateSelector.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import left from "../../assets/left-arrow.png"
 import right from "../../assets/right-arrow.png"
-import ReservationForm from '../ReservationForm'
-
-export default function DateSelector({listing}){
+export default function DateSelector(){
 
         const today = new Date()
 
@@ -12,14 +10,12 @@ export default function DateSelector({listing}){
         const calendar = [].concat(...Object.values(getCalendar()))
         const calendarMonths = [...new Set(calendar.map(date => date.getMonth()))].map(i => months[i])
         const calendarYears = [...Array(12).keys()].map(i => 2022).concat( [...Array(12).keys()].map(i => 2023)).slice(calendarMonths.length -2,)
-        const [checkInDate,setCheckInDate] = useState('')
-
+        
         console.log(calendarYears)
         const [selectedMonth, setSelectedMonth] = useState(0)
         const [month, setMonth] = useState(calendarMonths[selectedMonth])
         const [year, setYear] = useState(calendarYears[selectedMonth])
 
-    
         function getCalendar(){
             const today = new Date()
             const tomorrow = new Date()
@@ -36,15 +32,34 @@ export default function DateSelector({listing}){
      
         const handleClick = (e) => {
             e.preventDefault()
-            alert(e)
+            console.log(e.target.id)
             console.log(selectedMonth)
-            console.log(e)
             if(e.target.id === "up"){
-                setSelectedMonth(selectedMonth + 1)
-            }else{
+           
+                    setSelectedMonth(selectedMonth + 1)
+                    setYear(calendarYears[selectedMonth + 1])
+                    setMonth(calendarMonths[selectedMonth+1])
+                    setYear(calendarYears[selectedMonth+1])
+                    console.log(month)
+                console.log(calendarDates)
+            }else if(e.target.id === "down" &&  selectedMonth > 0){
+           
                 setSelectedMonth(selectedMonth - 1)
-            }
-            console.log(selectedMonth)
+                setYear(calendarYears[selectedMonth - 1])
+                setMonth(calendarMonths[selectedMonth-1])
+                setYear(calendarYears[selectedMonth-1])
+    
+            console.log(calendarDates)
+        }
+                // }else{
+                //     setSelectedMonth(selectedMonth -1)
+                //     setYear(selectedMonth - 1)
+                //     setMonth(calendarMonths[selectedMonth])
+                //     setYear(calendarYears[selectedMonth])
+                // }
+
+              
+            
         }
 
         const getDates = (m, y) => {
@@ -58,19 +73,11 @@ export default function DateSelector({listing}){
                 5:[],
                 6:[]
             }
-             dates.map(date => weekDays[date.getDay()].push(date))
+             dates.map(date => weekDays[date.getDay()].push(date.getDate().toString()))
              return weekDays
         }
         const calendarHeader = ["SUN","MON","TUES","WED","THURS","FRI","SAT"]
         let dates = getDates(month,year)
-
-
-
-        const handleSelect = (e) => {
-            e.preventDefault()
-            setCheckInDate(e.target.id)
-
-        }
 
         dates = Object.values(dates).map(date => {
             if(date.length < 5){
@@ -80,22 +87,26 @@ export default function DateSelector({listing}){
             }
     
         })
+
+        useEffect(()=>{
+            setMonth(calendarMonths[selectedMonth])
+            setYear(calendarYears[selectedMonth])
+  
+
+            console.log(month)
+        },[selectedMonth])
+
+
+
    
         return(
             <>
-            <div id="overlay">
-            <ReservationForm listing={listing} checkInDate={checkInDate}></ReservationForm>
-            </div>
+            <div id="overlay"></div>
             <div id="date-selector-container">
                 <div id="calendar-header">
-                    <div>
-                    <button id="down"  onClick={() => selectedMonth > 0 ? setSelectedMonth(selectedMonth - 1): null}> <img className='arrow' src={left}></img></button>
-
-                    </div>
-                <span>{calendarMonths[selectedMonth].toUpperCase()} {calendarYears[selectedMonth]} </span>
-                <div>
-                <button id="up" onClick={() => selectedMonth < calendarMonths.length - 1 ?  setSelectedMonth(selectedMonth + 1) : null}><img className='arrow' src={right}></img></button>
-                </div>
+                <button placeholder='<' id="down" onClick={e => selectedMonth > 0  ? setSelectedMonth(selectedMonth - 1) :null}> <img className='arrow' src={left}></img></button>
+                <span>{month.toUpperCase()} {year}</span>
+                <button id="up" onClick={e => selectedMonth < calendarMonths.length - 1  ? setSelectedMonth(selectedMonth + 1) :null}><img className='arrow' src={right}></img></button>
             </div>
             <div id="calendar-container">
                 {calendarHeader.map((day,i) => 
@@ -103,15 +114,13 @@ export default function DateSelector({listing}){
                     {day}
               
                     <ul>
-                        {dates[i].map(date => date === 0 ?  <div className='calendar-square' ><br></br></div> : <div className='calendar-square' id={`${date.getMonth().toString()}/${date.getDate().toString()}/${date.getFullYear().toString()}`} onClick={handleSelect}>{date.getDate().toString()}</div> )}
+                        {dates[i].map(date => date === 0 ?  <div className='calendar-square'><br></br></div> : <div className='calendar-square'>{date}</div> )}
                     </ul>
 
                 </div>)}
             </div>
 
             </div>
-            
-
             </>
         )
 
