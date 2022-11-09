@@ -7,7 +7,7 @@ import DateSelector from "../DateSelector";
 import { fetchRerservations, makeReservation } from "../../store/reservation";
 import "./ReservationForm.css"
 
-export default function ReservationForm({l,checkInDate}){
+export default function ReservationForm({l,checkInDate,checkOutDate}){
     const listing = {l}
   
     const dispatch = useDispatch()
@@ -28,6 +28,8 @@ export default function ReservationForm({l,checkInDate}){
     }
     const [startDate, setStartDate] = useState(currentDate);
     const [endDate, setEndDate] = useState("");
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -35,14 +37,15 @@ export default function ReservationForm({l,checkInDate}){
         const reservationData = {
             user_id: userId,
             listing_id: id,
-            start_date: startDate,
-            end_date: endDate
+            start_date: checkInDate,
+            end_date: checkOutDate
         }
-        if(startDate === '' || endDate === ''){
+        if(reservationData[startDate] === '' ||reservationData[endDate] === ''){
             alert("please add ddates")
         }else{
             dispatch(makeReservation(reservationData))
             dispatch(fetchRerservations(id))
+            alert("reservation made!")
         }
   
     }
@@ -57,20 +60,24 @@ export default function ReservationForm({l,checkInDate}){
 </div>
 <div id="reservation-selection-container">
     <div id="dates-container">
-    <div className="dates" id="check-in-display" value={startDate}>
+    <div className="dates" id="check-in-display" value={checkInDate}>
         check-in
         <p id="check-in-date">{checkInDate}</p>
     </div>
-    <div className="dates">check-out</div>
+    <div className="dates">
+        check-out
+        <p id="check-out-date">{checkOutDate}</p>
+        </div>
     </div>
 </div>
 <br></br>
 <div id="reservation-button-container">
-    reserve
+    <button id="reservation-button" onClick={handleSubmit}>Reserve</button>
 </div>
 <br></br>
 <p>you wont be charged yet</p>
 <br></br>
+
 
 <div id="reservation-fee-container">
     <p>{listing.price} X # nights</p>

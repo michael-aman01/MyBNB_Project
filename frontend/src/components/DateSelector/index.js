@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import left from "../../assets/left-arrow.png"
 import right from "../../assets/right-arrow.png"
 import ReservationForm from '../ReservationForm'
+
+
 export default function DateSelector({listing}){
 
         const today = new Date()
@@ -31,7 +33,7 @@ export default function DateSelector({listing}){
         const [month, setMonth] = useState(calendarMonths[selectedMonth])
         const [year, setYear] = useState(calendarYears[selectedMonth])
         const [checkInDate,setCheckInDate] = useState('')
-
+        const [checkOutDate, setCheckOutDate] = useState('')
         const calendarDates = calendar.filter(date => months[date.getMonth()] === month && date.getFullYear() === today.getFullYear() ||  date.getFullYear() === today.getFullYear()).map(date => date.getDate())
      
         const handleClick = (e) => {
@@ -52,17 +54,8 @@ export default function DateSelector({listing}){
                 setYear(calendarYears[selectedMonth - 1])
                 setMonth(calendarMonths[selectedMonth-1])
                 setYear(calendarYears[selectedMonth-1])
-    
-            console.log(calendarDates)
-        }
-                // }else{
-                //     setSelectedMonth(selectedMonth -1)
-                //     setYear(selectedMonth - 1)
-                //     setMonth(calendarMonths[selectedMonth])
-                //     setYear(calendarYears[selectedMonth])
-                // }
 
-              
+        }
             
         }
 
@@ -108,7 +101,7 @@ export default function DateSelector({listing}){
         return(
             <>
             <div id="overlay">
-                <ReservationForm listing={listing} checkInDate={checkInDate}/>
+                <ReservationForm listing={listing} checkInDate={checkInDate} checkOutDate={checkOutDate}/>
             </div>
             <div id="date-selector-container">
                 <div id="calendar-header">
@@ -125,7 +118,7 @@ export default function DateSelector({listing}){
                     {dates[i].map(date => date === 0 ?  <div className='calendar-square'><br></br></div> : <div 
                     className='calendar-square' 
                     id={`${date.getMonth().toString()}/${date.getDate().toString()}/${date.getFullYear().toString()}`}
-                    onClick={(e) => setCheckInDate(e.target.id)}
+                    onClick={(e) => checkInDate === '' ?  setCheckInDate(e.target.id) : setCheckOutDate(e.target.id)} 
                     >{date.getDate().toString()}</div> )}
                     </ul>
 

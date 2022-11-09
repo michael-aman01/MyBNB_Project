@@ -17,8 +17,8 @@ export default function ProfilePage(){
                <p id="profile-header-title" >Trips</p>
         </div>
         <div id="profile-container">
-            <DateSelector />
-        {/* <ReservationIndexPage /> */}
+ 
+        <ReservationIndexPage />
         </div>
 </>
     )
