@@ -100,14 +100,17 @@ export default function DateSelector({listing}){
         if(month){
         return(
             <>
+    <div id="show-reservation-container">
+        <ReservationForm listing={listing} checkInDate={checkInDate} checkOutDate={checkOutDate}/>
 
-
-            <div id="date-selector-container">
-                <div id="calendar-header">
+    </div>
+    <div id="show-calendar-container">
+            <div id="calendar-header">
                 <button placeholder='<' id="down" onClick={e => selectedMonth > 0  ? setSelectedMonth(selectedMonth - 1) :null}> <img className='arrow' src={left}></img></button>
                 <span>{month.toUpperCase()} {year}</span>
                 <button id="up" onClick={e => selectedMonth < calendarMonths.length - 1  ? setSelectedMonth(selectedMonth + 1) :null}><img className='arrow' src={right}></img></button>
             </div>
+            <br></br>
             <div id="calendar-container">
                 {calendarHeader.map((day,i) => 
                 <div>
@@ -123,14 +126,20 @@ export default function DateSelector({listing}){
 
                 </div>)}
             </div>
+        </div>
+
+
+
+        
+             
  
 
       
 
-            </div>
-            <div id="overlay">
+        
+            {/* <div id="overlay">
                 <ReservationForm listing={listing} checkInDate={checkInDate} checkOutDate={checkOutDate}/>
-            </div>
+            </div> */}
             </>
         )
                 }

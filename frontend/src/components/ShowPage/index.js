@@ -29,31 +29,31 @@ export default function ShowPage(){
     const showModal = (e) => {
        document.getElementById("description-modal").setAttribute("class","modal-show")
     }
-    useEffect(()=>{
-        window.addEventListener("resize",() =>{
-            const contentContainer = document.getElementById("content")
-            const detailsContainer = document.getElementById("details-container")
-            if(window.screen.availWidth === window.outerWidth){
+    // useEffect(()=>{
+    //     window.addEventListener("resize",() =>{
+    //         const contentContainer = document.getElementById("content")
+    //         const detailsContainer = document.getElementById("details-container")
+    //         if(window.screen.availWidth === window.outerWidth){
          
     
     
-                contentContainer.style.marginRight = "20%"
-                contentContainer.style.marginLeft = "20%"
-                contentContainer.style.gridTemplateColumns = "repeat(4,1fr)"
-                contentContainer.style.gridTemplateRows = "repeat(2,1fr)"
+    //             contentContainer.style.marginRight = "20%"
+    //             contentContainer.style.marginLeft = "20%"
+    //             contentContainer.style.gridTemplateColumns = "repeat(4,1fr)"
+    //             contentContainer.style.gridTemplateRows = "repeat(2,1fr)"
    
              
-                //max
-            }else{
-                console.log(contentContainer.style.marginRight)
-                contentContainer.style.marginRight = "5%"
-                contentContainer.style.marginLeft = "5%"
-                contentContainer.style.gridTemplateColumns = "repeat(4,25%)"
-                contentContainer.style.gridTemplateRows = "repeat(2,80%)"
+    //             //max
+    //         }else{
+    //             console.log(contentContainer.style.marginRight)
+    //             contentContainer.style.marginRight = "5%"
+    //             contentContainer.style.marginLeft = "5%"
+    //             contentContainer.style.gridTemplateColumns = "repeat(4,25%)"
+    //             contentContainer.style.gridTemplateRows = "repeat(2,80%)"
               
-            }    })
-    },[windowSize])
-    const overlay = document.getElementById("overlay")
+    //         }    })
+    // },[windowSize])
+    // const overlay = document.getElementById("overlay")
 
     // if(window.screen.availWidth === window.outerWidth){
     //     overlay.style.marginTop = "30%"
@@ -64,10 +64,67 @@ export default function ShowPage(){
     if(!listing){
         return null
     }else{
-  
+
             return (
       <>
-                <div id="root-container">        
+          <div>
+        <div className="grid-container">
+        <div  id="show-title-container">
+        <p className="header-title">header</p>
+        </div>
+        <div id="show-image-container">
+         <div class="images-grid">
+                            <img  src={listing.image_urls[0]} id="main-image"></img>
+                            <img src={listing.image_urls[0]} className="side-image"></img>
+                            <img src={listing.image_urls[0]} className="side-image"></img>
+                            <img src={listing.image_urls[0]} className="side-image"></img>
+                            <img src={listing.image_urls[0]} className="side-image"></img>
+            </div>
+        </div>
+        <div id="show-details-container">
+        <div className="header-title">details</div>
+                              <br></br>
+                              <div className="details-items">
+                                <p>{listing.max_guests} guests {listing.num_bedrooms} bedrooms {listing.num_beds} beds {listing.num_bedrooms} bathrooms</p>    
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <div id="show-description-container">
+                    {listing.description.split("").slice(0,250).join("") + "..."}
+                                    <br></br>
+                                    <br></br>
+                                 
+                                        <div className="modal-hide" id="description-modal">
+                                            <div className="modal-background">
+                                           
+                                                <div className="modal-content">
+                                                <span onClick={closeModal}><img  className="modal-closing-x" src={X}></img></span>
+                                                    {listing.description}
+                                                </div>
+                                            </div>
+                               
+                                         
+                                    </div>
+                                    
+                            </div>
+                           
+                            <div id="show-description-container">
+                            <span id="modal-button" onClick={showModal}>Show more {">"}</span>
+                            </div>
+                            <div>               
+                            </div>
+                            <div>
+                    </div>
+        </div>
+
+            <DateSelector listing={listing} />
+           
+
+      </div>
+ 
+     </div>
+
+                {/* <div id="root-container">        
                 <div id="content">
      
                     <div id="header-container">
@@ -139,7 +196,7 @@ export default function ShowPage(){
                     </div> 
                     </div>
                     <div id="right-container">test</div>
-                    </div>
+                    </div> */}
 
             
                 
