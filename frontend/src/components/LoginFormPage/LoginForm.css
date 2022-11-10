@@ -133,6 +133,7 @@ input::placeholder {
 #close-modal-button-container {
   position: absolute !important;
   display: flex !important;
+  max-width: 40px;
   top: 16px !important;
   left: 24px !important;
   z-index: 1 !important;

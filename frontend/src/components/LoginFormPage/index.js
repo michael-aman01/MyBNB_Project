@@ -33,12 +33,13 @@ function LoginFormPage() {
 
   },[])
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/listings" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ credential, password }))
+    dispatch(sessionActions.login({ credential, password }))
+    history.push("/listings")
       .catch(async (res) => {
         let data;
         try {
@@ -114,7 +115,7 @@ function LoginFormPage() {
             <input className="input-field" id="password" type="text"onChange={(e) => setPassword(e.target.value)} placeholder='password' value={password}   ></input>
           </div>
           <br></br>
-          <div id="submit-container">
+          <div id="login-submit-container">
             <button id="submit-button">
               <span>Continue</span>
             </button>

@@ -32,11 +32,11 @@ export default function NavOptionsDropdown(){
         }
     }
 
-    if(user === undefined){
+    if(user === undefined || user === null){
         options = {
             "login": options["login"], 
             "signup":options["signup"],
-            "demo-login": options["login"]
+            "demo-login": options["login"],
         }
     }else{
         options["account"] = {

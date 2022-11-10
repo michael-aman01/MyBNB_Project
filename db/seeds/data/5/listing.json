@@ -1,0 +1,27 @@
+{
+    "id": "33405043",
+    "price": 65,
+    "info": "Close to Union Square, Nob Hill, Chinatown, and the cable car, this hotel suite offers a quintessential San Francisco experience. Your room at the Worldmark San Francisco is well equipped for exploring the city with a queen size bed, full bathroom, and mini-fridge to store leftovers from the area's great restaurants.\n\n\nThe workout room means you don't have to leave your routine when you're away from home. The main floor has a free laundry room.\n\nWiFi is $4.95/day. No on site parking, ask about options if necessary.",
+    "title": "Entire serviced apartment hosted by Michael",
+    "num_bedrooms": 1,
+    "num_baths": 1,
+    "guests": 2,
+    "type": "Studio",
+    "city": "San Francisco",
+    "state": " California",
+    "country": " United States",
+    "photo_urls": [
+        "https://a0.muscache.com/im/pictures/7a1f5403-a6ee-463d-98c4-a4b40030a70f.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/30fc51c6-e207-4976-9956-36036b439498.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/295e784c-4758-45cb-bc25-0d5716a7e05e.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/425dc79f-bc93-4e7a-ad3d-daad3c709eb3.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/7bea153d-4ea9-479a-8933-ebb9176000a5.jpg?im_w=720"
+    ],
+    "bucket_urls": [
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51212524/image_0.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51212524/image_1.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51212524/image_2.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51212524/image_3.jpg",
+        "https://mybnb-michael-aman.s3.us-west-2.amazonaws.com/scraper/photos/51212524/image_4.jpg"
+    ]
+}
