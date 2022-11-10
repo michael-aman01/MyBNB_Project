@@ -4,3 +4,37 @@
     justify-content: space-between;
 }
 
+
+.trip-widget-container{
+    display: flex;
+    width: 400px;
+  }
+  
+  
+  .trip-details {
+    background-color: purple;
+    width: 400px;
+    height: 100px;
+  }
+  
+  .trip-location {
+    background-color: blue;
+    width: 200px;
+  }
+  
+  
+  .trip-image{
+    background-color: green;
+    width: 320px;
+    height: 150px;
+  }
+  .trip-dates {
+    background-color: red;
+    width: 200px;
+    height: 100px;;
+  }
+  
+  .trip-detail-bottom {
+    display: flex;
+  
+  }

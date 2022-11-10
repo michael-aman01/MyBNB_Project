@@ -7,10 +7,10 @@ import DateSelector from "../DateSelector";
 import { fetchRerservations, makeReservation } from "../../store/reservation";
 import "./ReservationForm.css"
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
-
-export default function ReservationForm({listing,checkInDate,checkOutDate}){
+import downArrow from "../../assets/down-arrow.png"
+export default function ReservationForm({listing,checkOutDate,checkInDate}){
     
-    console.log(listing)
+
     const dispatch = useDispatch()
     const {id} = useParams();
     const userId = useSelector(getUser).id ;
@@ -71,7 +71,11 @@ export default function ReservationForm({listing,checkInDate,checkOutDate}){
                 <span>{checkOutDate}</span>
                 </div>
                 </div>
-                <div id="guests">guests</div>
+                <div id="guests"> 
+                         Guests
+                    <button><img src={downArrow}></img></button>
+                </div>
+            
             </div>
             <div className="reservation-item" id="show-reserve-button-container">
                 <button  id="show-reserve-button" onClick={handleSubmit}>Reserve</button>

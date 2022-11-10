@@ -1,4 +1,3 @@
-
 import "./ReservationIndexPage.css"
 
 import { useEffect } from "react"
@@ -39,13 +38,32 @@ export default function ReservationIndexPage(){
     return (
         <>
 
-            <div id="reservation-container">
+
                 <ul>
                     {reservations.map((res, i) =>
               <li>
-                <div id="reservation-card"></div>
-                <div>{res.start_date}</div>
-                <div>{listings[i].city}</div>
+
+                <div class="trip-widget-container">
+                    <div id="left">
+                        <div class="trip-details">
+                            {listings[i].sub_title}
+                        </div>  
+                        <div class="trip-detail-bottom">
+                            <div class="trip-dates">
+                                {res.start_date} - {res.end_date}
+                            </div>
+                            <div class="trip-location">
+                            {listings[i].city}, {listings[i].state}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="rigth">
+                        <div class="trip-image">
+                            <img src={user.reservation_images[0]}></img>
+                        </div>
+                    </div>
+                </div>
                 <form onSubmit={handleSubmit} id={i}>
                     <button>cancel</button>
                 </form>
@@ -55,9 +73,11 @@ export default function ReservationIndexPage(){
  
                     )}
                 </ul>
-            </div>
+
     
 </>
     )
 }
+
+
 

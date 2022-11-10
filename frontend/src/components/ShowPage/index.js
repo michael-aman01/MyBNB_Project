@@ -16,7 +16,7 @@ export default function ShowPage(){
     const {id} = useParams()
     const [windowSize, setWindowSize] = useState(window.innerHeight)
     const listing = useSelector(getListing(id))
-    const [value, onChange] = useState(new Date());
+    const [value, onChange] = useState(1);
     useEffect(() => {
         if(!listing){
             dispatch(fetchListings())
@@ -95,7 +95,7 @@ export default function ShowPage(){
                     <br></br>
                     <br></br>
                     <div id="show-ammenities-container">
-                        <div className="detail-title">What this place offers</div>
+                        <div className="detail-title">What this place offers </div>
                         {listing.amenities.map(a => <p>{a}</p>)}
                  </div>
                  <br></br>
@@ -145,15 +145,23 @@ export default function ShowPage(){
                            
                             <div id="show-description-container">
                             <span id="modal-button" onClick={showModal}>Show more {">"}</span>
+                            
                             </div>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <div className="border-line"></div>
                             <div>               
                             </div>
                             <div>
                     </div>
+        
         </div>
 
+
                 
-            <DateSelector listing={listing} />
+            <DateSelector listing={listing} value={value}/>
            
 
       </div>

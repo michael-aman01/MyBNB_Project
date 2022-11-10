@@ -3,17 +3,21 @@ import { useEffect, useState } from 'react'
 import left from "../../assets/left-arrow.png"
 import right from "../../assets/right-arrow.png"
 import ReservationForm from '../ReservationForm'
+import { useDispatch, useSelector } from 'react-redux'
+import { addCheckin, addCheckout, getCheckIn, getCheckOut } from '../../store/reservation'
 
 
-export default function DateSelector({listing}){
+export default function DateSelector({listing,value}){
 
         const today = new Date()
+        const dispatch = useDispatch()
 
         const months = ["january","february","march","april","may","june","july","august","september","october","november","december"]
         const calendar = [].concat(...Object.values(getCalendar()))
         const calendarMonths = [...new Set(calendar.map(date => date.getMonth()))].map(i => months[i])
         const calendarYears = [...Array(12).keys()].map(i => 2022).concat( [...Array(12).keys()].map(i => 2023)).slice(calendarMonths.length -2,)
         
+
 
         function getCalendar(){
             const today = new Date()
@@ -37,6 +41,7 @@ export default function DateSelector({listing}){
         const calendarDates = calendar.filter(date => months[date.getMonth()] === month && date.getFullYear() === today.getFullYear() ||  date.getFullYear() === today.getFullYear()).map(date => date.getDate())
      
         const handleClick = (e) => {
+       
             e.preventDefault()
             console.log(e.target.id)
             console.log(selectedMonth)
@@ -60,7 +65,15 @@ export default function DateSelector({listing}){
         }
 
 
-
+        const handleSelect = (e) =>{
+            if(checkInDate === ''){
+                dispatch(addCheckin(e.target.id))
+                setCheckInDate(e.target.id)
+            }else{
+                dispatch(addCheckout(e.target.id))
+                setCheckOutDate(e.target.id)
+            }
+        }
         const getDates = (m, y) => {
             const dates =  calendar.filter(date => months[date.getMonth()] === m && date.getFullYear() === y)
             const weekDays = {
@@ -95,7 +108,7 @@ export default function DateSelector({listing}){
             console.log(month)
         },[selectedMonth])
 
-
+    
 
         if(month){
         return(
@@ -105,6 +118,7 @@ export default function DateSelector({listing}){
 
     </div>
     <div id="show-calendar-container">
+
             <div id="calendar-header">
                 <button placeholder='<' id="down" onClick={e => selectedMonth > 0  ? setSelectedMonth(selectedMonth - 1) :null}> <img className='arrow' src={left}></img></button>
                 <span>{month.toUpperCase()} {year}</span>
@@ -120,7 +134,7 @@ export default function DateSelector({listing}){
                     {dates[i].map(date => date === 0 ?  <div className='calendar-square'><br></br></div> : <div 
                     className='calendar-square' 
                     id={`${date.getMonth().toString()}/${date.getDate().toString()}/${date.getFullYear().toString()}`}
-                    onClick={(e) => checkInDate === '' ?  setCheckInDate(e.target.id) : setCheckOutDate(e.target.id)} 
+                    onClick={(e) => handleSelect(e)} 
                     >{date.getDate().toString()}</div> )}
                     </ul>
 
