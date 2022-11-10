@@ -79,10 +79,10 @@ export default function ShowPage(){
         <div id="show-image-container">
          <div class="images-grid">
                             <img  src={listing.image_urls[0]} id="main-image"></img>
-                            <img src={listing.image_urls[0]} className="side-image"></img>
-                            <img src={listing.image_urls[0]} className="side-image"></img>
-                            <img src={listing.image_urls[0]} className="side-image"></img>
-                            <img src={listing.image_urls[0]} className="side-image"></img>
+                            <img src={listing.image_urls[1]} className="side-image"></img>
+                            <img src={listing.image_urls[2]} className="side-image"></img>
+                            <img src={listing.image_urls[3]} className="side-image"></img>
+                            <img src={listing.image_urls[4]} className="side-image"></img>
             </div>
         </div>
 
@@ -95,7 +95,10 @@ export default function ShowPage(){
                     <br></br>
                     <br></br>
                     <div id="show-ammenities-container">
-                        <div className="detail-title">What this place offers </div>
+    
+                        <div className="detail-title">What this place offers 
+      
+                        </div>
                         {listing.amenities.map(a => <p>{a}</p>)}
                  </div>
                  <br></br>

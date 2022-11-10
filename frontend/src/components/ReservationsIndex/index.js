@@ -1,5 +1,5 @@
 import "./ReservationIndexPage.css"
-
+import xMark from "../../assets/iconmonstr-x-mark-1.svg"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchListings } from "../../store/data"
@@ -33,8 +33,10 @@ export default function ReservationIndexPage(){
     const listings = user.reservations_listings
     if(reservations.length === 0){
         return (
-        <div id="reservation-containers">
-            NO reservations
+        <div id="reservation-containers"> 
+            <p>No trips booked yet...</p>
+            <p>start searching: </p>
+            <button id="profileh-search-button">search</button>
         </div>
         )
     }
@@ -86,7 +88,7 @@ export default function ReservationIndexPage(){
                     </div>
                 </div>
 
-
+         
                 <br></br>
                 <br></br>
 

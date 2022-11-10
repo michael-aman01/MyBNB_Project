@@ -64,10 +64,22 @@ export default function DateSelector({listing,value}){
             
         }
 
-
+        function dateToString(date){
+            return `${date.getMonth().toString()}/${date.getDate().toString()}/${date.getFullYear().toString()}`
+        }
         const handleSelect = (e) =>{
+            if(checkInDate !== '' && new Date(checkInDate) > new Date(e.target.id)){
+                alert("invalid checkout date")
+            }
+            const availableDates = Array.from(document.getElementsByClassName("calendar-square"))
+            
+
+            
+            console.log(availableDates)
             if(checkInDate === ''){
                 dispatch(addCheckin(e.target.id))
+
+
                 setCheckInDate(e.target.id)
             }else{
                 dispatch(addCheckout(e.target.id))
@@ -133,7 +145,7 @@ export default function DateSelector({listing,value}){
                     <ul>
                     {dates[i].map(date => date === 0 ?  <div className='calendar-square'><br></br></div> : <div 
                     className='calendar-square' 
-                    id={`${date.getMonth().toString()}/${date.getDate().toString()}/${date.getFullYear().toString()}`}
+                    id={`${(date.getMonth()+1).toString()}/${date.getDate().toString()}/${date.getFullYear().toString()}`}
                     onClick={(e) => handleSelect(e)} 
                     >{date.getDate().toString()}</div> )}
                     </ul>
