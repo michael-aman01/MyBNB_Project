@@ -1,0 +1,28 @@
+{
+    "price": 86,
+    "num_bedrooms": 2,
+    "num_baths": 1,
+    "city": "Miami",
+    "state": " Florida",
+    "country": " United States",
+    "ammenities": [
+        "Kitchen",
+        "Wifi",
+        "Dedicated workspace",
+        "Free parking on premises",
+        "HDTV",
+        "Elevator",
+        "Central air conditioning",
+        "Patio or balcony",
+        "Luggage dropoff allowed",
+        "Unavailable: Carbon monoxide alarm\nCarbon monoxide alarm"
+    ],
+    "listing_type": "apartment",
+    "description": "All 24 apartments in the building are full-time Airbnb's and hosted by me!\n\n*Surgery friendly \n\nThis property is right next to the airport! If you\u2019re in Miami and looking for convenience, location and want to enjoy the city with all it\u2019s possibilities but have to stick to a tight budget look no further! Minutes away from the beach, sports venues, world renowned medical facilities, port of Miami, downtown and more! It is my goal provide a home for you during your stay!\n\n\nI\u2019m available to my guests at any time before and during their stay! This starts with the inquiry and ends at checkout, I\u2019m committed to providing the best possible service at all times!",
+    "main_title": "Large & charming in house suite. w/ free parking",
+    "sub_title": "Entire condo hosted by Eduardo",
+    "space_type": "1 bedroom",
+    "cleaning_fee": 129.0,
+    "service_fee": 64.5,
+    "max_guests": 4
+}

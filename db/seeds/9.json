@@ -1,0 +1,16 @@
+{
+    "price": 65,
+    "num_bedrooms": 1,
+    "num_baths": 1,
+    "city": "San Francisco",
+    "state": " California",
+    "country": " United States",
+    "listing_type": "apartment",
+    "description": "Close to Union Square, Nob Hill, Chinatown, and the cable car, this hotel suite offers a quintessential San Francisco experience. Your room at the Worldmark San Francisco is well equipped for exploring the city with a queen size bed, full bathroom, and mini-fridge to store leftovers from the area's great restaurants.\n\n\nThe workout room means you don't have to leave your routine when you're away from home. The main floor has a free laundry room.\n\nWiFi is $4.95/day. No on site parking, ask about options if necessary.",
+    "main_title": "Luxury Convenient Safe Neighborhood",
+    "sub_title": "Entire serviced apartment hosted by Michael",
+    "space_type": "Studio",
+    "cleaning_fee": 97.5,
+    "service_fee": 48.75,
+    "max_guests": 2
+}

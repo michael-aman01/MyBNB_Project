@@ -1,0 +1,28 @@
+{
+    "price": 363,
+    "num_bedrooms": 3,
+    "num_baths": 2,
+    "city": "Miami",
+    "state": " Florida",
+    "country": " United States",
+    "ammenities": [
+        "Kitchen",
+        "Wifi",
+        "Dedicated workspace",
+        "Free parking on premises",
+        "Private pool",
+        "Pets allowed",
+        "75\" HDTV with Amazon Prime Video, Apple TV, Disney+, HBO Max, Netflix",
+        "Free washer \u2013 In unit",
+        "Free dryer \u2013 In unit",
+        "Security cameras on property"
+    ],
+    "listing_type": "apartment",
+    "description": "This gorgeous, cozy, and modern Miami home is what dreams are made of. With 3 bedrooms 2 bathrooms, this is the perfect place to stay during your visit to the Magic City. Within walking distance to the best local dining and drinking in the city. An outdoor oasis filled with tropical greenery, over 20 fruits trees for you to eat right from the tree, and a gorgeous pergola and private pool - there\u2019s no better place to stay. 5 minutes to Miami Beach and 10 minutes to the airport. @mimobungalow\n\n\nThe driveway comfortably fits 4 cars.",
+    "main_title": "Spacious Room in the heart of North Beach",
+    "sub_title": "Entire villa hosted by Luisa & Justin",
+    "space_type": "3 bedrooms",
+    "cleaning_fee": 544.5,
+    "service_fee": 272.25,
+    "max_guests": 6
+}

@@ -1,0 +1,16 @@
+{
+    "price": 77,
+    "num_bedrooms": 1,
+    "num_baths": 1,
+    "city": "San Francisco",
+    "state": " California",
+    "country": " United States",
+    "listing_type": "apartment",
+    "description": "Our cozy bedroom sits in a Victorian home dating back to 1900.  It is centrally located in the Richmond District of San Francisco and retains the original San Franciscan flavor. With a queen bed and a sofa, it comfortably accommodates one person or a couple. \n\nIt's within walking distance to the Golden Gate Park, Lake Park, Presidio, and bus stops that connect you to major attractions the city has to offer.\n\nIt has a beautiful black Yamaha YU-30'upright piano that you can play.\n\n\nIt's strategically and conveniently located in the Inner Richmond District of San Francisco. Only 6 blocks from the Golden Gate Park, two blocks from Presidio Park and Lake Park and 5- minute bus ride (Muni #28) to the Golden Gate Bridge. \n\nThe room is on the second floor and there are about 11 steps up from the street level.  The house has a total of 5 bedrooms, two on the second floor and three on the third floor. Three of us live on the third floor.",
+    "main_title": "Spacious Private Room with Ensuite Bathroom",
+    "sub_title": "Private room in home hosted by Budi",
+    "space_type": "1 bedroom",
+    "cleaning_fee": 115.5,
+    "service_fee": 57.75,
+    "max_guests": 2
+}

@@ -7,9 +7,10 @@ import DateSelector from "../DateSelector";
 import { fetchRerservations, makeReservation } from "../../store/reservation";
 import "./ReservationForm.css"
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
-export default function ReservationForm({l,checkInDate,checkOutDate}){
-    const listing = {l}
-  
+
+export default function ReservationForm({listing,checkInDate,checkOutDate}){
+    
+    console.log(listing)
     const dispatch = useDispatch()
     const {id} = useParams();
     const userId = useSelector(getUser).id ;
@@ -55,7 +56,7 @@ export default function ReservationForm({l,checkInDate,checkOutDate}){
             
             <div className="reservation-item" id="reservation-price">
                <div><span>${listing.price} </span>night</div>
-               <div><img src={reviewStar}></img>  review</div>
+               <div><img src={reviewStar} ></img>  review</div>
             </div>
             <div className="reservation-item" id="reservation-info-box">
                 <div id="dates-box">
@@ -73,7 +74,7 @@ export default function ReservationForm({l,checkInDate,checkOutDate}){
                 <div id="guests">guests</div>
             </div>
             <div className="reservation-item" id="show-reserve-button-container">
-                <button  id="show-reserve-button">Reserve</button>
+                <button  id="show-reserve-button" onClick={handleSubmit}>Reserve</button>
                 <br></br>
                 you wont be charged yet
             </div>

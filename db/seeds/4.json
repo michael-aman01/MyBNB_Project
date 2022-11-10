@@ -1,0 +1,16 @@
+{
+    "price": 138,
+    "num_bedrooms": 1,
+    "num_baths": 1,
+    "city": "San Francisco",
+    "state": " California",
+    "country": " United States",
+    "listing_type": "apartment",
+    "description": "The Dorel is your perfect escape from the hustle and bustle of city life. Newly remodeled in 2019, our partially furnished efficiency units were built with your comfort in mind with the necessities needed to settle into urban life including a private bathroom, full or double Murphy beds, sofa, microwave and mini-fridge. The building features a gourmet community kitchen, an outdoor patio deck, on-site laundry and high-speed Wi-Fi.\n\n\nEnjoy your studio with a private bathroom, full Murphy bed, sofa, smart TV, microwave and mini-fridge.\n\nThe building features a gourmet community kitchen, an outdoor patio deck, on-site laundry and high-speed Wi-Fi. Each door is equipped with Key Fob locks to ensure the safety of our guests.",
+    "main_title": "Guitar Room",
+    "sub_title": "Room in aparthotel hosted by Dorel SF",
+    "space_type": "Studio",
+    "cleaning_fee": 207.0,
+    "service_fee": 103.5,
+    "max_guests": 2
+}

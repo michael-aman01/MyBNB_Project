@@ -8,6 +8,7 @@ import ReservationForm from "../ReservationForm";
 import { fetchRerservations } from "../../store/reservation";
 import DateSelector from "../../components/DateSelector"
 import React, { useState } from 'react';
+import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 
 export default function ShowPage(){
 
@@ -70,7 +71,10 @@ export default function ShowPage(){
           <div>
         <div className="grid-container">
         <div  id="show-title-container">
-        <p className="header-title">header</p>
+        <p className="header-title">{listing.main_title}</p>
+        <br></br>
+        <p><img id="show-title-star" src={reviewStar}></img> 4.3  {listing.city}.{listing.state} </p>
+
         </div>
         <div id="show-image-container">
          <div class="images-grid">
@@ -81,14 +85,45 @@ export default function ShowPage(){
                             <img src={listing.image_urls[0]} className="side-image"></img>
             </div>
         </div>
+
         <div id="show-details-container">
-        <div className="header-title">details</div>
+        <div className="detail-title">{listing.sub_title}</div>
                               <br></br>
                               <div className="details-items">
                                 <p>{listing.max_guests} guests {listing.num_bedrooms} bedrooms {listing.num_beds} beds {listing.num_bedrooms} bathrooms</p>    
                     </div>
                     <br></br>
                     <br></br>
+                    <div id="show-ammenities-container">
+                        <div className="detail-title">What this place offers</div>
+                        {listing.amenities.map(a => <p>{a}</p>)}
+                 </div>
+                 <br></br>
+                 <div className="border-line"></div>
+                    {/* <div id="aircover-container">
+                        <img id="aircover-banner" src="https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg"></img>
+                        <br></br>
+                        Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.
+                        <br></br>
+                        <div className="modal-hide" id="description-modal">
+                                            <div className="modal-background">
+                                           
+                                                <div className="modal-content">
+                                                <span onClick={closeModal}><img  className="modal-closing-x" src={X}></img></span>
+                                                    {listing.description}
+                                                </div>
+                                            </div>
+                               
+                                         
+                                    </div>
+                                    
+                 
+                           
+                            <div id="show-description-container">
+                            <span id="modal-button" onClick={showModal}>Learn more {">"}</span>
+                            </div>
+                    </div>
+                    <div className="border-line"></div> */}
                     <div id="show-description-container">
                     {listing.description.split("").slice(0,250).join("") + "..."}
                                     <br></br>
@@ -117,11 +152,12 @@ export default function ShowPage(){
                     </div>
         </div>
 
+                
             <DateSelector listing={listing} />
            
 
       </div>
- 
+
      </div>
 
                 {/* <div id="root-container">        

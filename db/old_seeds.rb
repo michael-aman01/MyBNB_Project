@@ -129,18 +129,18 @@ def add_listings
         })
   
   
-         file_path = Dir.foreach(image_dirs[count]).map{|d| "#{image_dirs[count]}/#{d}"}[1]
-         count += 1
-  
-          image = File.open(file_path)
-          l.images.attach(io: image, filename: "image_1.jpg")
-          l.save!
-          puts image
-     
-          puts "DONE ADDING LISTINGS"
-        end
-      end
-    end
-  end
-  
-  add_listings()
+        file_path = Dir.foreach(image_dirs[count]).map{|d| "#{image_dirs[count]}/#{d}"}[1]
+        count += 1
+ 
+         image = File.open(file_path)
+         l.images.attach(io: image, filename: "image_1.jpg")
+         l.save!
+         puts image
+    
+         puts "DONE ADDING LISTINGS"
+       end
+     end
+   end
+ end
+ 
+ add_listings()

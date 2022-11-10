@@ -5,7 +5,7 @@
     grid-template-rows: repeat(1,2fr);
     margin-left: 90px;
     justify-content: space-between;
-    
+    position: sticky;
 }
 
 

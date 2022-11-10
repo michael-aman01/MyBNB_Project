@@ -21,11 +21,15 @@ class Api::ListingsController < ApplicationController
                     cleaning_fee: listing.cleaning_fee,
                     description: listing.description,
                     num_bedrooms: listing.num_bedrooms,
-                   num_beds: listing.num_beds,
+                #    num_beds: listing.num_beds,
                    num_baths: listing.num_baths,
                    image_urls: listing.images.map{|image| image.url},
                    reservations: listing.reservations.map{|reservation| reservation},
-                   reviews: listing.reviews.map{|review| review}
+                   reviews: listing.reviews.map{|review| review},
+                   main_title: listing.main_title,
+                   sub_title: listing.sub_title,
+                   service_fee:listing.service_fee,
+                   amenities: listing.ammenities
             }
         end
             render json: data
@@ -54,11 +58,15 @@ class Api::ListingsController < ApplicationController
                     cleaning_fee: @listing.cleaning_fee,
                     description: @listing.description,
                     num_bedrooms: @listing.num_bedrooms,
-                   num_beds: @listing.num_beds,
+              
                    num_baths: @listing.num_baths,
                    image_urls: @listing.images.map{|image| image.url},
                    reservations: @listing.reservations.map{|reservation| reservation},
-                   reviews: listing.reviews.map{|review| review}
+                   reviews: @listing.reviews.map{|review| review},
+                   main_title: @listing.main_title,
+                   sub_title: @listing.sub_title,
+                   service_fee: @listing.service_fee,
+                   amenities: @listing.ammenities
             }
         else
             render json: "NO USER"
