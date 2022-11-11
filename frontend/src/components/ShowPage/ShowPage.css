@@ -47,7 +47,8 @@ body {
   #show-details-container {
     grid-column-start: 2;
     grid-column-end: 4;
-    padding: 50px;
+    padding: 40px;
+  
   }
   .header-title{
     font-size: 45px;
@@ -182,7 +183,7 @@ body {
         margin-top: 48px;
         position: sticky;
         grid-column-start: 4;
-        max-height: 650px;
+
         grid-column-end: 5;
         display: block;
         border: 1px solid rgb(221, 221, 221);
@@ -313,3 +314,7 @@ body {
 }
 
 
+.guests-confirmation-container p {
+  font-size: 20px;
+  font-weight: 800;
+}
