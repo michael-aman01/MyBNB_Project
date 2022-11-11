@@ -102,15 +102,41 @@ export default function DateSelector({listing,value}){
         }
         const calendarHeader = ["SUN","MON","TUES","WED","THURS","FRI","SAT"]
         let dates = getDates(month,year)
-
+        //find index of 1 
+        let days = Object.values(dates).map(weekArray => weekArray.map(day => day.getDate())) //number for days
+        let flat = days.flat()
+        let min = flat[0]
+        flat.map(num => {
+            if(num < min){
+                min = num
+            }
+        })
+        let minIndex
+        for(let i = 0; i < Object.values(dates).length; i++){
+      
+            if(Object.values(dates[i]).map(d => d.getDate()).includes(min)){
+                //i is array with min date, add pad to all vals before
+                minIndex = i
+           }
+        }
         dates = Object.values(dates).map(date => {
-            if(date.length < 5){
-                return    [...Array(5 - dates[0].length).keys()].map(i => 0).concat(date)
+            if( Object.values(dates).indexOf(date) < minIndex){
+                date.unshift(0)
+                return date
             }else{
                 return date
             }
-    
+          
         })
+
+        // dates = Object.values(dates).map(date => {
+        //     if(date.length < 5){
+        //         return    [...Array(5 - dates[0].length).keys()].map(i => 0).concat(date)
+        //     }else{
+        //         return date
+        //     }
+    
+        // })
 
         useEffect(()=>{
             setMonth(calendarMonths[selectedMonth])
