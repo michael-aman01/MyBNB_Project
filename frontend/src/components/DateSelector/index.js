@@ -129,14 +129,7 @@ export default function DateSelector({listing,value}){
           
         })
 
-        // dates = Object.values(dates).map(date => {
-        //     if(date.length < 5){
-        //         return    [...Array(5 - dates[0].length).keys()].map(i => 0).concat(date)
-        //     }else{
-        //         return date
-        //     }
-    
-        // })
+
 
         useEffect(()=>{
             setMonth(calendarMonths[selectedMonth])

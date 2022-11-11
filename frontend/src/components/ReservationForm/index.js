@@ -48,26 +48,27 @@ export default function ReservationForm({listing,checkOutDate,checkInDate}){
 
         if(checkInDate === ''|| checkOutDate === ''){
             alert("Please select dates to continue")
+        }else if(new Date(checkInDate) > new Date(checkOutDate)){
+            alert("enter valid dates")
         }else{
             document.getElementById("reservation-confirmation-overlay").style.display = "block"
         }
     }
     const handleReservation = (e) => {
-       
-        alert(new Date(checkInDate) > new Date(checkOutDate))
-        // const reservationData = {
-        //     user_id: userId,
-        //     listing_id: id,
-        //     start_date: checkInDate,
-        //     end_date: checkOutDate
-        // }
-        // if(reservationData[startDate] === '' ||reservationData[endDate] === ''){
-        //     alert("please add ddates")
-        // }else{
-        //     dispatch(makeReservation(reservationData))
-        //     dispatch(fetchRerservations(id))
-        //     alert("reservation made!")
-        // }
+        const reservationData = {
+            user_id: userId,
+            listing_id: id,
+            start_date: checkInDate,
+            end_date: checkOutDate
+        }
+        if(reservationData[startDate] === '' ||reservationData[endDate] === ''){
+            alert("please add ddates")
+        }else{
+            dispatch(makeReservation(reservationData))
+            dispatch(fetchRerservations(id))
+            alert("reservation made!")
+            history.push(`/accounts/${userId}`)
+        }
   
     }
  
@@ -109,11 +110,11 @@ export default function ReservationForm({listing,checkOutDate,checkInDate}){
                 </div>
                 <div className="fee-item">
                     <span>Cleaning Fee</span>
-                    <span>${listing.cleaning_Fee}</span>
+                    <span>${listing.cleaning_fee}</span>
                 </div>
                 <div className="fee-item">
                     <span>Service Fee</span>
-                    <span>${listing.cleaning_Fee}</span>
+                    <span>${listing.service_fee}</span>
                 </div>
             </div>
             <br></br>
@@ -121,7 +122,7 @@ export default function ReservationForm({listing,checkOutDate,checkInDate}){
             <div className="border-line"></div>
             <div id="reservation-total-fee" className="fee-item">
                 <span><b>Total before taxes</b></span>
-                <span>${checkInDate !== '' && checkOutDate !== '' ?  `${(listing.price * Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))) +listing.cleaning_Fee + listing.ser}` : ''}</span>
+                <span>${checkInDate !== '' && checkOutDate !== '' ?  `${(listing.price * Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))) +listing.cleaning_fee + listing.service_fee}` : ''}</span>
             </div>
 
           <div id="reservation-confirmation-overlay">
@@ -157,16 +158,16 @@ export default function ReservationForm({listing,checkOutDate,checkInDate}){
                 <p id="confirmation-booking-title">Price details</p>
                 <div className="reservation-item">
                 <div className="fee-item">
-                    <span>${listing.price} X number of nights</span>
-                    <span>$0</span>
+                    <span>${listing.price}  {checkInDate !== '' && checkOutDate !== '' ?  `X ${Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))} nights` : ''}</span>
+                    <span>{checkInDate !== '' && checkOutDate !== '' ?  "$" + `${ listing.price * Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))}` : ''}</span>
                 </div>
                 <div className="fee-item">
                     <span>Cleaning Fee</span>
-                    <span>${listing.cleaning_Fee}</span>
+                    <span>${listing.cleaning_fee}</span>
                 </div>
                 <div className="fee-item">
                     <span>Service Fee</span>
-                    <span>$0</span>
+                    <span>${listing.service_fee}</span>
                 </div>
             </div>
             <br></br>
@@ -174,7 +175,7 @@ export default function ReservationForm({listing,checkOutDate,checkInDate}){
             <div className="border-line"></div>
             <div id="reservation-total-fee" className="fee-item">
                 <span><b>Total before taxes</b></span>
-                <span>$total</span>
+                <span>${checkInDate !== '' && checkOutDate !== '' ?  `${(listing.price * Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))) +listing.cleaning_fee + listing.service_fee}` : ''}</span>
             </div>
 
                 </div>

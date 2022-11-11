@@ -83,7 +83,7 @@ export default function ReservationIndexPage(){
                     </div>
                     <div class="rigth">
                         <div class="trip-image">
-                            <img  class="trip-image" src={dummyUrl}></img>
+                            <img  class="trip-image" src={images[i][0]}></img>
                         </div>
                     </div>
                 </div>
