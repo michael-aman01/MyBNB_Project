@@ -187,7 +187,7 @@ body {
         grid-column-start: 4;
         grid-column-end: 4;
         display: block;
-        height: 100%;
+        height: fit-content;
         border: 1px solid rgb(221, 221, 221);
         border-radius: 20px;
         padding: 30px;
