@@ -1,7 +1,7 @@
 #search-bar-container {
     display: flex;
-    width:250px;
-    height: 35px;
+    width:350px;
+    height: 50px;
     justify-content: space-around;
      background-color: transparent;
      margin-top: 15px;

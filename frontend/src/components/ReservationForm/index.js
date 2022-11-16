@@ -163,7 +163,7 @@ export default function ReservationForm({listing,checkOutDate,checkInDate}){
             </div>
             <div className="reservation-item">
                 <div className="fee-item">
-                    <span>${listing.price}  {checkInDate !== '' && checkOutDate !== '' ?  `X ${Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))} nights` : ''}</span>
+                    <span>${listing.price}  {checkInDate !== '' && checkOutDate !== "" ?  `X ${Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))} nights` : 'per night'}</span>
                     <span>{checkInDate !== '' && checkOutDate !== '' ?  "$" + `${ listing.price * Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))}` : ''}</span>
                 </div>
                 <div className="fee-item">

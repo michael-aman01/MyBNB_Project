@@ -1,4 +1,43 @@
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
 #nav-container {
+    display: inline-block;
+    height: 7vh auto;
+    width: 100vw;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
+
+#nav-logo {
+    height: 90px;
+    width: 125px;
+
+}
+
+
+#logo-container {
+    display: flex;
+    width: 25%;
+    height: 10%;
+    padding: 1px;
+    margin-left: 100px;
+}
+
+#option-box {
+    width: 10%;
+    margin-left: 20%;
+}
+
+#search-box {
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+}
+
+/* #nav-container {
     display: flex;
     position: static;
     height: 7vh;
@@ -40,4 +79,4 @@
     padding: 0px;
     margin-right: 20px;
 }
-
+ */

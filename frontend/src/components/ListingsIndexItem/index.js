@@ -49,7 +49,7 @@ export default function ListingsIndexItem({listing}){
            
                     </div>
                     <div id="rating-box">
-                    <img alt="" id="review-star" src={reviewStar} width="1px" height="10px"></img>
+                    <img alt="" id="review-star" src={reviewStar}></img>
                         <b>     5.0
                          
                           

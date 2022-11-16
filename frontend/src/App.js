@@ -38,10 +38,10 @@ function App() {
       <Route path="/account/:user_id">
         <ProfilePage />
       </Route>
-      
-<Route path="/create/photos">
-  <CreateListingPhotos></CreateListingPhotos>
-</Route>
+      {/* <Route path="/test">
+        <NavigationBar></NavigationBar>
+      </Route> */}
+
 
     </Switch>
     </>

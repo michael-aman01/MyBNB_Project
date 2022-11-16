@@ -13,8 +13,17 @@ export default function NavigationBar(){
     }
     return(
         <>
-         <div id="nav-container">
+         <div id="nav-container" >
             <div id="logo-container" onClick={handleClick}>
+                <img alt="" id="nav-logo" src={logo}></img>
+            </div>
+            <div id="search-box">
+                <SearchBar />
+            </div>
+            <div id="option-box">
+            <NavOptionsDropdown/>
+            </div> 
+            {/* <div id="logo-container" onClick={handleClick}>
                 <img alt="" id="logo" src={logo}></img>
             </div>
             <div id="search-box">
@@ -24,7 +33,7 @@ export default function NavigationBar(){
             <div id="option-box">
             <NavigationToggle/>
             <NavOptionsDropdown/>
-            </div>
+            </div> */}
 
         </div> 
         </>

@@ -3,31 +3,32 @@
     flex-direction: column;
     margin-right: 20px;
     margin-left: 30px;
-    padding: 20px 20px;
-
+    padding: 50px 50px;
+  
 }
 .listing-image {
-    width: 260px;
-    height: 260px;
+    width: 360px;
+    height: 360px;
     position: absolute;
     border-radius: 20px;
 
 }
 #image-container {
     background-color: black;
-    width: 260px;
-    height: 260px;
+    width: 360px;
+    height: 360px;
     color: white;
     border-radius: 20px;
 
 }
 #info-container {
     display: flex;
-  
+
 }
 #info-box {
     line-height: 1.2;
-    font-size: 15px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
    width: 200px;
     max-height: fit-content;
     padding: 10px;
@@ -38,11 +39,16 @@
 
     text-align: center;
     padding-top: 10px;
+    padding-left: 25px;
+    margin-left: 19px;
     width: 60px;
-    font-size: small;
+    font-size: 17px;
 
 }
 
+#review-star {
+    width: 17px;
+}
 
 #distance-dates {
     opacity: 50%;
