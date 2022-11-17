@@ -5,6 +5,7 @@ import logo from "../../assets/logo.jpg"
 import SearchBar from './SearchBar';
 import NavOptionsDropdown from './NavOptionsDropdown';
 import { useHistory } from "react-router-dom";
+import bnbLogo from "../../assets/Airbnb_Logo.png"
 export default function NavigationBar(){
     const history = useHistory()
     const handleClick = () => {
@@ -13,29 +14,20 @@ export default function NavigationBar(){
     }
     return(
         <>
-         <div id="nav-container" >
-            <div id="logo-container" onClick={handleClick}>
-                <img alt="" id="nav-logo" src={logo}></img>
+      <div class="grid-container" id="nav-container">
+         <div class="grid-item" id="logo-box">
+            <div id="nav-logo">
+                <img src={bnbLogo} height="30px" width="100px"/>
             </div>
-            <div id="search-box">
+        </div>
+   
                 <SearchBar />
-            </div>
-            <div id="option-box">
-            <NavOptionsDropdown/>
-            </div> 
-            {/* <div id="logo-container" onClick={handleClick}>
-                <img alt="" id="logo" src={logo}></img>
-            </div>
-            <div id="search-box">
-            <SearchBar />
-            </div>
- 
-            <div id="option-box">
-            <NavigationToggle/>
-            <NavOptionsDropdown/>
-            </div> */}
+        
+    
+                <NavOptionsDropdown />
+       
+        </div>
 
-        </div> 
         </>
     )
 }

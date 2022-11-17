@@ -1,4 +1,5 @@
 import "./SearchBar.css"
+import searchIcon from "../../../assets/search-icon.svg"
 
 const handleClick = (e) => {
     const NavBar = document.getElementById("nav-container")
@@ -28,14 +29,17 @@ export default function SearchBar(){
 
     return (
         <>
+         <div class="grid-item" id="search-box">
+            <button class="search-option">Anywhere</button>
+            <button className="search-option">Any week</button>
+            <button className="search-option">
+                <div id="add-guests">Add guests</div>
+                <div id="search-icon-button">
+                <img id="search-icon" src={searchIcon} ></img>
+                </div>
+            </button>
+            </div>
 
-<div id="search-bar-container" onClick={handleClick}>
-           
-        <p>Search</p>
-         
-
-</div>
-        
 </>
 )
 }

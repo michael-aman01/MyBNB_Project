@@ -51,7 +51,7 @@ export default function NavOptionsDropdown(){
     
     const handleClick= (e) => {
 
-        let optionTags = document.getElementsByClassName("nav-option")
+        let optionTags = Array.from(document.getElementsByClassName("nav-selection"))
         let newSetting = optionTags[0].style.display === "none" ? "block" : "none"
         for(let i = 0; i < optionTags.length; i++){
             optionTags[i].style.display = newSetting
@@ -72,21 +72,18 @@ export default function NavOptionsDropdown(){
 
     return(
         <>
-            <div id="dropdown-container">
-            <div className="dropdown">
-                        <button className="dropbtn"  onClick={handleClick}>
-                                <img alt="" className='button-image' src={stripes}></img>
-                                <img alt="" className='button-image' src={buttonImage}></img>
-                        </button>
-                        <div className="dropdown-content">
-                                {Object.keys(options).map((key,i) => 
-                                <div key={i} hidden onClick={handleSelect} className="nav-option">
-                                        <NavLink to={options[key].path}>{key}</NavLink>
-                                </div>
-                                    )}
+             <div class="grid-item" id="nav-options">
+            <div id="options-button" onClick={handleClick}>
+                    <img class="button-image" src={stripes}/>
+                    <img class="button-image" src={buttonImage}/>
+                </div>
+                {Object.keys(options).map((key,i) => 
+                    <div key={i} hidden onClick={handleSelect} className="nav-selection">
+                            <NavLink to={options[key].path}>{key}</NavLink>
+                    </div>
+                        )}
                         </div>
-                </div>
-                </div>
+  
         </>
     )
 }

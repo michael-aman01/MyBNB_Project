@@ -70,15 +70,17 @@ l1 = Listing.create({
 })
 
 
-l1_image_1 = File.open("/home/michael/aa_projects/MyBNB/db/seeds/data/1/image_0.jpg",content_type: 'image/jpg')
-l1_image_3 = File.open(File.join(Rails.root,"/seeds/data/1/image_2.jpg"),content_type: 'image/jpg')
-l1_image_4 = File.open(File.join(Rails.root,"/seeds/data/1/image_3.jpg"),content_type: 'image/jpg')
-l1_image_5 = File.open(File.join(Rails.root,"/seeds/data/1/image_4.jpg"),content_type: 'image/jpg')
+l1_image_1 = File.open("#{File.dirname(__FILE__)}/seeds/data/1/image_0.jpg")
 
-l1.images.attach(io: File.open(File.join(Rails.root,"db/seeds/data/1/image_0.jpg"),content_type: 'image/jpg'),filename: "image_1.jpg")
-l1.images.attach(io: File.open(File.join(Rails.root,"/seeds/data/1/image_2.jpg",)content_type: 'image/jpg')filename: "image_2.jpg")
-l1.images.attach(io:  File.open(File.join(Rails.root,"/seeds/data/1/image_3.jpg"),content_type: 'image/jpg'),filename: "image_3.jpg")
-l1.images.attach(io:  File.open(File.join(Rails.root,"/seeds/data/1/image_4.jpg"),content_type: 'image/jpg'),filename: "image_4.jpg")
+l1_image_3 = File.open("#{File.dirname(__FILE__)}/seeds/data/1/image_2.jpg")
+l1_image_4 = File.open("#{File.dirname(__FILE__)}/seeds/data/1/image_3.jpg")
+l1_image_5 = File.open("#{File.dirname(__FILE__)}/seeds/data/1/image_4.jpg")
+
+l1.images.attach(io: l1_image_1,filename: "image.jpg")
+
+l1.images.attach(io: l1_image_3,filename: "image.jpg")
+l1.images.attach(io: l1_image_4,filename: "image.jpg")
+l1.images.attach(io: l1_image_5,filename: "image.jpg")
 l1.save!
 
 u1 =    User.create!({
@@ -95,7 +97,18 @@ l1 = Listing.create!({
   "city": "Miami",
   "state": " Florida",
   "country": " United States",
-  "ammenities": [],
+  "ammenities": [
+        "Kitchen",
+        "Wifi",
+        "Dedicated workspace",
+        "Free parking on premises",
+        "Private pool",
+        "Pets allowed",
+        "75\" HDTV with Amazon Prime Video, Apple TV, Disney+, HBO Max, Netflix",
+        "Free washer \u2013 In unit",
+        "Free dryer \u2013 In unit",
+        "Security cameras on property"
+    ],
   "listing_type": "apartment",
   "description": "Casa Canal is a relaxing oasis surrounded by tropical plants and a Beautiful Canal.  The canal is home to manatees, squirrels, bright green Iguanas, and at times wild green Parakeets in the tree canopy, You can enjoy all this from your private hot tub.\n\nSpend a quiet time fishing under the gumbo limbo tree while enjoying the tropical breeze. The backyard faces the Canal to the east and in the morning you can often enjoy a beautiful sunrise and sometimes in the evening an impressive full moon.\n\n\nCasa Canal, from the moment you walk in, you get a feeling of spacious, relaxing, non-cluttered space yet a place that makes you feel comfortable right away. The house is an open plan design with water views visible from all rooms. It has 3 large bedrooms, 2 bathrooms, and a large kitchen with a bar, 55\u201d HDTV, and plenty of seating. The kitchen is fully equipped, and there is a separate laundry room and a relaxing outdoor patio, accessible from the dining room All beds have 100% cotton sheets and guests are provided 100% premium quality cotton baths and hand towels.",
   "main_title": "Mini cottage near San Francisco & SF airport",
@@ -135,6 +148,18 @@ l1 =Listing.create!({
   "state": " California",
   "country": " United States",
   "listing_type": "apartment",
+  "ammenities": [
+    "Kitchen",
+    "Wifi",
+    "Dedicated workspace",
+    "Free parking on premises",
+    "Private pool",
+    "Pets allowed",
+    "75\" HDTV with Amazon Prime Video, Apple TV, Disney+, HBO Max, Netflix",
+    "Free washer \u2013 In unit",
+    "Free dryer \u2013 In unit",
+    "Security cameras on property"
+],
   "description": "The Inn At The Opera has a guest rating of 4.1  out of 5 on Expedia.  Please let me know what dates you are interested in & I will check on the availability with my timeshare company\n\nThis is a hotel room/studio  (~ 200 sq ft) with one queen size bed & is equipped with television, a nightstand with a lamp, a desk or round table with two chairs & a kitchenette. Kitchenette has a microwave oven, coffeemaker, refrigerator & flatware, glassware, and silverware for two.  Max occupancy of 2.\n\n\nYou will check in just like at any hotel. This is a timeshare unit and it's fully transferable so I will be booking the nights under your name.  I will email you the reservation confirmation  document from the timeshare company showing the reservation being under your name.\n\nI have been an owner of Shell Vacations Time Share properties for over 10 years  (The Inn at the Opera Hotel being one property owned by Shell Vacations Club).\n\nCredit card will be required by hotel at time of check-in and held as a deposit for any damages.\n\nFeatures Include:\nComplimentary WiFi Internet access\nConcierge services\nWireless Internet access throughout the hotel\nBusiness services available including faxing, copying, and printing\nInternet kiosk in lobby\n24-hour front desk\nLaundry and dry cleaning service (fee)\nParking is optional at a parking structure around the corner at a cost of $39/night.  The access card that will allow you in and out privileges is purchased directly at the front desk.\nPets not allowed\nMust be at least 21 years of age\n\nTo ensure your safety and the safety of others, the following precautions may be in place at the Inn at the Opera (since covid transmission rates are fluid, conditions may change based on check in date):\n- House cleaning will not come into the room but you can contact the front desk and they can provide you with replacement towels/wash clothes/kleenex/etc (they will leave at your door).\n- Guests MAY be required to wear a mask when checking in and walking in the common areas of the hotel throughout the stay.\n- When arriving at the hotel, staff MAY ask guests several health questions to verify they are not experiencing COVID systems. Any guest with COVID systems will not be allowed to check-in.\n\nAll units have same features and size, but room location, and decor may vary based on which ever unit is available at the time of check-in.\n\nHOUSEKEEPING:  On a daily basis, hotel housekeeping will provide a light cleaning service which consists of making the bed(s), replacing the bath towels and emptying the trash. A full cleaning of the room is provided on the fifth day of the reservation.  Tenants seeking a daily full cleaning service may be added for an additional fee.",
   "main_title": "Walk to the Waterfront from a High-Tech Studio Flat",
   "sub_title": "Entire rental unit hosted by Jim",
@@ -160,6 +185,18 @@ l1 =Listing.create!({
   "city": "San Francisco",
   "state": " California",
   "country": " United States",
+  "ammenities": [
+    "Kitchen",
+    "Wifi",
+    "Dedicated workspace",
+    "Free parking on premises",
+    "Private pool",
+    "Pets allowed",
+    "75\" HDTV with Amazon Prime Video, Apple TV, Disney+, HBO Max, Netflix",
+    "Free washer \u2013 In unit",
+    "Free dryer \u2013 In unit",
+    "Security cameras on property"
+],
   "listing_type": "apartment",
   "description": "The Dorel is your perfect escape from the hustle and bustle of city life. Newly remodeled in 2019, our partially furnished efficiency units were built with your comfort in mind with the necessities needed to settle into urban life including a private bathroom, full or double Murphy beds, sofa, microwave and mini-fridge. The building features a gourmet community kitchen, an outdoor patio deck, on-site laundry and high-speed Wi-Fi.\n\n\nEnjoy your studio with a private bathroom, full Murphy bed, sofa, smart TV, microwave and mini-fridge.\n\nThe building features a gourmet community kitchen, an outdoor patio deck, on-site laundry and high-speed Wi-Fi. Each door is equipped with Key Fob locks to ensure the safety of our guests.",
   "main_title": "Guitar Room",
@@ -196,6 +233,18 @@ l1 =Listing.create!({
   "num_baths": 1,
   "city": "San Francisco",
   "state": " California",
+  "ammenities": [
+    "Kitchen",
+    "Wifi",
+    "Dedicated workspace",
+    "Free parking on premises",
+    "Private pool",
+    "Pets allowed",
+    "75\" HDTV with Amazon Prime Video, Apple TV, Disney+, HBO Max, Netflix",
+    "Free washer \u2013 In unit",
+    "Free dryer \u2013 In unit",
+    "Security cameras on property"
+],
   "country": " United States",
   "listing_type": "apartment",
   "description": "Our cozy bedroom sits in a Victorian home dating back to 1900.  It is centrally located in the Richmond District of San Francisco and retains the original San Franciscan flavor. With a queen bed and a sofa, it comfortably accommodates one person or a couple. \n\nIt's within walking distance to the Golden Gate Park, Lake Park, Presidio, and bus stops that connect you to major attractions the city has to offer.\n\nIt has a beautiful black Yamaha YU-30'upright piano that you can play.\n\n\nIt's strategically and conveniently located in the Inner Richmond District of San Francisco. Only 6 blocks from the Golden Gate Park, two blocks from Presidio Park and Lake Park and 5- minute bus ride (Muni #28) to the Golden Gate Bridge. \n\nThe room is on the second floor and there are about 11 steps up from the street level.  The house has a total of 5 bedrooms, two on the second floor and three on the third floor. Three of us live on the third floor.",
@@ -239,6 +288,18 @@ l1 =Listing.create!({
   "description": "Mini cottage w/ free parking.\n\nThis small cottage is located in our beautiful backyard. It is close to everything. A 15 min drive to downtown San Francisco and SF airport. A 15 min walk to Westlake shopping center and Bart station to San Francisco. The beautiful unit has a private entrance, one bedroom with a queen bed and a private bathroom. \nWe provide Wi-fi, towels, instant coffee, tea, and snack. More amenities for you to use: TV, microwave,  refrigerator, hair dryer & electric kettle.\n\n\nOur beautiful backyard.",
   "main_title": "Luxury Beachfront Space near SF ",
   "sub_title": "Entire cottage hosted by En",
+  "ammenities": [
+    "Kitchen",
+    "Wifi",
+    "Dedicated workspace",
+    "Free parking on premises",
+    "Private pool",
+    "Pets allowed",
+    "75\" HDTV with Amazon Prime Video, Apple TV, Disney+, HBO Max, Netflix",
+    "Free washer \u2013 In unit",
+    "Free dryer \u2013 In unit",
+    "Security cameras on property"
+],
   "space_type": "1 bedroom",
   "cleaning_fee": 102.0,
   "service_fee": 51.0,
@@ -377,6 +438,18 @@ l1 =Listing.create!({
   "description": "Close to Union Square, Nob Hill, Chinatown, and the cable car, this hotel suite offers a quintessential San Francisco experience. Your room at the Worldmark San Francisco is well equipped for exploring the city with a queen size bed, full bathroom, and mini-fridge to store leftovers from the area's great restaurants.\n\n\nThe workout room means you don't have to leave your routine when you're away from home. The main floor has a free laundry room.\n\nWiFi is $4.95/day. No on site parking, ask about options if necessary.",
   "main_title": "Luxury Convenient Safe Neighborhood",
   "sub_title": "Entire serviced apartment hosted by Michael",
+  "ammenities": [
+    "Kitchen",
+    "Wifi",
+    "Dedicated workspace",
+    "Free parking on premises",
+    "Private pool",
+    "Pets allowed",
+    "75\" HDTV with Amazon Prime Video, Apple TV, Disney+, HBO Max, Netflix",
+    "Free washer \u2013 In unit",
+    "Free dryer \u2013 In unit",
+    "Security cameras on property"
+],
   "space_type": "Studio",
   "cleaning_fee": 97.5,
   "service_fee": 48.75,
