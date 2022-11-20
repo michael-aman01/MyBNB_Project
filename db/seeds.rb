@@ -32,7 +32,17 @@ sf_listing_objects = [
         "state": " California",
         "country": " United States",
         "listing_type": "in",
-        "ammenities": [],
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Free parking on premises",
+            "TV with standard cable",
+            "Luggage dropoff allowed",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave",
+            "Long term stays allowed"
+        ],
         "location_desc": "Situated in the picturesque Nob Hill District of San Francisco, just a block away from Polk Street, The Dorel is set in the center of various bars, restaurants and shopping. Discover new cuisine and entertainment just by taking a 10-minute walk outside. Return to our outdoor deck space and entertainment room equipped with all the essentials to sit back and enjoy San Francisco with your neighbors, family, and friends.",
         "photo_urls": [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/23/image_5.jpg",
