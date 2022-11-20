@@ -44,9 +44,9 @@
 
 
 #modal-title{
-  font-size: 16px;
+
   color: inherit !important;
-  font-weight: inherit !important;
+
   line-height: inherit !important;
   margin: 0px !important;
   padding: 0px !important;
@@ -64,9 +64,9 @@
   padding: 0px 24px !important;
   border-bottom: 1px solid rgb(235, 235, 235) !important;
   color: rgb(34, 34, 34) !important;
-  font-size: 10px !important;
+
   line-height: 20px !important;
-  font-weight: 800 !important;
+
 }
 
 #close-modal-button-container {
@@ -92,10 +92,9 @@
   background-color: rgb(255, 255, 255) !important;
   border-radius: 8px !important;
   box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset !important;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-  font-size: 16px !important;
+
   line-height: 20px !important;
-  font-weight: 400 !important;
+
 }
 
 
@@ -116,9 +115,7 @@ form input {
 
   color: inherit !important;
   background-color: transparent !important;
-  font-family: inherit !important;
-  font-size: inherit !important;
-  font-weight: inherit !important;
+
 
   appearance: none !important;
 
@@ -127,7 +124,7 @@ form input {
 input::placeholder {
   text-align: left;
   margin-left: 0%;
-  font-size: 20px;
+
 }
 
 #close-modal-button-container {
@@ -148,10 +145,10 @@ input::placeholder {
   text-align: center !important;
   text-decoration: none !important;
   touch-action: manipulation !important;
-  font-family: var(--e-ls-qkw) !important;
-  font-size: var(--iw-ehf-f) !important;
+
+
   line-height: var(---s-l-myu) !important;
-  font-weight: var(--jx-zk-pv) !important;
+
   border-radius: 10px;
   outline: none !important;
   padding: 14px 24px !important;

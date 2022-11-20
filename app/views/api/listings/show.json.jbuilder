@@ -11,7 +11,7 @@ json.listing do
     :state,
     :country,
     :listing_type,
-    :max_guests,
+
     :price,
     :cleaning_fee,
     :description,

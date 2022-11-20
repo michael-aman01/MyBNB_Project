@@ -13,12 +13,11 @@ body {
   
   #logo-box{
     display: flex;
-    background-color: blanchedalmond;
-    grid-column-start:1 ;
-    grid-column-start: 1;
+
+    grid-column-start:1;
     background-color: white;
     padding: 20px 80px;
-    margin-left: 10px;
+
   }
 
   

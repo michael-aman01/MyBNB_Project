@@ -7,6 +7,9 @@ class Api::ListingsController < ApplicationController
             @listings.map do |listing|
                 data[listing.id] = {
                     id: listing.id,
+                    size: listing.size,
+                    photo_urls: listing.photo_urls,
+                    location_desc: listing.location_desc,
                     property_type: listing.property_type,
                     space_type: listing.space_type,
                     user_id: listing.user_id,
@@ -16,7 +19,7 @@ class Api::ListingsController < ApplicationController
                     state: listing.state,
                     country: listing.country,
                     listing_type: listing.listing_type,
-                    max_guests: listing.max_guests,
+                    min_guests: listing.min_guests,
                     price: listing.price,
                     cleaning_fee: listing.cleaning_fee,
                     description: listing.description,
@@ -44,6 +47,9 @@ class Api::ListingsController < ApplicationController
         if @listing
             render json: {
                     id: @listing.id,
+                    size: listing.size,
+                    photo_urls: listing.photo_urls,
+                    location_desc: listing.location_desc,
                     property_type: @listing.property_type,
                     space_type: @listing.space_type,
                     user_id: @listing.user_id,
@@ -53,14 +59,13 @@ class Api::ListingsController < ApplicationController
                     state: @listing.state,
                     country: @listing.country,
                     listing_type: @listing.listing_type,
-                    max_guests: @listing.max_guests,
+
                     price: @listing.price,
                     cleaning_fee: @listing.cleaning_fee,
                     description: @listing.description,
                     num_bedrooms: @listing.num_bedrooms,
-              
+                    min_guests: listing.min_guests,
                    num_baths: @listing.num_baths,
-                   image_urls: @listing.images.map{|image| image.url},
                    reservations: @listing.reservations.map{|reservation| reservation},
                    reviews: @listing.reviews.map{|review| review},
                    main_title: @listing.main_title,

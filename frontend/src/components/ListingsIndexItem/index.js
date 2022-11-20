@@ -24,15 +24,15 @@ export default function ListingsIndexItem({listing}){
         return(
             <>
 
-            <div id="item-container" onClick={handleClick}>
-                 <div id="image-container">
+            <div className="listing" onClick={handleClick}>
+                 <div className="image-container">
                     <div>
-                    <img className="listing-image"src={listing.image_urls[0]} alt=""></img>
+                    <img className="listing-image"src={listing.photo_urls[1]} alt=""></img>
                     </div>
   
        
                 </div>
-                <div id="info-container">
+                <div className="info-container">
                     <div id="info-box">
                         <p>
                            <b>{listing.city}, {listing.state}</b> 
@@ -52,8 +52,7 @@ export default function ListingsIndexItem({listing}){
                     <img alt="" id="review-star" src={reviewStar}></img>
                         <b>     5.0
                          
-                          
-                     
+                         
                         </b>
                     </div>
                 </div>

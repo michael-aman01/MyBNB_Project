@@ -1,31 +1,11 @@
-#item-container{
-    display: flex;
-    flex-direction: column;
 
-    margin-left: 50px;
-}
-.listing-image {
-    width: 360px;
-    height: 360px;
-    position: absolute;
-    border-radius: 20px;
-
-}
-#image-container {
-    background-color: black;
-    width: 360px;
-    height: 360px;
-    color: white;
-    border-radius: 20px;
-}
-#info-container {
+.info-container {
     display: flex;
 
 }
+
 #info-box {
     line-height: 1.2;
-    font-family: 'Manrope', sans-serif;
-    font-size: 20px;
    width: 200px;
     max-height: fit-content;
     padding: 10px;
@@ -39,7 +19,6 @@
     padding-left: 25px;
     margin-left: 19px;
     width: 60px;
-    font-size: 17px;
 
 }
 
@@ -55,3 +34,32 @@
     width: 15px;
 }
 
+
+
+
+.listing{
+    height: 350px;
+    min-width: 250px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    box-sizing: border-box;
+  }
+  
+  .image-container {
+    height: 60%;
+    width: 100%;
+    display: flex;
+  
+  }
+  
+  .listing-image {
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    max-height: 100%;
+    max-width: 100%;
+    width: 300px;
+    height: 250px;
+    object-fit: fill;
+  }
+  
+  

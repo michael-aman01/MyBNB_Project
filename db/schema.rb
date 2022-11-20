@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_11_033348) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_20_102944) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,7 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_11_033348) do
     t.string "state", null: false
     t.string "country", null: false
     t.string "listing_type", null: false
-    t.integer "max_guests", null: false
     t.float "price", null: false
     t.float "cleaning_fee", null: false
     t.text "description", null: false
@@ -66,6 +65,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_11_033348) do
     t.string "sub_title", null: false
     t.text "ammenities", default: [], array: true
     t.float "service_fee"
+    t.integer "min_guests"
+    t.text "location_desc"
+    t.float "size", null: false
+    t.text "photo_urls", default: [], array: true
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 

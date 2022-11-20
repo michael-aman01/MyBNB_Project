@@ -1,5 +1,10 @@
-  
+
+
+  body {
+    font-family: cereal;
+  }
   #options-button {
+
     margin-left: 130px;
     display: grid; /* Hidden by default */
     grid-template-columns: 1fr 1fr;
@@ -9,7 +14,9 @@
     border: 1px solid black;
   
   }
-  
+  .NavLink {
+    font: inherit
+  }
   #nav-options{
     grid-column-start: 2;
     grid-column-end: span 3;
@@ -49,9 +56,13 @@
   }
   .nav-selection a {
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #484848;
+    
+  }
+  a {
+    outline: none;
+  }
+  a, a:visited, a:hover, a:active {
+    color: inherit;
   }
   #first-option {
     border-top: 1px solid #484848;
