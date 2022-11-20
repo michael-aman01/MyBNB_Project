@@ -51,6 +51,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/23/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/23/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/23/image_1.jpg"
+        ],
+        "coordinates": [
+            37.80485222770692,
+            -122.4389097230117
         ]
     },
     {
@@ -87,6 +91,9 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/8/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/8/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/8/image_1.jpg"
+        ],
+        "coordinates": [
+            37.68418727392442, -122.46634260991704
         ]
     },
     {
@@ -119,6 +126,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/11/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/11/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/11/image_1.jpg"
+        ],
+        "coordinates": [
+            37.78589172917465,
+            -122.49143810101894
         ]
     },
     {
@@ -156,6 +167,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/2/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/2/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/2/image_1.jpg"
+        ],
+        "coordinates": [
+            37.75061041299212,
+            -122.50036449205284
         ]
     },
     {
@@ -193,6 +208,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/22/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/22/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/22/image_1.jpg"
+        ],
+        "coordinates": [
+            37.75549652225367,
+            -122.49006481009066
         ]
     },
     {
@@ -230,6 +249,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/5/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/5/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/5/image_1.jpg"
+        ],
+        "coordinates": [
+            37.77937952239036,
+            -122.49349803741138
         ]
     },
     {
@@ -267,6 +290,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/15/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/15/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/15/image_1.jpg"
+        ],
+        "coordinates": [
+            37.75983945960185,
+            -122.42964000924566
         ]
     },
     {
@@ -299,6 +326,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/16/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/16/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/16/image_1.jpg"
+        ],
+        "coordinates": [
+            37.78604385419523,
+            -122.40389080434012
         ]
     },
     {
@@ -331,6 +362,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/18/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/18/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/18/image_1.jpg"
+        ],
+        "coordinates": [
+            37.747776502250574,
+            -122.42174358640794
         ]
     },
     {
@@ -368,6 +403,9 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/9/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/9/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/9/image_1.jpg"
+        ],
+        "coordinates": [
+            37.68822174745753, -122.46270112243727
         ]
     },
     {
@@ -405,6 +443,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/1/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/1/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/1/image_1.jpg"
+        ],
+        "coordinates": [
+            37.75849878557058,
+            -122.41882534327269
         ]
     },
     {
@@ -442,6 +484,9 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/4/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/4/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/4/image_1.jpg"
+        ],
+        "coordinates": [
+            37.679384043106644, -122.48649217397178
         ]
     },
     {
@@ -477,6 +522,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/13/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/13/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/13/image_1.jpg"
+        ],
+        "coordinates": [
+            37.74954103592308,
+            -122.49950618889063
         ]
     },
     {
@@ -513,6 +562,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/6/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/6/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/6/image_1.jpg"
+        ],
+        "coordinates": [
+            37.78807879744571,
+            -122.45865078381752
         ]
     },
     {
@@ -549,6 +602,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/14/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/14/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/14/image_1.jpg"
+        ],
+        "coordinates": [
+            37.76555564314785,
+            -122.43633480623272
         ]
     },
     {
@@ -581,6 +638,9 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/17/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/17/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/17/image_1.jpg"
+        ],
+        "coordinates": [
+            37.69225600152861, -122.46294388826927
         ]
     },
     {
@@ -613,6 +673,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/12/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/12/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/12/image_1.jpg"
+        ],
+        "coordinates": [
+            37.792419821471086,
+            -122.40337582187954
         ]
     },
     {
@@ -650,6 +714,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/10/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/10/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/10/image_1.jpg"
+        ],
+        "coordinates": [
+            37.77993869029143,
+            -122.39376278538148
         ]
     },
     {
@@ -683,6 +751,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/19/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/19/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/19/image_1.jpg"
+        ],
+        "coordinates": [
+            37.78373751857462,
+            -122.40440579007576
         ]
     },
     {
@@ -720,6 +792,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/3/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/3/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/3/image_1.jpg"
+        ],
+        "coordinates": [
+            37.76962660080496,
+            -122.43461819049826
         ]
     },
     {
@@ -752,6 +828,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/24/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/24/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/24/image_1.jpg"
+        ],
+        "coordinates": [
+            37.65815134450551,
+            -122.41689759162178
         ]
     },
     {
@@ -789,6 +869,10 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/21/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/21/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/21/image_1.jpg"
+        ],
+        "coordinates": [
+            37.65244336055151,
+            -122.42290573943308
         ]
     },
     {
@@ -823,6 +907,9 @@ sf_listing_objects = [
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/26/image_4.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/26/image_2.jpg",
             "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/sf_photos/26/image_1.jpg"
+        ],
+        "coordinates": [
+            37.69536293190555, -122.48365156291459
         ]
     }
 ]

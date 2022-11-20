@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
-
+import { Wrapper } from "@googlemaps/react-wrapper";
 import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
 import CreateListingPhotos from "./components/CreateListingPhotos";
 import ShowPage from './components/ShowPage'
 import ProfilePage from "./components/ProfilePage";
+import Map from "./components/Map";
 function App() {
 
   useEffect(() =>{
@@ -38,9 +39,9 @@ function App() {
       <Route path="/account/:user_id">
         <ProfilePage />
       </Route>
-      {/* <Route path="/test">
-        <NavigationBar></NavigationBar>
-      </Route> */}
+      <Route path="/test">
+        <Map></Map>
+      </Route>
 
 
     </Switch>

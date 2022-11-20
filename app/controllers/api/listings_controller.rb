@@ -13,6 +13,7 @@ class Api::ListingsController < ApplicationController
                     property_type: listing.property_type,
                     space_type: listing.space_type,
                     user_id: listing.user_id,
+                    coordinates: {position: {lat: listing.coordinates[0], lng: listing.coordinates[1]}, label: {color: "red", label: listing.sub_title}},
                     street_address: listing.street_address,
                     city: listing.city,
                     zip_code: listing.zip_code,
@@ -59,7 +60,7 @@ class Api::ListingsController < ApplicationController
                     state: @listing.state,
                     country: @listing.country,
                     listing_type: @listing.listing_type,
-
+                    coordinates: @listening.coordinates,
                     price: @listing.price,
                     cleaning_fee: @listing.cleaning_fee,
                     description: @listing.description,

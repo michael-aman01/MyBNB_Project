@@ -10,7 +10,7 @@ import DateSelector from "../../components/DateSelector"
 import React, { useState } from 'react';
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 import bayviewIcon from "../../assets/ammenities/bayview.svg"
-
+import Map from "../Map";
 export default function ShowPage(){
 
     const dispatch = useDispatch()
@@ -186,8 +186,9 @@ export default function ShowPage(){
         </div>
 
             <DateSelector listing={listing} value={value}/>
-           
-
+            <div id="show-map-container">
+                    <Map listing={listing}></Map>
+            </div>
       </div>
 
      </div>

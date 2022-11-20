@@ -333,3 +333,11 @@ font-family: 'Montserrat', sans-serif;
 font-weight: 600;
 font-size: 21px;
 }
+
+#show-map-container {
+  display: flex;
+  grid-column-start: 2;
+  grid-column-end: span 3;
+  height: 100%;
+  background-color: black;
+}

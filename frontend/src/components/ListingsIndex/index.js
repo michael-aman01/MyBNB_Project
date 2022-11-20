@@ -6,7 +6,7 @@ import {fetchListings, getListings} from "../../store/data"
 import ListingsIndexItem from "../ListingsIndexItem";
 import "./listingsIndex.css"
 import { fetchRerservations } from "../../store/reservation";
-
+import Map from "../Map";
 export default function ListingsIndex(){
    
     const sessionUser = useSelector(state => state.session.user);
@@ -33,6 +33,7 @@ export default function ListingsIndex(){
             <div id="listings-container">
                 {listings.map((listing,i) =>  <ListingsIndexItem listing={listing} key={i}></ListingsIndexItem>)}
             </div>
+
 
             </>
         )

@@ -21,5 +21,8 @@
   "engines": {
     "node": "18.10.0"
   },
-  "homepage": "https://github.com/michael-aman01/MyBNB_Project#readme"
+  "homepage": "https://github.com/michael-aman01/MyBNB_Project#readme",
+  "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.35"
+  }
 }
