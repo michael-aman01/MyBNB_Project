@@ -24,12 +24,7 @@
   padding-top: 11px;
 }
 #search-box {
-  grid-column-start: 1;
-  grid-column-end: span 2;
-  grid-row-start:1 ;
-  position: relative;
-  height: 28px;
-  margin-left: 50px;
+  font-family: cereal_bk;
   width: 330px;
   border: 1px solid #bebdbd;
   box-shadow: gray;
@@ -37,8 +32,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
-margin-left: 15%;
-margin-top: 10px;
+  margin-left: 25%;
+  margin-top: 10px;
   box-sizing: border-box;
   grid-column-start: 2;
 

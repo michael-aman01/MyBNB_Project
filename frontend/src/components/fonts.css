@@ -1,0 +1,18 @@
+
+/* for banner text: */
+@font-face {
+    font-family: title_font;
+    src: url(AirbnbCereal_W_Md.otf);
+  }
+
+/* for regular text:  */
+@font-face {
+    font-family: cereal_bk;
+    src: url(../assets/AirbnbCereal_W_Bk.otf);
+  }
+
+  /* for light/sub text:   */
+  @font-face {
+    font-family: cereal_lt;
+    src: url(../assets/AirbnbCereal_W_Lt.otf);
+  }

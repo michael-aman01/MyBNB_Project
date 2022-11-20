@@ -1,8 +1,6 @@
 
 
-  body {
-    font-family: cereal;
-  }
+
   #options-button {
 
     margin-left: 130px;
@@ -18,6 +16,7 @@
     font: inherit
   }
   #nav-options{
+
     grid-column-start: 2;
     grid-column-end: span 3;
     position: fixed; /* Sit on top of the page content */
@@ -43,6 +42,7 @@
 
   }
   .nav-selection {
+    display: none;
     border-right: 1px solid #484848;
     border-left: 1px solid #484848;
     padding: 5px 5px 5px 12px;

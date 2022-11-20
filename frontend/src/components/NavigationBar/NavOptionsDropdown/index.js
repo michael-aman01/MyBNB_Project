@@ -9,12 +9,15 @@ import "./NavOptionsDropdown.css"
 import stripes from '../../../assets/navigation-button-stripes.svg'
 import buttonImage from "../../../assets/navigation-button.svg"
 import ProfilePage from '../../ProfilePage';
+import { useEffect } from 'react';
 
 
 
 export default function NavOptionsDropdown(){
     const dispatch = useDispatch();
     const user = useSelector(getUser);
+
+
 
     let options = {
         "signup": {
@@ -48,14 +51,16 @@ export default function NavOptionsDropdown(){
         "account":options["account"]
     }
     }
-    
-    const handleClick= (e) => {
 
-        let optionTags = Array.from(document.getElementsByClassName("nav-selection"))
-        let newSetting = optionTags[0].style.display === "none" ? "block" : "none"
-        for(let i = 0; i < optionTags.length; i++){
-            optionTags[i].style.display = newSetting
-        }
+    const handleClick= (e) => {
+        const options = Array.from(document.getElementsByClassName("nav-selection"))
+        options.map(tag => {
+            if(tag.style.display !== "none"){
+                tag.style.display = "none"
+            }else{
+                tag.style.display = "flex"
+            }
+        })
     }
 
     const handleSelect = (e) => {
@@ -78,7 +83,7 @@ export default function NavOptionsDropdown(){
                     <img class="button-image" src={buttonImage}/>
                 </div>
                 {Object.keys(options).map((key,i) => 
-                    <div key={i} hidden onClick={handleSelect} className="nav-selection">
+                    <div style={{display: "none"}} key={i}  onClick={handleSelect} className="nav-selection">
                             <NavLink to={options[key].path}>{key}</NavLink>
                     </div>
                         )}

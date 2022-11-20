@@ -5,7 +5,10 @@
 }
 
 #info-box {
-    line-height: 1.2;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    line-height: 1.5;
    width: 200px;
     max-height: fit-content;
     padding: 10px;
@@ -13,7 +16,8 @@
 }
 
 #rating-box {
-
+    font-size: 15px;
+    font-weight: 300;
     text-align: center;
     padding-top: 10px;
     padding-left: 25px;
@@ -23,7 +27,7 @@
 }
 
 #review-star {
-    width: 17px;
+    width: 12px;
 }
 
 #distance-dates {
@@ -38,6 +42,7 @@
 
 
 .listing{
+    font-family: cereal_W_bk;
     height: 350px;
     min-width: 250px;
     border-bottom-left-radius: 22px;

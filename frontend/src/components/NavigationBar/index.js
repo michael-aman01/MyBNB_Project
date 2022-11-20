@@ -14,7 +14,7 @@ export default function NavigationBar(){
     }
     return(
         <>
-      <div class="grid-container" id="nav-container">
+      <div id="nav-container">
          <div class="grid-item" id="logo-box">
             <div id="nav-logo">
                 <img src={bnbLogo} height="30px" width="100px"/>

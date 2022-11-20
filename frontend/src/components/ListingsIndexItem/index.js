@@ -35,7 +35,7 @@ export default function ListingsIndexItem({listing}){
                 <div className="info-container">
                     <div id="info-box">
                         <p>
-                           <b>{listing.city}, {listing.state}</b> 
+                           <p>{listing.city}, {listing.state}</p> 
                            <p id="distance-dates">
                   
                               distance

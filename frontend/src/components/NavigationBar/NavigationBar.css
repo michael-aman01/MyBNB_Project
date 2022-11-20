@@ -6,7 +6,7 @@ body {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-column-start:1 ;
+    column-gap: 10px;
     border-bottom:  1px solid #cdc1c1;
   }
   
