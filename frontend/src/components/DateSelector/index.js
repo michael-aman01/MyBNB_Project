@@ -39,6 +39,14 @@ export default function DateSelector({listing}){
 
     
         <div id="show-calendar-container">
+        <div id="calendar-description">
+        {checkinDate !== undefined && checkOutDate !== undefined ? (
+        <div id="description-title">{Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkinDate)) / (1000 * 60 * 60 * 24))} nights in {listing.city}</div>
+        ) :
+        null
+      
+      }
+        </div>
       <div className='calendar-container'>
         <Calendar
           onChange={setDate}
@@ -50,14 +58,7 @@ export default function DateSelector({listing}){
           
         />
       </div>
-      <div>
-        {checkinDate !== undefined ? (
-        <div> {checkinDate.toDateString()}</div>
-        ) :
-        null
-      
-      }
-        </div>
+
         </div>
       </>
    

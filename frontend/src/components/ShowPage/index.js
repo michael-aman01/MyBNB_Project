@@ -202,93 +202,28 @@ export default function ShowPage(){
         <DateSelector listing={listing}>s</DateSelector>
 
             {/* <DateSelector listing={listing} value={value}/> */}
+            </div>
+            </div>
+            <div className="grid-container">
+            <br></br>
+            <div id="description-title">Where you will be</div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <div id="show-map-container">
+              
                     <Map listing={listing}></Map>
             </div>
-      </div>
 
      </div>
-
-                {/* <div id="root-container">        
-                <div id="content">
-     
-                    <div id="header-container">
-                        <p className="header-title">header</p>
-                    </div>
-                    <div class="images-grid">
-                            <img  src={listing.image_urls[0]} id="main-image"></img>
-                            <img src={listing.image_urls[0]}></img>
-                            <img src={listing.image_urls[0]} ></img>
-                            <img src={listing.image_urls[0]}></img>
-                            <img src={listing.image_urls[0]} ></img>
-                    </div>
-                    <div id="bottom-half">
-
-               
-                    <div id="mid-container">
-                    <div id="details-container">
-                              <div className="header-title">details</div>
-                              <br></br>
-                              <div className="details-items">
-                                <p>{listing.max_guests} guests {listing.num_bedrooms} bedrooms {listing.num_beds} beds {listing.num_bedrooms} bathrooms</p>    
-                              </div>
-                        
-                    </div>
-
-                    </div>
-                        
-                
-                    <div className="description-container">
-                    {listing.description.split("").slice(0,250).join("") + "..."}
-                                    <br></br>
-                                    <br></br>
-                                 
-                                        <div className="modal-hide" id="description-modal">
-                                            <div className="modal-background">
-                                           
-                                                <div className="modal-content">
-                                                <span onClick={closeModal}><img  className="modal-closing-x" src={X}></img></span>
-                                                    {listing.description}
-                                                </div>
-                                            </div>
-                               
-                                         
-                                    </div>
-                                    
-                            </div>
-                           
-                            <div className="description-container">
-                            <span id="modal-button" onClick={showModal}>Show more {">"}</span>
-                            </div>
-                            <div>               
-                            </div>
-                            <div>
-                            <div className="border-line"></div>
-                        <div id="show-calendar" className="description-container">
-                            <p className="header-title">
-                                Select checkout date
-                                <br></br>
-                                <span className="small-print">add your travel dates for exact pricing</span>
-                                </p>
-                    
-                 
-                        </div>
-         
-                      <div id="calendar-container">
-                        <DateSelector listing={listing}/>
-                      </div>
-                    </div>
-                    </div> 
-                    </div>
-                    <div id="right-container">test</div>
-                    </div> */}
-
-            
-                
-               </>
-            )
-        }
+     <div className="grid-container" id="review-container">
+                reviews
+     </div>
+     </>
+     )
     }
+}
 
 
     /*

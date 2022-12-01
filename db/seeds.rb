@@ -32,6 +32,16 @@ sf_listing_objects = [
         "state": " California",
         "country": " United States",
         "listing_type": "in",
+        "coordinates": {
+"position": {
+"lat": 37.68418727392442,
+"lng": -122.46634260991704
+},
+"label": {
+"color": "red",
+"label": "Entire rental unit hosted by Andrew"
+}
+},
         "ammenities": [
             "Kitchen",
             "Wifi",

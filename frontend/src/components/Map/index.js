@@ -65,7 +65,7 @@ export default function Map({listings={},listing={}}){
                 }
                 clearInterval(dataLoad)
             }
-        },1000)
+        },1500)
     },[])
 
 
