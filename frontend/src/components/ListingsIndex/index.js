@@ -1,12 +1,11 @@
 import { useEffect} from "react";
-import NavigationBar from "../NavigationBar";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import {fetchListings, getListings} from "../../store/data"
 import ListingsIndexItem from "../ListingsIndexItem";
 import "./listingsIndex.css"
 import { fetchRerservations } from "../../store/reservation";
-import Map from "../Map";
+
 export default function ListingsIndex(){
    
     const sessionUser = useSelector(state => state.session.user);

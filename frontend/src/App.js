@@ -2,14 +2,10 @@ import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
-import { Wrapper } from "@googlemaps/react-wrapper";
 import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
-import CreateListingPhotos from "./components/CreateListingPhotos";
 import ShowPage from './components/ShowPage'
 import ProfilePage from "./components/ProfilePage";
-
-
 import DateSelector from "./components/DateSelector";
 
 
@@ -33,6 +29,9 @@ function App() {
       </Route>
       <Route path="/signup">
         <SignupFormPage />
+      </Route>
+      <Route exact path="/">
+        <ListingsIndex></ListingsIndex>
       </Route>
       <Route exact path="/listings">
         <ListingsIndex></ListingsIndex>
