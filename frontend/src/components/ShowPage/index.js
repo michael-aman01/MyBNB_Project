@@ -211,15 +211,24 @@ export default function ShowPage(){
             <br></br>
             <br></br>
             <br></br>
+            
             <div id="show-map-container">
-              
+         
                     <Map listing={listing}></Map>
             </div>
 
      </div>
-     <div className="grid-container" id="review-container">
-                reviews
+<div className="grid-container">
+<div id="location-description-container">
+        {listing.location_desc}
+        <br></br>
+        <br></br>
+        <br></br>
+<div className="border-line"></div>
      </div>
+
+</div>
+    
      </>
      )
     }

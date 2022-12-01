@@ -347,3 +347,14 @@ font-size: 21px;
   height: 100%;
   background-color: black;
 }
+
+#location-description-container {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  margin-top: 20px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 100px;
+}
