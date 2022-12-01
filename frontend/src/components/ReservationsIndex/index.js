@@ -10,7 +10,6 @@ import { cancelReservation } from "../../store/reservation"
 
 export default function ReservationIndexPage(){
     const months = {"01":"Jan","02":"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"Aug","09":"Sept","10":"Oct","11":"Nov","12":"Dec"}
-
     const dispatch = useDispatch()
     const currentUser = useSelector(getUser)
     const user = useSelector(getCurrentUser)
@@ -29,7 +28,7 @@ export default function ReservationIndexPage(){
         return null
     }
     const reservations = user.reservations
-    const images = user.reservation_images
+    const images = user.reservations_listings.map(r => r.photo_urls)
     const listings = user.reservations_listings
     if(reservations.length === 0){
         return (
@@ -39,8 +38,11 @@ export default function ReservationIndexPage(){
             <button id="profileh-search-button">search</button>
         </div>
         )
-    }
+    }else{
+        console.log(images)
+
     return (
+        
         <>
 
 
@@ -54,12 +56,13 @@ export default function ReservationIndexPage(){
                             <p className="trip-details-small">{listings[i].sub_title}</p>
                         </div>  
                         <div class="trip-detail-bottom">
+                      
                             <div class="trip-dates">
+                            <h1>Trip Dates:</h1>
                                 <div>
-                                <p>{months[res.start_date.split("/")[0]]}  {res.start_date.split("/")[1]} {res.start_date.split("/")[2]}</p>
+                                <p>{`${months[res.start_date.split('-')[1]]}-${res.start_date.split('-')[2].slice(0,2)}-${res.start_date.split('-')[0]}`}</p>
                                 <p> - </p>
-                                <p>{months[res.end_date.split("/")[0]]}  {res.end_date.split("/")[1]} {res.end_date.split("/")[2]}</p>
-                                </div>
+                                <p>{`${months[res.end_date.split('-')[1]]}-${res.end_date.split('-')[2].slice(0,2)}-${res.end_date.split('-')[0]}`}</p>                                </div>
                                 <div className="alter-buttons">
                                 <form className="" onSubmit={handleSubmit} id={i}>
                     <div className="cancel-container">
@@ -83,7 +86,7 @@ export default function ReservationIndexPage(){
                     </div>
                     <div class="rigth">
                         <div class="trip-image">
-                            <img  class="trip-image" src={images[i][0]}></img>
+                            <img  class="trip-image" src={images[i][1]}></img>
                         </div>
                     </div>
                 </div>
@@ -106,8 +109,7 @@ export default function ReservationIndexPage(){
 
     
 </>
+    
     )
 }
-
-
-
+}
