@@ -7,9 +7,12 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     column-gap: 10px;
-    border-bottom:  1px solid #cdc1c1;
+
   }
   
+  #nav-container {
+    border-bottom:  1px solid #cdc1c1;
+  }
   
   #logo-box{
     display: flex;
@@ -29,6 +32,7 @@ body {
     display: flex;
     justify-items: left;
     margin-right: 0% ;
+    cursor: pointer;
   }
   
 

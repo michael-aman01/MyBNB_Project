@@ -4,7 +4,7 @@
   #options-button {
 
     margin-left: 130px;
-    display: grid; /* Hidden by default */
+    display: grid; 
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     width: 80px;
@@ -16,18 +16,16 @@
     font: inherit
   }
   #nav-options{
-
     grid-column-start: 2;
     grid-column-end: span 3;
-    position: fixed; /* Sit on top of the page content */
-    display: flex; /* Hidden by default */
-    width: 10%; /* Full width (cover the whole page) */
-    height: 10%; /* Full height (cover the whole page) */
+    position: absolute;
+    display: flex; 
+    width: 10%; 
+    height: 10%; 
     flex-direction: column;
     right: 10%;
     margin-top: 10px;
   
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
   #options-box {

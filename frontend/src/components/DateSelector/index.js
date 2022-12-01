@@ -39,6 +39,7 @@ export default function DateSelector(){
           minDate={checkinDate === undefined ? new Date() : checkinDate}
           onClickDay={(e) => checkinDate === undefined ? setCheckInDate(e) : setCheckOutDate(e)}
           showDoubleView={true}
+          
         />
       </div>
       <div>

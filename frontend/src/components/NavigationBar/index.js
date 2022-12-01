@@ -16,7 +16,7 @@ export default function NavigationBar(){
         <>
       <div id="nav-container">
          <div class="grid-item" id="logo-box">
-            <div id="nav-logo">
+            <div id="nav-logo" onClick={handleClick}>
                 <img src={bnbLogo} height="30px" width="100px"/>
             </div>
         </div>
