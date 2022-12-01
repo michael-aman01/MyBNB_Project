@@ -47,8 +47,7 @@ background-color: rgba(255, 255, 255, 0.8);
 #show-calendar-container {
   grid-column-start: 2;
   grid-column-end: 4;
-  padding: 50px;
-
+  margin-bottom: 100px;
 }
 
 #show-details-container {
@@ -60,9 +59,7 @@ background-color: rgba(255, 255, 255, 0.8);
 
 
 
-.reservation-item{
- 
-}
+
 
 
 .images-grid img {
