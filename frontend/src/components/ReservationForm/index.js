@@ -14,6 +14,7 @@ import leftArrow from "../../assets/left-arrow.png"
 
 
 export default function ReservationForm({listing,checkOut,checkIn}){
+    console.log(`from resrrvation ${checkIn}`)
     const [checkInDate,setCheckInDate] = useState('')
     const [checkOutDate, setCheckOutDate] = useState('')
     const [adults, setAdults] = useState(0)
@@ -86,7 +87,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
     }
     return (
         <>
-            
+              <div id="show-reservation-container" className="sticky">
             <div className="reservation-item" id="reservation-price">
                <div><span>${listing.price} </span>night</div>
                <div><img src={reviewStar} ></img>  review</div>
@@ -96,12 +97,28 @@ export default function ReservationForm({listing,checkOut,checkIn}){
                 <div id="check-in-date">
                     <span>Check-In</span>
                     <br></br>
-                    <span>{checkInDate}</span>
+                           
+
+                    {checkIn !== undefined ? (
+        <span>{checkIn.toDateString()}</span>
+        ) :
+        null
+      
+      }
                 </div>
                 <div id="check-out-date">
                 <span>Check-out</span>
                 <br></br>
-                <span>{checkOutDate}</span>
+
+                
+
+                {checkOut !== undefined ? (
+        <span>{checkOut.toDateString()}</span>
+        ) :
+        null
+      
+      }
+                
                 </div>
                 </div>
                 <div id="guests"> 
@@ -280,6 +297,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
 
             
             </div>
+          </div>
           </div>
     
      

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import X from "../../assets/iconmonstr-x-mark-1.svg"
 import { useEffect } from "react";
 import ReservationForm from "../ReservationForm";
-import { fetchRerservations } from "../../store/reservation";
+import { fetchRerservations, getCheckIn, getReservations } from "../../store/reservation";
 
 import React, { useState } from 'react';
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
@@ -20,12 +20,23 @@ export default function ShowPage(){
     const [windowSize, setWindowSize] = useState(window.innerHeight)
     const listing = useSelector(getListing(id))
     const [value, onChange] = useState(1);
+    const [checkinDate,setCheckInDate] = useState()
+
+    
     useEffect(() => {
         if(!listing){
             dispatch(fetchListings())
         }
         dispatch(fetchRerservations(id))
     },[dispatch,id])
+
+
+
+
+
+
+
+
 
     const closeModal = () => {
         document.getElementById("description-modal").setAttribute("class","modal-hide")
@@ -186,13 +197,10 @@ export default function ShowPage(){
                  <div className="border-line"></div>
         
         </div>
-        <div id="show-reservation-container" className="sticky">
-        <ReservationForm listing={listing} checkIn={''} checkOut={''}/>
 
-    </div>
-    <div id="show-calendar-container">
-        <DateSelector>s</DateSelector>
-    </div>
+       
+        <DateSelector listing={listing}>s</DateSelector>
+
             {/* <DateSelector listing={listing} value={value}/> */}
             <div id="show-map-container">
                     <Map listing={listing}></Map>

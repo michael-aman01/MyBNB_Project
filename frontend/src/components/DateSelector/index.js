@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import {useDispatch, useSelector} from 'react-redux'
 import './DateSelector.css'
-import { addCheckin, addCheckout, ADD_CHECKIN, getCheckIn, getCheckOut } from '../../store/reservation'
+import ReservationForm from '../ReservationForm';
+import { addCheckin, addCheckout, ADD_CHECKIN, getCheckIn, getCheckOut, getReservations } from '../../store/reservation'
 
-export default function DateSelector(){
+export default function DateSelector({listing}){
   const dispatch = useDispatch()
 
   const [date, setDate] = useState([null,null]);
@@ -15,6 +16,8 @@ export default function DateSelector(){
   useEffect(() => {
     if(checkinDate !== undefined){
       dispatch(addCheckin(checkinDate))
+      setCheckInDate(checkinDate)
+   
     }
 
   },[dispatch,checkinDate])
@@ -31,6 +34,11 @@ export default function DateSelector(){
   return (
 
 <>
+
+        <ReservationForm listing={listing} checkIn={checkinDate} checkOut={checkOutDate}/>
+
+    
+        <div id="show-calendar-container">
       <div className='calendar-container'>
         <Calendar
           onChange={setDate}
@@ -49,8 +57,8 @@ export default function DateSelector(){
         null
       
       }
-  
-      </div>
+        </div>
+        </div>
       </>
    
   )}

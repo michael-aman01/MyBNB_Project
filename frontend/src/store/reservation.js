@@ -54,14 +54,18 @@ export const getReservations = () => state => {
 }
 
 export const getCheckIn = () => state => {
-    if(state.checkin){
+    if(state){
         return state.checkin
+    }else{
+        return null
     }
 }
 
 export const getCheckOut = () => state => {
-    if(state.checkout){
+    if(state.reservations.checkout){
         return state.checkout
+    }else{
+        return null
     }
 }
 
