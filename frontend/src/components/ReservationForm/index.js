@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import {fetchUser, getUser} from '../../store/user'
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import DateSelector from "../DateSelector";
+import DateSelector from "../DateSelector_old";
 import { fetchRerservations, makeReservation } from "../../store/reservation";
 import "./ReservationForm.css"
 import { useHistory } from "react-router-dom";
@@ -13,7 +13,9 @@ import downArrow from "../../assets/down-arrow.png"
 import leftArrow from "../../assets/left-arrow.png"
 
 
-export default function ReservationForm({listing,checkOutDate,checkInDate}){
+export default function ReservationForm({listing,checkOut,checkIn}){
+    const [checkInDate,setCheckInDate] = useState('')
+    const [checkOutDate, setCheckOutDate] = useState('')
     const [adults, setAdults] = useState(0)
     const [children, setChildren] = useState(0)
     const [infants,setInfants] = useState(0)

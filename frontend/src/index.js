@@ -8,7 +8,10 @@ import { configureStore } from './store'
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session'
 
+import {
+  DatePickerProvider,
 
+} from '@bcad1591/react-date-picker';
 const store = configureStore()
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
@@ -19,12 +22,12 @@ if (process.env.NODE_ENV !== 'production') {
 const renderApplication = () => {
   ReactDOM.render(
     <React.StrictMode>
+
   <Provider store={store}>
           <BrowserRouter>
             <App />
           </BrowserRouter>
         </Provider>
-
 
     </React.StrictMode>,
     document.getElementById('root')

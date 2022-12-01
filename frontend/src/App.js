@@ -8,7 +8,11 @@ import ListingsIndex from "./components/ListingsIndex";
 import CreateListingPhotos from "./components/CreateListingPhotos";
 import ShowPage from './components/ShowPage'
 import ProfilePage from "./components/ProfilePage";
-import Map from "./components/Map";
+
+
+import DateSelector from "./components/DateSelector";
+
+
 function App() {
 
   useEffect(() =>{
@@ -40,7 +44,10 @@ function App() {
         <ProfilePage />
       </Route>
       <Route path="/test">
-        <Map></Map>
+
+      <DateSelector></DateSelector>
+
+  
       </Route>
 
 

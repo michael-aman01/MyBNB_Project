@@ -6,11 +6,13 @@ import X from "../../assets/iconmonstr-x-mark-1.svg"
 import { useEffect } from "react";
 import ReservationForm from "../ReservationForm";
 import { fetchRerservations } from "../../store/reservation";
-import DateSelector from "../../components/DateSelector"
+
 import React, { useState } from 'react';
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 import bayviewIcon from "../../assets/ammenities/bayview.svg"
 import Map from "../Map";
+import DateSelector from "../DateSelector";
+
 export default function ShowPage(){
 
     const dispatch = useDispatch()
@@ -184,8 +186,14 @@ export default function ShowPage(){
                  <div className="border-line"></div>
         
         </div>
+        <div id="show-reservation-container" className="sticky">
+        <ReservationForm listing={listing} checkIn={''} checkOut={''}/>
 
-            <DateSelector listing={listing} value={value}/>
+    </div>
+    <div id="show-calendar-container">
+        <DateSelector>s</DateSelector>
+    </div>
+            {/* <DateSelector listing={listing} value={value}/> */}
             <div id="show-map-container">
                     <Map listing={listing}></Map>
             </div>

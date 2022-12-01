@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import ReservationIndexPage from "../ReservationsIndex"
 import { getUser, getCurrentUser } from "../../store/user"
-import DateSelector from "../DateSelector"
+import DateSelector from "../DateSelector_old"
 export default function ProfilePage(){
     const dispatch = useDispatch()
     const currentUser = useSelector(getUser)
