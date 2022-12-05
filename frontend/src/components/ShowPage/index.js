@@ -12,23 +12,59 @@ import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 import bayviewIcon from "../../assets/ammenities/bayview.svg"
 import Map from "../Map";
 import DateSelector from "../DateSelector";
+import { fetchUser, getUser } from "../../store/user";
 
 export default function ShowPage(){
 
     const dispatch = useDispatch()
     const {id} = useParams()
-    const [windowSize, setWindowSize] = useState(window.innerHeight)
     const listing = useSelector(getListing(id))
-    const [value, onChange] = useState(1);
-    const [checkinDate,setCheckInDate] = useState()
+    const [reviewers,setReviewers] = useState([null])
+    const [reviewStats,setReviewStats] = useState()
 
-    
+    function calcReviewAvgs(){
+        const keys = ["cleanliness","communication","check_in","accuracy","location"]
+        const reviews = listing.reviews
+        const grouped = {}
+
+        let vals = keys.map(key => {
+            let total =  (reviews.map(review => review[key]).reduce((a,b) => a + b, 0)/reviews.length).toFixed(2)
+            grouped[key] = total
+        })
+     
+        
+       return grouped
+
+    }
     useEffect(() => {
         if(!listing){
             dispatch(fetchListings())
         }
         dispatch(fetchRerservations(id))
     },[dispatch,id])
+
+
+
+
+    useEffect(() => {
+
+        if(listing !== undefined && reviewers[0] === null){
+
+            const users = []
+            listing.reviews.map(async review => {
+                let res =  await dispatch(fetchUser(review.user_id))
+                let user = await res.user
+   
+                users.push(user.first_name)
+            })
+
+            setReviewers(users)
+            let stats = calcReviewAvgs()
+            setReviewStats(stats)
+        
+        }
+
+    },[listing])
 
 
 
@@ -44,42 +80,12 @@ export default function ShowPage(){
     const showModal = (e) => {
        document.getElementById("description-modal").setAttribute("class","modal-show")
     }
-    // useEffect(()=>{
-    //     window.addEventListener("resize",() =>{
-    //         const contentContainer = document.getElementById("content")
-    //         const detailsContainer = document.getElementById("details-container")
-    //         if(window.screen.availWidth === window.outerWidth){
-         
-    
-    
-    //             contentContainer.style.marginRight = "20%"
-    //             contentContainer.style.marginLeft = "20%"
-    //             contentContainer.style.gridTemplateColumns = "repeat(4,1fr)"
-    //             contentContainer.style.gridTemplateRows = "repeat(2,1fr)"
-   
-             
-    //             //max
-    //         }else{
-    //             console.log(contentContainer.style.marginRight)
-    //             contentContainer.style.marginRight = "5%"
-    //             contentContainer.style.marginLeft = "5%"
-    //             contentContainer.style.gridTemplateColumns = "repeat(4,25%)"
-    //             contentContainer.style.gridTemplateRows = "repeat(2,80%)"
-              
-    //         }    })
-    // },[windowSize])
-    // const overlay = document.getElementById("overlay")
 
-    // if(window.screen.availWidth === window.outerWidth){
-    //     overlay.style.marginTop = "30%"
-    // }else{
-    //     overlay.style.marginTop = "20%"
-    // }
 
-    if(!listing){
+    if(!listing && reviewers[0] === null){
         return null
     }else{
-
+    calcReviewAvgs()
             return (
       <>
           <div>
@@ -195,17 +201,112 @@ export default function ShowPage(){
                  <br></br>
                  <br></br>
                  <div className="border-line"></div>
-        
+
         </div>
-
-       
         <DateSelector listing={listing}>s</DateSelector>
+            </div>
+            
+            </div>
+    <br></br>
+    <br></br>
+            <div className="grid-container" >
+            <div id="review-border-line"></div>
 
-            {/* <DateSelector listing={listing} value={value}/> */}
+                <div id="reviews-container">
+                <br></br>
+            <br></br>
+                    <div id="description-title">Reviews</div>
+                    <br></br>
+                    <br></br>
+                    <div id="review-summary-container">
+                        <div className="review-summary-half">
+                            <div className="review-item">
+                                <div>Cleanliness</div>
+                                <div>{reviewStats !== undefined ? reviewStats["cleanliness"] : null}</div>
+                            </div>
+   
+                            <div className="review-item">
+                                <div>Communication</div>
+                                <div>{reviewStats !== undefined ? reviewStats["communication"] : null}</div>
+                            </div>
+                            <div className="review-item">
+                                <div>Check-in</div>
+                                <div>{reviewStats !== undefined ? reviewStats["check_in"] : null}</div>
+                            </div>
+                        </div>
+                        <div className="review-summary-half">
+                 
+                            <div className="review-item">
+                                <div>Accuracy</div>
+                                <div>{reviewStats !== undefined ? reviewStats["accuracy"] : null}</div>
+                            </div>
+                            <div className="review-item">
+                                <div>Location</div>
+                                <div>{reviewStats !== undefined ? reviewStats["location"] : null}</div>
+                            </div>
+             
+                        </div>
+                        </div>
+                        <br></br>
+                        <div id="review-details-container">
+                        <div id="details-left">
+                                
+                        {listing.reviews.slice(0,Math.floor(listing.reviews.length/2)).map((review,i) => 
+                        <>
+                                <div className="reviewer-info">
+                                    {reviewers[0] !== null ? 
+
+                                    <p>{reviewers[i]}</p>
+                                    :
+                                    null
+                                }
+                                </div>
+                                <br></br>
+                                <div className="review-text">
+                                        <p>{review.text}</p> 
+                                </div>
+                                <br></br>
+                                <br></br>
+                                 </>
+                                )}
+                            
+                        </div>
+                    
+                        <div id="details-right">
+                                
+                                {listing.reviews.slice(Math.floor(listing.reviews.length/2)).map((review,i) => 
+                                <>
+                                        <div className="reviewer-info">
+                                            {reviewers[0] !== null ? 
+        
+                                            <p>{reviewers[i + Math.floor(listing.reviews.length/2)]}</p>
+                                            :
+                                            null
+                                        }
+                                        </div>
+                                        <br></br>
+                                        <div className="review-text">
+                                                <p>{review.text}</p> 
+                                        </div>
+                                        <br></br>
+                                <br></br>
+        
+                                         </>
+                                        )}
+                                </div>
+                                </div>
+                        </div>
+  
+ 
             </div>
-            </div>
+                   <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+        
             <div className="grid-container">
             <br></br>
+
             <div id="description-title">Where you will be</div>
             <br></br>
             <br></br>
@@ -213,7 +314,7 @@ export default function ShowPage(){
             <br></br>
             
             <div id="show-map-container">
-         
+   
                     <Map listing={listing}></Map>
             </div>
 
@@ -235,23 +336,6 @@ export default function ShowPage(){
 }
 
 
-    /*
-    .images-grid on minimized:
-    grid-template-columns: repeat(4,25%);
-    grid-template-rows: repeat(2,75%);
-   
-    content :
-    margin-right 5%
-    margin-left 5%
-
-        .images-grid on open
-    grid-template-columns: repeat(4,2fr);
-    grid-template-rows: repeat(2,2fr);
-
-    content:
-        margin-left: 20%;
-    margin-right: 20%;
-    */
 
     
 

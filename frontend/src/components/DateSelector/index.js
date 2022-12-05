@@ -13,7 +13,8 @@ export default function DateSelector({listing}){
   const [checkinDate,setCheckInDate] = useState()
   const [checkOutDate, setCheckOutDate] = useState()
   const [disabledDates, setDisabledDates] = useState([])
-
+  const reviews = listing.reviews
+  console.log(reviews)
   function getDisabledDates(){
     const res_range = listing.reservations.map((res) => [new Date(res.start_date), new Date(res.end_date)])
     const takenDates = []
@@ -32,7 +33,7 @@ export default function DateSelector({listing}){
 
   useEffect(() => {
     getDisabledDates()
-  })
+  },[])
   useEffect(() => {
     if(checkinDate !== undefined){
       dispatch(addCheckin(checkinDate))
