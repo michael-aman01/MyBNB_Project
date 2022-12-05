@@ -12,7 +12,27 @@ export default function DateSelector({listing}){
   const [minDate, setMinDate] = useState(new Date())
   const [checkinDate,setCheckInDate] = useState()
   const [checkOutDate, setCheckOutDate] = useState()
+  const [disabledDates, setDisabledDates] = useState([])
 
+  function getDisabledDates(){
+    const res_range = listing.reservations.map((res) => [new Date(res.start_date), new Date(res.end_date)])
+    const takenDates = []
+    let dates = res_range.map(dateArr => {
+      const diff = Math.round((dateArr[1] - dateArr[0]) / (1000 * 60 * 60 * 24))
+      const date = new Date
+      for(let i = 0; i <= diff; i++){
+        let nextDate = new Date(date.setDate(dateArr[0].getDate() + i))
+        if(!takenDates.includes(nextDate)){
+          takenDates.push(nextDate.toDateString())
+        }
+      }
+    })
+    setDisabledDates(takenDates)
+  }
+
+  useEffect(() => {
+    getDisabledDates()
+  })
   useEffect(() => {
     if(checkinDate !== undefined){
       dispatch(addCheckin(checkinDate))
@@ -55,8 +75,7 @@ export default function DateSelector({listing}){
           minDate={checkinDate === undefined ? new Date() : checkinDate}
           onClickDay={(e) => checkinDate === undefined ? setCheckInDate(e) : setCheckOutDate(e)}
           showDoubleView={true}
-          
-        />
+          tileDisabled={(date) => disabledDates.includes(date.date.toDateString())}        />
       </div>
 
         </div>

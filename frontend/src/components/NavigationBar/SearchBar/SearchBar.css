@@ -25,7 +25,8 @@
 }
 #search-box {
   font-family: cereal_bk;
-  width: 330px;
+  width: 430px;
+  height: 430px;
   border: 1px solid #bebdbd;
   box-shadow: gray;
   border-radius: 20px;
