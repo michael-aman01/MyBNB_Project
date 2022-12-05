@@ -13,12 +13,9 @@
 #  listing_id  :bigint
 #
 class Review < ApplicationRecord
-    validates :host_rating, :check_in, :description, :accuracy, presence: true
-    validates :host_rating, :check_in, :accuracy, numericality: {in: 1..5}
-
-
-    belongs_to :user
-   
-    belongs_to :listing
+    validates :cleanliness, :accuracy, :communication, :location, :check_in, :text, :user_id, :listing_id, presence: true
     
+    belongs_to :user
+
+    belongs_to :listing
 end

@@ -33,7 +33,8 @@ class Api::ListingsController < ApplicationController
                    main_title: listing.main_title,
                    sub_title: listing.sub_title,
                    service_fee:listing.service_fee,
-                   amenities: listing.ammenities
+                   amenities: listing.ammenities,
+                   reviews: listing.reviews
             }
         end
             render json: data
@@ -72,7 +73,8 @@ class Api::ListingsController < ApplicationController
                    main_title: @listing.main_title,
                    sub_title: @listing.sub_title,
                    service_fee: @listing.service_fee,
-                   amenities: @listing.ammenities
+                   amenities: @listing.ammenities,
+                   reviews: @listing.reviews
             }
         else
             render json: "NO USER"

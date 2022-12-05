@@ -924,6 +924,1139 @@ sf_listing_objects = [
     }
 ]
 
+sf_reviews = [
+    [
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 3,
+            location: 4,
+            check_in: 2,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 3,
+            location: 3,
+            check_in: 3,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 4,
+            location: 4,
+            check_in: 2,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 5,
+            location: 5,
+            check_in: 2,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 5,
+            communication: 5,
+            location: 5,
+            check_in: 3,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 4,
+            location: 4,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 5,
+            communication: 4,
+            location: 4,
+            check_in: 3,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 3,
+            location: 4,
+            check_in: 4,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 5,
+            location: 4,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 4,
+            location: 5,
+            check_in: 4,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 2,
+            location: 5,
+            check_in: 2,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 3,
+            communication: 3,
+            location: 4,
+            check_in: 4,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 4,
+            communication: 5,
+            location: 5,
+            check_in: 2,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 5,
+            location: 3,
+            check_in: 2,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 2,
+            accuracy: 3,
+            communication: 2,
+            location: 3,
+            check_in: 4,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 2,
+            location: 5,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 3,
+            location: 2,
+            check_in: 5,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 3,
+            accuracy: 4,
+            communication: 4,
+            location: 4,
+            check_in: 3,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 3,
+            communication: 3,
+            location: 2,
+            check_in: 2,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 2,
+            communication: 2,
+            location: 2,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 3,
+            location: 5,
+            check_in: 4,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 5,
+            accuracy: 4,
+            communication: 5,
+            location: 4,
+            check_in: 4,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 5,
+            communication: 2,
+            location: 3,
+            check_in: 2,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 2,
+            location: 5,
+            check_in: 2,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 5,
+            accuracy: 5,
+            communication: 3,
+            location: 2,
+            check_in: 5,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 2,
+            location: 3,
+            check_in: 2,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 5,
+            communication: 4,
+            location: 2,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 2,
+            location: 2,
+            check_in: 5,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 4,
+            accuracy: 2,
+            communication: 4,
+            location: 2,
+            check_in: 5,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 5,
+            location: 5,
+            check_in: 3,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 4,
+            communication: 4,
+            location: 5,
+            check_in: 3,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 3,
+            accuracy: 5,
+            communication: 4,
+            location: 5,
+            check_in: 3,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 4,
+            location: 5,
+            check_in: 3,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 5,
+            location: 3,
+            check_in: 2,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 5,
+            communication: 3,
+            location: 3,
+            check_in: 2,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [],
+    [
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 4,
+            location: 4,
+            check_in: 3,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 3,
+            communication: 5,
+            location: 5,
+            check_in: 2,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 4,
+            location: 2,
+            check_in: 4,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 3,
+            location: 2,
+            check_in: 4,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 3,
+            location: 3,
+            check_in: 4,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 3,
+            location: 4,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 5,
+            communication: 3,
+            location: 3,
+            check_in: 3,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 5,
+            location: 4,
+            check_in: 3,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 2,
+            location: 4,
+            check_in: 5,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 3,
+            communication: 5,
+            location: 5,
+            check_in: 2,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 5,
+            location: 2,
+            check_in: 3,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 5,
+            location: 4,
+            check_in: 5,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 4,
+            communication: 3,
+            location: 3,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 4,
+            communication: 3,
+            location: 5,
+            check_in: 3,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 3,
+            accuracy: 5,
+            communication: 3,
+            location: 5,
+            check_in: 4,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 2,
+            location: 4,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 4,
+            location: 4,
+            check_in: 4,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 3,
+            accuracy: 3,
+            communication: 4,
+            location: 3,
+            check_in: 3,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 4,
+            location: 3,
+            check_in: 2,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 4,
+            communication: 4,
+            location: 5,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 2,
+            communication: 3,
+            location: 3,
+            check_in: 5,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 2,
+            location: 5,
+            check_in: 4,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 4,
+            location: 3,
+            check_in: 5,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 2,
+            communication: 2,
+            location: 3,
+            check_in: 5,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 2,
+            location: 2,
+            check_in: 4,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 2,
+            communication: 3,
+            location: 2,
+            check_in: 5,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 3,
+            communication: 2,
+            location: 4,
+            check_in: 4,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 3,
+            location: 2,
+            check_in: 4,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 2,
+            location: 2,
+            check_in: 4,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 4,
+            location: 3,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 2,
+            location: 5,
+            check_in: 2,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 3,
+            location: 5,
+            check_in: 5,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 4,
+            location: 5,
+            check_in: 4,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 5,
+            communication: 4,
+            location: 2,
+            check_in: 2,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 5,
+            location: 5,
+            check_in: 2,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 2,
+            location: 3,
+            check_in: 4,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 2,
+            location: 3,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 2,
+            location: 5,
+            check_in: 5,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 4,
+            location: 2,
+            check_in: 2,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 5,
+            location: 2,
+            check_in: 5,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 4,
+            location: 2,
+            check_in: 2,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 3,
+            communication: 5,
+            location: 5,
+            check_in: 4,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 3,
+            accuracy: 5,
+            communication: 2,
+            location: 2,
+            check_in: 2,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 5,
+            location: 4,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 5,
+            location: 3,
+            check_in: 5,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 5,
+            location: 5,
+            check_in: 4,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 5,
+            communication: 2,
+            location: 2,
+            check_in: 5,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 4,
+            location: 2,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 5,
+            communication: 4,
+            location: 5,
+            check_in: 4,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 3,
+            accuracy: 3,
+            communication: 3,
+            location: 3,
+            check_in: 2,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 3,
+            location: 4,
+            check_in: 3,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 3,
+            communication: 5,
+            location: 4,
+            check_in: 2,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 4,
+            location: 2,
+            check_in: 3,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 2,
+            location: 4,
+            check_in: 2,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 5,
+            location: 2,
+            check_in: 4,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 2,
+            location: 5,
+            check_in: 2,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 2,
+            location: 4,
+            check_in: 2,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 4,
+            communication: 4,
+            location: 5,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 4,
+            communication: 3,
+            location: 4,
+            check_in: 4,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 3,
+            location: 3,
+            check_in: 3,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 4,
+            communication: 5,
+            location: 3,
+            check_in: 5,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 2,
+            location: 4,
+            check_in: 2,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 5,
+            communication: 3,
+            location: 2,
+            check_in: 3,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 4,
+            location: 2,
+            check_in: 2,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 4,
+            communication: 4,
+            location: 4,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 4,
+            communication: 4,
+            location: 5,
+            check_in: 2,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 5,
+            location: 5,
+            check_in: 3,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 3,
+            location: 4,
+            check_in: 4,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 5,
+            location: 5,
+            check_in: 4,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 2,
+            location: 2,
+            check_in: 5,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 5,
+            location: 4,
+            check_in: 5,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 2,
+            communication: 5,
+            location: 5,
+            check_in: 4,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 3,
+            communication: 5,
+            location: 3,
+            check_in: 3,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 4,
+            location: 5,
+            check_in: 2,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 3,
+            communication: 3,
+            location: 3,
+            check_in: 3,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 2,
+            communication: 5,
+            location: 3,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 4,
+            communication: 2,
+            location: 3,
+            check_in: 3,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 5,
+            location: 4,
+            check_in: 2,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 4,
+            communication: 2,
+            location: 3,
+            check_in: 5,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 5,
+            communication: 5,
+            location: 2,
+            check_in: 3,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 4,
+            location: 2,
+            check_in: 5,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 3,
+            location: 5,
+            check_in: 5,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 3,
+            location: 5,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 5,
+            communication: 4,
+            location: 2,
+            check_in: 3,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 4,
+            accuracy: 3,
+            communication: 3,
+            location: 3,
+            check_in: 2,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 2,
+            communication: 3,
+            location: 3,
+            check_in: 5,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 4,
+            location: 2,
+            check_in: 3,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 3,
+            accuracy: 2,
+            communication: 4,
+            location: 2,
+            check_in: 2,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 3,
+            accuracy: 3,
+            communication: 4,
+            location: 3,
+            check_in: 2,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 3,
+            communication: 4,
+            location: 5,
+            check_in: 4,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 5,
+            communication: 4,
+            location: 5,
+            check_in: 2,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [
+        {
+            cleanliness: 3,
+            accuracy: 4,
+            communication: 3,
+            location: 2,
+            check_in: 2,
+            text: "Nice and comfortable stay. Most of the tourist attractions are very close from the property."
+        },
+        {
+            cleanliness: 4,
+            accuracy: 2,
+            communication: 5,
+            location: 2,
+            check_in: 2,
+            text: "it was a very convenient location on lombard st. They have their own parking which is a MUST because whew the break ins lately are not it. The rooms were clean and for a hostel it was very quiet. Staff were friendly."
+        },
+        {
+            cleanliness: 2,
+            accuracy: 2,
+            communication: 2,
+            location: 5,
+            check_in: 4,
+            text: "Great spot for the price!"
+        },
+        {
+            cleanliness: 4,
+            accuracy: 5,
+            communication: 5,
+            location: 4,
+            check_in: 3,
+            text: "No frills accommodation in good location with free parking. Bed was comfy + clean."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 2,
+            location: 4,
+            check_in: 3,
+            text: "The hotel offers the minimum of what you expect. Breakfast is served from 9 AM which was to late for me. It is a worn out hotel, but staying for a night won't kill you."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 5,
+            location: 5,
+            check_in: 5,
+            text: "Nice hostel close to typical sightseeing spots, so pretty good for some days with sightseeing! Bars and Restaurants close, very friendly staff! Unfortunately the rooms are a Bit noisy."
+        },
+        {
+            cleanliness: 5,
+            accuracy: 2,
+            communication: 5,
+            location: 2,
+            check_in: 5,
+            text: "We had a great 3 night stay here during our first trip to San Francisco - our room was lovely, clean and spacious. The staff were so friendly and helpful; nothing was too much trouble! The location was brilliant as well. Would 100% recommend this accommodation."
+        }
+    ],
+    [  {
+        cleanliness: 5,
+        accuracy: 2,
+        communication: 5,
+        location: 2,
+        check_in: 5,
+        text: "Awesome Stay"
+
+    }],
+    [{
+        cleanliness: 1,
+        accuracy: 1,
+        communication: 1,
+        location: 1,
+        check_in: 1,
+        text:"stay away! WORST STAY EVER"
+    }],    
+    [{
+        cleanliness: 1,
+        accuracy: 1,
+        communication: 1,
+        location: 1,
+        check_in: 1,
+        text:"stay away! WORST STAY EVER"
+    }]
+
+]
+listings = []
+users = []
 puts "creating SF listings...."
 sf_listing_objects.each do |listing|
     u =    User.create!({
@@ -933,6 +2066,28 @@ sf_listing_objects.each do |listing|
         password: 'password'
       })
     listing["user_id"] = u.id
-    Listing.create!(listing)
+    l = Listing.create!(listing)
+    users.push(u.id)
+    listings.push(l)
 end
+
+puts "CREATING REVIEWS"
+sf_reviews.each_with_index do |review_array,i|
+    listing_id = listings[i].id
+    review_array.each do |review|
+        u =    User.create!({
+            first_name: Faker::Name.first_name,
+            last_name: Faker::Name.last_name,
+            email: Faker::Internet.unique.email,
+            password: 'password'
+          })
+         review["user_id"] = u.id
+         review["listing_id"] = listing_id
+      
+        Review.create!(review)
+    end
+
+end
+
+
 puts "DONE"
