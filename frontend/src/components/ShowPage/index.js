@@ -32,8 +32,10 @@ export default function ShowPage(){
             grouped[key] = total
         })
      
-        
-       return grouped
+        let avgScore = (Object.values(grouped).map(val => parseFloat(val)).reduce((a,b) => a + b, 0)/keys.length).toFixed(2)
+        console.log(avgScore)
+        grouped["avg-score"] = avgScore
+        return grouped
 
     }
     useEffect(() => {
@@ -215,7 +217,11 @@ export default function ShowPage(){
                 <div id="reviews-container">
                 <br></br>
             <br></br>
-                    <div id="description-title">Reviews</div>
+                    <div id="avg-review-score">
+                        <img height="30px" width="30px" src={reviewStar}></img>
+                       <span>{reviewStats !== undefined ? `${reviewStats["avg-score"]}  ·  ${listing.reviews.length} reviews` : null} </span> 
+               
+                        </div>
                     <br></br>
                     <br></br>
                     <div id="review-summary-container">
