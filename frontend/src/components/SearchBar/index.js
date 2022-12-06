@@ -1,5 +1,5 @@
 import "./SearchBar.css"
-import searchIcon from "../../../assets/search-icon.svg"
+import searchIcon from "../../assets/search-icon.svg"
 
 const handleClick = (e) => {
     const NavBar = document.getElementById("nav-container")

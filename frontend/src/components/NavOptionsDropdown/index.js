@@ -1,15 +1,15 @@
 import {useDispatch, useSelector } from 'react-redux'
-import LoginFormPage from '../../LoginFormPage'
-import LogOutButton from '../../LogoutButton'
-import SignupFormPage from '../../SignupFormPage'
+import LoginFormPage from '../LoginFormPage'
+import LogOutButton from '../LogoutButton'
+import SignupFormPage from '../SignupFormPage'
 import { NavLink } from "react-router-dom";
-import { login, logout } from '../../../store/session'
-import { getUser } from '../../../store/user';
+import { login, logout } from '../../store/session'
+import { getUser } from '../../store/user'
 import "./NavOptionsDropdown.css"
-import stripes from '../../../assets/navigation-button-stripes.svg'
-import buttonImage from "../../../assets/navigation-button.svg"
-import ProfilePage from '../../ProfilePage';
-import { useEffect } from 'react';
+import stripes from '../../assets/navigation-button-stripes.svg'
+import buttonImage from "../../assets/navigation-button.svg"
+import ProfilePage from '../ProfilePage';
+
 
 
 

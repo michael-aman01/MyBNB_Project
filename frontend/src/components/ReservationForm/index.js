@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useSelector } from "react-redux";
-import {fetchUser, getUser} from '../../store/user'
+import {getUser} from '../../store/user'
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import DateSelector from "../DateSelector_old";
 import { fetchRerservations, makeReservation } from "../../store/reservation";
 import "./ReservationForm.css"
 import { useHistory } from "react-router-dom";
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
-import xMark from "../../assets/iconmonstr-x-mark-1.svg"
 import downArrow from "../../assets/down-arrow.png"
 import leftArrow from "../../assets/left-arrow.png"
 

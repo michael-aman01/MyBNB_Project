@@ -1,9 +1,7 @@
 
 import "./NavigationBar.css"
-import NavigationToggle from "../NavigationToggle";
-import logo from "../../assets/logo.jpg"
-import SearchBar from './SearchBar';
-import NavOptionsDropdown from './NavOptionsDropdown';
+import SearchBar from '../SearchBar';
+import NavOptionsDropdown from '../NavOptionsDropdown';
 import { useHistory } from "react-router-dom";
 import bnbLogo from "../../assets/Airbnb_Logo.png"
 export default function NavigationBar(){

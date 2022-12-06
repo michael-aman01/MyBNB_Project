@@ -4,6 +4,7 @@ import sessionReducer, { UserReducer } from './session';
 import ListingsReducer from './data';
 import ReservationsReducer from './reservation';
 import {FormReducer} from "./session"
+import ReviewReducer from './review';
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   listings: ListingsReducer,
   activeForm: FormReducer,
   reservations: ReservationsReducer,
-  user: UserReducer
+  user: UserReducer,
+  review: ReviewReducer
 })
 
 let enhancer;

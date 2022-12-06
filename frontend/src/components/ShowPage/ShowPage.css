@@ -325,6 +325,7 @@ height: 30px;
 
 
 .guests-confirmation-container p {
+  
 }
 
 
@@ -359,61 +360,8 @@ font-size: 21px;
   margin-bottom: 100px;
 }
 
-#reviews-container {
-  grid-column-start: 2;
-  grid-column-end: 5;
-}
-
-#review-summary-container {
-  display: flex;
-  justify-content: space-between;
-  line-height: 2;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.review-summary-half {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-right: 10%;
-  
-}
-.review-item {
-  display: flex;
-  font-size: 22px;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.reviewer-info > p{
-  font-size: 25px;
-  font-weight: 600;
-}
-
-.review-text p{
-  font-size: 20px;
-}
-
-
-#review-details-container {
-  display: flex;
-  justify-content: space-between;
-
-}
-
-#details-left {
-  margin-right: 10%;
-}
-
 #review-border-line {
   grid-column-start: 2;
   grid-column-end: 5;
   border-bottom: 1px solid rgb(171, 168, 168);
-}
-
-#avg-review-score > span{
-  font-size: 35px;
-  font-weight: 600;
-  margin-left: 10px;
 }
