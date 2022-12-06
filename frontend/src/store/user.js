@@ -18,6 +18,8 @@ const ADD_USERS = 'users/ADD_USERS'
     )
   }
 
+
+
   export const getCurrentUser = state => {
     if(state.user){
       return state.user.user
@@ -61,7 +63,7 @@ const ADD_USERS = 'users/ADD_USERS'
   export default function UserReducer(state={},action){
     switch(action.type){
        case ADD_USERS:
-          return {...state, ...action.users}
+          return {...action.users}
         case ADD_USER:
             return {...action.user}
         default:

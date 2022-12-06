@@ -7,7 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {getUser} from '../../store/user'
 import { useParams } from 'react-router-dom';
 import { createReview } from '../../store/review';
-import { fetchListing } from '../../store/data';
+import ReactSlider from "react-slider";
+import xMark from "../../assets/iconmonstr-x-mark-1.svg"
+import ReviewItem from '../ReviewIndexItem';
 
 export default function Reviews({listing}){
 
@@ -17,18 +19,21 @@ export default function Reviews({listing}){
     const {user_id} = useParams()
     const currentUser = useSelector(getUser)
     const [user,setUser] = useState()
-    const [cleanliness, setCleanliness] = useState(5)
-    const [communication, setCommunication] = useState(5)
+   
+    const [cleanliness, setCleanliness] = useState()
+    const [communication, setCommunication] = useState()
 
-    const [checkIn, setCheckIn] = useState(5)
-    const [accuracy, setAccuracy] = useState(5)
-    const [location, setLocation] = useState(5)
+    const [checkIn, setCheckIn] = useState()
+    const [accuracy, setAccuracy] = useState()
+    const [location, setLocation] = useState()
     const [text, setText] = useState("this is a usestate tess")
     const [currentListing, setCurrentListing] = useState(listing)
+    const [reviews, setReviews] = useState(currentListing.reviews)
 
+    
     function calcReviewAvgs(){
         const keys = ["cleanliness","communication","check_in","accuracy","location"]
-        const reviews = currentListing.reviews
+       
         const grouped = {}
 
         keys.map(key => {
@@ -54,7 +59,7 @@ export default function Reviews({listing}){
             currentListing.reviews.map(async review => {
     
                 let res = await dispatch(fetchUsers())
-
+            
                 let user = await res.users[review.user_id]
            
                 users.push(user.first_name)
@@ -64,7 +69,17 @@ export default function Reviews({listing}){
             setReviewStats(stats)
         }
         
-    },[])
+    },[currentListing])
+    
+    const toggleReviewModal = (e) => {
+        e.preventDefault()
+        const modalTags = Array.from(document.getElementsByClassName('review-form-modal' ))
+        modalTags.map(tag => {
+
+            tag.style.display === "none" ? tag.style.display = "flex" : tag.style.display = "none"
+        })
+
+    }
     
     const handleCreate = async (e) => {
         e.preventDefault()
@@ -81,13 +96,28 @@ export default function Reviews({listing}){
         let check = Object.values(review).filter(val => val === undefined).length > 0 ? false : true
         if(check === true){
             const res = await dispatch(createReview(review))
-            window.location.reload()
- 
+            let updatedReviews = [...reviews, review]
+            let updatedReviewers = [...reviewers, currentUser.firstName]
+            let updatedListing = currentListing
+            updatedListing["reviews"] = updatedReviews
+            updatedListing["reviewers"] = updatedReviewers
+            setCurrentListing(updatedListing)
+            setReviews(updatedReviews)
+            setReviewers(updatedReviewers)
+            let stats = calcReviewAvgs()
+            setReviewStats(stats)
+            
         }else{
             alert("fill out info")
         }
+    }
 
-      
+    const handleUpdate = (e) => {
+        e.preventDefault()
+    }
+
+    const handleDelete = (e) => {
+        e.preventDefault()
     }
     if(reviewers[0] === null){
         return null
@@ -138,52 +168,64 @@ export default function Reviews({listing}){
                         <br></br>
                         <div id="review-details-container">
                         <div id="details-left">
-                                
-                        {currentListing.reviews.slice(0,Math.floor(currentListing.reviews.length/2)).map((review,i) => 
-                        <>
-                                <div className="reviewer-info">
-                                    {reviewers[0] !== null ? 
+                                <ReviewItem currentListing={currentListing} reviewers={reviewers} currentUser={currentUser}/>
 
-                                    <p>{reviewers[i]}</p>
-                                    :
-                                    null
-                                }
-                                </div>
-                                <br></br>
-                                <div className="review-text">
-                                        <p>{review.text}</p> 
-                                </div>
-                                <br></br>
-                                <br></br>
-                                 </>
-                                )}
                             
                         </div>
                     
                         <div id="details-right">
-                                
-                                {currentListing.reviews.slice(Math.floor(currentListing.reviews.length/2)).map((review,i) => 
-                                <>
-                                        <div className="reviewer-info">
-                                            {reviewers[0] !== null ? 
-        
-                                            <p>{reviewers[i + Math.floor(currentListing.reviews.length/2)]}</p>
-                                            :
-                                            null
-                                        }
-                                        </div>
-                                        <br></br>
-                                        <div className="review-text" >
-                                                <p>{review.text}</p> 
-                                        </div>
-                                        <br></br>
-                                        <br></br>
-                                         </>
-                                        )}
+                                <ReviewItem currentListing={currentListing} reviewers={reviewers} currentUser={currentUser}/>
+                        </div>
                                 </div>
+                                <div id="create-review-container">
+                                    <span onClick={toggleReviewModal} className="toggle-review-button">Write a review</span>
+                                    <div id="review-modal" className='review-form-modal' >
+                                    <div id="review-modal-background" className='review-form-modal'  >
+                                    <div id="review-modal-content"className='review-form-modal'  >
+                                        <div id="review-modal-header">
+                                            <img onClick={toggleReviewModal} width="20px" heigh="20px" alt="" src={xMark} className="toggle-review-button"></img>
+                                            <div id="review-banner">Write a Review</div>
+                                      
+                                        </div>
+                                        <div id="review-input-container">
+                                            <div className='review-rating-item'>
+                                            <div>
+                                                Accuracy: 
+                                            </div>
+                                            <div className='slide-container'>
+                                                <ReactSlider
+                                                    className='review-slider'
+                                                    trackClassName='review-track'
+                                                    thumbClassName='review-thumb'
+                                                    onChange={(e) => setAccuracy(e)}
+                                                />
+                                            </div>
+                                            <div className='review-rating-display'></div>
+                                                        {accuracy === undefined ? 0 : accuracy}
+                                            </div>
+                                            <div className='review-rating-item'>
+                                            <div>
+                                                Communication: 
+                                            </div>
+                                            <div className='slide-container'>
+                                                <ReactSlider
+                                                    className='review-slider'
+                                                    trackClassName='review-track'
+                                                    thumbClassName='review-thumb'
+                                                    onChange={(e) => setCommunication(e)}
+                                                />
+                                            </div>
+                                            <div className='review-rating-display'></div>
+                                                        {communication}
+                                            </div>
+                                           
+                                            <div className='review-rating-item'>location</div>
+                                            <div className='review-rating-item'>check-in</div>
+                                            <div className='review-rating-item'>cleanliness</div>
+                                        </div>
+                                    </div>
+                                    </div>
                                 </div>
-                                <div id="create-review-container" onClick={handleCreate}>
-                                    Write a review
                                 </div>
                                 <br></br>
                                 <br></br>
