@@ -20,12 +20,12 @@ export default function Reviews({listing}){
     const currentUser = useSelector(getUser)
     const [user,setUser] = useState()
    
-    const [cleanliness, setCleanliness] = useState()
-    const [communication, setCommunication] = useState()
+    const [cleanliness, setCleanliness] = useState(0)
+    const [communication, setCommunication] = useState(0)
 
-    const [checkIn, setCheckIn] = useState()
-    const [accuracy, setAccuracy] = useState()
-    const [location, setLocation] = useState()
+    const [checkIn, setCheckIn] = useState(0)
+    const [accuracy, setAccuracy] = useState(0)
+    const [location, setLocation] = useState(0)
     const [text, setText] = useState("this is a usestate tess")
     const [currentListing, setCurrentListing] = useState(listing)
     const [reviews, setReviews] = useState(currentListing.reviews)
@@ -177,6 +177,7 @@ export default function Reviews({listing}){
                                 <ReviewItem currentListing={currentListing} reviewers={reviewers} currentUser={currentUser}/>
                         </div>
                                 </div>
+                                <br></br>
                                 <div id="create-review-container">
                                     <span onClick={toggleReviewModal} className="toggle-review-button">Write a review</span>
                                     <div id="review-modal" className='review-form-modal' >
@@ -198,6 +199,8 @@ export default function Reviews({listing}){
                                                     trackClassName='review-track'
                                                     thumbClassName='review-thumb'
                                                     onChange={(e) => setAccuracy(e)}
+                                                    min={0}
+                                                    max={5}
                                                 />
                                             </div>
                                             <div className='review-rating-display'></div>
@@ -213,15 +216,88 @@ export default function Reviews({listing}){
                                                     trackClassName='review-track'
                                                     thumbClassName='review-thumb'
                                                     onChange={(e) => setCommunication(e)}
+                                                    min={0}
+                                                    max={5}
                                                 />
                                             </div>
                                             <div className='review-rating-display'></div>
                                                         {communication}
                                             </div>
                                            
-                                            <div className='review-rating-item'>location</div>
-                                            <div className='review-rating-item'>check-in</div>
-                                            <div className='review-rating-item'>cleanliness</div>
+                                            <div className='review-rating-item'>
+                                            <div>
+                                                Location: 
+                                            </div>
+                                            <div className='slide-container'>
+                                                <ReactSlider
+                                                    className='review-slider'
+                                                    trackClassName='review-track'
+                                                    thumbClassName='review-thumb'
+                                                    onChange={(e) => setLocation(e)}
+                                                    min={0}
+                                                    max={5}
+                                                />
+                                            </div>
+                                            <div className='review-rating-display'></div>
+                                                        {location}
+                                            </div>
+
+                                            </div>
+                                            <div className='review-rating-item'>
+                                            <div>
+                                                Check-in: 
+                                            </div>
+                                            <div className='slide-container'>
+                                                <ReactSlider
+                                                    className='review-slider'
+                                                    trackClassName='review-track'
+                                                    thumbClassName='review-thumb'
+                                                    onChange={(e) => setCheckIn(e)}
+                                                    min={0}
+                                                    max={5}
+                                                />
+                                            </div>
+                                            <div className='review-rating-display'>
+                                            {checkIn}
+                                            </div>    
+                                            </div>
+                                            <div className='review-rating-item'>
+                                            <div>
+                                                Cleanliness: 
+                                            </div>
+                                            <div className='slide-container'>
+                                                <ReactSlider
+                                                    className='review-slider'
+                                                    trackClassName='review-track'
+                                                    thumbClassName='review-thumb'
+                                                    onChange={(e) => setCleanliness(e)}
+                                                    min={0}
+                                                    max={5}
+                                                />
+                                            </div>
+                                            <div className='review-rating-display'>
+                                                {cleanliness}
+                                            </div>
+                                            </div>
+                                            <br></br>
+                                            <div id="review-text-box">
+                                                <div>
+                                                    Additional Info:
+                                                </div>
+                                                <br></br>
+                                                <div >
+                                                <textarea>
+                                                    {text}
+                                                </textarea>
+                                                </div>
+                        
+                                            </div>
+                                            <br></br>
+                                            <div id="login-submit-container">
+                                            <button id="login-submit-button">
+                                                    <span>Submit</span>
+                                            </button>
+                                        </div>
                                         </div>
                                     </div>
                                     </div>
@@ -231,7 +307,8 @@ export default function Reviews({listing}){
                                 <br></br>
                                 <br></br>
                                 <div id="review-border-line"></div>
-                        </div>
+              
+                    
         </>
     )}
 }

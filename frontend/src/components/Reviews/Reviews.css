@@ -85,7 +85,7 @@
   #review-modal-content {
     display: flex;
     flex-direction: column;
-    height: 700px;
+    height: fit-content;
     width: 600px;
     margin-left: 33vw;
     margin-top: 10%;
@@ -153,4 +153,9 @@
   border-radius: 20px;
   background: black;
   position: relative;
+}
+
+#review-text-box textarea{
+  width: 100%;
+  height: 200px;
 }
