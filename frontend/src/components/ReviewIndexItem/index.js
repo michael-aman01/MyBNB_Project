@@ -17,9 +17,12 @@ export default function ReviewsIndexItem({review, reviewer}){
 
  
 
-    const openModal = (e) => {
+    const openUpdateModal = (e) => {
         e.preventDefault()
-        const modalTags = Array.from(document.getElementsByClassName('review-form-modal' ))
+ 
+     
+        const modalTags = Array.from(document.getElementsByClassName('review-form-modal' )).filter(tag => tag.getAttribute("data-id") === e.target.getAttribute("data-id"))
+   
         modalTags.map(tag => {
             tag.style.display = "flex" 
         })
@@ -42,25 +45,20 @@ if(reviewer !== undefined && review !== undefined){
                         </div>
                         {
                             reviewer.id === user.id ? 
-                            <div onClick={openModal}>update</div>
+                            <>
+                            <div  data-id={review.id} onClick={openUpdateModal}>update</div>
+                            <div id="reviews-container">
+                            <ReviewForm review={review}  type={'update'}></ReviewForm>
+                            </div>  
+                            </>
+     
+                            
                             :
                             null
                         }
                         
                      </div>
-                    
-               
-                            {
-                                reviewer.id === user.id ? 
-                                <div id="reviews-container">
-                                         <ReviewForm review={review}  type={'update'}></ReviewForm>
-                                </div>
-
-                           
-
-                                :
-                                 null
-                                }
+                
                             </div>
                          
                             </>

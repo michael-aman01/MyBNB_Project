@@ -19,17 +19,16 @@ class Api::ReviewsController < ApplicationController
 
 
     def update
-        @review = Review.update(cleanliness: params[:cleanliness],
-            accuracy: params[:accuracy],
-            communication: params[:communication],
-            location: params[:location],
-            check_in: params[:check_in],
-            text: params[:text],
-            user_id: params[:user_id],
-            listing_id: params[:listing_id],
-            text: params[:text]
-        )
-        if @review 
+        @review = Review.find_by(id: params[:id])
+       
+        if @review && @review.update(cleanliness: params[:cleanliness], accuracy: params[:accuracy],
+                                                                            communication: params[:communication],
+                                                                            location: params[:location],
+                                                                            check_in: params[:check_in],
+                                                                            text: params[:text],
+                                                                            user_id: params[:user_id],
+                                                                            listing_id: params[:listing_id],
+                                                                            text: params[:text])
             render json: @review
         else
             render json: "ERROR"

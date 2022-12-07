@@ -14,6 +14,8 @@ export default function ReviewForm({review, type}){
     const [location, setLocation] = useState(review.location)
     const [cleanliness, setCleanliness] = useState(review.cleanliness)
 
+    const modalId = type === "create"? "create" : review.id
+
     const callbacks = {
         "cleanliness": (val) => setCleanliness(val),
         "communication": (val) => setCommunication(val),
@@ -22,6 +24,8 @@ export default function ReviewForm({review, type}){
         "check_in": (val) => setCheckIn(val),
         "location": (val) => setLocation(val)
     }
+
+
 
     const reviewBody = {
         "cleanliness":  cleanliness,
@@ -40,14 +44,35 @@ export default function ReviewForm({review, type}){
 
 
 
+
+
     const dispatch = useDispatch()
 
-    const handleUpdate = async (e) => {
+    const handleUpdateReview = async (e) => {
         e.preventDefault()
         let check = Object.values(reviewBody).filter(val => val === undefined).length === 0 ? true : false
         console.log(check)
         if(check){
+            console.log(reviewBody)
             const res = await dispatch(updateReview(reviewBody))
+  
+            console.log(res)
+            closeModal()
+            return res
+         
+        }else{
+            alert("please complete form")
+        }
+    }
+
+    const handleCreateReview =async  (e) => {
+        e.preventDefault()
+        delete reviewBody.id
+        let check = Object.values(reviewBody).filter(val => val === undefined).length === 0 ? true : false
+  
+        if(check){
+ 
+            const res = await dispatch(createReview(reviewBody))
             console.log(res)
             closeModal()
         }else{
@@ -55,19 +80,7 @@ export default function ReviewForm({review, type}){
         }
     }
 
-    const handleCreate = () => {
-        alert("create")
-    }
 
-    const openModal = (e) => {
-        e.preventDefault()
-        alert("e")
-        const modalTags = Array.from(document.getElementsByClassName('review-form-modal' ))
-        alert(modalTags.length)
-        modalTags.map(tag => {
-            tag.style.display = "flex" 
-        })
-    }
 
     const closeModal = () => {
     
@@ -76,13 +89,13 @@ export default function ReviewForm({review, type}){
             tag.style.display = "none" 
         })
     }
-    console.log(review)
+
     return(
         <>
   
-        <div id="review-modal"  className='review-form-modal'>
-             <div id="review-modal-background" className='review-form-modal'>
-                <div id="review-modal-content" className='review-form-modal'>
+        <div id="review-modal"  data-id={modalId} className='review-form-modal'>
+             <div id="review-modal-background" data-id={modalId}  className='review-form-modal'>
+                <div id="review-modal-content" data-id={modalId}  className='review-form-modal'>
                     <div id="review-modal-header">
                     <div id="review-banner">
                         <img src={x} onClick={closeModal} height="20px"></img>
@@ -131,7 +144,7 @@ export default function ReviewForm({review, type}){
                         
                     </div>
                     <div id="review-form-button-container">
-                        <button onClick={type === "update" ? handleUpdate : handleCreate}>submit</button>
+                        <button onClick={type === "update" ? handleUpdateReview : handleCreateReview}>submit</button>
                     </div>
                     </div>
              

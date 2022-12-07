@@ -4,13 +4,14 @@
     inset: 0px;
     max-height: calc(var(--vh, 1vh) * 100);
     padding-top: calc(12px + env(safe-area-inset-top, 0));
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
   }
     #review-modal-background{
       position: fixed;
+      display: none;
       top: 0;
       right: 0;
       left: 0;
@@ -19,7 +20,7 @@
     }
   
     #review-modal-content {
-      display: flex;
+      display: none;
       flex-direction: column;
       height: fit-content;
       width: 600px;
