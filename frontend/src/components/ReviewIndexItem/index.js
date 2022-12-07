@@ -1,9 +1,11 @@
 import ReviewForm from "../ReviewForm"
 import {useParams } from "react-router-dom"
-import {useDispatch, useSelector, useStore} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {getUser} from '../../store/user'
 import { useEffect, useState } from "react"
 import "./reviewIndexItem.css"
+
+
 export default function ReviewsIndexItem({review, reviewer}){
     const newReview = useSelector(state => state.review)
     const {id} = useParams()
@@ -51,18 +53,15 @@ if(reviewer !== undefined && currentReview !== undefined){
                             </div>  
                             </>
      
-                            
                             :
                             null
                         }
                         
-                     </div>
-                
-                            </div>
+                 </div>
+                </div>
                          
                             </>
                  
-
     )
 }else{
     return (
