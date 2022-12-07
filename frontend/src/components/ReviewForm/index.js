@@ -5,6 +5,7 @@ import ReactSlider from 'react-slider'
 import {createReview, updateReview} from "../../store/review"
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 export default function ReviewForm({review, type}){
 
     const [communication, setCommunication] = useState(review.communication)
@@ -13,6 +14,7 @@ export default function ReviewForm({review, type}){
     const [text, setText] = useState(review.text)
     const [location, setLocation] = useState(review.location)
     const [cleanliness, setCleanliness] = useState(review.cleanliness)
+    
 
     const modalId = type === "create"? "create" : review.id
 
@@ -36,7 +38,7 @@ export default function ReviewForm({review, type}){
         "listing_id": review.listing_id,
         "id": review.id
     }
-
+    const history = useHistory()
     const dispatch = useDispatch()
 
     const handleUpdateReview = async (e) => {
@@ -47,7 +49,9 @@ export default function ReviewForm({review, type}){
             console.log(reviewBody)
             const res = await dispatch(updateReview(reviewBody))
   
-            console.log(res)
+ 
+            // history.push(`/listings/${reviewBody.listing_id}`)
+            // window.location.reload()
             closeModal()
             return res
          
@@ -65,6 +69,7 @@ export default function ReviewForm({review, type}){
  
             const res = await dispatch(createReview(reviewBody))
             console.log(res)
+            history.push(`/listings/${reviewBody.listing_id}`)
             closeModal()
         }else{
             alert("please complete form")

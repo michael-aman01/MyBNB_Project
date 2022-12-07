@@ -12,7 +12,7 @@ import ReviewForm from "../ReviewForm"
 export default function ReviewsIndex(){
     const {id} = useParams()
     const dispatch = useDispatch()
-
+    const newReview = useSelector(state => state.review)
     const currentUser = useSelector(getUser)
     const listings = useSelector(state => state.listings)
     const [currentListing, setCurrentListing] = useState(listings[id])
@@ -62,6 +62,16 @@ export default function ReviewsIndex(){
             tag.style.display = "flex" 
         })
     }
+
+
+    useEffect(() => {
+        const index = reviews.map((rev,i) => rev.id === newReview.id ? i : null).filter(val => val !== null)[0]
+        const newReviews =  [...reviews]
+        newReviews[index] = newReview
+        setReviews(newReviews)
+       
+    },[newReview])
+      
 
 
 
