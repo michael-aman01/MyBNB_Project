@@ -78,12 +78,15 @@ export default function ReviewForm({review, type}){
 
 
 
-    const closeModal = () => {
-    
+    const closeModal = (e) => {
+        
         const modalTags = Array.from(document.getElementsByClassName('review-form-modal' ))
+     
         modalTags.map(tag => {
+
             tag.style.display = "none" 
         })
+
     }
 
     return(
@@ -93,7 +96,7 @@ export default function ReviewForm({review, type}){
              <div id="review-modal-background" data-id={modalId}  className='review-form-modal'>
                 <div id="review-modal-content" data-id={modalId}  className='review-form-modal'>
                     <div id="review-modal-header">
-                    <div id="review-banner">
+                    <div id="review-banner" data-id={modalId} onClick={() => closeModal()}>
                         <img src={x} onClick={closeModal} height="20px"></img>
                         {type === "update" ? "Update Review" : "Write a Review"}
                     </div>

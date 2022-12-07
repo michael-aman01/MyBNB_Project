@@ -91,10 +91,11 @@ export default function ReviewsIndex(){
 
                 }
                 <br></br>
-                <div id="create-review-container"  onClick={openCreateModal}>
+                <div id="create-review-container"  data-id="create" onClick={openCreateModal}>
                     Write a review
-                    <ReviewForm review={createReviewObj} type={"create"}></ReviewForm>
+                  
                 </div>
+                <ReviewForm review={createReviewObj} type={"create"}></ReviewForm>
                 
             </div>
             </>
