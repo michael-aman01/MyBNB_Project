@@ -25,8 +25,6 @@ export default function ReviewForm({review, type}){
         "location": (val) => setLocation(val)
     }
 
-
-
     const reviewBody = {
         "cleanliness":  cleanliness,
         "communication": communication,
@@ -38,13 +36,6 @@ export default function ReviewForm({review, type}){
         "listing_id": review.listing_id,
         "id": review.id
     }
-
-
-
-
-
-
-
 
     const dispatch = useDispatch()
 

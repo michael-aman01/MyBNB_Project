@@ -5,18 +5,12 @@ import {getUser} from '../../store/user'
 import { useEffect, useState } from "react"
 import "./reviewIndexItem.css"
 export default function ReviewsIndexItem({review, reviewer}){
-    
+    const newReview = useSelector(state => state.review)
     const {id} = useParams()
     const dispatch = useDispatch()
     const sessionUser = useSelector(getUser)
     const [user, setUser] = useState(sessionUser)
-
-    
-
-
-
- 
-
+    const [currentReview, setCurrentReview] = useState(review)
     const openUpdateModal = (e) => {
         e.preventDefault()
  
@@ -27,8 +21,13 @@ export default function ReviewsIndexItem({review, reviewer}){
             tag.style.display = "flex" 
         })
     }
+
+    useEffect(() => {
+        setCurrentReview(newReview)
+        
+    },[newReview])
       
-if(reviewer !== undefined && review !== undefined){
+if(reviewer !== undefined && currentReview !== undefined){
     return (
 
     
@@ -41,14 +40,14 @@ if(reviewer !== undefined && review !== undefined){
                         </div>
                         
                         <div className="review-text">
-                            {review.text}
+                            {currentReview.text}
                         </div>
                         {
                             reviewer.id === user.id ? 
                             <>
-                            <div  data-id={review.id} onClick={openUpdateModal}>update</div>
+                            <div  data-id={currentReview.id} onClick={openUpdateModal}>update</div>
                             <div id="reviews-container">
-                            <ReviewForm review={review}  type={'update'}></ReviewForm>
+                            <ReviewForm review={currentReview}  type={'update'}></ReviewForm>
                             </div>  
                             </>
      

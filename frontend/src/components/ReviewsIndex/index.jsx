@@ -12,6 +12,7 @@ import ReviewForm from "../ReviewForm"
 export default function ReviewsIndex(){
     const {id} = useParams()
     const dispatch = useDispatch()
+
     const currentUser = useSelector(getUser)
     const listings = useSelector(state => state.listings)
     const [currentListing, setCurrentListing] = useState(listings[id])
@@ -27,9 +28,7 @@ export default function ReviewsIndex(){
             setReviewers(currentReviewers)
 
         }
-        if(reviewers === undefined){
-            allUsers()
-        }
+        allUsers()
 
     },[])
 
@@ -39,6 +38,8 @@ export default function ReviewsIndex(){
             
         }
     },[])
+
+
 
     const createReviewObj =  {
         "cleanliness":  0,
@@ -61,6 +62,8 @@ export default function ReviewsIndex(){
             tag.style.display = "flex" 
         })
     }
+
+
 
 
 
