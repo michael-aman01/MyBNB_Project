@@ -3,7 +3,7 @@ import Calendar from 'react-calendar';
 import {useDispatch, useSelector} from 'react-redux'
 import './DateSelector.css'
 import ReservationForm from '../ReservationForm';
-import { addCheckin, addCheckout, ADD_CHECKIN, getCheckIn, getCheckOut, getReservations } from '../../store/reservation'
+import { addCheckin, addCheckout} from '../../store/reservation'
 
 export default function DateSelector({listing}){
   const dispatch = useDispatch()
@@ -20,7 +20,7 @@ export default function DateSelector({listing}){
     const takenDates = []
     let dates = res_range.map(dateArr => {
       const diff = Math.round((dateArr[1] - dateArr[0]) / (1000 * 60 * 60 * 24))
-      const date = new Date
+      const date = new Date()
       for(let i = 0; i <= diff; i++){
         let nextDate = new Date(date.setDate(dateArr[0].getDate() + i))
         if(!takenDates.includes(nextDate)){

@@ -7,7 +7,7 @@ import ListingsIndex from "./components/ListingsIndex";
 import ShowPage from './components/ShowPage'
 import ProfilePage from "./components/ProfilePage";
 import DateSelector from "./components/DateSelector";
-
+import ReviewsIndex from './components/ReviewsIndex'
 
 function App() {
 
@@ -43,12 +43,10 @@ function App() {
         <ProfilePage />
       </Route>
       <Route path="/test">
-
-      <DateSelector></DateSelector>
-
-  
+        <ReviewsIndex></ReviewsIndex>
       </Route>
 
+      
 
     </Switch>
     </>

@@ -76,7 +76,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
             dispatch(makeReservation(reservationData))
             dispatch(fetchRerservations(id))
             alert("reservation made!")
-            history.push(`/accounts/${userId}`)
+            history.push(`/listings`)
         }
   
     }
@@ -110,6 +110,10 @@ export default function ReservationForm({listing,checkOut,checkIn}){
             setMaxMessage(messageString)
         }
     }
+    const resetDates = (e) => {
+        setCheckInDate("test")
+      
+    }
     return (
         <>
               <div id="show-reservation-container" className="sticky">
@@ -119,7 +123,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
             </div>
             <div className="reservation-item" id="reservation-info-box">
                 <div id="dates-box">
-                <div id="check-in-date">
+                <div id="check-in-date"onClick={resetDates}>
                     <span>Check-In</span>
                     <br></br>
                            

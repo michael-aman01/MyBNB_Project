@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import X from "../../assets/iconmonstr-x-mark-1.svg"
 import { useEffect } from "react";
 import { fetchRerservations} from "../../store/reservation";
-import Reviews from "../Reviews";
+import ReviewsIndex from "../ReviewsIndex";
 
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 import bayviewIcon from "../../assets/ammenities/bayview.svg"
@@ -159,7 +159,7 @@ export default function ShowPage(){
         
         <div className="grid-container" >
             <div id="review-border-line"></div>
-            <Reviews listing={listing}></Reviews>
+           <ReviewsIndex></ReviewsIndex>
         </div>
         <br></br>
         <br></br>
