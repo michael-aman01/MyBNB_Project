@@ -1,3 +1,5 @@
+
+
 .react-calendar {
     width: 350px;
     max-width: 100%;
@@ -6,11 +8,13 @@
     font-family: 'Montserrat', sans-serif;
     line-height: 1.125em;
   }
+
   .react-calendar--doubleView {
-    width: 700px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px
+  
   }
   .react-calendar--doubleView .react-calendar__viewContainer {
     display: flex;

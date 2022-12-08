@@ -6,3 +6,8 @@
     min-height: 400px;
     
 }
+
+#location-description-container {
+    font-size: 20px;
+    line-height: 1.6;
+}

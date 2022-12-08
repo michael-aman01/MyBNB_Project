@@ -8,7 +8,7 @@ import "./reviewsIndex.css"
 import { useEffect } from "react"
 import { fetchUsers, getUser } from "../../store/user"
 import ReviewForm from "../ReviewForm"
-
+import reviewStar from '../../assets/Five_Pointed_Star_Solid.svg'
 export default function ReviewsIndex(){
     const {id} = useParams()
     const dispatch = useDispatch()
@@ -18,6 +18,23 @@ export default function ReviewsIndex(){
     const [currentListing, setCurrentListing] = useState(listings[id])
     const [reviews, setReviews] = useState(currentListing.reviews)
     const [reviewers, setReviewers] = useState()
+    const [stats, setStats] = useState()
+
+    function calcStats(reviewsArr){
+        const keys = Object.keys(reviewsArr[0])
+        const stats = {}
+        const unwanted = ["id","created_at","updated_at","text","user_id","listing_id"]
+        keys.filter(key => !unwanted.includes(key)).map(key => {
+            
+            let ratingsSum = reviewsArr.map(r => r[key]).reduce((a,b) => a + b, 0)
+            let stat = ratingsSum/reviewsArr.length
+            stats[key] = stat.toFixed(2)
+        })
+        const avg = Object.values(stats).map(val => parseInt(val)).reduce((a,b) => a +b, 0)/5
+        stats["avg"] = avg
+        console.log(stats)
+        return stats
+    }
 
     useEffect(() => {
         let allUsers = async () => {
@@ -36,6 +53,9 @@ export default function ReviewsIndex(){
         if(currentListing === undefined || currentListing=== null){
             dispatch(fetchListings())
             
+        }
+        if(reviews.length > 0){
+            setStats(calcStats(reviews))
         }
     },[])
 
@@ -91,10 +111,40 @@ export default function ReviewsIndex(){
 
 
     if(reviewers !== undefined && reviews !== undefined){
+   
         return(
             <>
             <div id="reviews-container">
-               <div id="reviews-header">Reviews</div> 
+               <div id="reviews-header">
+                <div>
+                    {reviews.length === 0 ? 
+                    "0 Reviews" 
+                    : 
+                    <>
+                <img height="25px" width="25px" src={reviewStar}></img>
+                    {  `${stats["avg"]} (${reviews.length} Reviews)`}
+                    <div id="review-stats-container">
+                    
+                    <ul>
+                        <div>Accuracy: {stats.accuracy}</div>
+                        <div>Communication: {stats.communication}</div>
+                        <div>Location: {stats.location}</div>
+                    </ul>
+                    <ul>
+                        <div>Cleanliness: {stats.cleanliness}</div>
+                        <div>Check-in: {stats.check_in}</div>
+                    </ul>
+                    
+                </div>
+                    </>
+          
+                    }
+                
+                </div>
+
+
+                
+                </div> 
 
                 {reviews.map((review,i) => 
                 <div id="review-details-item">
@@ -103,21 +153,14 @@ export default function ReviewsIndex(){
                 )
 
                 }
-                                {reviews.map((review,i) => 
-                <div id="review-details-item">
-                            <ReviewsIndexItem review={review}  reviewer={reviewers[i]}></ReviewsIndexItem>
-                    </div>
-                )
-
-                }
-                </div>
                 <br></br>
                 <div id="create-review-container"  data-id="create" onClick={openCreateModal}>
                     Write a review
                 </div>
                 <ReviewForm review={createReviewObj} type={"create"}></ReviewForm>
                 
-        
+            </div>
+
             </>
         )
     }else{

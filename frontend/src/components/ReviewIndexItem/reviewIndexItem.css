@@ -34,8 +34,13 @@
   font-size: 16px;
   padding: 10px;
   width: 100%;
+}
 
-
+#review-date {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.6;
+  text-decoration: underline;
 }
 
 .reviewer-name{

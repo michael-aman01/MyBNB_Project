@@ -12,7 +12,8 @@ export default function LogOutButton(){
     const handleLogout = (e) => {
         e.preventDefault()
         dispatch(logout())
-        history.push("/listings")
+        history.push("/")
+        window.location.reload()
     }
 
     

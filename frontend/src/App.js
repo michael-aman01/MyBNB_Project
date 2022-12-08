@@ -8,9 +8,12 @@ import ShowPage from './components/ShowPage'
 import ProfilePage from "./components/ProfilePage";
 import DateSelector from "./components/DateSelector";
 import ReviewsIndex from './components/ReviewsIndex'
+import { useSelector } from "react-redux";
+import { getUser } from "./store/user";
 
 function App() {
-
+  const currentUser = useSelector(getUser)
+  console.log(currentUser === null)
   useEffect(() =>{
     const navBar = document.getElementById("nav-container")
     if(window.location.toString().split("/").includes("create")){
@@ -31,10 +34,16 @@ function App() {
         <SignupFormPage />
       </Route>
       <Route exact path="/">
-        <ListingsIndex></ListingsIndex>
+        {
+          currentUser !== null ?    <ListingsIndex></ListingsIndex> :  <LoginFormPage></LoginFormPage>
+        }
+      
       </Route>
       <Route exact path="/listings">
-        <ListingsIndex></ListingsIndex>
+      {
+          currentUser !== null ?    <ListingsIndex></ListingsIndex> :  <LoginFormPage></LoginFormPage>
+        }
+      
       </Route>
       <Route path={`/listings/:id`}>
         <ShowPage />

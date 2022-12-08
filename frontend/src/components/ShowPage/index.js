@@ -161,12 +161,14 @@ export default function ShowPage(){
             <div id="review-border-line"></div>
            <ReviewsIndex></ReviewsIndex>
         </div>
+
         <br></br>
         <br></br>
         <br></br>
         <br></br>
-        
+ 
         <div className="grid-container">
+            
         <br></br>
 
         <div id="description-title">Where you will be</div>
@@ -187,7 +189,7 @@ export default function ShowPage(){
                 <br></br>
                 <br></br>
                 <br></br>
-        <div className="border-line"></div>
+     
         </div>
 
         </div>

@@ -42,7 +42,7 @@ export default function ReviewsIndexItem({review, reviewer}){
         setCurrentReview(null)
     }
 
-
+const months = ["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov","Dec"]
 if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !== null){
 
     return (
@@ -53,7 +53,8 @@ if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !
             <div id="review-detail-container">
                    <div className="reviewer-info">
                         <div className="reviewer-name" >
-                            {reviewer.first_name}
+                            <p> {reviewer.first_name}</p>
+                             <p id="review-date"> {months[new Date(review.created_at).getMonth()].toLowerCase()} {new Date(review.created_at).getFullYear()}</p>
                         </div>
                         
                         <div className="review-text" >
@@ -78,7 +79,6 @@ if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !
                         
                  </div>
                 </div>
-                         
                             </>
                  
     )

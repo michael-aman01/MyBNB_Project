@@ -5,6 +5,17 @@
     height: fit-content;
   }
   
+
+  #review-stats-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    font-size: 20px;
+    margin-top: 2%;
+    line-height: 1.6;
+    margin-left: 10%;
+    font-weight: 600;
+  }
   #review-summary-container {
     display: flex;
     justify-content: space-between;
@@ -28,7 +39,16 @@
     justify-content: space-between;
   
   }
-  
+  #create-review-container {
+    font-size: 25px;
+    margin-top: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+    padding-bottom: 5%;
+    border-bottom: 1px solid black;
+  }
+
   #details-left {
     margin-right: 10%;
     width: 50%;
