@@ -1,33 +1,33 @@
 
 .info-container {
     display: flex;
-
+    
 }
 
 #info-box {
-    font-size: 13px;
+    font-size: 17px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     line-height: 1.5;
-   width: 200px;
+   width: 650px;
     max-height: fit-content;
     padding: 10px;
 
 }
 
 #rating-box {
-    font-size: 15px;
-    font-weight: 300;
+    font-family:  'Montserrat', sans-serif;;
+    font-size: 16px;
+    font-weight: 600;
     text-align: center;
     padding-top: 10px;
-    padding-left: 25px;
-    margin-left: 19px;
-    width: 60px;
+
+    width: 200px;
 
 }
 
 #review-star {
-    width: 12px;
+    width: 16px;
 }
 
 #distance-dates {
@@ -43,7 +43,8 @@
 
 .listing{
     font-family: cereal_W_bk;
-    height: 350px;
+    height: 450px;
+    width: 350px;
     min-width: 250px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
@@ -62,8 +63,8 @@
     border-top-right-radius: 22px;
     max-height: 100%;
     max-width: 100%;
-    width: 300px;
-    height: 250px;
+    width: 650px;
+    height: 650px;
     object-fit: fill;
   }
   
