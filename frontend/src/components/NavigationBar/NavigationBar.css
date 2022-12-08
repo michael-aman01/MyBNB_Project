@@ -13,16 +13,16 @@ body {
   #nav-container {
     border-bottom:  1px solid #cdc1c1;
     position: relative;
-    height: 70px;
+    height: 80px;
   }
-  
+
   #logo-box{
     display: flex;
-
+    height: fit-content;
     grid-column-start:1;
     background-color: white;
     padding: 20px 80px;
-
+    margin-left: 5%;
   }
 
   

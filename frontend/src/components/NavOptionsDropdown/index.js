@@ -79,7 +79,7 @@ export default function NavOptionsDropdown(){
         <>
              <div class="grid-item" id="nav-options">
             <div id="options-button" onClick={handleClick}>
-                    <img class="button-image" src={stripes}/>
+                    <img class="button-image" src={stripes} height="200px"/>
                     <img class="button-image" src={buttonImage}/>
                 </div>
                 {Object.keys(options).map((key,i) => 

@@ -5,15 +5,19 @@
     height: fit-content;
   }
   
+.delete-review {
+  margin-left: 10%;
+}
 
   #review-stats-container {
     display: flex;
     justify-content: space-between;
     width: 50%;
     font-size: 20px;
+    padding: 10px;
     margin-top: 2%;
     line-height: 1.6;
-    margin-left: 10%;
+
     font-weight: 600;
   }
   #review-summary-container {

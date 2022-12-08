@@ -1,18 +1,19 @@
 import "./listingsIndexItem.css"
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
-
+import rightArrow from "../../assets/right-arrow.png"
 import { useEffect, useState} from "react";
 import {  useHistory } from "react-router-dom";
 
 
 export default function ListingsIndexItem({listing}){
     //add image fetch here
-   const [currentPosition, setCurrentPosition] = useState()
+
    const [distance, setDistance] = useState()
+   const [currentImage, setCurrentImage] = useState(1)
     const history = useHistory()
     
 
-    function calcDistance(someListing){
+    function calcDistance(someListing,currentPosition){
         
         const lat = someListing.coordinates.position.lat
         const lng = someListing.coordinates.position.lng
@@ -46,15 +47,14 @@ export default function ListingsIndexItem({listing}){
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
             position => {
-                setCurrentPosition([position.coords.latitude,position.coords.longitude])
+                let d = calcDistance(listing,[position.coords.latitude,position.coords.longitude])
+                setDistance(d)
             }
-          )
-          if(currentPosition !== undefined){
-            setDistance(calcDistance(listing))
-        }
-   
-      
-    },[])
+          )      
+    },[listing
+    ])
+
+
     const handleClick = (e) => {
         history.push(`/listings/${listing.id}`)
     }
@@ -66,15 +66,28 @@ export default function ListingsIndexItem({listing}){
         return(
             <>
 
-            <div className="listing" onClick={handleClick}>
+            <div className="listing">
                  <div className="image-container">
                     <div>
-                    <img className="listing-image"src={listing.photo_urls[1]} alt=""></img>
+                        <div id="image-button-container">
+                            <button id="image-button" onClick={() => currentImage === listing.photo_urls.length - 1 ? setCurrentImage(1) : setCurrentImage(currentImage + 1)}>
+                                <img src={rightArrow} height="10px" ></img>
+                            </button>
+                        </div>
+                        <div id="image-count">
+                            {[...Array(listing.photo_urls.length -1).keys()].map((url,i) => i + 1 === currentImage ?
+                                <div  style={{display:"block", backgroundColor: "white", height:"15px", width: "15px"}}  className="image-circle"></div>
+                                :
+                                <div style={{display:"block", backgroundColor: "white",  height:"10px", width: "10px", opacity: "50%"}}className="image-circle"></div>
+                            )}
+                        </div>
+                        <img  onClick={handleClick} className="listing-image"src={listing.photo_urls[currentImage]} alt=""></img>
+          
                     </div>
   
        
                 </div>
-                <div className="info-container">
+                <div className="info-container" onClick={handleClick} >
                     <div id="info-box">
                         <p>
                            <p>{listing.city}, {listing.state}</p> 

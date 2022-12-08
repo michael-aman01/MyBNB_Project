@@ -9,7 +9,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     line-height: 1.5;
-   width: 650px;
+   width: 350px;
     max-height: fit-content;
     padding: 10px;
 
@@ -55,7 +55,29 @@
     height: 60%;
     width: 100%;
     display: flex;
-  
+    cursor: pointer;
+  }
+
+  #image-button-container {
+    position: absolute;
+    display: flex;
+    color: black;
+    z-index: 3;
+    width: 100%;
+    margin-left: 290px;
+    margin-top: 140px;
+  }
+
+
+  #image-button-container > button {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+    visibility: none;
+    opacity: 0;
+    transition: .5s visibility, opacity .5s;
   }
   
   .listing-image {
@@ -66,6 +88,28 @@
     width: 650px;
     height: 650px;
     object-fit: fill;
+    position: relative;
+  }
+
+  .image-container:hover #image-button{
+    visibility: visible;
+    opacity: .8;
   }
   
-  
+  .image-circle {
+    margin: 10px;
+   
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  #image-count {
+    position: absolute;
+    display: flex;
+    color: black;
+    z-index: 3;
+    color:white;
+    margin-top: 230px;
+    justify-content: space-around;
+    margin-left: 100px;
+  }

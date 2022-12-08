@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux";
 import {getUser} from '../../store/user'
 import { useParams } from "react-router-dom";
@@ -12,15 +12,23 @@ import leftArrow from "../../assets/left-arrow.png"
 
 
 export default function ReservationForm({listing,checkOut,checkIn}){
+
     console.log(`from resrrvation ${checkIn}`)
     const [checkInDate,setCheckInDate] = useState('')
     const [checkOutDate, setCheckOutDate] = useState('')
+    const [avgReview, setAvgReview] = useState()
     const [adults, setAdults] = useState(0)
     const [children, setChildren] = useState(0)
     const [infants,setInfants] = useState(0)
     const [pets, setPets] = useState(0)
     const [show, setShow] = useState(true)
     const history = useHistory()
+
+    useEffect(() => {
+        let avg = calcStats(listing.reviews)["avg"]
+        setAvgReview(avg)
+    },[listing])
+
     const toggleModal = () => {
         setShow(false)
         history.push("/")
@@ -63,6 +71,23 @@ export default function ReservationForm({listing,checkOut,checkIn}){
             document.getElementById("reservation-confirmation-overlay").style.display = "block"
         }
     }
+
+    function calcStats(reviewsArr){
+        const keys = Object.keys(reviewsArr[0])
+        const stats = {}
+        const unwanted = ["id","created_at","updated_at","text","user_id","listing_id"]
+        keys.filter(key => !unwanted.includes(key)).map(key => {
+            
+            let ratingsSum = reviewsArr.map(r => r[key]).reduce((a,b) => a + b, 0)
+            let stat = ratingsSum/reviewsArr.length
+            stats[key] = stat.toFixed(2)
+        })
+        const avg = Object.values(stats).map(val => parseInt(val)).reduce((a,b) => a +b, 0)/5
+        stats["avg"] = avg
+        console.log(stats)
+        return stats
+    }
+
     const handleReservation = (e) => {
         const reservationData = {
             user_id: userId,
@@ -114,12 +139,17 @@ export default function ReservationForm({listing,checkOut,checkIn}){
         setCheckInDate("test")
       
     }
+
+    const checkoutDrop = (e) => {
+        window.location.hash = "#calendar-container"
+
+    }
     return (
         <>
               <div id="show-reservation-container" className="sticky">
             <div className="reservation-item" id="reservation-price">
                <div><span>${listing.price} </span>night</div>
-               <div><img src={reviewStar} ></img>  review</div>
+               <div><img src={reviewStar} ></img>{avgReview}  review</div>
             </div>
             <div className="reservation-item" id="reservation-info-box">
                 <div id="dates-box">
@@ -136,13 +166,14 @@ export default function ReservationForm({listing,checkOut,checkIn}){
       }
                 </div>
                 <div id="check-out-date">
-                <span>Check-out</span>
+                <span onClick={checkoutDrop}>Check-out</span>
+           
                 <br></br>
 
                 
 
                 {checkOut !== undefined ? (
-        <span>{checkOut.toDateString()}</span>
+        <span id="checkin-span">{checkOut.toDateString()}</span>
         ) :
         null
       

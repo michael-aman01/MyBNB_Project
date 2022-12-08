@@ -65,8 +65,9 @@ if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !
                             reviewer.id === user.id ? 
                             <>
                             <div  data-id={review.id} onClick={openUpdateModal} id="review-options-container">
-                                update
-                                <div id={review.id} onClick={handleDelete}>delete</div>
+                                    update
+                                    
+                                <div id={review.id} onClick={handleDelete} className="delete-review">delete</div>
                             </div>
                             <div id="reviews-container" >
                             <ReviewForm review={review}  type={'update'}></ReviewForm>
