@@ -27,7 +27,6 @@ export default function NavigationBar(){
             if(currentHeight === targetHeight){
                 clearInterval(transition)
             }
-    
         },2)
         
     }

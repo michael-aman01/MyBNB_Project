@@ -52,7 +52,7 @@ function App() {
         <ProfilePage />
       </Route>
       <Route path="/test">
-        <ReviewsIndex></ReviewsIndex>
+
       </Route>
 
       
