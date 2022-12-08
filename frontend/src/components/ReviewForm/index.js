@@ -2,7 +2,7 @@
 import './reviewForm.css'
 import x from '../../assets/iconmonstr-x-mark-1.svg'
 import ReactSlider from 'react-slider'
-import {createReview, updateReview} from "../../store/review"
+import {addReview, createReview, updateReview} from "../../store/review"
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
@@ -22,36 +22,36 @@ export default function ReviewForm({review, type}){
         "cleanliness": (val) => setCleanliness(val),
         "communication": (val) => setCommunication(val),
         "accuracy": (val) => setAccuracy(val),
-        "text": (val) => setText(val),
+
         "check_in": (val) => setCheckIn(val),
-        "location": (val) => setLocation(val)
+        "location": (val) => setLocation(val),
+        "text": (val) => setText(val)
     }
 
     const reviewBody = {
         "cleanliness":  cleanliness,
         "communication": communication,
         "accuracy": accuracy,
-        "text": text,
+ 
         "check_in": checkIn,
         "location": location,
         "user_id": review.user_id,
         "listing_id": review.listing_id,
-        "id": review.id
+        "id": review.id,
+        "text": text
     }
     const history = useHistory()
     const dispatch = useDispatch()
 
     const handleUpdateReview = async (e) => {
         e.preventDefault()
+
         let check = Object.values(reviewBody).filter(val => val === undefined).length === 0 ? true : false
-        console.log(check)
+        console.log(check  && reviewBody.text !== '')
         if(check){
             console.log(reviewBody)
             const res = await dispatch(updateReview(reviewBody))
-  
- 
-            // history.push(`/listings/${reviewBody.listing_id}`)
-            // window.location.reload()
+          
             closeModal()
             return res
          
@@ -64,13 +64,13 @@ export default function ReviewForm({review, type}){
         e.preventDefault()
         delete reviewBody.id
         let check = Object.values(reviewBody).filter(val => val === undefined).length === 0 ? true : false
-  
-        if(check){
+      
+        if(check && reviewBody.text !== ''){
  
             const res = await dispatch(createReview(reviewBody))
-            console.log(res)
-            history.push(`/listings/${reviewBody.listing_id}`)
+            window.location.reload()
             closeModal()
+            return res
         }else{
             alert("please complete form")
         }

@@ -8,6 +8,7 @@ import { getListing } from "../../store/data"
 import { useReducer } from "react"
 
 import {useRef} from 'react'
+import { deleteReview } from "../../store/review"
 
 export default function ReviewsIndexItem({review, reviewer}){
 
@@ -15,12 +16,17 @@ export default function ReviewsIndexItem({review, reviewer}){
     const dispatch = useDispatch()
     const sessionUser = useSelector(getUser)
     const [user, setUser] = useState(sessionUser)
+    
     const listing = useSelector(state => state.listings[id])
     const [currentReview, setCurrentReview] = useState({})
 
     useEffect(() => {
         setCurrentReview(review)
     },[])
+
+
+
+
 
     const openUpdateModal = (e) => {
         e.preventDefault()
@@ -30,8 +36,14 @@ export default function ReviewsIndexItem({review, reviewer}){
         })
     }
 
+    const handleDelete = (e) => {
+        e.preventDefault()
+        dispatch(deleteReview(e.target.id))
+        setCurrentReview(null)
+    }
 
-if(reviewer !== undefined && Object.values(review).length > 0){
+
+if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !== null){
 
     return (
 
@@ -51,7 +63,10 @@ if(reviewer !== undefined && Object.values(review).length > 0){
                         {
                             reviewer.id === user.id ? 
                             <>
-                            <div  data-id={review.id} onClick={openUpdateModal}>update</div>
+                            <div  data-id={review.id} onClick={openUpdateModal} id="review-options-container">
+                                update
+                                <div id={review.id} onClick={handleDelete}>delete</div>
+                            </div>
                             <div id="reviews-container" >
                             <ReviewForm review={review}  type={'update'}></ReviewForm>
                             </div>  
@@ -69,9 +84,7 @@ if(reviewer !== undefined && Object.values(review).length > 0){
     )
 }else{
     return (
-        <div>
-            loading..
-        </div>
+        null
     )
 }
 

@@ -39,6 +39,16 @@ export default function ReviewsIndex(){
         }
     },[])
 
+    useEffect(() => {
+        const index = reviews.map((rev,i) => rev.id === newReview.id ? i : null).filter(val => val !== null)[0]
+        const newReviews =  [...reviews]
+        newReviews[index] = newReview
+        setReviews(newReviews)
+    },[listings])
+
+
+
+
 
 
     const createReviewObj =  {
@@ -64,6 +74,9 @@ export default function ReviewsIndex(){
     }
 
 
+
+
+
     useEffect(() => {
         const index = reviews.map((rev,i) => rev.id === newReview.id ? i : null).filter(val => val !== null)[0]
         const newReviews =  [...reviews]
@@ -81,7 +94,7 @@ export default function ReviewsIndex(){
         return(
             <>
             <div id="reviews-container">
-                reviews
+               <div id="reviews-header">Reviews</div> 
 
                 {reviews.map((review,i) => 
                 <div id="review-details-item">
@@ -90,14 +103,21 @@ export default function ReviewsIndex(){
                 )
 
                 }
+                                {reviews.map((review,i) => 
+                <div id="review-details-item">
+                            <ReviewsIndexItem review={review}  reviewer={reviewers[i]}></ReviewsIndexItem>
+                    </div>
+                )
+
+                }
+                </div>
                 <br></br>
                 <div id="create-review-container"  data-id="create" onClick={openCreateModal}>
                     Write a review
-                  
                 </div>
                 <ReviewForm review={createReviewObj} type={"create"}></ReviewForm>
                 
-            </div>
+        
             </>
         )
     }else{

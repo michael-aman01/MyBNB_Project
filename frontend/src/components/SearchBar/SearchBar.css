@@ -38,10 +38,6 @@
   box-sizing: border-box;
   grid-column-start: 2;
 
-  /* padding-top: 10px;
-  padding-right: 35px;
-  padding-bottom: 10px;
-  padding-left: 35px; */
   height: fit-content;
 }
 #search-icon-button{

@@ -34,5 +34,14 @@ class Api::ReviewsController < ApplicationController
             render json: "ERROR"
         end
     end
+
+    def destroy
+        @review =  Review.find_by(id: params[:id])
+        if @review && @review.destroy
+            render json: {}
+        else
+            render json: "ERROR: REVIEW NOT DELETED"
+        end
+    end
     
 end
