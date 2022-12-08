@@ -61,7 +61,7 @@ export default function SearchBar(){
           </button>
           </div>     
           : 
-    
+
             <div id="open-search-container">
             <div  id="search-box-open">
                 <button className="search-option-open" id="active-option" onClick={handleOption} value="where">where</button>
@@ -79,7 +79,7 @@ export default function SearchBar(){
                                 </div>
                                 <div>
                                     <div>
-                                        
+
                                     </div>
                                 </div>
                                 
@@ -94,10 +94,9 @@ export default function SearchBar(){
                     }
 
       </div>
-      
+      </div>
 
-            </div>
-
+       
         }
           
         </>
