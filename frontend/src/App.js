@@ -10,7 +10,7 @@ import DateSelector from "./components/DateSelector";
 import ReviewsIndex from './components/ReviewsIndex'
 import { useSelector } from "react-redux";
 import { getUser } from "./store/user";
-
+import Test from "./components/Test";
 function App() {
   const currentUser = useSelector(getUser)
   console.log(currentUser === null)
@@ -52,7 +52,7 @@ function App() {
         <ProfilePage />
       </Route>
       <Route path="/test">
-
+        <Test></Test>
       </Route>
 
       

@@ -133,8 +133,10 @@ export default function ReservationForm({listing,checkOut,checkIn}){
 
         calendarContainer.appendChild(calendarDescription)
         calendarContainer.appendChild(calendarContent)
-
-        modal.remove()
+        if(modal !== null){
+            modal.remove()
+        }
+        
     }
 
     const handleDateInput = (e) => {

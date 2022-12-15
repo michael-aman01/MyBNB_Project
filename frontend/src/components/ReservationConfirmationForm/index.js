@@ -212,7 +212,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
         <br>
         </br>
         <div id="max-message">
-                {maxMessage}!
+                {maxMessage === undefined ? null : `${maxMessage}!`}
         </div>
 
             </div>
