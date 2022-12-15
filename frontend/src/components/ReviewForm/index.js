@@ -68,7 +68,7 @@ export default function ReviewForm({review, type}){
         if(check && reviewBody.text !== ''){
  
             const res = await dispatch(createReview(reviewBody))
-            window.location.reload()
+            
             closeModal()
             return res
         }else{

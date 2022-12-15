@@ -9,20 +9,26 @@ import { useHistory } from "react-router-dom";
 import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 import downArrow from "../../assets/down-arrow.png"
 import leftArrow from "../../assets/left-arrow.png"
+import { addCheckin, addCheckout} from '../../store/reservation'
+import x from '../../assets/iconmonstr-x-mark-1.svg'
 
 
 export default function ReservationForm({listing,checkOut,checkIn}){
 
-    console.log(`from resrrvation ${checkIn}`)
-    const [checkInDate,setCheckInDate] = useState('')
-    const [checkOutDate, setCheckOutDate] = useState('')
+ 
+    const [checkInDate,setCheckInDate] = useState()
+    const [checkOutDate, setCheckOutDate] = useState()
     const [avgReview, setAvgReview] = useState()
     const [adults, setAdults] = useState(0)
     const [children, setChildren] = useState(0)
     const [infants,setInfants] = useState(0)
     const [pets, setPets] = useState(0)
     const [show, setShow] = useState(true)
+
+    const maxDate = `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`
     const history = useHistory()
+
+
 
     useEffect(() => {
         let avg = calcStats(listing.reviews)["avg"]
@@ -38,8 +44,6 @@ export default function ReservationForm({listing,checkOut,checkIn}){
     const userId = useSelector(getUser).id ;
     const [maxMessage, setMaxMessage] = useState()
 
-    console.log(listing.reservations)
-    console.log(listing.reservations)
     const date = new Date()
     const month = date.getMonth().toString()
     const day =  (date.getUTCDate() - 1).toString()
@@ -52,7 +56,8 @@ export default function ReservationForm({listing,checkOut,checkIn}){
     }
     const [startDate, setStartDate] = useState(currentDate);
     const [endDate, setEndDate] = useState("");
-    const months = {"01":"Jan","02":"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"Aug","09":"Sept","10":"Oct","11":"Nov","12":"Dec"}
+
+
     const closeConfirmation = (e) => {
 
         document.getElementById("reservation-confirmation-overlay").style.display = "None"
@@ -135,15 +140,76 @@ export default function ReservationForm({listing,checkOut,checkIn}){
             setMaxMessage(messageString)
         }
     }
-    const resetDates = (e) => {
-        setCheckInDate("test")
+
+
+
+
+    const closeCalendarModal = () => {
+        const modal = document.getElementById("calendar-modal")
+
+        const calendarContent = Array.from(document.getElementsByClassName("calendar-container"))[0]
+        const calendarContainer = document.getElementById("show-calendar-container")
+        const calendarDescription = document.getElementById("calendar-description")
+
+        calendarContainer.appendChild(calendarDescription)
+        calendarContainer.appendChild(calendarContent)
+
+        modal.remove()
+    }
+
+    const handleDateInput = (e) => {
+        const calendarContainer = document.getElementById("show-calendar-container")
+        const calendarDescription = document.getElementById("calendar-description")
+        const calendarContent = Array.from(document.getElementsByClassName("calendar-container"))[0]
+
+
+        const calendarModal = document.createElement("div") 
+        const calendarModalBackground = document.createElement("div")
+        const calendarModalContent = document.createElement("div")
+        const calendarModalHeader = document.createElement("div")
+        const calendarModalBanner = document.createElement("div")
+
+        const calendarX = document.createElement("img")
+        calendarX.setAttribute("src",x)
+        calendarX.addEventListener("click",closeCalendarModal)
+        calendarModalBanner.appendChild(calendarX)
+        
+
+        calendarModalBanner.setAttribute("id","calendar-modal-banner")
+        calendarModalHeader.appendChild(calendarModalBanner)
+
+        calendarModalHeader.setAttribute("id","calendar-modal-header")
+ 
+        calendarModalContent.appendChild(calendarModalHeader)
+        calendarModalContent.appendChild(calendarDescription)
+        calendarModalContent.appendChild(calendarContent)
+
+
+        calendarModal.setAttribute("id","calendar-modal")
+        calendarModalBackground.setAttribute("id","calendar-modal-background")
+        calendarModalContent.setAttribute("id","calendar-modal-content")
+
+        calendarModalBackground.appendChild(calendarModalContent)
+        calendarModal.appendChild(calendarModalBackground)
+        calendarContainer.appendChild(calendarModal)
+    }
+
+
+    useEffect(() => {
+      if(checkIn !== undefined){
+        closeCalendarModal()
+      }
+    },[checkIn])
+
+    useEffect(() => {
+        if(checkOut !== undefined){
+          closeCalendarModal()
+        }
+      },[checkOut])
       
-    }
+    
 
-    const checkoutDrop = (e) => {
-        window.location.hash = "#calendar-container"
 
-    }
     return (
         <>
               <div id="show-reservation-container" className="sticky">
@@ -153,29 +219,28 @@ export default function ReservationForm({listing,checkOut,checkIn}){
             </div>
             <div className="reservation-item" id="reservation-info-box">
                 <div id="dates-box">
-                <div id="check-in-date"onClick={resetDates}>
+                <div id="check-in-date"  onClick={handleDateInput}>
                     <span>Check-In</span>
                     <br></br>
                            
 
                     {checkIn !== undefined ? (
-        <span>{checkIn.toDateString()}</span>
+        <span  id="check-in-span">{checkIn.toDateString()}</span>
         ) :
-        null
+        <span id="check-in-span">{null}</span>
       
       }
                 </div>
-                <div id="check-out-date">
-                <span onClick={checkoutDrop}>Check-out</span>
-           
+                <div id="check-out-date" onClick={handleDateInput}>
+                <span>Check-out</span>
                 <br></br>
 
                 
 
                 {checkOut !== undefined ? (
-        <span id="checkin-span">{checkOut.toDateString()}</span>
+        <span  id="check-out-span">{checkOut.toDateString()}</span>
         ) :
-        null
+        <span id="check-out-span">{null}</span>
       
       }
                 

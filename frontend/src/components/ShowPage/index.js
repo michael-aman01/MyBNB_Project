@@ -11,13 +11,22 @@ import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 import bayviewIcon from "../../assets/ammenities/bayview.svg"
 import Map from "../Map";
 import DateSelector from "../DateSelector";
-
+import { useState } from "react";
 
 export default function ShowPage(){
 
     const dispatch = useDispatch()
     const {id} = useParams()
     const listing = useSelector(getListing(id))
+    const currentDates = useSelector(state => state.reservations)
+    const [currentCheckin, setCurrentCheckin] = useState()
+    const [currentCheckout, setCurrentCheckout] = useState()
+
+    useEffect(() => {
+        setCurrentCheckin(currentDates.checkin)
+        setCurrentCheckout(currentDates.checkout)
+    },[currentDates])
+
 
     useEffect(() => {
         if(!listing){
@@ -32,6 +41,8 @@ export default function ShowPage(){
     const showModal = (e) => {
        document.getElementById("description-modal").setAttribute("class","modal-show")
     }
+
+    const initialDates = [currentCheckin, currentCheckout]
 
 
     if(!listing){
@@ -150,7 +161,7 @@ export default function ShowPage(){
         <div className="border-line"></div>
         </div>
         
-        <DateSelector listing={listing}>s</DateSelector>
+        <DateSelector listing={listing} initialDates={initialDates}>s</DateSelector>
         </div>
             
         </div>

@@ -51,6 +51,10 @@
 
   }
 
+  .react-calendar__navigation__label__labelText{
+    pointer-events: none;
+  }
+
   .react-calendar__navigation span {
     justify-content: center;
     text-align: center;
@@ -168,3 +172,53 @@
   margin-left: 10%;
 }
 
+#calendar-modal-background {
+  
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#calendar-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 500px;
+  width: 800px;
+  margin-top: 30%;
+  margin-left: 40%;
+
+  padding: 50px;
+  position: absolute;
+  background-color:white;
+
+  border-radius: 20px;
+
+}
+
+#calendar-modal {
+  z-index: 2000;
+  position: fixed;
+  inset: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+}
+
+
+#calendar-modal-banner {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  width: 100%;
+  height: fit-content;
+  white-space: nowrap;
+}
+
+#calendar-modal-banner > img {
+  cursor: pointer;
+}

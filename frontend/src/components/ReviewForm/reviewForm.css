@@ -72,10 +72,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  cursor: pointer;
   }
   
   .review-slider {
     width: 70%;
+    cursor: pointer;
   
   }
   

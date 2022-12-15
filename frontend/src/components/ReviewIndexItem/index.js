@@ -54,7 +54,7 @@ if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !
                    <div className="reviewer-info">
                         <div className="reviewer-name" >
                             <p> {reviewer.first_name}</p>
-                             <p id="review-date"> {months[new Date(review.created_at).getMonth()].toLowerCase()} {new Date(review.created_at).getFullYear()}</p>
+                             {/* <p id="review-date"> {months[new Date(review.created_at).getMonth()].toLowerCase()} {new Date(review.created_at).getFullYear()}</p> */}
                         </div>
                         
                         <div className="review-text" >

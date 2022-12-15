@@ -135,3 +135,7 @@
 
     text-decoration: underline;
 }
+
+input::-webkit-calendar-picker-indicator{
+    display: none;
+}

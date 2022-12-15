@@ -14,6 +14,7 @@ export default function ReviewsIndex(){
     const dispatch = useDispatch()
     const newReview = useSelector(state => state.review)
     const currentUser = useSelector(getUser)
+    
     const listings = useSelector(state => state.listings)
     const [currentListing, setCurrentListing] = useState(listings[id])
     const [reviews, setReviews] = useState(currentListing.reviews)
@@ -48,6 +49,13 @@ export default function ReviewsIndex(){
         allUsers()
 
     },[])
+
+    useEffect(() => {
+        if(reviews !== undefined){
+            let currentReviewsIndex = [...reviews,newReview]
+            setReviews(currentReviewsIndex)
+        }
+    },[newReview])
 
     useEffect(() => {
         if(currentListing === undefined || currentListing=== null){
@@ -126,13 +134,16 @@ export default function ReviewsIndex(){
                     <div id="review-stats-container">
                     
                     <ul>
-                        <div>Accuracy: {stats.accuracy}</div>
-                        <div>Communication: {stats.communication}</div>
-                        <div>Location: {stats.location}</div>
+                    <div>Cleanliness: {stats.cleanliness}</div>
+                    <div>Accuracy: {stats.accuracy}</div>
+                    <div>Communication: {stats.communication}</div>
+                    <div>Location: {stats.location}</div>
+                        <div>Check-in: {stats.check_in}</div>
+
                     </ul>
                     <ul>
-                        <div>Cleanliness: {stats.cleanliness}</div>
-                        <div>Check-in: {stats.check_in}</div>
+          
+
                     </ul>
                     
                 </div>
