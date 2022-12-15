@@ -7,6 +7,7 @@ import { fetchUser, getCurrentUser, getUser } from "../../store/user"
 import ReservationConfirmationForm from '../ReservationConfirmationForm'
 import { cancelReservation } from "../../store/reservation"
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
 export default function ReservationIndexPage(){
     const months = {"01":"Jan","02":"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"Aug","09":"Sept","10":"Oct","11":"Nov","12":"Dec"}
     const dispatch = useDispatch()
@@ -38,7 +39,7 @@ export default function ReservationIndexPage(){
         
       
     }
-
+    const history = useHistory()
 
     if(!user || !user.reservations){
         return null
@@ -52,7 +53,7 @@ export default function ReservationIndexPage(){
         <div id="reservation-containers"> 
             <p>No trips booked yet...</p>
             <p>start searching: </p>
-            <button id="profileh-search-button">search</button>
+            <button id="profileh-search-button" onClick={() => history.push("/listings")}>search</button>
         </div>
         )
     }else{

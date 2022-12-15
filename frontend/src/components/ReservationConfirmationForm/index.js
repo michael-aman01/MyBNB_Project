@@ -110,7 +110,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
 
         document.getElementById("reservation-confirmation-overlay").style.display = "None"
     }
-    console.log(currentCheckIn.toDateString())
+
     return(
         <div id="reservation-confirmation">
     
@@ -120,9 +120,9 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
         <div>
             <p id="confirmation-booking-title">Your trip</p>
             <br></br>
-            <p id="confirmation-dates-title">{checkIn.toDateString()}</p>
+            <p id="confirmation-dates-title">{checkIn !== undefined ? checkIn.toDateString() : null}</p>
             <p> - </p>
-            <p id="confirmation-dates-title">{currentCheckOut.toDateString()}</p>
+            <p id="confirmation-dates-title">{checkOut !== undefined ? checkOut.toDateString() : null}</p>
             <br></br>
             <br></br>
 
