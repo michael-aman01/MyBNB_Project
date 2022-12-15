@@ -87,7 +87,7 @@ export default function Map({listings={},listing={}}){
 
         <div id="map-container" ref={ref}>
             {markers}
-        <LoadScript googleMapsApiKey='AIzaSyBUcuyWFmqQS8mj-r2L3AUuy8EmKmnPifE'>
+        <LoadScript googleMapsApiKey={process.env.MAPS_API_KEY}>
             <GoogleMap
               mapContainerStyle={mapStyles}
               zoom={13}

@@ -12,7 +12,7 @@ export default function ListingsIndex(){
     const dispatch = useDispatch()
 
     const listings = useSelector(getListings());
-    console.log(listings)
+   
   
     useEffect(( ) =>{
 
