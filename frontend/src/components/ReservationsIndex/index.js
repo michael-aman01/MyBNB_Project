@@ -4,32 +4,49 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchListings } from "../../store/data"
 import { fetchUser, getCurrentUser, getUser } from "../../store/user"
-import { UserReducer } from "../../store/session"
-import { compose } from "redux"
+import ReservationConfirmationForm from '../ReservationConfirmationForm'
 import { cancelReservation } from "../../store/reservation"
-
+import { useState } from "react"
 export default function ReservationIndexPage(){
     const months = {"01":"Jan","02":"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"Aug","09":"Sept","10":"Oct","11":"Nov","12":"Dec"}
     const dispatch = useDispatch()
     const currentUser = useSelector(getUser)
     const user = useSelector(getCurrentUser)
-    const dummyUrl = "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/fzl85fhux1orkyludbkdqu3dfutf?response-content-disposition=inline%3B%20filename%3D%22image%22%3B%20filename%2A%3DUTF-8%27%27image&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXI3R5LCTHMP6KVD6%2F20221110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221110T184337Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0d4c5150d29da4901ba1e08d1933dfa4609041af947cc41590a27eec355042ca"
+    const [currentReservation, setCurrentReservation] = useState()
+    const [tag, setTag] = useState()
+
+
     useEffect(() => {
         dispatch(fetchUser(currentUser.id))
     },[dispatch])
-    const handleSubmit = (e) => {
+
+    const handleCancel = (e) => {
         e.preventDefault()
         const selected = reservations[e.target.id]
         dispatch(cancelReservation(selected))
         alert("canceled")
         dispatch(fetchUser(currentUser.id))
     }
+
+    const handleUpdate = e => {
+        e.preventDefault()
+        const selected = reservations[e.target.id]
+    
+        setCurrentReservation(selected)
+      
+        document.getElementById("reservation-confirmation-overlay").style.display = "block"
+        
+      
+    }
+
+
     if(!user || !user.reservations){
         return null
     }
     const reservations = user.reservations
     const images = user.reservations_listings.map(r => r.photo_urls)
     const listings = user.reservations_listings
+    reservations.map(res => console.log(new Date(res.start_date).toDateString()))
     if(reservations.length === 0){
         return (
         <div id="reservation-containers"> 
@@ -64,17 +81,18 @@ export default function ReservationIndexPage(){
                                 <p> - </p>
                                 <p>{`${months[res.end_date.split('-')[1]]}-${res.end_date.split('-')[2].slice(0,2)}-${res.end_date.split('-')[0]}`}</p>                                </div>
                                 <div className="alter-buttons">
-                                <form className="" onSubmit={handleSubmit} id={i}>
+                                <form className="" onSubmit={handleCancel} id={i}>
                     <div className="cancel-container">
                     <button className="alter-button">Cancel trip</button>
                     </div>
+                    </form>
                     <br></br>
-            
-                    <div>
-      
-                    <button  className="alter-button">Update trip</button>
-                      </div>
-                </form>
+                    <form className="" onSubmit={handleUpdate} id={i}>
+                                <div>
+                
+                                <button  className="alter-button">Update trip</button>
+                                </div>
+                    </form>
 
                                 </div>
                             </div>
@@ -89,6 +107,15 @@ export default function ReservationIndexPage(){
                             <img  class="trip-image" src={images[i][1]}></img>
                         </div>
                     </div>
+                </div>
+
+                <div id="reservation-confirmation-overlay">
+                    {currentReservation === undefined ? null 
+                    :
+                    <ReservationConfirmationForm checkIn={new Date(currentReservation.start_date)} checkOut={new Date(currentReservation.end_date)} listing={listings[i]}   adults={currentReservation.adult_count} children={currentReservation.children_count} pets={currentReservation.pet_count} infants={currentReservation.infant_count} method={"update"} reservationID={currentReservation.id}></ReservationConfirmationForm>
+
+                    }
+
                 </div>
 
          

@@ -83,6 +83,7 @@
 }
 
 #reservation-confirmation {
+    
     width: 40%;
     height: 50%;
     margin-left: 500px;
@@ -96,18 +97,22 @@
 }
 #confirmation-price-details {
     width: 400px;
+    font-size: 20px;
     margin-right: 50px;
     margin-top: 100px;
     padding: 10px;
 }
 #confirmation-title {
-
+    font-size: 40px;
     margin-bottom: 100px;
+    text-decoration: underline;
 }
 
 #confirmation-booking-title {
-
+    font-size: 20px;
+    font-weight: 600;
 }
+
 
 #date-confirmation-container {
     display: flex;
@@ -117,10 +122,11 @@
 .guests-confirmation-container {
     display: flex;
     justify-content: space-between;
+    font-size: 20px;
 }
 
 #confirmation-dates-title {
-
+    font-size: 20px;
 }
 
 #left-arrow {
@@ -128,7 +134,7 @@
 }
 
 #date-confirmation-container p {
-
+    font-size: 20px; 
 }
 
 .edit-button {
@@ -139,3 +145,24 @@
 input::-webkit-calendar-picker-indicator{
     display: none;
 }
+
+.confirmation-options-buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .confirmation-options-buttons button {
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    border-radius: 40px;
+    background-color: transparent;
+    border: 1px solid gray;
+  }
+
+  #max-message {
+    color: red;
+  }

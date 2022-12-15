@@ -11,7 +11,7 @@ import downArrow from "../../assets/down-arrow.png"
 import leftArrow from "../../assets/left-arrow.png"
 import { addCheckin, addCheckout} from '../../store/reservation'
 import x from '../../assets/iconmonstr-x-mark-1.svg'
-
+import ReservationConfirmationForm from "../ReservationConfirmationForm";
 
 export default function ReservationForm({listing,checkOut,checkIn}){
 
@@ -58,10 +58,6 @@ export default function ReservationForm({listing,checkOut,checkIn}){
     const [endDate, setEndDate] = useState("");
 
 
-    const closeConfirmation = (e) => {
-
-        document.getElementById("reservation-confirmation-overlay").style.display = "None"
-    }
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -93,23 +89,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
         return stats
     }
 
-    const handleReservation = (e) => {
-        const reservationData = {
-            user_id: userId,
-            listing_id: id,
-            start_date: checkIn,
-            end_date: checkOut
-        }
-        if(reservationData[startDate] === '' ||reservationData[endDate] === ''){
-            alert("please add ddates")
-        }else{
-            dispatch(makeReservation(reservationData))
-            dispatch(fetchRerservations(id))
-            alert("reservation made!")
-            history.push(`/listings`)
-        }
-  
-    }
+
     const handleOptions = (e) => {
         Array.from(document.getElementsByClassName("guests-option")).forEach(options => options.style.display === "none" ? options.style.display = "flex" : options.style.display = "none")
 
@@ -334,93 +314,9 @@ export default function ReservationForm({listing,checkOut,checkIn}){
             </div>
 
           <div id="reservation-confirmation-overlay">
-      
-            <div id="reservation-confirmation">
-    
-            <div id="confirmation-booking-details">
-            
-            <p onClick={closeConfirmation} id="confirmation-title"><img id="left-arrow" src={leftArrow}></img>  Request to book</p>
-            <div>
-                <p id="confirmation-booking-title">Your trip</p>
-                <br></br>
-                <p id="confirmation-dates-title">{checkIn === undefined ? null : checkIn.toDateString()}</p>
-                <p> - </p>
-                <p id="confirmation-dates-title">{checkOut === undefined ? null : checkOut.toDateString()}</p>
-                <br></br>
-                <br></br>
+          <ReservationConfirmationForm listing={listing}  checkIn={checkIn} checkOut={checkOut} adults={adults} children={children} infants={infants} pets={pets} startDate={startDate} endDate={endDate} />     
 
-
-                <div className="guests-confirmation-container">
-                    <div>
-                    <p id="adults">{adults} Adults</p>
-                    <br></br>
-                    </div>
-                    <div className="edit-button" onClick={(e) => closeConfirmation(e)}>
-                        edit
-                    </div>
-                </div>
-
-                <div className="guests-confirmation-container">
-                    <div>
-                    <p id="children">{children} Children</p>
-                    <br></br>
-                    </div>
-                    <div className="edit-button" onClick={(e) => closeConfirmation(e)}>
-                        edit
-                    </div>
-                </div>
-                <div className="guests-confirmation-container">
-                    <div>
-                    <p id="infants">{infants} Infants</p>
-                    <br></br>
-                    </div>
-                    <div className="edit-button" onClick={(e) => closeConfirmation(e)}>
-                        edit
-                    </div>
-                </div>
-                <div className="guests-confirmation-container">
-                    <div>
-                    <p id="pets">{pets} Pets</p>
-                    <br></br>
-                    </div>
-                    <div className="edit-button" onClick={(e) => closeConfirmation(e)}>
-                        edit
-                    </div>
-                </div>
-                <div className="reservation-item" id="show-reserve-button-container">
-                <button  id="show-reserve-button" onClick={handleReservation}>Reserve</button>
-                </div>
-            </div>
-                </div>
-                <div id="confirmation-price-details">
-                <p id="confirmation-booking-title">Price details</p>
-                <div className="reservation-item">
-                <div className="fee-item">
-                    <span>${listing.price}  {checkInDate !== '' && checkOutDate !== '' ?  `X ${Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))} nights` : ''}</span>
-                    <span>{checkInDate !== '' && checkOutDate !== '' ?  "$" + `${ listing.price * Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))}` : ''}</span>
-                </div>
-                <div className="fee-item">
-                    <span>Cleaning Fee</span>
-                    <span>${listing.cleaning_fee}</span>
-                </div>
-                <div className="fee-item">
-                    <span>Service Fee</span>
-                    <span>${listing.service_fee}</span>
-                </div>
-            </div>
-            <br></br>
-            <br></br>
-            <div className="border-line"></div>
-            <div id="reservation-total-fee" className="fee-item">
-                <span><b>Total before taxes</b></span>
-                <span>${checkInDate !== '' && checkOutDate !== '' ?  `${(listing.price * Math.ceil(Math.abs(new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24))) +listing.cleaning_fee + listing.service_fee}` : ''}</span>
-            </div>
-
-                </div>
-
-            
-            </div>
-          </div>
+</div>
           <br></br>
           <div id="max-message">
             <span> {maxMessage === undefined ? 

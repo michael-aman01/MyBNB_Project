@@ -98,6 +98,15 @@ export const cancelReservation = reservation => async dispatch => {
     }
 }
 
+export const updateReservation = reservation => async dispatch => {
+    const res = await csrfFetch(`/api/users/${reservation.user_id}/reservations/${reservation.id}`,{method: "PUT", body: JSON.stringify(reservation)})
+    const data = await res.json()
+    if(data){
+        return dispatch(getReservations(data))
+    }
+}
+
+
 
 export default function ReservationsReducer(state={},action){
     let newState

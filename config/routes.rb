@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:destroy, :update]
     resources :listings, only: [:show, :index,:create,:destroy]
     resources :users, only: [:show] do
-      resources :reservations, only: [:create, :destroy]
+      resources :reservations, only: [:create, :destroy, :update]
     end
    resources :listings, only: [:show] do
       resources :reservations, only: [:index]
