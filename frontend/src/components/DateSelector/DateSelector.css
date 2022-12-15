@@ -188,7 +188,7 @@
   justify-content: space-around;
   height: 500px;
   width: 800px;
-  margin-top: 30%;
+  margin-top: 10%;
   margin-left: 40%;
 
   padding: 50px;
@@ -202,7 +202,7 @@
 #calendar-modal {
   z-index: 2000;
   position: fixed;
-  inset: 0px;
+
   height: 100%;
   width: 100%;
   display: flex;

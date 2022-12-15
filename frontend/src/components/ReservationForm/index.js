@@ -158,6 +158,10 @@ export default function ReservationForm({listing,checkOut,checkIn}){
     }
 
     const handleDateInput = (e) => {
+        if(e.target.id === "check-out-date" && checkIn === undefined){
+            alert("please select checkin date first")
+            return null
+        }
         const calendarContainer = document.getElementById("show-calendar-container")
         const calendarDescription = document.getElementById("calendar-description")
         const calendarContent = Array.from(document.getElementsByClassName("calendar-container"))[0]
@@ -192,6 +196,8 @@ export default function ReservationForm({listing,checkOut,checkIn}){
         calendarModalBackground.appendChild(calendarModalContent)
         calendarModal.appendChild(calendarModalBackground)
         calendarContainer.appendChild(calendarModal)
+
+        
     }
 
 
