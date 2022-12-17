@@ -43,7 +43,13 @@ export default function ShowPage(){
     }
 
     const initialDates = [currentCheckin, currentCheckout]
-
+    const mapStyles = {        
+        display: "block",
+        width: "100%",
+        height: "100%",
+        minWidth: "400px",
+        minHeight: "400px",
+    };
 
     if(!listing){
         return null
@@ -189,7 +195,7 @@ export default function ShowPage(){
         <br></br>
         
         <div id="show-map-container">
-                <Map listing={listing}></Map>
+                <Map listing={listing} mapStyles={mapStyles}></Map>
         </div>
 
         </div>

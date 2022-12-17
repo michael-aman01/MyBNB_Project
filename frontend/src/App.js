@@ -6,8 +6,7 @@ import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
 import ShowPage from './components/ShowPage'
 import ProfilePage from "./components/ProfilePage";
-import DateSelector from "./components/DateSelector";
-import ReviewsIndex from './components/ReviewsIndex'
+import Map from "./components/Map";
 import { useSelector } from "react-redux";
 import { getUser } from "./store/user";
 import Test from "./components/Test";
@@ -56,7 +55,7 @@ function App() {
         <SearchResults></SearchResults>
       </Route>
       <Route path="/test">
-        <Test></Test>
+      <Test></Test>
       </Route>
 
       

@@ -10,15 +10,28 @@ import { useParams } from "react-router-dom";
 
 
 
-export default function Map({listings={},listing={}}){
+export default function Map({listings={},listing={}, mapStyles={}}){
     const [activeInfoWindow, setActiveInfoWindow] = useState("");
     const dispatch = useDispatch()
     const ref = useRef(null)
+    const [center, setCenter] = useState()
     const {id} = useParams()
     const mapsKey = process.env.REACT_APP_MAPS_API_KEY
 
     const [markers, setMarkers] = useState(null)
     const [ currentPosition, setCurrentPosition ] = useState({});
+
+    function calcCenter(someCoords){
+      const positions = someCoords.map(val => val.position)
+      const lats = positions.map(pos => pos.lat)
+      const lngs = positions.map(pos => pos.lng)
+      const latsAvg = lats.reduce((a,b) => a + b, 0)/lats.length
+      const lngAvg = lngs.reduce((a,b) => a + b, 0)/lngs.length
+      const newCenter = {lat: latsAvg, lng: lngAvg}
+      setCenter(newCenter)
+
+    }
+
     const success = position => {
       const currentPosition = {
         lat: position.coords.latitude,
@@ -27,9 +40,13 @@ export default function Map({listings={},listing={}}){
       setCurrentPosition(currentPosition);
     };
 
-    const getCoords = (coordsArray) => {
-  
+    const getCoords = (coordsArray,listingsArray) => {
+      
         let listingMarkers = coordsArray.map((coords,index) => {
+          
+          coords.label = {"text":`$${listingsArray[index].price}`,"color":"white"}
+          console.log(listings)
+          console.log(coords.label)
            return  <Marker 
             key={index} 
             position={coords.position}
@@ -39,7 +56,7 @@ export default function Map({listings={},listing={}}){
                 (activeInfoWindow === index)
                 &&
                 <InfoWindow position={coords.position}>
-                    <b>{coords.position.lat}, {coords.position.lng}</b>
+                    <div>{coords.position.lat}, {coords.position.lng}</div>
                 </InfoWindow>
             }  
         </Marker>
@@ -56,11 +73,12 @@ export default function Map({listings={},listing={}}){
             let result = await dispatch(fetchListings())
             if(Object.values(result.listings).length) {
                 if(id === undefined){
-                    getCoords(Object.values(result.listings).map(listing => listing.coordinates)) 
+                    getCoords(Object.values(result.listings).map(listing => listing.coordinates),Object.values(result.listings))
+                    calcCenter(Object.values(result.listings).map(listing => listing.coordinates))
                  
                 }else{
                     let listing = result.listings[id]
-                    getCoords([listing.coordinates])
+                    getCoords([listing.coordinates],[listing])
                 }
                 clearInterval(dataLoad)
             }
@@ -76,53 +94,66 @@ export default function Map({listings={},listing={}}){
         setCurrentPosition({ lat, lng})
       };
 
-      const mapStyles = {        
-        height: "100%",
-        width: "100%"
-    };
-      
+      const mapOptions = {
+        disableDefaultUI: true,
+        scrollwheel: false,
+        navigationControl: false,
+        mapTypeControl: false,
+        scaleControl: false,
+        mapTypeControl:false,
+        scrollwheel: false,
+        zoom:12,
+        keyboardShortcut:false
+      }
     if(listings !== null){
+      console.log(currentPosition)
       return ( 
 
-        <div id="map-container" ref={ref}>
+
+        <>
+      
             {markers}
         <LoadScript googleMapsApiKey={mapsKey}>
             <GoogleMap
               mapContainerStyle={mapStyles}
-              zoom={13}
+
+
+              options={mapOptions}
               center={currentPosition}>
               {
                 currentPosition.lat ? 
                 <Marker
                 position={listings[0]}
                 onDragEnd={(e) => onMarkerDragEnd(e)}
-                draggable={true} /> :
+                draggable={false} /> :
                 null
               }
               {markers}
             </GoogleMap>
         </LoadScript>
-        </div>
+        </>
       )}else{
         return(
-            <div id="map-container" ref={ref}>
-                         {markers.length}
+  
+          
             <LoadScript googleMapsApiKey={mapsKey}>
                 <GoogleMap
+        
+                  options={mapOptions}
                   mapContainerStyle={mapStyles}
-                  zoom={100}
+                  center={center}
                   >
                   {
                     currentPosition.lat ? 
                     <Marker
                     position={currentPosition}
                     onDragEnd={(e) => onMarkerDragEnd(e)}
-                    draggable={true} /> :
+                    draggable={false} /> :
                     null
                   }
                 </GoogleMap>
             </LoadScript>
-            </div>
+    
         )
       } 
   

@@ -7,6 +7,7 @@ import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
 import { Circle } from "@react-google-maps/api"
+import Map from "../Map"
 import ListingsIndexItem from "../ListingsIndexItem"
 
 export default function SearchResults(){
@@ -90,7 +91,14 @@ export default function SearchResults(){
 
   
 
-
+        const mapStyles = {        
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            minWidth: "100%",
+            minHeight: "100%",
+        
+        };
   
   
 
@@ -98,13 +106,27 @@ export default function SearchResults(){
 
         return (
             <>
-                <div>
+                <div id="search-results-container">
+                    <div id="search-listings-container">
                     {filteredListings !== null ? 
-                    filteredListings.map(listing => <ListingsIndexItem listing={listing}></ListingsIndexItem>)
-                    :
-                    null
-                    }
-                </div>
+                        filteredListings.map(listing => 
+                            <div className="search-listings-grid-item">
+                                <ListingsIndexItem listing={listing}></ListingsIndexItem>
+                            </div>
+                     )
+
+                        :
+                        null
+                        }
+                    </div>
+            
+                    <div id="search-map-container" className="sticky">
+
+                        <Map listing={filteredListings[0]} mapStyles={mapStyles}></Map>
+                    </div>
+        
+                    </div>
+            
             </>
         )
     }else{
@@ -115,3 +137,4 @@ export default function SearchResults(){
         )
     }
 }
+
