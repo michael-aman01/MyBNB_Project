@@ -11,6 +11,7 @@ import ReviewsIndex from './components/ReviewsIndex'
 import { useSelector } from "react-redux";
 import { getUser } from "./store/user";
 import Test from "./components/Test";
+import SearchResults from "./components/SearchResults";
 function App() {
   const currentUser = useSelector(getUser)
   console.log(currentUser === null)
@@ -50,6 +51,9 @@ function App() {
       </Route>
       <Route path="/account/:user_id">
         <ProfilePage />
+      </Route>
+      <Route path="/search">
+        <SearchResults></SearchResults>
       </Route>
       <Route path="/test">
         <Test></Test>

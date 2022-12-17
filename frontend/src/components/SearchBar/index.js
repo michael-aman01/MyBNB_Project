@@ -7,6 +7,9 @@ import nyMap from '../../assets/ny-map-icon.jpg'
 import sfMap from  '../../assets/sf-map-icon.jpg'
 import miaMap from  '../../assets/miami-map-icon.jpg'
 import flexMap from  '../../assets/flexible-map-icon.jpg'
+import { addSearchParams } from "../../store/search"
+import { useHistory } from "react-router-dom"
+import { useDispatch } from "react-redux"
 export default function SearchBar(){
     const [open, setOpen] = useState(false)
     const [content, setContent] = useState("where")
@@ -14,25 +17,10 @@ export default function SearchBar(){
     const [checkOutDate, setCheckOutDate] = useState("check-out")
     const [minDate, setMinDate] = useState(new Date())
     const [city, setCity] = useState("where")
-    const expandNav =(e) => {
-        const tag = document.getElementById("nav-container")
-        let i = 1
-        
-        const targetHeight = tag.style.height === "490px" ? 70 : 500
-        let currentHeight = tag.style.height === "501px" ?  500 : 70
-        let step =  tag.style.height === "501px" ? -1  : 1
-        let transition = setInterval(() => {
-            currentHeight = currentHeight + step
-            tag.style.height = `${currentHeight + step}px`
-            console.log(tag.style.height)
-    
-            if(currentHeight === targetHeight){
-                clearInterval(transition)
-            }
-        },2)
+    const dispatch = useDispatch()
+    const history = useHistory()
 
 
-    }
 
     useEffect(() => {
         const viewTag = Array.from(document.getElementsByClassName("react-calendar__navigation__label"))[0]
@@ -81,7 +69,21 @@ export default function SearchBar(){
 
         const handleSearch = (e) => {
             e.preventDefault()
-            alert("search")
+
+            if(checkInDate !== "check-in" && checkOutDate !== "check-out" && city !== "where"){
+                let searchParams = {
+                    "city": city,
+                    "check-in": checkInDate,
+                    "check-out":checkOutDate
+                }
+
+                setOpen(false)
+                document.getElementById("nav-container").style.height = "90px"
+                history.push("/search")
+                dispatch(addSearchParams(searchParams))
+            
+                
+            }
         }
 
         const handleCity = (e,city) => {
@@ -100,12 +102,12 @@ export default function SearchBar(){
         
         <>
         {open === false ?
-          <div class="grid-item" id="search-box">
+          <div class="grid-item" id="search-box" >
           <button class="search-option" onClick={handleClick}>Anywhere</button>
           <button className="search-option" onClick={handleClick}>Any week</button>
           <button className="search-option">
               <div id="add-guests" onClick={handleClick}>Add guests</div>
-              <div id="search-icon-button">
+              <div id="search-icon-button" onClick={handleClick}>
               <img id="search-icon" src={searchIcon} ></img>
               </div>
           </button>
