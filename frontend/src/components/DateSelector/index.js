@@ -57,6 +57,7 @@ export default function DateSelector({listing, initialDates=[null, null]}){
   useEffect(() => {
     if(checkinDate !== undefined){
       dispatch(addCheckin(checkinDate))
+      disabledDates.push(checkinDate)
       setCheckInDate(checkinDate)
       let maxDate = disabledDates.map(date => new Date(date)).filter(date => date > checkinDate)[0]
       setMaxDate(maxDate)
@@ -130,7 +131,7 @@ useEffect(() =>{
           detailedView={"month"}
           selectRange={true}
           maxDate={maxDate}
-          minDate={checkinDate === undefined ? new Date() : checkinDate}
+          minDate={checkinDate === undefined ? new Date() : new Date(checkinDate.getTime()  +  (60*60*24* 1000))}
           onClickDay={(e) => checkinDate === undefined ? setCheckInDate(e) : setCheckOutDate(e)}
           showDoubleView={true}
           tileDisabled={(date) => disabledDates.includes(date.date.toDateString())}        />

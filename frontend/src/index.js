@@ -8,10 +8,6 @@ import { configureStore } from './store'
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session'
 
-import {
-  DatePickerProvider,
-
-} from '@bcad1591/react-date-picker';
 const store = configureStore()
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
