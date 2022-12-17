@@ -1,9 +1,8 @@
 import React, { useState, useEffect} from "react";
-import { useSelector } from "react-redux";
 
 import { GoogleMap, InfoWindow, LoadScript, Marker } from "@react-google-maps/api";
 import { fetchListings  } from "../../store/data";
-import { getListings } from "../../store/data";
+
 import { useDispatch } from "react-redux";
 import "./map.css"
 import { useRef } from "react";
@@ -16,10 +15,10 @@ export default function Map({listings={},listing={}}){
     const dispatch = useDispatch()
     const ref = useRef(null)
     const {id} = useParams()
-    console.log(useParams())
+    const mapsKey = process.env.REACT_APP_MAPS_API_KEY
+
     const [markers, setMarkers] = useState(null)
     const [ currentPosition, setCurrentPosition ] = useState({});
-    // const listings = useSelector(getListings())
     const success = position => {
       const currentPosition = {
         lat: position.coords.latitude,
@@ -87,7 +86,7 @@ export default function Map({listings={},listing={}}){
 
         <div id="map-container" ref={ref}>
             {markers}
-        <LoadScript googleMapsApiKey={process.env.MAPS_API_KEY}>
+        <LoadScript googleMapsApiKey={mapsKey}>
             <GoogleMap
               mapContainerStyle={mapStyles}
               zoom={13}
@@ -108,7 +107,7 @@ export default function Map({listings={},listing={}}){
         return(
             <div id="map-container" ref={ref}>
                          {markers.length}
-            <LoadScript googleMapsApiKey='AIzaSyBUcuyWFmqQS8mj-r2L3AUuy8EmKmnPifE'>
+            <LoadScript googleMapsApiKey={mapsKey}>
                 <GoogleMap
                   mapContainerStyle={mapStyles}
                   zoom={100}

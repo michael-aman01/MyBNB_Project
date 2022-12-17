@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import './DateSelector.css'
 import ReservationForm from '../ReservationForm';
 import { addCheckin, addCheckout} from '../../store/reservation'
+import { compose } from 'redux';
 
 export default function DateSelector({listing, initialDates=[null, null]}){
   const dispatch = useDispatch()
@@ -15,33 +16,42 @@ export default function DateSelector({listing, initialDates=[null, null]}){
   const [disabledDates, setDisabledDates] = useState([])
   const [datesStatus, setDatesStatus] = useState(false)
   const reservations = useSelector(state => state.reservations)
-  const reviews = listing.reviews
-  console.log(reviews)
-  function getDisabledDates(){
-    const res_range = listing.reservations.map((res) => [new Date(res.start_date), new Date(res.end_date)])
+  const [maxDate, setMaxDate] = useState()
+
+
+  function getDisabledDates(resDates){
+    
     const takenDates = []
-    let dates = res_range.map(dateArr => {
-      const diff = Math.round((dateArr[1] - dateArr[0]) / (1000 * 60 * 60 * 24))
-      const date = new Date()
-      for(let i = 0; i <= diff; i++){
-        let nextDate = new Date(date.setDate(dateArr[0].getDate() + i))
-        if(!takenDates.includes(nextDate)){
-          takenDates.push(nextDate.toDateString())
-        }
-      }
-    })
-    setDisabledDates(takenDates)
+    const startDate = resDates[0]
+    const endDate = resDates[1]
+    takenDates.push(startDate)
+    const diffDates = Math.abs(endDate - startDate)
+    const diffDays = Math.ceil(diffDates)/(1000 * 3600 * 24)
+    
+    for(let i = 1; i < diffDays; i++){
+
+   
+      takenDates.push(new Date(startDate.getTime()  +  (60*60*24* i * 1000)))
+
+    }
+    takenDates.push(endDate)
+
+    return takenDates
+
+    // setDisabledDates(takenDates)
   }
 
   useEffect(() => {
-    getDisabledDates()
+    let takenDates = Object.values(reservations).map(res => getDisabledDates([new Date(res.startDate), new Date(res.endDate)])).flat().map(date => date.toDateString())
+    setDisabledDates(takenDates)
   },[])
 
   useEffect(() => {
     if(checkinDate !== undefined){
       dispatch(addCheckin(checkinDate))
       setCheckInDate(checkinDate)
-   
+      let maxDate = disabledDates.map(date => new Date(date)).filter(date => date > checkinDate)[0]
+      setMaxDate(maxDate)
     }
 
   },[dispatch,checkinDate])
@@ -87,6 +97,8 @@ useEffect(() =>{
 
   })
 },[])
+
+
   return (
 
 <>
@@ -109,6 +121,7 @@ useEffect(() =>{
           value={date}
           detailedView={"month"}
           selectRange={true}
+          maxDate={maxDate}
           minDate={checkinDate === undefined ? new Date() : checkinDate}
           onClickDay={(e) => checkinDate === undefined ? setCheckInDate(e) : setCheckOutDate(e)}
           showDoubleView={true}
