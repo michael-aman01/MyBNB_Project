@@ -90,6 +90,7 @@ export default function SearchBar(){
                 const searchQueryStr = `/search/${searchParams["city"]}&${searchParams["check-in"]}&${searchParams["check-out"]}`
         
                 history.push(searchQueryStr)
+                window.location.reload()
                 dispatch(addSearchParams(searchParams))
             
                 
