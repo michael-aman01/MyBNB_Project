@@ -4,10 +4,6 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getUser} from '../../store/user'
 import { useEffect, useState } from "react"
 import "./reviewIndexItem.css"
-import { getListing } from "../../store/data"
-import { useReducer } from "react"
-
-import {useRef} from 'react'
 import { deleteReview } from "../../store/review"
 
 export default function ReviewsIndexItem({review, reviewer}){

@@ -38,7 +38,7 @@ export default function ListingsIndexItem({listing}){
         })
         const avg = Object.values(stats).map(val => parseInt(val)).reduce((a,b) => a +b, 0)/5
         stats["avg"] = avg
-        console.log(stats)
+ 
         return stats
     }
 

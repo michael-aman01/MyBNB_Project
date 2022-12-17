@@ -52,7 +52,7 @@ function App() {
       <Route path="/account/:user_id">
         <ProfilePage />
       </Route>
-      <Route path="/search">
+      <Route path="/search/:search_params">
         <SearchResults></SearchResults>
       </Route>
       <Route path="/test">

@@ -20,6 +20,13 @@ export default function SearchBar(){
     const dispatch = useDispatch()
     const history = useHistory()
 
+    const cityOptions = {
+        "ny": "New York, NY",
+        "sf" : "San Francisco, CA",
+        "mia": "Miami, FL",
+        "flex" : "I'm Flexible" 
+    }
+
 
 
     useEffect(() => {
@@ -73,13 +80,16 @@ export default function SearchBar(){
             if(checkInDate !== "check-in" && checkOutDate !== "check-out" && city !== "where"){
                 let searchParams = {
                     "city": city,
-                    "check-in": checkInDate,
-                    "check-out":checkOutDate
+                    "check-in": new Date(checkInDate).toISOString().split("T")[0],
+                    "check-out":new Date(checkOutDate).toISOString().split("T")[0]
                 }
 
                 setOpen(false)
                 document.getElementById("nav-container").style.height = "90px"
-                history.push("/search")
+        
+                const searchQueryStr = `/search/${searchParams["city"]}&${searchParams["check-in"]}&${searchParams["check-out"]}`
+        
+                history.push(searchQueryStr)
                 dispatch(addSearchParams(searchParams))
             
                 
@@ -116,7 +126,7 @@ export default function SearchBar(){
 
             <div id="open-search-container">
             <div  id="search-box-open">
-                <button className="search-option-open" id="active-option" onClick={handleOption} value="where">{city}</button>
+                <button className="search-option-open" id="active-option" onClick={handleOption} value="where">{city === "where" ? city : cityOptions[city]}</button>
                 <button className="search-option-open" onClick={handleOption} value="checkInDate" id="checkInDateButton">{checkInDate}</button>
                 <button className="search-option-open" onClick={handleOption} value="checkOutDate" id="checkOutDateButton">{checkOutDate}</button>
                 <button className="search-option-open" id="search-submit-button" onClick={handleSearch}>
@@ -133,25 +143,25 @@ export default function SearchBar(){
                     {
                         content === "where" ?
                         <div id="search-city-options-container">
-                                <div className="city-selection-option" id="ny" onClick={(e) => handleCity(e,"New York, NY")}>
+                                <div className="city-selection-option" id="ny" onClick={(e) => handleCity(e,"ny")}>
                                     <div class="search-map-icon-container">
                                     <img class="search-map-icon" src={nyMap}></img>
                                     <div class="search-city-text">New York, NY</div>
                                     </div>
                                 </div>
-                                <div className="city-selection-option" id="sf" onClick={(e) => handleCity(e,"San Francisco, CA")}>
+                                <div className="city-selection-option" id="sf" onClick={(e) => handleCity(e,"sf")}>
                                 <div class="search-map-icon-container">
                                     <img class="search-map-icon" src={sfMap}></img>
                                     <div class="search-city-text">San Francisco, CA</div>
                                     </div>
                                 </div>
-                                <div className="city-selection-option" id="mia" onClick={(e) => handleCity(e,"Miami, FL")}>
+                                <div className="city-selection-option" id="mia" onClick={(e) => handleCity(e,"mia")}>
                                 <div class="search-map-icon-container">
                                     <img class="search-map-icon" src={miaMap}></img>
                                     <div class="search-city-text">Miami, FL</div>
                                     </div>
                                 </div>
-                                <div className="city-selection-option" id="flex" onClick={(e) => handleCity(e,"I'm Flexible")}>
+                                <div className="city-selection-option" id="flex" onClick={(e) => handleCity(e,"flex")}>
                                 <div class="search-map-icon-container">
                                     <img class="search-map-icon" src={flexMap}></img>
                                     <div class="search-city-text">I'm Flexible</div>
