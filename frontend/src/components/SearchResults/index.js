@@ -22,7 +22,7 @@ export default function SearchResults(){
     const cities = {
         "sf" : "California",
         "ny" : "NY",
-        "mia": "Miami"
+        "mia": "FL"
     }
 
     useEffect(() => {
@@ -60,7 +60,7 @@ export default function SearchResults(){
 
 
             let matchResults = []
-            let cityResults = Object.values(someListings).filter(l => l.state.trim() === cities[city])
+            let cityResults = city !== "flex" ? Object.values(someListings).filter(l => l.state.trim() === cities[city]) : Object.values(someListings)
             cityResults.map(listing => {
                 let reservations = Object.values(listing.reservations)
                 if(reservations.length === 0){

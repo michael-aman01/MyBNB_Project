@@ -19,8 +19,10 @@ export default function Map({listings={},listing={}, mapStyles={}}){
     const {search_params} = useParams()
     const mapsKey = process.env.REACT_APP_MAPS_API_KEY 
     const states = {
-      "SF":" California",
-      "NY": "NY"
+      "SF":[" California"],
+      "NY": ["NY"],
+      "MIA":["FL"],
+      "FLEX":[" California","NY","FL"]
     }
     const [markers, setMarkers] = useState(null)
     const [ currentPosition, setCurrentPosition ] = useState({});
@@ -81,9 +83,8 @@ export default function Map({listings={},listing={}, mapStyles={}}){
                     const state = states[search_params.split("&")[0].toUpperCase()]
                 
                     
-
-                    getCoords(Object.values(result.listings).filter(listing => listing.state === state).map(listing => listing.coordinates),Object.values(result.listings).filter(listing => listing.state === state))
-                    calcCenter(Object.values(result.listings).filter(listing => listing.state === state).map(listing => listing.coordinates))
+                    getCoords(Object.values(result.listings).filter(listing => state.includes(listing.state)).map(listing => listing.coordinates),Object.values(result.listings).filter(listing => state.includes(listing.state)))
+                    calcCenter(Object.values(result.listings).filter(listing => state.includes(listing.state)).map(listing => listing.coordinates))
                  
                 }else{
                     let listing = result.listings[id]

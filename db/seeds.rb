@@ -3278,4 +3278,1385 @@ ny_reviews.each_with_index do |review_array,i|
 end
 
 puts "NY REVIEWS COMPLETE"
+
+miami_listing_objects = [
+    {
+        "main_title": "Miami Villa W/ Pool | Near Beach | Waterfront View",
+        "price": 857,
+        "cleaning_fee": 1499.75,
+        "service_fee": 1714,
+        "description": "5min Drive to Aventura Mall\n10min Drive to Sunny Isles Beach\n15min Drive to Fort Lauderdale\n\n\u2605Ask for Weekly Discount\u2605\n\nAn unforgettable stay awaits you at this luxurious waterfront home. Tucked in a residential area with beautiful lake views, you\u2019ll have the utmost privacy during your stay. While you may feel worlds away from all the action, this impeccably furnished home is located minutes from famous South Florida attractions, including top restaurants and beaches. \n\nExperience Miami With Us!\n\n\nKEY FEATURES:\n\n\u2600 5 spacious bedrooms + additional sleeping areas for large groups\n\u2600 2 full bathrooms w/ plush towels + luxurious amenities & outside shower\n\u2600 Modern kitchen w/ new appliances\n\u2600 Large living area w/ Smart TV, arcade games, foosball table, + popcorn machine\n\u2600 Beautiful outdoor space with private pool, outdoor sitting area + beautiful canal views\n\u2600 Central location near famous South Florida attractions\n\u2600 High speed free WiFi + Smart TVs in each room\n\u2600 Free parking \n\nHere Are A Few Kind Words From Our Past Guests:\n\n\u201cGreat stay and great location. The property was clean and had everything needed to enjoy the property. The location was ideal. Everything was great and the host was very responsive.\u201d - Dirk \u2605\u2605\u2605\u2605\u2605\n\n\u201cEverything about this Airbnb was amazing. Would definitely book with We Stay again.\u201d - Jennifer \u2605\u2605\u2605\u2605\u2605 \n\n\u201cThe property is beautifully appointed, clean, well stocked with everything needed for a home away from home. Lots to do without leaving the house. Management was extremely accommodating and responded in record time to our needs.\u201d - Vicki \u2605\u2605\u2605\u2605\u2605 \n\n\n\u2606\u2606 BEDROOMS \u2606\u2606\n\nLarge groups will have plenty of room to spread out thanks to the five spacious bedrooms and additional sleeping spaces located throughout the home. All five bedrooms are equipped with luxurious bedding and large Smart TVs to give guests the most comfortable stay possible. \n\nBedroom 1 features a comfy king-sized bed, a walk-in closet, and beautiful views of the canal and pool area. This room also has a private ensuite bathroom. \n\nBedroom 2 is the largest room in the home and features two queen-sized beds. The washing machine and dryer are located inside the closet.\n\nBedrooms 3 is furnished with a queen-sized bed, Smart-TV and is facing the bathroom.\n\nBedrooms 4 and 5 are each furnished with a queen-sized bed and share beautiful views of the lake and pool area.\n\nIf you have additional guests, we can provide two air mattresses as well. Please let us know in advance so we can prepare the correct amount of bedding for your group. \n\n\u2606\u2606 BATHROOMS \u2606\u2606\n\nNo need to wait around for your turn in the bathroom. This spacious property has 2 full bathrooms + 1 outside shower, each of which is outfitted with plush towels, hairdryers, and top-notch toiletries, including shampoo, conditioner, body wash, and body lotion. \n\nBathroom 1 is located off the first bedroom and features dual vanities and decent size walk-in shower. \n\nBathroom 2 sits off the main living area. This bathroom is outfitted with a shower/tub combo and a long vanity and mirror. \n\nBathroom 3 is situated in the pool area giving a rustic feeling to our interior design theme. \n\n\u2606\u2606 KITCHEN & LOUNGE \u2606\u2606\n\nThe modern kitchen is sure to please the chef of your group. This spacious area features new appliances, tons of counter space, and all the cooking basics you\u2019ll need to make delicious meals and tasty cocktails. You can enjoy your grub at the large dining table (seating for eight), or head to the outdoor dining area to soak up the sun and the breathtaking views as you eat. We also provide coffee for your stay.\n\nThe large living room area is decked out with a huge L-shaped sofa, a 65\u201d Smart TV, a foosball table, a popcorn machine, and an arcade game. This is the perfect place to hang out as a large group, whether you\u2019re enjoying a family movie night or a fun game tournament from our large collection of board games.\n\n\u2606\u2606 OUTDOOR SPACE \u2606\u2606\n\nThe large backyard is a collection of vibrant spaces that allow guests to experience Miami like local residents. Cool off in the private pool! We also have fun pool floaties and sun loungers to give you the full tropical experience. The outdoor space is also equipped with a gas grill, a hammock, and a dining area under the string lights of the pergola. Glide across the glistening lake and experience the marine life!\n\n\u2605\u2606 Book Today & Let Us Take Care Of You In Miami! \u2606\u2605",
+        "sub_title": "Entire villa hosted by We Stay",
+        "num_bedrooms": 6,
+        "num_baths": 2,
+        "min_guests": 13,
+        "size": "5 bedrooms",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "villa",
+        "ammenities": [
+            "Canal view",
+            "Lake view",
+            "Public or shared beach access",
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free driveway parking on premises 3 spaces",
+            "Private pool",
+            "Security cameras on property",
+            "Unavailable: Carbon monoxide alarm Carbon monoxide alarm"
+        ],
+        "location_desc": "The house is located in Miami, an upscale and safe city. A very lively area surrounded by lakes and green life of all sorts. Located close by beautiful beaches and near the Aventura mall the premier shopping destination in South Florida! Renowned for its luxury shopping and nightlife. Family friendly area with plenty of activities to do, such as restaurant, golfing entertainment and much more!",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/609270474244401226/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/609270474244401226/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/609270474244401226/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/609270474244401226/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/609270474244401226/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/609270474244401226/image_1.jpg"
+        ],
+        "coordinates": [
+            25.87185600896426,
+            -80.30374021680686
+        ]
+    },
+    {
+        "main_title": "Garden Deluxe King in South Beach",
+        "price": 122,
+        "cleaning_fee": 213.5,
+        "service_fee": 244,
+        "description": "IMPORTANT: Please keep in mind that we are a hotel property. We collect a Property Fee of $30.00 + TAX per night, per room upon arrival. Your card will also be authorized $50 per day for incidentals upon arrival ($250 maximum), this incidentals deposit is refunded to you after checking out from the property. \n\nIf you are driving the Hotel has a Valet Parking service for an additional daily fee.\nFor pets, a cleaning fee may apply.\n\n\nIMPORTANT: Please keep in mind that we are a hotel property. We collect a Property Fee of $30.00 + TAX per night, per room upon arrival.\n\nYour card will also be authorized $50 per day for incidentals upon arrival ($250 maximum), this incidentals deposit is refunded to you after checking out from the property. \n\nIf you are driving the Hotel has a Valet Parking service for an additional daily fee.",
+        "sub_title": "Room in boutique hotel hosted by Tal",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "in",
+        "ammenities": [
+            "Wifi",
+            "Shared pool",
+            "Pets allowed",
+            "TV with standard cable",
+            "Central air conditioning",
+            "Crib",
+            "Hair dryer",
+            "Refrigerator",
+            "Unavailable: Carbon monoxide alarm\nCarbon monoxide alarm",
+            "Unavailable: Smoke alarm\nSmoke alarm"
+        ],
+        "location_desc": "Fairwind Hotel is located in the heart of South Beach within walking distance to most attractions in the South Beach area.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/549955297779670220/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/549955297779670220/image_10.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/549955297779670220/image_7.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/549955297779670220/image_8.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/549955297779670220/image_9.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/549955297779670220/image_11.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/549955297779670220/image_12.jpg"
+        ],
+        "coordinates": [
+            25.94697338044887,
+            -80.21537345494467
+        ]
+    },
+    {
+        "main_title": "Villa Canal with hot tub and backyard oasis",
+        "price": 307,
+        "cleaning_fee": 537.25,
+        "service_fee": 614,
+        "description": "Casa Canal is a relaxing oasis surrounded by tropical plants and a Beautiful Canal.  The canal is home to manatees, squirrels, bright green Iguanas, and at times wild green Parakeets in the tree canopy, You can enjoy all this from your private hot tub.\n\nSpend a quiet time fishing under the gumbo limbo tree while enjoying the tropical breeze. The backyard faces the Canal to the east and in the morning you can often enjoy a beautiful sunrise and sometimes in the evening an impressive full moon.\n\n\nCasa Canal, from the moment you walk in, you get a feeling of spacious, relaxing, non-cluttered space yet a place that makes you feel comfortable right away. The house is an open plan design with water views visible from all rooms. It has 3 large bedrooms, 2 bathrooms, and a large kitchen with a bar, 55\u201d HDTV, and plenty of seating. The kitchen is fully equipped, and there is a separate laundry room and a relaxing outdoor patio, accessible from the dining room All beds have 100% cotton sheets and guests are provided 100% premium quality cotton baths and hand towels.",
+        "sub_title": "Entire villa hosted by Adam",
+        "num_bedrooms": 3,
+        "num_baths": 2,
+        "min_guests": 7,
+        "size": "3 bedrooms",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "villa",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "Beautiful tropical neighborhood in North Miami 15 minutes to Miami Beach 20 minutes to downtown Miami perfect location for holidays day.\n\nPlease see the driving times to the most popular destinations in Miami.\n20-minute walk to Brickell City Center.\n15-minute drive to the sand of South Beach.\n22-minute drive to the cruise ship terminal at the Port of Miami.\n25 -minute drive to Key Biscayne Beach\n17 -minute drive to Little Havana\n17 -minute drive to Wynwood Art District\n17-minute drive to FTX Exchange Heat arena\n\nNorth Miami is a quiet family neighborhood with restaurants and supermarkets Down the street",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_7.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_8.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_9.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/690749773349217396/image_1.jpg"
+        ],
+        "coordinates": [
+            26.015934348297954,
+            -80.16973347903783
+        ]
+    },
+    {
+        "main_title": "Oceanfront 16th Floor Brand New Beachfront Flat",
+        "price": 126,
+        "cleaning_fee": 220.5,
+        "service_fee": 252,
+        "description": "A modern style and freshly renovated large beachfront studio apartment in Miami Beach with 180 degree ocean views of the crystal clear water and free parking. The apartment features a king size bed, fast and free unlimited 300mb WiFi Internet and a 60inch Samsung LED TV with Netflix HBOGO and TIVO HD service 500 channels.\n\nWhile we have always had the highest standards of cleanliness, we have now taken it to another level by investing in an Electric ULV Fogger to be used between each guest.\n\n\nWe just got done renovating every single aspect of Pure Miami Beach.  We basically tore it down to the cement walls and floor and then rebuilt it with functionality and design in mind. The result was a crisp all white modern studio that provides everything you need for a beach holiday. \n\nThis unit (along with our others) offers FREE PARKING for one car which is hard to find in Miami Beach.\n\nSome highlights of Pure Miami Beach\n-King Size bed (2mx2m) with brand new linens provided\n-Fresh Bath Towels, Hand Towels and Washcloths provided\n-Beach Towels Provided\n-Beach Chairs, Beach Umbrella and Snorkel gear provided\n-Tennis rackets provided\n-65 inch Samsung LED TV with Netflix HBOGO and TIVO HD service 500 channels.\n-300mb speed WIFI internet Free Private internet (unlimited)\n-Local telephone with free calls to USA and some other countries\n-iPhone speaker/alarm clock (lightning connector)\n-Keurig K-Cup\u00ae coffee system\n-Basic kitchenette with bar sink, medium size refrigerator, Freezer and Microwave\n-Electric Tea Kettle, Toaster, and blender to make some tropical drinks.\n-Door Combination lock, no keys required\n-All white contemporary design with LED lighting\n-All original artwork by Maru\n-Dyson cordless vacuum for quick cleanup\n-Iron, Iron board and Hairdryer\n-Pack n Play Baby Crib, Baby Tub or Toddler Cot Available upon request\n\n\n\nPure Miami Beach would be comfortable for 2 adults.  Potentially, somebody could sleep on the sofa (probrably a child) so we are listing it for 3 people.   Please let us know if you would like us to provide an extra set of sheets.",
+        "sub_title": "Entire condo hosted by Shane And Maru",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 3,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "condo",
+        "ammenities": [
+            "Ocean view",
+            "Sea view",
+            "Beach access \u2013 Beachfront",
+            "Kitchen",
+            "Wifi",
+            "Free parking on premises",
+            "Pets allowed",
+            "TV with standard cable",
+            "Elevator",
+            "Washer"
+        ],
+        "location_desc": "The location of Pure Miami Beach is very centrally located in a residential area. It is on the BEACH side of Collins avenue on millionaires row in Miami Beach. Being directly on Collins Ave provides quick access to all of Miami Beach and Miami.\n\nThere are numerous buses and taxis and UBERs always available on Collins ave since it is the primary artery connecting North Beach to South Beach. There is also access to the Miami Beach public bike system called CIti Bike.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_7.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_8.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_9.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/2131269/image_1.jpg"
+        ],
+        "coordinates": [
+            25.717978560547287,
+            -80.3668593324227
+        ]
+    },
+    {
+        "main_title": "Dune Paradise | Pool/HotTub Wynwood / Miami Beach",
+        "price": 327,
+        "cleaning_fee": 572.25,
+        "service_fee": 654,
+        "description": "Welcome to DUNE PARADISE!\n\nMIAMI meets DUNE to create a boho desert atmosphere with a touch of the Miami lifestyle. Kick your feet in the sand, enjoy the tranquility and privacy of our back terrace. This home is fully remodeled featuring an open concept, to create the perfect ambiance for your family and friends. 7-10 minutes from Wynwood, Midtown, and Design District. Private gated parking, brand new appliances, High Speed Wi-Fi, SMART TV, Apple Home System, Smart Light Switches & keyless Entry\n\n\nWe created a boho space all around the house. We mix natural materials as wood, cotton, fabrics, so you can enjoy nature in a different way.",
+        "sub_title": "Entire villa hosted by Paula",
+        "num_bedrooms": 12,
+        "num_baths": 2,
+        "min_guests": 16,
+        "size": "5 bedrooms",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "villa",
+        "ammenities": [
+            "Garden view",
+            "Kitchen",
+            "Fast wifi \u2013 321 Mbps",
+            "Dedicated workspace",
+            "Free parking on premises",
+            "Private outdoor pool - available all year, open 24 hours",
+            "Private hot tub",
+            "Sauna",
+            "Security cameras on property",
+            "Unavailable: Carbon monoxide alarm\nCarbon monoxide alarm"
+        ],
+        "location_desc": "Our neighbors are very hard worker people, they know we are doing vacation rentals, and they are happy to know all our guests are very respectful and conscious that our city is a quit neighborhood.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/692684000824220589/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/692684000824220589/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/692684000824220589/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/692684000824220589/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/692684000824220589/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/692684000824220589/image_1.jpg"
+        ],
+        "coordinates": [
+            25.603315347142136,
+            -80.3144219132957
+        ]
+    },
+    {
+        "main_title": "At Mine | Miami Beach Suite steps from the Ocean",
+        "price": 75,
+        "cleaning_fee": 131.25,
+        "service_fee": 150,
+        "description": "Renovated boutique hotel suite in the highly desirable South Of Fifth area. This suite is situated in South Beach, just blocks from the ocean and it offers a private accommodation for vacationers and business travelers. The unit features a comfortable king bed, cable TV and central AC. Indulge in South Beach with warm weather all year long and great food, all within blocks from your suite.\nOn request parking is provided one block away from the property at a gated garage for just as $20/day.\n\n\nThe suite is equipped with free public Wi-Fi, Cable and a cable TV. Towels, wash clothes and fresh high quality linen is provided to every guest.\n\nAs exclusive operators of the property, we manage the whole building. While all the units have almost identical layout, pictures may slightly differ but the rooms all have the same features and amenities.",
+        "sub_title": "Entire rental unit hosted by At Mine",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "Wifi",
+            "Dedicated workspace",
+            "42\" HDTV",
+            "Central air conditioning",
+            "Luggage dropoff allowed",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave",
+            "Long term stays allowed",
+            "Security cameras on property"
+        ],
+        "location_desc": "The Suite is located in the highly desirable South Of Fifth Area, just steps from the Ocean. There are numerous restaurants and bars that are within blocks from the property. Locals' favorites include: Nikki Beach for a vibey beach experience; Big Pink for casual American breakfast/lunch; Story for nightclubbers; Prime 112, Prime Italian and Prime Steakhouse for authentic top notch cuisines.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/48540406/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/48540406/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/48540406/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/48540406/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/48540406/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/48540406/image_1.jpg"
+        ],
+        "coordinates": [
+            26.177075658724743,
+            -80.14305343324794
+        ]
+    },
+    {
+        "main_title": "\u2605 EXCLUSIVE Luxury Studio with FREE Parking \u2605",
+        "price": 134,
+        "cleaning_fee": 234.5,
+        "service_fee": 268,
+        "description": "Come stay at our comfortable and luxurious quiet, high-floor, fully-equipped with king size bed, marble bathroom with shower and bath-tub, access to all in the heart of prestigious Brickell area of Miami. World-Class 5 star amenities, 24 gym, heated pool and jacuzzi hot tub with pool service, tennis courts, spa, restaurants, room service. Brickell is the top destination in Miami with restaurants, shops & nightlife Miami has to offer!\n\n\u2605FREE parking and FREE freshly brewed coffee in the morning\u2605\n\n\nSunny, spacious, warm, and quiet. You'll have the entire space all to yourself. This is Private Residence . You will get to enjoy ALL hotel amenities you could ever imagine! 24h gym, Pool and jacuzzi hot tub with pool service and food service, full service Spa, 2 rooftop tennis courts, hotel restaurants, wine room, dramatic Miami Bay views, and much more!\n\nAwarded Luxury Place of the Year!\nTripAdvisor Certificate of Excellence 5 in a row!!!!\nWalk Score: 97 \"Walkers Paradise\"\n\nConveniently located near:\nElevator ride to Conrad restaurants and bars\n1 minute walk to CVS\n1 minute walk to nearest restaurants and bars\n1 minute walk from waterfront promenade\n5 minute walk to Publix supermarket\n10 minute walk to Brickell City Centre\n\nEasy access by uber to South Beach, Key Biscayne, Midtown, Wynwood, Coconut Grove, Coral Gables, and more.\n\nIf there is anything you need to help make your stay easier just let me know.\nWe are here to serve you!\n\nLots of sunlight through multiple windows windows. Very quiet. 1 King size bed with memory foam mattress, comfortable bedding to make your stay as comfortable as possible. The kitchen includes a microwave, fridge, stove, garbage disposal, plates, utensils, glasses, cookware, etc.\n\nFREE Garage parking space is included with your stay. You will need to get a parking card and then enter the garage to park.",
+        "sub_title": "Entire rental unit hosted by Brickell",
+        "num_bedrooms": 2,
+        "num_baths": 1,
+        "min_guests": 3,
+        "size": "Studio",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "City skyline view",
+            "Kitchen",
+            "Wifi",
+            "Free parking on premises",
+            "Shared outdoor pool - available all year, heated",
+            "Shared hot tub",
+            "50\" HDTV with Amazon Prime Video, Apple TV, standard cable",
+            "Elevator",
+            "EV charger",
+            "Central air conditioning"
+        ],
+        "location_desc": "Brickell \u2013 the urban chic playground where entertainment abounds, culture comes to play, and nightlife never sleeps. This apartment is located within what Brickellites call the \u201c30-minute live-work-play circle,\u201d in the epicenter of Miami\u2019s business and financial district and surrounded by parks and historic landmarks, Biscayne Bay, Brickell Avenue. You are just steps away from, pedestrian-friendly bustling sidewalk cafes, restaurants, night-time establishments and posh boutiques found throughout Brickell and Downtown Miami. This is Miami's most exquisite and chic location; the place to be!",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/17209451/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/17209451/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/17209451/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/17209451/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/17209451/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/17209451/image_1.jpg"
+        ],
+        "coordinates": [
+            26.096939593711127,
+            -80.32982099742416
+        ]
+    },
+    {
+        "main_title": "Large & charming in house suite. w/ free parking",
+        "price": 69,
+        "cleaning_fee": 120.75,
+        "service_fee": 138,
+        "description": "Only 6 minutes from Miami International Airport \u2708\ufe0f and 15 minutes from south beach. Feel comfortable and enjoy plenty of extra room at this spacious place. This huge house is shared with other guests, but the bathroom is only shared with one other guest.\n\n\nThis is a private room, with 2 baths that are shared with one more room. The bath is in the hallway across from the room. The house has 5 other rooms and communal areas, like kitchen, living, dinning and patio are shared with other guests.  We have a house keeper who comes daily and keeps everything shining .",
+        "sub_title": "Private room in villa hosted by Alexander",
+        "num_bedrooms": 1,
+        "num_baths": 2,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "room",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "The beautiful Coral Gables, fl\n\nOnly 6 minutes from Miami International Airport \u2708\ufe0f\n\n15 minutes from Miami Beach\n15 minutes from the port of Miami",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/563866670114723236/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/563866670114723236/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/563866670114723236/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/563866670114723236/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/563866670114723236/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/563866670114723236/image_1.jpg"
+        ],
+        "coordinates": [
+            25.46752249145874,
+            -80.40260541581638
+        ]
+    },
+    {
+        "main_title": "**Ultra-Modern Home in Brickell with Ocean Views**",
+        "price": 195,
+        "cleaning_fee": 341.25,
+        "service_fee": 390,
+        "description": "Amazing Huge 1 Bedroom w/ Beautiful Ocean Views from 37th floor in the Heart of Brickell! White Porcelain Floors throughout! 2 FREE ASSIGNED PARKING SPACES in garage! Building, The Club at Brickell Bay, features 2 Huge Pools & Jacuzzi on expansive pool deck, 3 Room Gym w/ New State-of-the Art equipment, steam room, kids play room & more! All Brand-New Furniture & Decor throughout the home. High-speed internet & extensive cable TV w/ Two 55-Inch 4K Smart TVs for Netflix, Hulu, & Amazon Prime.\n\n\nAmazing Huge 1 Bedroom with Beautiful Bayviews from the 37th floor.  Two Huge 55-Inch Ultra-High Definition 4K Smart TVs in both the Living Room and Bedroom with Netflix, Hulu and Amazon Prime Video.  Ultra-Modern Luxury Brand-New Furniture and Decor throughout the Home.  Building is in the heart of Brickell on 12th street and Brickell Bay Drive in The Club at Brickell Bay.  Unit comes with a FREE PARKING Space assigned in the garage.  High-speed internet and extensive cable TV.  \n\nAmenities feature 2 Huge outdoor pools and a Hot tub/Jacuzzi on the pool deck on the 14th floor with Spectacular Ocean Views.  Building also has a 24 Hour state of the art Gym with 3 huge rooms of equipment and also a Sauna/Steam Room to enjoy.  Guests have access to all the amenities free of charge.",
+        "sub_title": "Entire condo hosted by Philip",
+        "num_bedrooms": 2,
+        "num_baths": 1,
+        "min_guests": 4,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "condo",
+        "ammenities": [
+            "Waterfront",
+            "Kitchen",
+            "Wifi",
+            "Free parking on premises",
+            "Shared pool",
+            "Shared hot tub",
+            "TV with standard cable",
+            "Elevator",
+            "Washer \u2013 In unit",
+            "Dryer \u2013 In unit"
+        ],
+        "location_desc": "The undisputed hot-spot for business, high-end hotels, fine dining, and ultra-luxury condominiums, Brickell is the new heart of Miami. The downtown destination offers walkable convenience to many of the city\u2019s best attractions, with great proximity to Miami Beach, Coconut Grove, and other points of interest throughout the city.\n\nPrimarily condominium properties dominate the dazzling skyline here, with captivating views of Biscayne Bay and the lights of west Miami. In the center of Brickell, Mary Brickell Village is a popular dining and entertainment district, with a few shops and boutiques also in the mix and the massive Brickell City Centre offers elite shopping, even more high-end hotels, and the most coveted office space in the city.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/38851131/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/38851131/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/38851131/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/38851131/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/38851131/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/38851131/image_1.jpg"
+        ],
+        "coordinates": [
+            25.90809498854923,
+            -80.19523848558525
+        ]
+    },
+    {
+        "main_title": "OCEANFRONT King Size bed/Bayview with free parking",
+        "price": 110,
+        "cleaning_fee": 192.5,
+        "service_fee": 220,
+        "description": "BEACHFRONT Studio apartment 400 sq ft with bayview Beautifull apartment in an oceanfront building located in the heart of Miami Beach , 10 blocks north of famous Fontainebleau Hotel Building has beach access , gym , tennis court , spa , Restaurant and Tiki Bar Close to the Downtown Miami and Port of Miami , 15 minutes from Miami airport and 35 from FLL airport Free Valet parking included (It's a 36 dollars value) Free Miami Beach Trolley transportation on Collins ave.\n\n\nThe apartment has a King Size bed and a Full sofabed, a big table , a led TV set with cable television and large closet. The kitchen has a full size fridge, microwave, burners, coffee maker, toaster,\u2026Free wireless Internet access\nThe apartment has Microwave ,, refrigerator, central air conditioner , ,coffemaker , Wi-FI internet ,TV\n-Coffee Machine, Toaster.\n-Iron, Iron board and Hairdryer\n\nINCLUDES:\n- Direct access to the beach\n- Tiki Bar & restaurant by the pool\n- FREE GYM\n- FREE Tennis court\n- Included valet parking service ( Rare in MiamiBeach )\n-% 100 Airbnb legal condominium hotel\n- Restaurants at the lobby and on site\n- Free trolley bus every 15 minutes\n10 minutes from the heart of South Beach: Collins Express\n- Famous Russian and Turkish spa (Not included)\n- Mini market.\n\nThis unit offers FREE PARKING for one car which is hard to find in Miami Beach.\n\nSome highlights \n-Fresh Bath Towels, Hand Towels and Washcloths provided\n-Beach Towels Provided\n-Beach Chairs, Beach Umbrella and Towels.\n-Tennis rackets provided\n-WIFI internet hassle free (unlimited)\n-Refrigerator, Freezer and Microwave\n-Vacuum for quick cleanup\n-Iron, Iron board and Hairdryer\n\n\nYou are renting directly with me, and there is no daily housekeeping. We will do our best to accommodate early check ins or late check outs. It really just depends on availability.\n\nThe location of the apartment is amazing. It on the BEACH side of Collins avenue in millionaires row in Miami Beach . It is about a 10 minute drive to south beach as well as a 20 minute drive up to Aventura shopping mall. There are numerous buses and taxis always available on Collins ave since it is the primary artery connecting North Beach to South Beach. There is also access to the Miami Beach public bike system called Deco Bike.\n\nTo access the beach, you only need to take the elevator to LL (Lower Level) and walk past the pool and you are on the beach. There are no streets to cross or ways to get lost which makes it very safe for children",
+        "sub_title": "Entire rental unit hosted by Agustin",
+        "num_bedrooms": 2,
+        "num_baths": 1,
+        "min_guests": 3,
+        "size": "Studio",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "Beach access  Beachfront",
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free parking on premises",
+            "Shared pool",
+            "Shared hot tub",
+            "TV with standard cable",
+            "Elevator",
+            "Washer"
+        ],
+        "location_desc": "Located right on Millionaires row, this beachfront property is 10 minutes away from South Beach and Bar Harbor, 5 minutes away from to La Gorce Golf Course, 20 minutes away from MIA International Airport, and 20 minutes away from Florida International University-Biscayne Bay Campus.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/47112870/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/47112870/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/47112870/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/47112870/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/47112870/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/47112870/image_1.jpg"
+        ],
+        "coordinates": [
+            25.78394668344655,
+            -80.24835986551027
+        ]
+    },
+    {
+        "main_title": "At Mine | Charming Suite in Miami Beach",
+        "price": 58,
+        "cleaning_fee": 101.5,
+        "service_fee": 116,
+        "description": "Beautifully renovated boutique hotel suite in the highly desirable Mid Beach area. This suite is situated in one block away from the beach and it offers a private and quiet accommodation for vacationers and business travelers. The unit features a comfortable king-sized bed, Cable TV, Mini fridge and central AC. Indulge in Miami Beach with warm weather all year long.\nOn request parking is provided one block away from the property at a valet parking for just as $25/day.\n\n\nThe suite is equipped with free public Wi-Fi, Cable Cable TV, Towels, wash clothes and fresh high quality linen is provided to every guest. Our common area includes a Cozy Rooftop with Cabanas and comfortable table and chair to enjoy the beautiful sunset of Miami. We also provide a Workspace for our guests in the lobby and in our lovely Patio.\n\nAs exclusive operators of the property, we manage the whole building. While all the units have almost identical layout, pictures may slightly differ but the rooms all have the same features and amenities.",
+        "sub_title": "Entire rental unit hosted by At Mine",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "The Suite is located in the highly desirable Mid Beach Area, just steps from the Ocean. There are numerous restaurants and bars that are within blocks from the property. Locals' favorites include: Cecconi's Restaurant at Soho House for a vibery food experience; Piola for casual Italian Pizzeria; LIV for nightclubbers; Nobu, Hakkasan and Scarpetta Restaurant for authentic top notch cuisines.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/733251743064542501/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/733251743064542501/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/733251743064542501/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/733251743064542501/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/733251743064542501/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/733251743064542501/image_1.jpg"
+        ],
+        "coordinates": [
+            25.867103474921535,
+            -80.19177489062152
+        ]
+    },
+    {
+        "main_title": "Sextant Collins Ave PH Rooftop Pool Near Beach",
+        "price": 670,
+        "cleaning_fee": 1172.5,
+        "service_fee": 1340,
+        "description": "LOCATION: The property is located in South Beach, one block from the ocean, 25 mins from MIA (45 minutes from FLL Airport), and has many bars, restaurants, and shopping at your doorstep.\n\nSituated in the heart of South Beach, the Collins Ave Penthouse is your dream Miami location. This 4-bedroom Penthouse spans over 6500 SF and offers the amenities of a condo with the privacy and space of a home. Relax in luxury in your heated, private, rooftop infinity pool, or walk just one block to the beach.\n\n\nCHECK-IN & CHECK-OUT: Check-in is any time after 4PM and check-out is any time before 11AM. An early check-in or late check-out time may be available, please inquire about pricing at the time of booking.\n\nBEDROOMS: This property sleeps 8 guests in 7 beds and 1 air mattress. Smart TVs are located in each bedroom. See bed count below:\n- Bedroom 1: 2 Queens\n- Bedroom 2: 1 King\n- Bedroom 3: 2 Queens\n- Bedroom 4: 2 Queens\n- Common Area: 1 Queen Air Mattress\nAdditional beds cannot be provided.\n\nBATHROOMS: Both full bathrooms are stocked with toiletries (shampoo, conditioner, and body wash), plush towels and washcloths, and a hairdryer. There are also 2 half bathrooms, one just off the living room, and a second right by the pool, for a total of 4 bathrooms.\n\nKITCHEN & DINING: The kitchen is fully stocked (200-piece culinary set) and has a full line of new appliances (blender and drip coffee maker included). The dining area has seating for 10, with 8 at the dinner table and 4 at the bar, along with all the necessary dinnerware.\n\nOUTDOOR SPACE: The outdoor focal point is the heated, infinity 20'x10' pool (5' deep), and also includes a Propane BBQ. The entire rooftop is private and exclusively for your use. No one has access to the rooftop or pool, other than the pool cleaner who comes each Friday. \n\nPARKING: Public parking garage is available 1 block south Miami Beach Parking Garage.\n\nTRASH INSTRUCTION: Please take all trash bags to the dumpster located on the left side of the alley.\n\nWHAT\u2019S INCLUDED?: Iron and ironing board, steamer, washer/dryer, 1 pack-n-play crib, 1 high chair, 1 queen-sized air mattress, 12 beach towels, free WiFi (75 Mbps) and Smart TVs for your streaming apps like Netflix. Games, toys and stair gates provided upon availability.",
+        "sub_title": "Entire villa hosted by Sextant Stays",
+        "num_bedrooms": 7,
+        "num_baths": 3,
+        "min_guests": 8,
+        "size": "4 bedrooms",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "villa",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Pool",
+            "Pets allowed",
+            "TV",
+            "Elevator",
+            "Washer",
+            "Dryer",
+            "Security cameras on property"
+        ],
+        "location_desc": "South Beach",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_7.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_8.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_9.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/35380290/image_1.jpg"
+        ],
+        "coordinates": [
+            25.866064375664198,
+            -80.32168937378448
+        ]
+    },
+    {
+        "main_title": "Modern Studio Apartment I Vibrating Miami Downtown",
+        "price": 103,
+        "cleaning_fee": 180.25,
+        "service_fee": 206,
+        "description": "Modern and Bright Studio Apartment\n\nThe space\nThis modern and sleek Studio Apartment with amazing view on Miami Brickell makes an easy choice for a Miami gate away. The apartment offers all the comfort: full kitchen, private balcony, washer and dryer, Smart TV, Wi-Fi, silverware, coffee maker.\nBrickell House offers its guests a number of fabulous amenities, including a rooftop pool and sundeck; lounge with an event bar and catering kitchen; a theater; a 50-foot lap pool with poolside cabanas; a fitness center; conference rooms; a spa with co-ed sauna and steam room; and two street-level restaurants. Additionally, Brickell House offers concierge.\nThe unit is located on the 27th floor.",
+        "sub_title": "Entire rental unit hosted by Luca",
+        "num_bedrooms": 2,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "Studio",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Shared outdoor pool - available all year, open specific hours, heated",
+            "Hot tub",
+            "TV",
+            "Washer",
+            "Dryer",
+            "Air conditioning",
+            "Patio or balcony",
+            "Unavailable: Carbon monoxide alarm\nCarbon monoxide alarm"
+        ],
+        "location_desc": "Referred to as the 'Manhattan of the South', Brickell is home to the largest concentration of international banks in the United States, and home to many of Miami's top restaurants, shops and places of entertainment.\nDowntown Miami is a neighborhood where contrasts converge, enabling residents to enjoy the best of many worlds. Here, it is possible to enjoy the frenetic, businesslike energy of weekdays and the relaxed, joyful feeling of a vacation all on the same day. The diverse neighborhood houses residents who come from a variety of cultural and ideological backgrounds. Even the physical environment presents an intriguing contrast, as the neighborhood's towering skyscrapers run right up to the teal waters of Biscayne Bay.\nOne of the most important business hubs in Florida, Downtown Miami attracts professionals who want to be close to their jobs at the financial and commercial institutions in the neighborhood. Others come for the hot nightlife scene and world-class restaurants. Residents from all walks of life enjoy the neighborhood's year-round warm temperatures and blue skies.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/46531039/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/46531039/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/46531039/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/46531039/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/46531039/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/46531039/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/46531039/image_1.jpg"
+        ],
+        "coordinates": [
+            25.81513732456243,
+            -80.1271063478915
+        ]
+    },
+    {
+        "main_title": "Ocean view studio, w 2 Queens",
+        "price": 169,
+        "cleaning_fee": 295.75,
+        "service_fee": 338,
+        "description": "Beautiful Studio with Ocean view! \nLocated in the Heart of Miami-Beach on famous Collins Avenue Featuring\n\n- Direct Beach Access\n- Large Pool\n- Tiki Bar&restaurant by the pool\n- famous russian&Turkish spa\n- FREE GYM - FREE valet Parking (Rare MiamiBeach)\n- 100% Airbnb legal condo hotel\n- on site Restaurant\n- Free trolley bus every 15mins in front 10 minutes to South Beach\u2019s heart. (\u201cCollins Express\u201d)\n\n\nBTRO10510072021, 234391",
+        "sub_title": "Entire condo hosted by Jessica",
+        "num_bedrooms": 2,
+        "num_baths": 1,
+        "min_guests": 4,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "condo",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "We are Located in the heart of Collins Avenue, directly on the ocean.\nand right in between South-Beach to your south, and Bal-Harbour & Aventura to your north.\nLincoln Road Mall, Ocean Drive, Bal-Harbour shopping center and Aventura Mall,\nare all 15 minutes away!\n\nthere is a supermarket in the building, and vending machines. but if you want a huge supermarket with free parking go to Publix Supermarket on 69th & Collins!",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_7.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_8.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_9.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54159486/image_1.jpg"
+        ],
+        "coordinates": [
+            25.87281835750436,
+            -80.12306456397087
+        ]
+    },
+    {
+        "main_title": "Modern 4.5 bdr 3 bath dream house with heated pool",
+        "price": 299,
+        "cleaning_fee": 523.25,
+        "service_fee": 598,
+        "description": "Welcome to our stylish recently remodeled home with a short drive to the beach. Open-concept living space and top-of-the-line kitchen with plenty of natural light. A beautiful outside dining area and a Gazebo are perfect for skipping a beach day in style. We created this space to meet the highest standards of quality and taste. We look forward to welcoming you!\n\n\nOur recently remodeled home with an open space concept is perfect for someone looking to enjoy indoor and outdoor living. The open kitchen is merged with a living room that leads to a gorgeous pool with a mounted waterfall fountain, a spacious lounge area with a cozy gazebo, and plenty of chaise lounge chairs. A high fence provides a feeling of seclusion, yet blends in perfectly with the overall flow of the backyard. There is a separate grilling corner for that grilling enthusiast who wants to focus on prepping their perfect steak or fish without being splashed down by someone else's cannonballs into the pool. Interior is made in light colors, using only natural materials. Granite countertops, stainless steel appliances, and all amenities make the kitchen a perfect spot to cook up that dish you've been wanting to try since you started to plan your vacation.  \nThe home features five bedrooms. The master bedroom has a gorgeous newly renovated bathroom with a sunken tub and double vanity. The second master bedroom has a private bath with a stand-up shower, also a convenient adjacent room with a bunk bed and en-suite bathroom.  Two other bedrooms share a spacious bathroom. Perfect for the two best friends or family men who want to have their own privacy, but don't mind sharing a bathroom.",
+        "sub_title": "Entire villa hosted by Tim",
+        "num_bedrooms": 6,
+        "num_baths": 3,
+        "min_guests": 10,
+        "size": "5 bedrooms",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "villa",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free parking on premises",
+            "Private outdoor pool - available all year, open 24 hours, heated",
+            "65\" HDTV with Amazon Prime Video, Disney+, HBO Max, Netflix, Roku, standard cable",
+            "Free washer \u2013 In unit",
+            "Free dryer \u2013 In unit",
+            "Central air conditioning",
+            "Security cameras on property"
+        ],
+        "location_desc": "Our house is located at the border of Miramar and Hollywood hills. This is a quiet residential area centrally located to different tourist attractions.\nThe local supermarket is just a block away.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/51212524/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/51212524/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/51212524/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/51212524/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/51212524/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/51212524/image_1.jpg"
+        ],
+        "coordinates": [
+            25.779787311245922,
+            -80.13518991573274
+        ]
+    },
+    {
+        "main_title": "BrandNew~OceanViewStudio FreeParking&Pool",
+        "price": 177,
+        "cleaning_fee": 309.75,
+        "service_fee": 354,
+        "description": "Studio with stunning direct Ocean Views, in an ocean front resort, \nLocated in the Heart of Miami-Beach on famous Collins Avenue in the famous Castle Beach Club \n\nFeaturing \n- Direct Beach Access  \n- fabulous infinity pool \n- Tiki Bar&restaurant by the pool \n- famous russian&Turkish spa\n- GYM \n- FREE valet Parking \n- %100 Airbnb legal condo hotel \n- on site Restaurants \n- Free trolley bus every 15mins in front 10 minutes to South Beach\u2019s heart. (\u201cCollins Express\u201d)\n\n\nBTRO10510072021, 234391",
+        "sub_title": "Entire condo hosted by Jessica",
+        "num_bedrooms": 2,
+        "num_baths": 1,
+        "min_guests": 4,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "condo",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "We are Located in the heart of Collins Avenue, directly on the ocean.\nand right in between South-Beach to your south, and Bal-Harbour & Aventura to your north.\nLincoln Road Mall, Ocean Drive, Bal-Harbour shopping center and Aventura Mall,\nare all 15 minutes away!\n\nthere is a supermarket in the building, and vending machines. but if you want a huge supermarket with free parking go to Publix Supermarket on 69th & Collins!",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54158842/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54158842/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54158842/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54158842/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54158842/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/54158842/image_1.jpg"
+        ],
+        "coordinates": [
+            25.638281991029878,
+            -80.30552223810197
+        ]
+    },
+    {
+        "main_title": "Oceanfront 1 BDR at Hyde Resort! NO cleaning and service fee!",
+        "price": 174,
+        "cleaning_fee": 304.5,
+        "service_fee": 348,
+        "description": "Welcome to The HYDE Resort\n\nHollywood's new hottest residential-style resort featuring beach-inspired amenities, and a prime location.\nWhere we will make sure that this luxuries 1 bedroom apartment will feel like your home away from home.\n\nEnjoy breathtaking views, wrap-around balconies, contemporary European furniture, fully equipped gourmet style kitchen, High-Speed WiFi, and much more.\n\nATTENTION PLEASE!\nKindly review and agree to everything described in \"Other things to note\"!\n\n\nThis superbly styled oceanfront apartment makes for a perfect luxurious getaway. Ideal for groups of friends & family looking for a high-end Florida location. Great for people looking for an extraordinary Airbnb experience. It even suits couples looking for luxurious \u201chome away from home\u201d or a romantic break!\n\nHighlights include contemporary European furniture, fully equipped gourmet style kitchen, High-Speed WiFi, and in-suite washers and dryers.\n\nLiving Area:\nThe main living space is professionally designed to be tasteful as well as comfortable for your stay. The open plan kitchen has everything you will need for your stay including a toaster, cooking pots, utensils and even a coffeemaker. From the kitchen island you look out to the living room/dinning are as well as beautiful views through panoramic floor to ceiling windows. The dining area has a table and four chairs. The dining area leads into the living area which has a comfortable couch along with a Smart TV that is perfect after a long day at the beach.\n\n\nMaster Bedroom (Ocean view):\nThe master bedroom has a king sized bed with high quality memory foam and ecologically produced bed linens and beautiful ocean views. The closet provides plenty of space to store all your clothes. This bedroom has flat screen TV.",
+        "sub_title": "Entire serviced apartment hosted by Stay Today",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 4,
+        "size": "1 bedroom",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "serviced",
+        "ammenities": [
+            "City skyline view",
+            "Ocean view",
+            "Public or shared beach access  Beachfront",
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Shared outdoor pool - available all year, open specific hours, heated, infinity, rooftop",
+            "Shared hot tub - available all year, open specific hours",
+            "Pets allowed"
+        ],
+        "location_desc": "Hallandale Beach is a great town that sits squarely between Miami and Fort Lauderdale offering the best of each city only minutes away in a car. The neighborhood has plenty of shopping available with a Walmart right across the street for food shopping during extended stays, there are several restaurants available including Etaru which sits right on the Beach next to the building beach service area.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/745045767427118425/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/745045767427118425/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/745045767427118425/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/745045767427118425/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/745045767427118425/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/745045767427118425/image_1.jpg"
+        ],
+        "coordinates": [
+            25.708015198788985,
+            -80.3084092266167
+        ]
+    },
+    {
+        "main_title": "NEW! \"Villa Paradise\" ~ Lux Gem ~ Pool ~ Game Room",
+        "price": 268,
+        "cleaning_fee": 469.0,
+        "service_fee": 536,
+        "description": "Bring your family to the luxurious 3BR 2Bath Villa Paradise in the tranquil and friendly neighborhood in southern Miami, FL. Visit the exciting attractions, natural landmarks, restaurants, shops, and much more, and then retreat to the lavish oasis that will leave you in awe with its stylish design, private backyard, and rich amenity list.\n\n\u2714 3 Comfortable BRs\n\u2714 Open Design Living\n\u2714 Fully Equipped Kitchen\n\u2714 Swimming Pool\n\u2714 Game Room\n\u2714 Smart TVs\n\u2714 Smart House\n\u2714 High-Speed Wi-Fi\n\u2714 Free Parking\n\n\nAs soon as you step foot in this beautiful family home, you're welcomed by a very stylish yet highly comfortable open floor plan. It is uniquely designed and decorated professionally in an elegant manner that complements the tranquil but tropical, and modern, Miami location.\n\nThe fully equipped kitchen and adjacent dining area are where you'll get to prepare and enjoy delicious meals with your loved ones before relaxing in the living room, setting the stage for memorable evenings. Plenty of natural light comes through the large windows, making the home very bright during the day, accenting the tastefully picked furniture, and enhancing the luxurious ambiance under the high ceilings. \n\nThe home is a smart house featuring Brilliant smart light switches all throughout the house as well as dimmable/color-changing Phillips Hue lights to set the mood to your liking, as well as in-ceiling speakers throughout the home so that you and your family can enjoy your favorite music throughout the day! Our wifi is rated for speeds up to 800mbps, which means ultra-fast internet speeds for your work and leisure.\n\nRetreat to three comfortable bedrooms, which feature 5\u2606-resort comforts that allow you to rest after an exciting day of Miami sightseeing and adventures.\n\nBut wait! The best is yet to come! Step out onto a fully fenced backyard, where you can soak up the sun by the large swimming pool, prepare delicious BBQ, and have hours of family fun by playing pool or various yard games.\n\nWhen you've had enough of the great outdoors, you'll be able to retreat to the garage game room and have a fun tournament to decide who takes the crown of the vacation pool champ or play some classic games on arcade machines.\n\nThere are numerous options in this gorgeous home. We are looking forward to you experiencing them all.\n\n\u2605 SMART HOME \u2605\n\nVilla Paradise is equipped with the latest smart-home features. Using the designated Brilliant Touch Screen Panel in the entryway and Touch smart switches throughout the home you can access a multitude of features to make your stay just that much better. Set the mood with our smart lights or enjoy the music with friends and family using our integrated Sonos ceiling speakers located in the Living Area and Game Room that can stream from your smartphone.\n \n\u2714Fully dimmable & color-changing lights from Warm to Cold white.\n\u2714High Definition Sonos Ceiling Speakers with Smart Phone streaming (Living Area and Game Room)\n\u27144K Smart TVs \n\u2714Dimmable Smart Light Switches\n\u2714Smart Bathroom Mirrors with Defogging and LED lighting\n\u2714Smart Washer and Dryer with Samsung AI technology\"\n\u2714Smart Frige with Auto-filling Water Pitcher\n\n\u2605 LIVING ROOM \u2605\nIt immediately feels like home! Find your place on the comfy sofa, cuddle up with a good book, watch a movie, or discuss your plans for the day.\n\n\u2714 Oversized L-Shaped Sofa with Pillows & Blankets\n\u2714 65\" Ultra HD 4K Smart TV with Netflix, Hulu, HBO max, and more\n\u2714 HD Sound Bar with Dolby Atmos and surround sound\n\u2714 Coffee Table\n\u2714 Access to the Backyard\n\u2714 Sofa sleeps an extra 2 people\n\n\u2605 KITCHEN & DINING \u2605\nIt is fully equipped with state-of-the-art cooking appliances that make it suitable for preparing any meal, whether a simple breakfast, a quick snack or a three-course gourmet dinner. Spacious quartz countertops and the central kitchen island provide plenty of room to work your MasterChef magic.\n\n\u2714 Microwave\n\u2714 Stove\n\u2714 Oven\n\u2714 Toaster\n\u2714 Blender\n\u2714 Hot Water Kettle\n\u2714 Coffee Corner (Regular Coffee Maker, Keuring Machine, Moka Pot)\n\u2714 Refrigerator/Freezer\n\u2714 Dishwasher\n\u2714 Sink - Hot & Cold Water\n\u2714 Trays\n\u2714 Glasses\n\u2714 Silverware\n\u2714 Pots & Pans\n\nHave a few drinks in the living room while the food is getting ready. Once it's done, serve it on the dining table and enjoy a tasty meal with your loved ones. Breakfasts, snacks, and smaller meals can easily be served on the inviting kitchen island.\n\n\u2714 Dining Table with Seating for 6\n\u2714 Kitchen Island with Seating for 3\n\n\u2605 SLEEPING ARRANGEMENTS \u2013 3 BEDROOMS \u2605\nAfter an exciting day in the city, you will be looking to rest for an equally entertaining tomorrow. Once you are ready to relax, please make your way to these comfortable bedrooms.\n\n\u265b Master Bedroom: King-Size Bed, 45\" Smart TV, Access to the Backyard\n\u265b Bedroom 2: Queen-Size Bed, 45\" Smart TV\n\u265b Bedroom 3: Two Bunk Beds (Twin over Twin)\n\u265b Living Room: Large Sectional sofa can sleep 2 \n\nAll bedrooms are equipped with a similar set of amenities.\n\n\u2714 Premium Pillows, Linens, and Sheets\n\u2714 Ultra HD 4K Smart TVs\n\u2714 Full-Size Mirrors\n\u2714 Closets with Hangers and Shelves\n\u2714 Night Stands with Reading Lamps\n\n\u2605 BATHROOMS \u2605\nBesides the ensuite bathroom of the master bedroom, the house features another full relaxing bathroom that caters to the remaining bedrooms and the living area. All are stocked with fresh towels and essential toiletries to ensure you have a carefree stay.\n\n\u2714 Walk-In Shower\n\u2714 Vanity (Double in the Master Bath)\n\u2714 Mirror\n\u2714 Toilet\n\u2714 Towels\n\u2714 Hair Dryer\n\u2714 Essential Toiletries\n\n\u2605 GAME ROOM \u2605\nCome to the entertaining garage to discover numerous relaxing and entertaining amenities. Be careful, though. You'll quickly lose track of time in this fun space! \n \n\u2714 Arcade Machines\n\u2714 Pool Table\n\u2714 Comfy Futon\n\n\u2605 BACKYARD \u2605\nA luxurious home like this would not shine in its best light if it did not have a private outdoor space where you can relax and enjoy soaking up the sun. Step out onto the fully fenced backyard, cool off in the large swimming pool, play various fun games while the designated BBQ master works their magic on the grill, and then light up the fire pit under the pergola and have a magical evening under the Florida sky.\n\n\u2714 Swimming Pool with Sun Lounges and Parasols\n\u2714 Pergola (Fire Pit Table, Lounge Seating, String Lights)\n\u2714 Covered Patio with Lounge Seating\n\u2714 BBQ Grill\n\nWe look forward to you finding your happiness in this breathtaking home. This could mean unplugging for a while, watching a movie, curling up on the sofa with a good book, or swimming in the backyard's gorgeous pool.",
+        "sub_title": "Entire villa hosted by Michel",
+        "num_bedrooms": 8,
+        "num_baths": 2,
+        "min_guests": 12,
+        "size": "3 bedrooms",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "listing_type": "villa",
+        "ammenities": [
+            "Garden view",
+            "Kitchen",
+            "Fast wifi \u2013 442 Mbps",
+            "Dedicated workspace",
+            "Free parking on premises",
+            "Private outdoor pool - available all year, open 24 hours, lap pool, pool toys",
+            "Pets allowed",
+            "65\" HDTV with Amazon Prime Video, Apple TV, Disney+, HBO Max, Hulu, Netflix, premium cable, Roku, standard cable",
+            "EV charger - level 2, tesla only",
+            "Security cameras on property"
+        ],
+        "location_desc": "The house is nestled in a tranquil and family-friendly neighborhood in southern Miami, FL. It offers an ideal escape from the everyday hustle and bustle while allowing you to visit Miami's top restaurants, shops, entertainment, attractions, and landmarks.\n\nHere are some attractions you will surely be looking to visit.\n\n\u2714 Larry and Penny Thompson Memorial Park and Campground (8 min away)\n\u2714 By Brothers (11 min away)\n\u2714 Zoo Miami (12 min away)\n\u2714 Knaus Berry Farm (14 min away)\n\u2714 Coral Castle (18 min away)\n\u2714 Fairchild Tropical Botanic Garden (30 min away)\n\u2714 Miami International Airport (34 min away)\n\u2714 Downtown Miami (35 min away)\n\u2714 Design District (38 min away)\n\u2714 Jungle Island (40 min away)\n\u2714 P\u00e9rez Art Museum Miami (40 min away)\n\u2714 Everglades National Park (40 min away)\n\u2714 Brickell (44 min away)\n\u2714 Wynwood (44 min away)\n\u2714 South Beach (44 min away)\n\u2714 Vizcaya Museum & Gardens (44 min away)\n\u2714 Miami Seaquarium (45 min away)\n\n***Distance times are calculated if you are traveling by car.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/729895415924628131/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/729895415924628131/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/729895415924628131/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/729895415924628131/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/729895415924628131/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/miami_photos/729895415924628131/image_1.jpg"
+        ],
+        "coordinates": [
+            25.738705682439196,
+            -80.35229145204063
+        ]
+    }
+]
+
+miami_reviews = [
+    [
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 2,
+            "check_in": 5,
+            "text": "This place is spectacular. We loved our stay at this cozy #villa. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 5,
+            "check_in": 5,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 4,
+            "check_in": 3,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        }
+    ],
+    [
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 4,
+            "check_in": 4,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        }
+    ],
+    [
+        {
+            "cleanliness": 2,
+            "accuracy": 4,
+            "communication": 4,
+            "location": 5,
+            "check_in": 3,
+            "text": "Beautiful #villa. Perfect with plenty of beds and easy lake access. Great deck and yard with a nearby bbq makes for a perfect evening! Close walk to town with a fun bar aswell."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 5,
+            "check_in": 3,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 3,
+            "location": 2,
+            "check_in": 5,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 4,
+            "check_in": 2,
+            "text": "The place was perfect for our family and friends visit to #Miami and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 5,
+            "check_in": 3,
+            "text": "This place is spectacular. We loved our stay at this cozy #villa. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        }
+    ],
+    [
+        {
+            "cleanliness": 2,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 4,
+            "check_in": 4,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 5,
+            "check_in": 2,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 2,
+            "location": 4,
+            "check_in": 5,
+            "text": "Beautiful #condo. Perfect with plenty of beds and easy lake access. Great deck and yard with a nearby bbq makes for a perfect evening! Close walk to town with a fun bar aswell."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 5,
+            "check_in": 3,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 5,
+            "communication": 3,
+            "location": 5,
+            "check_in": 2,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 3,
+            "check_in": 3,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        }
+    ],
+    [
+        {
+            "cleanliness": 2,
+            "accuracy": 2,
+            "communication": 5,
+            "location": 2,
+            "check_in": 2,
+            "text": "Beautiful #villa. Perfect with plenty of beds and easy lake access. Great deck and yard with a nearby bbq makes for a perfect evening! Close walk to town with a fun bar aswell."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 3,
+            "location": 3,
+            "check_in": 4,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 3,
+            "check_in": 5,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 2,
+            "location": 4,
+            "check_in": 3,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 4,
+            "communication": 5,
+            "location": 2,
+            "check_in": 4,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        }
+    ],
+    [
+        {
+            "cleanliness": 2,
+            "accuracy": 5,
+            "communication": 3,
+            "location": 5,
+            "check_in": 4,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 5,
+            "check_in": 3,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 5,
+            "check_in": 3,
+            "text": "The place was perfect for our family and friends visit to #Miami and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 4,
+            "check_in": 3,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 4,
+            "check_in": 2,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 2,
+            "communication": 5,
+            "location": 5,
+            "check_in": 3,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 4,
+            "check_in": 5,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 4,
+            "check_in": 3,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 4,
+            "check_in": 4,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 5,
+            "check_in": 3,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 2,
+            "location": 5,
+            "check_in": 2,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 5,
+            "check_in": 3,
+            "text": "The place was perfect for our family and friends visit to #Miami and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 5,
+            "check_in": 2,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 5,
+            "check_in": 5,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 3,
+            "check_in": 3,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 2,
+            "location": 5,
+            "check_in": 4,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 2,
+            "location": 4,
+            "check_in": 2,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 4,
+            "check_in": 3,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 3,
+            "check_in": 5,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 5,
+            "check_in": 3,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 5,
+            "location": 3,
+            "check_in": 2,
+            "text": "The place was perfect for our family and friends visit to #Miami and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 2,
+            "location": 2,
+            "check_in": 3,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 2,
+            "check_in": 4,
+            "text": "This place is spectacular. We loved our stay at this cozy #rental. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 3,
+            "check_in": 5,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 5,
+            "location": 3,
+            "check_in": 4,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        }
+    ],
+    [
+        {
+            "cleanliness": 4,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 2,
+            "check_in": 4,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        }
+    ],
+    [
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 2,
+            "check_in": 5,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 2,
+            "check_in": 4,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 2,
+            "check_in": 3,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 4,
+            "communication": 4,
+            "location": 2,
+            "check_in": 2,
+            "text": "The place was perfect for our family and friends visit to #Miami and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        }
+    ],
+    [
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 2,
+            "location": 2,
+            "check_in": 3,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 5,
+            "check_in": 4,
+            "text": "The place was perfect for our family and friends visit to #Miami and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 4,
+            "check_in": 5,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 4,
+            "communication": 5,
+            "location": 5,
+            "check_in": 4,
+            "text": "This place is spectacular. We loved our stay at this cozy #villa. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 2,
+            "communication": 5,
+            "location": 2,
+            "check_in": 4,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 5,
+            "check_in": 4,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 3,
+            "check_in": 5,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 5,
+            "location": 3,
+            "check_in": 4,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 2,
+            "check_in": 2,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 3,
+            "check_in": 3,
+            "text": "The place was perfect for our family and friends visit to #Miami and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 4,
+            "communication": 3,
+            "location": 5,
+            "check_in": 4,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 2,
+            "check_in": 4,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 4,
+            "communication": 3,
+            "location": 4,
+            "check_in": 4,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 4,
+            "communication": 3,
+            "location": 4,
+            "check_in": 3,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 3,
+            "location": 5,
+            "check_in": 5,
+            "text": "This place is spectacular. We loved our stay at this cozy #condo. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 5,
+            "check_in": 4,
+            "text": "Beautiful #condo. Perfect with plenty of beds and easy lake access. Great deck and yard with a nearby bbq makes for a perfect evening! Close walk to town with a fun bar aswell."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 5,
+            "check_in": 4,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 2,
+            "communication": 2,
+            "location": 2,
+            "check_in": 2,
+            "text": "The place was perfect for our family and friends visit to #Miami and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        }
+    ],
+    [
+        {
+            "cleanliness": 4,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 5,
+            "check_in": 2,
+            "text": "This place is spectacular. We loved our stay at this cozy #serviced. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 2,
+            "check_in": 2,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        }
+    ]
+]
+
+puts "CREATING MIAMI LISTINGS"
+listings = []
+users = []
+
+miami_listing_objects.each do |listing|
+    u =    User.create!({
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.unique.email,
+        password: 'password'
+      })
+    listing["user_id"] = u.id
+    l = Listing.create!(listing)
+    users.push(u.id)
+    listings.push(l)
+end
+
+puts "MIAMI LISTINGS COMPLETE"
+puts "CREATING MIAMI REVIEWS"
+
+miami_reviews.each_with_index do |review_array,i|
+    listing_id = listings[i].id
+    review_array.each do |review|
+        u =    User.create!({
+            first_name: Faker::Name.first_name,
+            last_name: Faker::Name.last_name,
+            email: Faker::Internet.unique.email,
+            password: 'password'
+          })
+         review["user_id"] = u.id
+         review["listing_id"] = listing_id
+      
+        Review.create!(review)
+    end
+
+end
+
+puts "MIAMI REVIEWS COMPLETE"
 puts "DONE"
