@@ -44,6 +44,14 @@ export default function DateSelector({listing, initialDates=[null, null]}){
   useEffect(() => {
     let takenDates = Object.values(reservations).map(res => getDisabledDates([new Date(res.startDate), new Date(res.endDate)])).flat().map(date => date.toDateString())
     setDisabledDates(takenDates)
+    const viewTag = Array.from(document.getElementsByClassName("react-calendar__navigation__label"))[0]
+    if(viewTag !==  undefined){
+        viewTag.addEventListener("click", function(e){
+            e.preventDefault()
+            e.stopPropagation()
+        })
+
+    }
   },[])
 
   useEffect(() => {

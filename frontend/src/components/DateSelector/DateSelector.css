@@ -53,6 +53,7 @@
 
   .react-calendar__navigation__label__labelText{
     pointer-events: none;
+    cursor: none;
   }
 
   .react-calendar__navigation span {
