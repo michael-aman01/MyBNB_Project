@@ -2071,7 +2071,7 @@ sf_listing_objects.each do |listing|
     listings.push(l)
 end
 
-puts "CREATING REVIEWS"
+puts "CREATING SF REVIEWS"
 sf_reviews.each_with_index do |review_array,i|
     listing_id = listings[i].id
     review_array.each do |review|
@@ -2089,5 +2089,1193 @@ sf_reviews.each_with_index do |review_array,i|
 
 end
 
+puts "SF REVIEWS AND LISTINGS COMPLETE"
 
+ny_listing_objects = [
+    {
+        "main_title": "Individual Cubicle Room in NYC/Boys Floor",
+        "price": 82,
+        "cleaning_fee": 143.5,
+        "service_fee": 164,
+        "description": "This cubicle room is just for you and nobody else. Its door has a lock. Access to communal bathroom/shower/sink, and common lounge area. Peace and quiet strictly observed. Friendly staff on-site 24/7.Complimentary breakfast any time of day. Free WiFi everywhere. Fresh, clean sheets, pillows towels, blankets, shampoo, shower gel, hand soap provided. Basic yet safe, quiet and clean. Midtown Manhattan,within walking distance of Penn Station,FIT,Madison Square Garden,High Line Park,Theater District\n\n\nGreat fit for solo travelers on budget: central location, individual sleeping cubicle with door and lock. Basic accommodation yet safe, quiet, and very clean. Friendly helpful staff on-site 24 hrs. Breakfast 24 hrs. Free WiFi. Good price.",
+        "sub_title": "Private room in hostel hosted by Alex And Zeena",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 1,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "room",
+        "ammenities": [
+            "Wifi",
+            "Air conditioning",
+            "Luggage dropoff allowed",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave",
+            "Breakfast",
+            "Long term stays allowed",
+            "Security cameras on property"
+        ],
+        "location_desc": "This neighborhood is called: Chelsea. \n     There are literally hundreds of small unique restaurants, shops, book stores, galleries, theaters and pubs in Chelsea.  You will find, gently-strolling, pedestrian traffic at all hours of the day of evening.\n   Chelsea is not a dark, or dangerous area.   It's a neighborhood that's full of life.\n      Many artists, musicians, writers, actors, FIT students, other graduate students, similar intelligentsia, and creative people live in Chelsea.  I think you'll like it here.\n     You can get anywhere in New York City quickly and easily from here.\n       The subway station is two blocks away (a two minute walk).\nMidtown Manhattan is very central and safe. Police station 2 blocks away. We're located within walking distance of Theater District, Penn Station, FIT, Madison Square Garden, High Line Park  ",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/12171671/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/12171671/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/12171671/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/12171671/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/12171671/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/12171671/image_1.jpg"
+        ],
+        "coordinates": [
+            40.77570572820308,
+            -73.95885235100303
+        ]
+    },
+    {
+        "main_title": "Staypineapple New York, Cosmo King",
+        "price": 110,
+        "cleaning_fee": 192.5,
+        "service_fee": 220,
+        "description": "It\u2019s no secret. Manhattan has the best, if not the most options for dining, shopping, and entertainment on the planet. Booking a room in the hip and cozy Staypineapple in Midtown puts you right in the heart of the action so you can get the most out of your NYC vacay. \n\nAn amenity fee with tax ($28.69 per day) will be charged upon arrival.\n\nDaily pet fees apply.\n\n\nThe rooms feature plush ambience with modern furniture to provide a peaceful night\u2019s rest in the city that never sleeps. Enjoy the signature Naked Experience that includes duvet beds with luxury towels and robes to provide maximum comfort. Free high-speed Wi-Fi, high-def televisions with premium channels, and complimentary Kuerig coffee and tea are all standard.\n\nMidtown Manhattan is the home for some of New York\u2019s top attractions. The Theater District, Central Park, Times Square, and Madison Square Garden are the most notable. With subway stops spread all over the city, you\u2019ll have direct access to all of the destinations on your list. \n\nYour room will have: \n\nPrivate bathroom\nDaily housekeeping\nBlackout drapes/curtains\nAir conditioning\nDaily housekeeping \n \nThe space offers:\n\n24-hour front desk\nLaundry service\nConcierge services\nLuggage storage\nElevator",
+        "sub_title": "Room in boutique hotel hosted by An Artful Hotel",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "in",
+        "ammenities": [
+            "Wifi",
+            "Pets allowed",
+            "TV with standard cable",
+            "Elevator",
+            "Air conditioning",
+            "Luggage dropoff allowed",
+            "Pack \u2019n play/Travel crib",
+            "Hair dryer",
+            "Long term stays allowed",
+            "Paid parking off premises"
+        ],
+        "location_desc": "Purposefully located in Midtown just steps from everything you want to see: Times Square, Hudson Yards, Hell\u2019s Kitchen, and Madison Square Garden to name a few.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36238749/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36238749/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36238749/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36238749/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36238749/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36238749/image_1.jpg"
+        ],
+        "coordinates": [
+            40.74554019141643,
+            -73.98065334536037
+        ]
+    },
+    {
+        "main_title": "Arlo Midtown - Accessible King Room",
+        "price": 154,
+        "cleaning_fee": 269.5,
+        "service_fee": 308,
+        "description": "Ideal for travelers who want a little more walk-around space, Accessible King rooms are comfortably-outfitted home bases for urban explorers. The rooms are efficiently designed and offer all the modern amenities an on-the-go traveler needs, including 55\u201d LED TVs, high-speed WiFi and bedside wireless charging stations. Wheelchair accessible.\n\n\nADA Accessible with King Bed - 250 sq ft",
+        "sub_title": "Room in hotel hosted by Arlo",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "in",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "Nestled between the buzzing glamour of Times Square and the up-and-coming Hudson Yards neighborhood.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/49565858/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/49565858/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/49565858/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/49565858/image_1.jpg"
+        ],
+        "coordinates": [
+            40.774665764956886,
+            -73.9533591881331
+        ]
+    },
+    {
+        "main_title": "Staypineapple New York, Fashionista King",
+        "price": 110,
+        "cleaning_fee": 192.5,
+        "service_fee": 220,
+        "description": "It\u2019s no secret. Manhattan has the best, if not the most options for dining, shopping, and entertainment on the planet. Booking a room in the hip and cozy Staypineapple in Midtown puts you right in the heart of the action so you can get the most out of your NYC vacay. \n\nAn amenity fee with tax ($28.69 per day) will be charged upon arrival.\n\nDaily pet fees apply.\n\n\nThe rooms feature plush ambience with modern furniture to provide a peaceful night\u2019s rest in the city that never sleeps. Enjoy the signature Naked Experience that includes duvet beds with luxury towels and robes to provide maximum comfort. Free high-speed Wi-Fi, high-def televisions with premium channels, and complimentary Kuerig coffee and tea are all standard.\n\nMidtown Manhattan is the home for some of New York\u2019s top attractions. The Theater District, Central Park, Times Square, and Madison Square Garden are the most notable. With subway stops spread all over the city, you\u2019ll have direct access to all of the destinations on your list. \n\nYour room will have: \n\nPrivate bathroom\nDaily housekeeping\nBlackout drapes/curtains\nAir conditioning\nDaily housekeeping \n \nThe space offers:\n\n24-hour front desk\nLaundry service\nConcierge services\nLuggage storage\nElevator",
+        "sub_title": "Room in boutique hotel hosted by An Artful Hotel",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "in",
+        "ammenities": [
+            "Wifi",
+            "Pets allowed",
+            "TV",
+            "Elevator",
+            "Air conditioning",
+            "Hair dryer",
+            "Long term stays allowed"
+        ],
+        "location_desc": "Purposefully located in Midtown just steps from everything you want to see: Times Square, Hudson Yards, Hell\u2019s Kitchen, and Madison Square Garden to name a few.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239568/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239568/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239568/image_7.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239568/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239568/image_8.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239568/image_9.jpg"
+        ],
+        "coordinates": [
+            40.71731262305544,
+            -73.99112468869913
+        ]
+    },
+    {
+        "main_title": "138 Bowery-Classic King Studio",
+        "price": 145,
+        "cleaning_fee": 253.75,
+        "service_fee": 290,
+        "description": "Located in Bowery \u2013 historically the most unique streetscape of New York with over 400 years of history and culture \u2013 this place is right around the corner of Grand St subway. Super convenient as you can be anywhere in Manhattan in just a few minutes. Steps away from SoHo, NoHo and major subway lines (6,J,Z,N,Q,B,D). Its unbeatable location puts the best of downtown\n\n\nModern unit in an elevator building. This unit is illuminated by floor to ceiling industrial style windows, flooding the home with brilliant light. The room has a   hot plate, mini fridge, microwave, closet, spacious bathroom, smart TV and heat/air conditioning.",
+        "sub_title": "Entire rental unit hosted by Jeniffer",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "Studio",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Free street parking",
+            "TV",
+            "Elevator",
+            "Paid washer \u2013 In building",
+            "Paid dryer \u2013 In building",
+            "Air conditioning",
+            "Hair dryer",
+            "Security cameras on property"
+        ],
+        "location_desc": "This new building is situated on the dynamic Bowery just steps from Soho, Nolita, Noho, and the East Village. Its unbeatable location puts the best of downtown's galleries, boutiques, restaurants, wellness and nightlife at your doorstep.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43267312/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43267312/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43267312/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43267312/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43267312/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43267312/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43267312/image_1.jpg"
+        ],
+        "coordinates": [
+            40.723297347388524,
+            -73.9962745296854
+        ]
+    },
+    {
+        "main_title": "Clean, quiet, safe bedroom by Central Park",
+        "price": 82,
+        "cleaning_fee": 143.5,
+        "service_fee": 164,
+        "description": "Furnished hardwood floor private room (with door lock, key) with brand new furniture\u2019s: bed with linens, desk, closet, air conditioning and window blinds. Kitchen will have everything you will need (or just ask) \u2013 gas stove, coffee and espresso machine, toaster, microwave (no dishwasher sorry).\nShared bathroom has a window and a washing machine.\nBuilding with renovated lobby, elevator.\nSubways C, D and 1, 2, 3 few minutes away.\nNeighborhood: by Central Park, Wholefoods, Starbucks, restaurants.",
+        "sub_title": "Private room in rental unit hosted by Henry",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "room",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "The Upper West Side is home to Lincoln Center, home to performing arts institutions like the Metropolitan Opera and the New York City Ballet. Amid the majestic buildings of Central Park West, the American Museum of Natural History presents a collection ranging from dinosaurs to life in space. On weekends, families come out of their beautiful typical red sandstone houses (brownstones) located in quiet little streets to go for brunch or buy bagels.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53050522/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53050522/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53050522/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53050522/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53050522/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53050522/image_1.jpg"
+        ],
+        "coordinates": [
+            40.718873907054004,
+            -74.0100074422483
+        ]
+    },
+    {
+        "main_title": "Clean, quiet, safe room by Central Park",
+        "price": 70,
+        "cleaning_fee": 122.5,
+        "service_fee": 140,
+        "description": "Furnished hardwood floor room (separated from rest of the apartment by a thick curtain - no wall) with brand new furniture\u2019s: bed with linens, desk, closet, air conditioning and window blinds. Kitchen will have everything you will need (or just ask) \u2013 gas stove, coffee and espresso machine, toaster, microwave (no dishwasher sorry).\nShared bathroom has a window and a washing machine.\nBuilding with renovated lobby, elevator.\nSubways C, D and 1, 2, 3 & Central Park and Wholefoods near by.",
+        "sub_title": "Private room in rental unit hosted by Henry",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 1,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "room",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "The Upper West Side is home to Lincoln Center, which hosts performing-arts institutions like the Metropolitan Opera and New York City Ballet. Amid the grand apartment buildings of Central Park West, the American Museum of Natural History presents everything from dinosaurs to outer-space exhibits. On weekends, families emerge from stately brownstones on quiet side streets to line up for brunch or bagels.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53346269/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53346269/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53346269/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53346269/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53346269/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/53346269/image_1.jpg"
+        ],
+        "coordinates": [
+            40.76140480921615,
+            -73.99936443754335
+        ]
+    },
+    {
+        "main_title": "Staypineapple New York, Persona Queen",
+        "price": 110,
+        "cleaning_fee": 192.5,
+        "service_fee": 220,
+        "description": "It\u2019s no secret. Manhattan has the best, if not the most options for dining, shopping, and entertainment on the planet. Booking a room in the hip and cozy Staypineapple in Midtown puts you right in the heart of the action so you can get the most out of your NYC vacay. \n\nAn amenity fee with tax ($28.69 per day) will be charged upon arrival.\n\nDaily pet fees apply.\n\n\nThe rooms feature plush ambience with modern furniture to provide a peaceful night\u2019s rest in the city that never sleeps. Enjoy the signature Naked Experience that includes duvet beds with luxury towels and robes to provide maximum comfort. Free high-speed Wi-Fi, high-def televisions with premium channels, and complimentary Kuerig coffee and tea are all standard.\n\nMidtown Manhattan is the home for some of New York\u2019s top attractions. The Theater District, Central Park, Times Square, and Madison Square Garden are the most notable. With subway stops spread all over the city, you\u2019ll have direct access to all of the destinations on your list. \n\nYour room will have: \n\nPrivate bathroom\nDaily housekeeping\nBlackout drapes/curtains\nAir conditioning\nDaily housekeeping \n \nThe space offers:\n\n24-hour front desk\nLaundry service\nConcierge services\nLuggage storage\nElevator",
+        "sub_title": "Room in boutique hotel hosted by An Artful Hotel",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 1,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "in",
+        "ammenities": [
+            "Wifi",
+            "Pets allowed",
+            "TV",
+            "Elevator",
+            "Air conditioning",
+            "Hair dryer",
+            "Long term stays allowed"
+        ],
+        "location_desc": "Purposefully located in Midtown just steps from everything you want to see: Times Square, Hudson Yards, Hell\u2019s Kitchen, and Madison Square Garden to name a few.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239907/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239907/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239907/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239907/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239907/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/36239907/image_1.jpg"
+        ],
+        "coordinates": [
+            40.70820440112594,
+            -73.96417385648208
+        ]
+    },
+    {
+        "main_title": "Cozy, quiet room in artist's apartment",
+        "price": 54,
+        "cleaning_fee": 94.5,
+        "service_fee": 108,
+        "description": "Quiet room available in an artist's apartment. The room is fully furnished, the bed is very comfy. I provide fresh towels and sheets. Interior and mattresses are being exchanged frequently. Located in Brooklyn, you will get to experience staying in a new, exciting neighborhood with artists and young families. The Subway is on the same block! Short ride into Manhattan. This is the perfect place for a city vacation or business trip...\n\n\nYou will receive your own key and have full access to the bedroom, bathroom, hallway and kitchen.",
+        "sub_title": "Private room in rental unit hosted by Deycke",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 1,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "room",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "A fresh new neighborhood! Cafe's..Restaurants..Supermarkets..parks! Safe. Authentic Brooklyn with a new vibe of artists and young families.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43819542/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43819542/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43819542/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43819542/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43819542/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43819542/image_1.jpg"
+        ],
+        "coordinates": [
+            40.69388896419372,
+            -73.99593120923076
+        ]
+    },
+    {
+        "main_title": "My Casa Ur Home Away From Home",
+        "price": 104,
+        "cleaning_fee": 182.0,
+        "service_fee": 208,
+        "description": "Bright and sunny room, large window faces east . located right across the hallway from the bathroom in a 3 bedroom apt. Furnished w: Queen size bed, Flat TV  w Cable service(turns on to NY1, our local news channel), Small closet, dresser and a bedside table that works as a laptop desk.This room is Perfect for re-charging after a day of adventures or a night of partying but definitely not a place to bring the party back to.\n\n\nThis is a great real bedroom in a 3 bedroom very charming true EV apartment located  in the vibrant  Alphabet City area(East of Tompkins sq Park) .Near trendy bars and Michelin rated restaurants, Community Gardens and Tompkins Sq Park. Close to buses ( M9 stops right outside)and a 12 minute walk to trains (F,N,R,6,L,etc.)  And a average of 30 minutes away from most places that you would like to visit in NYC. Perfect location if you want to be in the East Village.\nA large dog ( true gentle giant) lives in this house :)",
+        "sub_title": "Private room in rental unit hosted by Jhovana",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "room",
+        "ammenities": [
+            "Courtyard view",
+            "Fast wifi \u2013 67 Mbps",
+            "32\" HDTV with standard cable",
+            "Window AC unit",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave",
+            "Long term stays allowed"
+        ],
+        "location_desc": "Alphabet City it's the hearth and soul of the East Village,Located on the east side of iconic St Mark's Place and Tompkins Sq Park. full of diverse restaurants, bars and coffee shops. community gardens and amazing people\nOn weekends you can just walk around and stumble into all sorts of magic moments (musicians performing in the park, painters taking in the landscape or a movie production been shot outside ).\nShort distance to Nolita,Chinatown,LES and close to subways and short ride to Meatpacking district, Williamsburg Bk,etc. Bus to Battery Park stop right across the street from the apartment and you can always get a citibike and ride around the city (Docks are a couple of blocks away).",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_6.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_10.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_7.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_8.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_9.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_11.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/9181483/image_1.jpg"
+        ],
+        "coordinates": [
+            40.70859477903494,
+            -74.00674587530195
+        ]
+    },
+    {
+        "main_title": "Charming, sunny room in artist's apartment",
+        "price": 67,
+        "cleaning_fee": 117.25,
+        "service_fee": 134,
+        "description": "Lovely room available in an artist's apartment. The room is fully furnished, the bed is very comfy. I provide fresh towels and sheets.\nInterior and mattresses are being exchanged frequently. The apartment is very quiet and catches plenty of daylight.\nLocated in Brooklyn, you will get to experience staying in a new, exciting neighborhood with artists and young families.\nThe Subway is on the same block! Short ride into Manhattan. This is the perfect place for a city vacation or business trip...\n\n\nYou are welcome to use the kitchen, all dishes included. You can have food in the fridge. I have a Microwave and a Electric water kettle for you to make coffee or tea. However, I cannot allow the use of the stove , no actual meal cooking please. Thank you!",
+        "sub_title": "Private room in rental unit hosted by Deycke",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 1,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "room",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "A fresh new neighborhood! Cafe's..Restaurants..Supermarkets..parks! Safe. Authentic Brooklyn with a new vibe of artists and young families.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43774160/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43774160/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43774160/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43774160/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43774160/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43774160/image_1.jpg"
+        ],
+        "coordinates": [
+            40.78597448832228,
+            -73.9779067657788
+        ]
+    },
+    {
+        "main_title": "138 Bowery-Classic Queen Studio",
+        "price": 140,
+        "cleaning_fee": 245.0,
+        "service_fee": 280,
+        "description": "Located in Bowery \u2013 historically the most unique streetscape of New York with over 400 years of history and culture \u2013 this place is right around the corner of Grand St subway. Super convenient as you can be anywhere in Manhattan in just a few minutes. Steps away from SoHo, NoHo and major subway lines (6,J,Z,N,Q,B,D). Its unbeatable location puts the best of downtown.\n\n\nModern unit in an elevator building. This unit is illuminated by floor to ceiling industrial style windows, flooding the home with brilliant light. The room has a   hot plate, mini fridge, microwave, closet, spacious bathroom, smart TV and heat/air conditioning.",
+        "sub_title": "Entire rental unit hosted by Jeniffer",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "Studio",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Free street parking",
+            "TV",
+            "Elevator",
+            "Washer \u2013 In building",
+            "Dryer \u2013 In building",
+            "Air conditioning",
+            "Hair dryer",
+            "Security cameras on property"
+        ],
+        "location_desc": "This new building is situated on the dynamic Bowery just steps from Soho, Nolita, Noho, and the East Village. Its unbeatable location puts the best of downtown's galleries, boutiques, restaurants, wellness and nightlife at your doorstep.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43315528/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43315528/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43315528/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43315528/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43315528/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/43315528/image_1.jpg"
+        ],
+        "coordinates": [
+            40.77089576221531,
+            -73.99026638414585
+        ]
+    },
+    {
+        "main_title": "Hell's Kitchen Enclave: a Diamond in the Rough.",
+        "price": 100,
+        "cleaning_fee": 175.0,
+        "service_fee": 200,
+        "description": "Hello and thank you for your interest in the space!\n\nWhen inquiring or submitting a reservation request, please send your detailed arrival and departure itineraries.\n\nI ask that you look over the listing thoroughly, read my reviews, house rules and house manual.  If you have any outstanding questions or concerns, please do not hesitate to bring those to my attention.\n\nI look forward to creating an outstanding part of your travel experience,\n\nWarmly,\n\nMichael\n\n\nThe space, located in the heart of the City, is suitable for a range of guests - solo adventurers, and business travelers alike - situated on a block shared with a school and car dealership, there are 1/2 as many people and twice the privacy. Up to date amenities, in a rustic, turn of the century walk-up, you will find solace.",
+        "sub_title": "Entire rental unit hosted by Michael",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 1,
+        "size": "Studio",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "Kitchen",
+            "Fast wifi \u2013 324 Mbps",
+            "Free street parking",
+            "Window AC unit",
+            "Bathtub",
+            "Hair dryer",
+            "Refrigerator",
+            "Breakfast",
+            "Long term stays allowed",
+            "Security cameras on property"
+        ],
+        "location_desc": "Hell's Kitchen is the hottest neighborhood in Manhattan. While becoming the most modern part of town, there remains an authentic charm in Hell's Kitchen, a timeless sense of New York throughout it's history, and this space epitomizes that feel. Home to some of the best restaurants in the City and stone's throw from Broadway and the best off-Broadway productions, you really do not need to stray far. Many of the City's main attractions, including MOMA and Central Park, are a comfortable walk away. Sunset strolls along the Westside Highway feature the glow of the City.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/13169559/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/13169559/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/13169559/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/13169559/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/13169559/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/13169559/image_1.jpg"
+        ],
+        "coordinates": [
+            40.68868258789342,
+            -73.96434551572099
+        ]
+    },
+    {
+        "main_title": "Mural Haus: Private 1br apartment, in BedStuy",
+        "price": 114,
+        "cleaning_fee": 199.5,
+        "service_fee": 228,
+        "description": "This private 1br apartment is located on the ground floor of a gorgeous townhome. Enjoy a private entrance to this 1br efficiency apartment (feels like a large hotel suite with a fully equipped kitchen), perfect for a single person or couple. You have access to the free laundry room to wash your stuff so you can pack light. The home is 5 blocks away from the A train that takes you express to NYC in under 25min. BedStuy is a vibrant Brooklyn neighborhood full of great restaurants and bars.",
+        "sub_title": "Entire rental unit hosted by George",
+        "num_bedrooms": 1,
+        "num_baths": 1,
+        "min_guests": 2,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "rental",
+        "ammenities": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "Hair dryer",
+            "Refrigerator",
+            "Microwave"
+        ],
+        "location_desc": "BedStuy is considered the hottest neighborhood in Brooklyn according to TimeOut Magazine. An interesting array of restaurants and bars are within walking distance and all of NYC best night life is within 30min from the house. The neighborhood is represented by a global array of characters and deeply rooted in the local culture of African American and West Indian home owners in the area. Walking through the neighborhood is like being in a small town. Everyone says hello and has a big smile on their face.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/617998141692186340/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/617998141692186340/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/617998141692186340/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/617998141692186340/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/617998141692186340/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/617998141692186340/image_1.jpg"
+        ],
+        "coordinates": [
+            40.69675229760938,
+            -73.9926696411455
+        ]
+    },
+    {
+        "main_title": "Upper West Side",
+        "price": 152,
+        "cleaning_fee": 266.0,
+        "service_fee": 304,
+        "description": "**NEWLY RENOVATED ONE BEDROOM APARTMENT**. Two blocks from Central Park and The West Side Highway. 10 mins from Harlem and 42nd street Times Square. The world famous Carmines is two blocks away on Broadway.",
+        "sub_title": "Entire condo hosted by Earl",
+        "num_bedrooms": 2,
+        "num_baths": 1,
+        "min_guests": 4,
+        "size": "1 bedroom",
+        "city": "New York City",
+        "state": "NY",
+        "country": "United States",
+        "listing_type": "condo",
+        "ammenities": [
+            "City skyline view",
+            "Park view",
+            "Lake access",
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free street parking",
+            "HDTV with Fire TV",
+            "Elevator",
+            "Air conditioning"
+        ],
+        "location_desc": "Nestled between Riverside and Central Park, the Upper West Side is one of the greenest parts of Manhattan. The Upper West Side is known for popular attractions like the Natural History Museum and Lincoln Center, but relaxed bistros and a lively bar scene defy expectations in this sparkling and cozy uptown neighborhood.",
+        "photo_urls": [
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/41133573/image_5.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/41133573/image_0.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/41133573/image_3.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/41133573/image_4.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/41133573/image_2.jpg",
+            "https://mybnb-app-dev.s3.us-west-2.amazonaws.com/ny_photos/41133573/image_1.jpg"
+        ],
+        "coordinates": [
+            40.69488510353104,
+            -73.9398555644184
+        ]
+    }
+]
+
+ny_reviews = [
+    [
+        {
+            "cleanliness": 4,
+            "accuracy": 4,
+            "communication": 4,
+            "location": 3,
+            "check_in": 4,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 2,
+            "location": 4,
+            "check_in": 5,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 2,
+            "check_in": 2,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 4,
+            "check_in": 5,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 4,
+            "check_in": 2,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 2,
+            "location": 4,
+            "check_in": 2,
+            "text": "The place was perfect for our family and friends visit to #New York City and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 4,
+            "communication": 4,
+            "location": 4,
+            "check_in": 4,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 2,
+            "check_in": 4,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 4,
+            "check_in": 3,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 2,
+            "check_in": 2,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 2,
+            "location": 3,
+            "check_in": 5,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 4,
+            "check_in": 2,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 5,
+            "check_in": 3,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 2,
+            "check_in": 5,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 3,
+            "check_in": 5,
+            "text": "The place was perfect for our family and friends visit to #New York City and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 4,
+            "location": 4,
+            "check_in": 4,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 5,
+            "location": 5,
+            "check_in": 4,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 3,
+            "check_in": 3,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 5,
+            "communication": 3,
+            "location": 5,
+            "check_in": 3,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 5,
+            "check_in": 3,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 4,
+            "communication": 5,
+            "location": 5,
+            "check_in": 3,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 4,
+            "check_in": 4,
+            "text": "The place was perfect for our family and friends visit to #New York City and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 4,
+            "check_in": 4,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 3,
+            "check_in": 4,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 4,
+            "check_in": 5,
+            "text": "Great neighborhood and a cozy place to stay! Parking isn\u2019t bad, you just need to know where to look."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 3,
+            "check_in": 3,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 4,
+            "location": 2,
+            "check_in": 2,
+            "text": "Beautiful #room. Perfect with plenty of beds and easy lake access. Great deck and yard with a nearby bbq makes for a perfect evening! Close walk to town with a fun bar aswell."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 5,
+            "check_in": 4,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 5,
+            "check_in": 5,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 4,
+            "check_in": 5,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 5,
+            "check_in": 3,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 4,
+            "location": 3,
+            "check_in": 5,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 2,
+            "check_in": 2,
+            "text": "The place was perfect for our family and friends visit to #New York City and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 3,
+            "check_in": 3,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 3,
+            "check_in": 2,
+            "text": "This place is spectacular. We loved our stay at this cozy #room. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 5,
+            "location": 2,
+            "check_in": 5,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 3,
+            "check_in": 4,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 4,
+            "communication": 4,
+            "location": 3,
+            "check_in": 5,
+            "text": "The place was perfect for our family and friends visit to #New York City and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 4,
+            "check_in": 3,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 4,
+            "check_in": 5,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 2,
+            "communication": 2,
+            "location": 5,
+            "check_in": 2,
+            "text": "Beautiful #room. Perfect with plenty of beds and easy lake access. Great deck and yard with a nearby bbq makes for a perfect evening! Close walk to town with a fun bar aswell."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 2,
+            "communication": 5,
+            "location": 2,
+            "check_in": 5,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 2,
+            "check_in": 5,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 3,
+            "communication": 2,
+            "location": 5,
+            "check_in": 2,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 4,
+            "check_in": 2,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        }
+    ],
+    [
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 4,
+            "check_in": 2,
+            "text": "Quiet neighborhood, good location, everything was great!"
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 5,
+            "check_in": 4,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 3,
+            "location": 4,
+            "check_in": 5,
+            "text": "Beautiful #rental. Perfect with plenty of beds and easy lake access. Great deck and yard with a nearby bbq makes for a perfect evening! Close walk to town with a fun bar aswell."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 3,
+            "check_in": 5,
+            "text": "The house was given to us not cleaned. Even when we requested maid service and they actually came they did not do a good job. They only sprayed Windex everywhere. The counters and the floors remained greasy and so are the bathrooms very disgustingGreat location with a large group. Absolutely had a fantastic time."
+        }
+    ],
+    [
+        {
+            "cleanliness": 5,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 2,
+            "check_in": 3,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 3,
+            "accuracy": 2,
+            "communication": 3,
+            "location": 2,
+            "check_in": 2,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 3,
+            "check_in": 2,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 3,
+            "location": 5,
+            "check_in": 3,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 3,
+            "check_in": 5,
+            "text": "This home is perfect for a big group. Our family of 16 gathered for grandpa's 80th birthday. We had a magical time. Weather was great so our time was mostly spent outside."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 3,
+            "location": 2,
+            "check_in": 5,
+            "text": "Beautiful, clean home for multiple families to enjoy."
+        }
+    ],
+    [
+        {
+            "cleanliness": 2,
+            "accuracy": 5,
+            "communication": 5,
+            "location": 2,
+            "check_in": 5,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 4,
+            "accuracy": 5,
+            "communication": 4,
+            "location": 5,
+            "check_in": 2,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 2,
+            "communication": 4,
+            "location": 3,
+            "check_in": 5,
+            "text": "Location is beautiful, location is amazing, communication was great, we had a wonderful weekend . Super kid friendly but would also stay with just adults. Great experience overall."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 2,
+            "check_in": 2,
+            "text": "The place was perfect for our family and friends visit to #New York City and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 2,
+            "communication": 2,
+            "location": 4,
+            "check_in": 4,
+            "text": "The place was very clean and comfortable. It had a nice little setup of snacks and coffee pods (more than you would get in a similarly priced hotel room). "
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 4,
+            "communication": 3,
+            "location": 4,
+            "check_in": 5,
+            "text": "This place is spectacular. We loved our stay at this cozy #rental. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        }
+    ],
+    [
+        {
+            "cleanliness": 2,
+            "accuracy": 3,
+            "communication": 5,
+            "location": 5,
+            "check_in": 5,
+            "text": "Very comfortable and clean space . Enjoyed my stay  and would definitely love to book again."
+        },
+        {
+            "cleanliness": 2,
+            "accuracy": 4,
+            "communication": 2,
+            "location": 4,
+            "check_in": 5,
+            "text": "This place is spectacular. We loved our stay at this cozy #condo. It had the most amazing view and the fresh air was so revitalizing. Our hosts were super communicative and made it so easy to check in and even provided a guest book with a list of things to do. We highly recommend this place!"
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 3,
+            "communication": 3,
+            "location": 3,
+            "check_in": 4,
+            "text": "The place was perfect for our family and friends visit to #New York City and also completing the Half Marathon. It was in a great location for easy access to the grocery store and within 30min of the south entrance to the park. The house had everything we needed and was exactly as described on the website. The views were amazing and the home was very comfortable. Would def stay here again."
+        },
+        {
+            "cleanliness": 5,
+            "accuracy": 4,
+            "communication": 3,
+            "location": 2,
+            "check_in": 5,
+            "text": "Such a beautiful house in an even more beautiful location. Our host was an amazing host and gave excellent walking and dinner recommendations in the local area. Check in was super easy. "
+        }
+    ]
+]
+
+puts "CREATING NY LISTINGS"
+listings = []
+users = []
+puts "creating NY listings...."
+ny_listing_objects.each do |listing|
+    u =    User.create!({
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.unique.email,
+        password: 'password'
+      })
+    listing["user_id"] = u.id
+    l = Listing.create!(listing)
+    users.push(u.id)
+    listings.push(l)
+end
+puts "NY LISTINGS COMPLETE"
+
+puts "CREATING NY REVIEWS"
+
+ny_reviews.each_with_index do |review_array,i|
+    listing_id = listings[i].id
+    review_array.each do |review|
+        u =    User.create!({
+            first_name: Faker::Name.first_name,
+            last_name: Faker::Name.last_name,
+            email: Faker::Internet.unique.email,
+            password: 'password'
+          })
+         review["user_id"] = u.id
+         review["listing_id"] = listing_id
+      
+        Review.create!(review)
+    end
+
+end
+
+puts "NY REVIEWS COMPLETE"
 puts "DONE"

@@ -6,11 +6,12 @@ import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
 import ShowPage from './components/ShowPage'
 import ProfilePage from "./components/ProfilePage";
-import Map from "./components/Map";
+
 import { useSelector } from "react-redux";
 import { getUser } from "./store/user";
-import Test from "./components/Test";
+
 import SearchResults from "./components/SearchResults";
+
 function App() {
   const currentUser = useSelector(getUser)
   console.log(currentUser === null)
@@ -54,12 +55,6 @@ function App() {
       <Route path="/search/:search_params">
         <SearchResults></SearchResults>
       </Route>
-      <Route path="/test">
-      <Test></Test>
-      </Route>
-
-      
-
     </Switch>
     </>
 

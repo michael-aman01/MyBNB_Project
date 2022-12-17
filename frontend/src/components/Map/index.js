@@ -16,8 +16,12 @@ export default function Map({listings={},listing={}, mapStyles={}}){
     const ref = useRef(null)
     const [center, setCenter] = useState()
     const {id} = useParams()
-    const mapsKey = process.env.REACT_APP_MAPS_API_KEY
-
+    const {search_params} = useParams()
+    const mapsKey = process.env.REACT_APP_MAPS_API_KEY 
+    const states = {
+      "SF":" California",
+      "NY": "NY"
+    }
     const [markers, setMarkers] = useState(null)
     const [ currentPosition, setCurrentPosition ] = useState({});
 
@@ -63,6 +67,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
         })
         setCurrentPosition(coordsArray[0].position)
         setMarkers(listingMarkers)
+        console.log(listingMarkers)
     }
 
     
@@ -73,8 +78,12 @@ export default function Map({listings={},listing={}, mapStyles={}}){
             let result = await dispatch(fetchListings())
             if(Object.values(result.listings).length) {
                 if(id === undefined){
-                    getCoords(Object.values(result.listings).map(listing => listing.coordinates),Object.values(result.listings))
-                    calcCenter(Object.values(result.listings).map(listing => listing.coordinates))
+                    const state = states[search_params.split("&")[0].toUpperCase()]
+                
+                    
+
+                    getCoords(Object.values(result.listings).filter(listing => listing.state === state).map(listing => listing.coordinates),Object.values(result.listings).filter(listing => listing.state === state))
+                    calcCenter(Object.values(result.listings).filter(listing => listing.state === state).map(listing => listing.coordinates))
                  
                 }else{
                     let listing = result.listings[id]
@@ -120,14 +129,6 @@ export default function Map({listings={},listing={}, mapStyles={}}){
 
               options={mapOptions}
               center={currentPosition}>
-              {
-                currentPosition.lat ? 
-                <Marker
-                position={listings[0]}
-                onDragEnd={(e) => onMarkerDragEnd(e)}
-                draggable={false} /> :
-                null
-              }
               {markers}
             </GoogleMap>
         </LoadScript>

@@ -21,7 +21,7 @@ export default function SearchResults(){
 
     const cities = {
         "sf" : "California",
-        "ny" : "New York",
+        "ny" : "NY",
         "mia": "Miami"
     }
 
@@ -99,6 +99,7 @@ export default function SearchResults(){
             minHeight: "100%",
         
         };
+      
   
   
 
