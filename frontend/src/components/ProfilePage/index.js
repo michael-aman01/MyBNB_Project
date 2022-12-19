@@ -8,7 +8,7 @@ import { fetchListings,fetchListing } from "../../store/data"
 import { useDispatch } from "react-redux"
 import { fetchUser, getUser } from "../../store/user"
 import { useParams } from "react-router-dom"
-
+import LoadingSpinner from "../LoadingSpinner"
 export default function ProfilePage(){
     const user = useSelector(state => state.user)
 
@@ -81,6 +81,6 @@ export default function ProfilePage(){
 </>
     )
 }else{
-    return <div> loading </div>
+    return <LoadingSpinner></LoadingSpinner>
 }
 }
