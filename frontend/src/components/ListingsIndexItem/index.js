@@ -18,9 +18,11 @@ export default function ListingsIndexItem({listing}){
         
         const lat = someListing.coordinates.position.lat
         const lng = someListing.coordinates.position.lng
+        
         const radLat1 = Math.PI * lat /180
         const radLat2 = Math.PI * currentPosition[0] /180
-        const radtheta = Math.PI * (currentPosition[0] - lat)/180
+        const theta = lng - currentPosition[1]
+        const radtheta = Math.PI * theta/180
         const dist1 = Math.sin(radLat1) * Math.sin(radLat2) + (Math.cos(radLat1) * Math.cos(radLat2) * Math.cos(radtheta))
         const distance = (Math.acos(dist1) * 180/Math.PI) * 60 * 1.1515
         return distance.toFixed(2)
