@@ -52,9 +52,16 @@ export const login = ({ credential, password }) => async dispatch => {
     body: JSON.stringify({ credential, password })
   });
   const data = await response.json();
-  storeCurrentUser(data.user);
-  dispatch(setCurrentUser(data.user));
-  return response;
+  if(data){
+    storeCurrentUser(data.user);
+    dispatch(setCurrentUser(data.user));
+    return response;
+  }else{
+    
+    return null
+  }
+
+
 };
 
 export const logout = () => async (dispatch) => {
@@ -77,10 +84,16 @@ export const signup = (user) => async (dispatch) => {
       last_name
     })
   });
+
   const data = await response.json();
+  if(data){
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
-  return response;
+  }else{
+    return null
+  }
+
+
 };
 
 

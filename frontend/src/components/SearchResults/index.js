@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
 import Map from "../Map"
 import ListingsIndexItem from "../ListingsIndexItem"
-
+import LoadingSpinner from "../LoadingSpinner"
 export default function SearchResults(){
     const dispatch = useDispatch()
     const [listings, setListings] = useState()
@@ -130,7 +130,7 @@ export default function SearchResults(){
     }else{
         return (
             <>
-                <div>loading...</div>
+           <LoadingSpinner/>
             </>
         )
     }

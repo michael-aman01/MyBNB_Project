@@ -1,33 +1,36 @@
 import {useDispatch, useSelector } from 'react-redux'
-import LoginFormPage from '../LoginFormPage'
+import SignUpFormPage from '../SignUpFormPage'
 import LogOutButton from '../LogoutButton'
-import SignupFormPage from '../SignupFormPage'
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { login, logout } from '../../store/session'
 import { getUser } from '../../store/user'
 import "./NavOptionsDropdown.css"
 import stripes from '../../assets/navigation-button-stripes.svg'
 import buttonImage from "../../assets/navigation-button.svg"
 import ProfilePage from '../ProfilePage';
-
-
-
+import LoginFormPage from '../LoginFormPage';
+import { useState } from 'react';
+import * as sessionActions from "../../store/session"
 
 export default function NavOptionsDropdown(){
     const dispatch = useDispatch();
     const user = useSelector(getUser);
+    const history = useHistory()
 
-
+    const [credential, setCredential] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState([]);
+    const [show, setShow] = useState(true)
 
     let options = {
         "signup": {
             path: "/signup",
-            component: <SignupFormPage />,
+            component:  <SignUpFormPage type={"sign-up"}></SignUpFormPage>
 
         },
         "login": {
             path: "/login",
-            component: <LoginFormPage />
+            component:  <LoginFormPage type={"login"}></LoginFormPage>
         },
         "logout":{
             path: "/login",
@@ -62,16 +65,30 @@ export default function NavOptionsDropdown(){
             }
         })
     }
-
+    const handleLogin = () => {
+        setErrors([]);
+        dispatch(sessionActions.login({ credential: "test@gmail.com", password: "password" }))
+        history.push("/listings")
+          .catch(async (res) => {
+            let data;
+            try {
+              // .clone() essentially allows you to read the response body twice
+              data = await res.clone().json();
+            } catch {
+              data = await res.text(); // Will hit this case if the server is down
+            }
+            if (data?.errors) setErrors(data.errors);
+            else if (data) setErrors([data]);
+            else setErrors([res.statusText]);
+          });
+      }
+      
     const handleSelect = (e) => {
         if(e.target.innerHTML === "logout"){
             dispatch(logout())
         }
         if(e.target.innerHTML === "demo-login"){
-            dispatch(login({
-                credential: "test@gmail.com",
-                password: "password"
-            }))
+            handleLogin()  
         }
 
     }

@@ -107,7 +107,10 @@ export default function SearchBar(){
                 checkInTab.click()
             }
         }
-
+        const closeSearch = e => {
+            setOpen(false)
+            document.getElementById("nav-container").style.height = "90px"
+        }
 
     return(
         
@@ -173,7 +176,11 @@ export default function SearchBar(){
 
                                     </div>
                                 </div>
-                                
+                                <br></br>
+                                <div id="close-open-search">
+                                    <div></div>
+                                       <div onClick={closeSearch}> X close</div> 
+                                    </div>
                         </div>
                         :
                         <div className='calendar-container' id="search-calendar">
@@ -186,9 +193,12 @@ export default function SearchBar(){
                                 onChange={(date) => content === "checkInDate" ? setCheckInDate(date[0].toDateString()) : setCheckOutDate(date[0].toDateString())}
                                 tileDisabled={date => date.date.toDateString() === checkInDate}
                                 />
+                                    <div id="close-open-search">
+                                       <div onClick={closeSearch}> X close</div> 
+                                    </div>
                         </div>
                     }
-
+ 
       </div>
 
       </div>

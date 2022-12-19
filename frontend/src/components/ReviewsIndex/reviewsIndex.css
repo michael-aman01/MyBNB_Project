@@ -12,12 +12,11 @@
   #review-stats-container {
     display: flex;
     justify-content: space-between;
-    width: 50%;
-    font-size: 20px;
+    width: 100%;
+    font-size: 17px;
     padding: 10px;
     margin-top: 2%;
     line-height: 1.6;
-
     font-weight: 600;
   }
   #review-summary-container {
@@ -37,29 +36,23 @@
   }
 
   
-  
-  #review-details-container {
-    display: flex;
-    justify-content: space-between;
-  
-  }
+
   #create-review-container {
     font-size: 25px;
+    margin-right: 10%;
     margin-top: 10px;
     text-decoration: underline;
     cursor: pointer;
     color: blue;
     padding-bottom: 5%;
+    width: 100%;
     border-bottom: 1px solid black;
   }
 
-  #details-left {
-    margin-right: 10%;
-    width: 50%;
-  }
 
 #details-right {
-  width: 50%;
+  width: 100%;
+  font-size: 10px;
 }
 #avg-review-score > span{
     font-size: 35px;
@@ -67,3 +60,8 @@
     margin-left: 10px;
   }
   
+#reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+

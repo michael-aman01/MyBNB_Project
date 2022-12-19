@@ -9,7 +9,11 @@ import { useEffect } from "react"
 import { fetchUsers, getUser } from "../../store/user"
 import ReviewForm from "../ReviewForm"
 import reviewStar from '../../assets/Five_Pointed_Star_Solid.svg'
+
+
 export default function ReviewsIndex(){
+
+
     const {id} = useParams()
     const dispatch = useDispatch()
     const newReview = useSelector(state => state.review)
@@ -38,6 +42,8 @@ export default function ReviewsIndex(){
     }
 
     useEffect(() => {
+
+
         let allUsers = async () => {
             let res = await dispatch(fetchUsers())
             let users = res["users"]
@@ -46,7 +52,10 @@ export default function ReviewsIndex(){
             setReviewers(currentReviewers)
 
         }
+
+
         allUsers()
+
 
     },[])
 
@@ -119,7 +128,7 @@ export default function ReviewsIndex(){
 
 
     if(reviewers !== undefined && reviews !== undefined){
-   
+
         return(
             <>
             <div id="reviews-container">
@@ -137,9 +146,10 @@ export default function ReviewsIndex(){
                     <div>Cleanliness: {stats.cleanliness}</div>
                     <div>Accuracy: {stats.accuracy}</div>
                     <div>Communication: {stats.communication}</div>
+                    </ul>
+                    <ul>
                     <div>Location: {stats.location}</div>
-                        <div>Check-in: {stats.check_in}</div>
-
+                    <div>Check-in: {stats.check_in}</div>
                     </ul>
                     <ul>
           
@@ -156,16 +166,26 @@ export default function ReviewsIndex(){
 
                 
                 </div> 
+                <div id="reviews-grid">
 
-                {reviews.map((review,i) => 
+                {reviews.slice(0,reviews.length/2).map((review,i) => 
                 <div id="review-details-item">
                             <ReviewsIndexItem review={review}  reviewer={reviewers[i]}></ReviewsIndexItem>
                     </div>
                 )
 
                 }
+
+            {reviews.map((review,i) => 
+                <div className="review-details-item">
+                            <ReviewsIndexItem review={review}  reviewer={reviewers[i]}></ReviewsIndexItem>
+                    </div>
+                )
+
+                }
+            </div>
                 <br></br>
-                <div id="create-review-container"  data-id="create" onClick={openCreateModal}>
+                <div id="create-review-container" data-id="create" onClick={openCreateModal}>
                     Write a review
                 </div>
                 <ReviewForm review={createReviewObj} type={"create"}></ReviewForm>

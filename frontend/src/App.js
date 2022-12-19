@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-import LoginFormPage from "./components/LoginFormPage";
-import SignupFormPage from "./components/SignupFormPage";
+import SignUpFormPage from './components/SignUpFormPage'
 import NavigationBar from "./components/NavigationBar";
 import ListingsIndex from "./components/ListingsIndex";
 import ShowPage from './components/ShowPage'
 import ProfilePage from "./components/ProfilePage";
-
+import LoginFormPage from "./components/LoginFormPage";
 import { useSelector } from "react-redux";
 import { getUser } from "./store/user";
 
@@ -29,20 +28,20 @@ function App() {
       <NavigationBar/>
         <Switch>
       <Route path="/login">
-        <LoginFormPage />
+        <LoginFormPage type={"login"}></LoginFormPage>
       </Route>
       <Route path="/signup">
-        <SignupFormPage />
+        <SignUpFormPage type={"Sign Up"}></SignUpFormPage>
       </Route>
       <Route exact path="/">
         {
-          currentUser !== null ?    <ListingsIndex></ListingsIndex> :  <LoginFormPage></LoginFormPage>
+          currentUser !== null ?    <ListingsIndex></ListingsIndex> :   <LoginFormPage type={"login"}></LoginFormPage>
         }
       
       </Route>
       <Route exact path="/listings">
       {
-          currentUser !== null ?    <ListingsIndex></ListingsIndex> :  <LoginFormPage></LoginFormPage>
+          currentUser !== null ?    <ListingsIndex></ListingsIndex> :   <LoginFormPage type={"login"}></LoginFormPage>
         }
       
       </Route>

@@ -68,6 +68,7 @@ export default function ReviewForm({review, type}){
             const res = await dispatch(createReview(reviewBody))
             
             closeModal()
+            window.location.reload()
             return res
         }else{
             alert("please complete form")
@@ -124,6 +125,7 @@ export default function ReviewForm({review, type}){
                               
                                     : 
                                     <>
+                     
                                   <div className='review-update-option'>
                                     {reviewItem}
                                     </div>
@@ -141,7 +143,7 @@ export default function ReviewForm({review, type}){
                         
                     </div>
                     <div id="review-form-button-container">
-                        <button onClick={type === "update" ? handleUpdateReview : handleCreateReview}>submit</button>
+                        <button id='review-submit-button' onClick={type === "update" ? handleUpdateReview : handleCreateReview}>submit</button>
                     </div>
                     </div>
              

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import xMark from "../../assets/iconmonstr-x-mark-1.svg"
+import "./AuthForm.css"
+import { useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import GithubLogo from "../../assets/github-logo.png"
 import LinkedInLogo from "../../assets/linkedin.png"
-import { useHistory } from 'react-router-dom';
 
-
-
-function LoginFormPage() {
+export default function SignUpFormPage({type}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
@@ -17,6 +17,10 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
   const [show, setShow] = useState(true)
   const history = useHistory()
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
+
+  const textCredentials = {"first_name":"First Name", "last_name":"Last Name", "email": "Email", "password": "Password"}
 
   useEffect(() => {
     let tag = document.getElementById("login-modal-content")
@@ -39,25 +43,48 @@ function LoginFormPage() {
 
   if (sessionUser) return <Redirect to="/listings" />;
 
-  const handleSubmit = (e) => {
+
+  const handleSignUp = (e) => {
     e.preventDefault();
-    setErrors([]);
-    dispatch(sessionActions.login({ credential, password }))
-    history.push("/listings")
-      .catch(async (res) => {
+
+      setErrors([]);
+      let reqParams = {
+        "email":credential,
+        "password":password,
+        "last_name": last_name,
+        "first_name" : first_name
+      }
+      let missingParams = Object.keys(reqParams).filter(key => reqParams[key] === '').map(key => `Please add a valid ${textCredentials[key]}`)
+      if(credential.length < 6) missingParams.push("Password must have 6 or more characters")
+      setErrors(missingParams)
+      if(missingParams.length > 0){
+        return null
+      }else{
+      return dispatch(sessionActions.signup(reqParams))
+        .catch(async (res) => {
         let data;
         try {
-          // .clone() essentially allows you to read the response body twice
+    
           data = await res.clone().json();
+          console.log(data)
         } catch {
-          data = await res.text(); // Will hit this case if the server is down
+          data = await res.text(); 
+          console.log(data)
         }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
+        if (data?.errors){
+          setErrors(data.errors);
+        } else if (data){
+          console.log(data)
+          setErrors([data]);
+        }else{
+          setErrors([res.statusText]);
+          console.log(data)
+        }
       });
-  }
-  
+    }
+      
+  };
+
 
 
   const toggleModal = () => {
@@ -70,30 +97,46 @@ function LoginFormPage() {
     
   <div id="login-modal">
     <div id="login-modal-background">
-      <div id="login-modal-content">
+      <div id="signup-modal-content">
         <div id="login-modal-header">
           <div id="close-modal-button-container" onClick={toggleModal}>
             <img width="20px" heigh="20px" alt="" src={xMark}></img>
           </div>
-          <div id="login-banner">Login</div>
+          <div id="login-banner">Sign Up</div>
      
         </div>
         <br></br>
       <div id="login-form-container">
-        <div>
+        <div id="auth-errors-container">
           <ul>
-            {errors.map(err => <li>{err}</li>)}
+            {errors.map(err => <li style={{"color":"red"}}>{err}</li>)}
           </ul>
-        <form onSubmit={handleSubmit}>
+          <br></br>
+        <form onSubmit={(e) => handleSignUp(e)}>
+        {type !== "login" ? 
+          <>
+          <div id="login-input-container" >
+          <label className="login-input-hidden-label" id="first-name-label"></label>
+          <input className="login-input-field" type="text" placeholder='First Name' id="firstName"  value={first_name} onChange={(e) => setFirstName(e.target.value)}></input>
+        </div>
+        <div id="login-input-container" >
+          <label className="login-input-hidden-label" id="last-name-label"> </label>
+          <input className="input-field" id="lastName" type="text"onChange={(e) => setLastName(e.target.value)} placeholder='Last Name' value={last_name}   ></input>
+        </div>
+        <br></br>
+        </>
+              : null  
+        }
           <div id="login-input-container" >
             <label className="login-input-hidden-label" id="email-label"></label>
             <input className="login-input-field" type="email" placeholder='Email' id="email"  value={credential} onChange={(e) => setCredential(e.target.value)}></input>
           </div>
           <div id="login-input-container" >
             <label className="login-input-hidden-label" id="password-label"> </label>
-            <input className="input-field" id="password" type="password"onChange={(e) => setPassword(e.target.value)} placeholder='password' value={password}   ></input>
+            <input className="input-field" id="Password" type="password"onChange={(e) => setPassword(e.target.value)} placeholder='Password' value={password}   ></input>
           </div>
           <br></br>
+
           <div id="login-submit-container">
             <button id="login-submit-button">
               <span>Continue</span>
@@ -103,11 +146,11 @@ function LoginFormPage() {
         </div>
         <br></br>
         <div id="change-auth-container">
-           <div> Not a member ?</div>
+           <div> Already a member ?</div>
            <br></br>
            <div id="login-submit-container">
             <button id="login-submit-button">
-              <span><NavLink style={{"color":"white" ,"text-decoration":"none"}} to="/signup">Sign Up</NavLink></span>
+              <span><NavLink style={{"color":"white" ,"text-decoration":"none"}} to="/login">Go to Login</NavLink></span>
                 
             </button>
           </div>
@@ -136,5 +179,3 @@ function LoginFormPage() {
   );
   }
 }
-
-export default LoginFormPage;

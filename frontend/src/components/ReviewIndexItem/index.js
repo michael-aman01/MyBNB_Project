@@ -57,6 +57,7 @@ if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !
                             {review["text"] }
                      
                         </div>
+                        <br></br>
                         {
                             reviewer.id === user.id ? 
                             <>

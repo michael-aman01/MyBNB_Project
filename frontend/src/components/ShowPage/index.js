@@ -12,6 +12,7 @@ import bayviewIcon from "../../assets/ammenities/bayview.svg"
 import Map from "../Map";
 import DateSelector from "../DateSelector";
 import { useState } from "react";
+import LoadingSpinner from "../LoadingSpinner";
 
 export default function ShowPage(){
 
@@ -52,7 +53,9 @@ export default function ShowPage(){
     };
 
     if(!listing){
-        return null
+        return (
+            <LoadingSpinner></LoadingSpinner>
+        )
     }else{
         return (
       <>

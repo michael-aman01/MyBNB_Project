@@ -4,6 +4,9 @@ import SearchBar from '../SearchBar';
 import NavOptionsDropdown from '../NavOptionsDropdown';
 import { useHistory } from "react-router-dom";
 import bnbLogo from "../../assets/Airbnb_Logo.png"
+import GithubLogo from "../../assets/github-logo.png"
+import LinkedInLogo from "../../assets/linkedin.png"
+
 export default function NavigationBar(){
 
     const history = useHistory()
@@ -30,7 +33,7 @@ export default function NavigationBar(){
     }
     const handleClick = () => {
         history.push("/listings")
-        window.location.reload()
+
     }
     return(
         <>
@@ -42,8 +45,15 @@ export default function NavigationBar(){
         </div>
    
                 <SearchBar />
-        
-    
+                <div id="navbar-social-media-container">
+                    <div>
+                    <a  href="https://github.com/michael-aman01/MyBNB_Project/wiki"><img width="30px" height="30px" src={GithubLogo}></img></a>
+                    </div>
+                    <div>
+                        <a href="https://www.linkedin.com/in/michael-aman-ba1086258/"><img width="30px" height="30px" src={LinkedInLogo}></img></a>
+                    </div>
+                
+                </div>
                 <NavOptionsDropdown />
        
         </div>

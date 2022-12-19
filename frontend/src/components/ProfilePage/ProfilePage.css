@@ -25,3 +25,11 @@
     padding: 20px;
     margin-left: 100px;
 }
+
+
+
+.profile-reviews-widget {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}

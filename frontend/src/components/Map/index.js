@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-
+import LoadingSpinner from "../LoadingSpinner";
 import { GoogleMap, InfoWindow, LoadScript, Marker } from "@react-google-maps/api";
 import { fetchListings  } from "../../store/data";
 
@@ -90,7 +90,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
                 }
                 clearInterval(dataLoad)
             }
-        },1500)
+        },150)
     },[])
 
 
@@ -133,23 +133,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
         return(
   
           
-            <LoadScript googleMapsApiKey={mapsKey}>
-                <GoogleMap
-        
-                  options={mapOptions}
-                  mapContainerStyle={mapStyles}
-                  center={center}
-                  >
-                  {
-                    currentPosition.lat ? 
-                    <Marker
-                    position={currentPosition}
-                    onDragEnd={(e) => onMarkerDragEnd(e)}
-                    draggable={false} /> :
-                    null
-                  }
-                </GoogleMap>
-            </LoadScript>
+      <LoadingSpinner></LoadingSpinner>
     
         )
       } 
