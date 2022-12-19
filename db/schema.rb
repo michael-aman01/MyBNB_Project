@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_042521) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_19_033640) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,8 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_042521) do
     t.text "description", null: false
     t.integer "num_bedrooms", null: false
     t.float "num_baths", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.float "rating"
     t.integer "zip_code"
     t.string "street_address"
@@ -70,20 +68,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_042521) do
     t.float "size", null: false
     t.text "photo_urls", default: [], array: true
     t.float "coordinates", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "listing_id", null: false
     t.string "start_date", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "end_date", null: false
     t.integer "adult_count"
     t.integer "children_count"
     t.integer "infant_count"
     t.integer "pet_count"
+    t.bigint "listing_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["listing_id"], name: "index_reservations_on_listing_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
@@ -95,10 +95,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_042521) do
     t.integer "location", null: false
     t.integer "check_in", null: false
     t.text "text", null: false
-    t.bigint "listing_id"
+    t.bigint "listing_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
     t.index ["listing_id"], name: "index_reviews_on_listing_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -107,10 +107,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_042521) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
