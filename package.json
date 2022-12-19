@@ -1,7 +1,7 @@
 {
-  "name": "mybnb",
+  "name": "mybnb_project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fullstack Rails/ReactJS AirBNB clone app",
   "directories": {
     "lib": "lib"
   },
@@ -13,20 +13,13 @@
     "url": "git+https://github.com/michael-aman01/MyBNB_Project.git"
   },
   "keywords": [],
-  "author": "michael aman",
+  "author": "Michael Aman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/michael-aman01/MyBNB_Project/issues"
   },
-  "engines": {
-    "node": "18.10.0"
-  },
   "homepage": "https://github.com/michael-aman01/MyBNB_Project#readme",
-  "dependencies": {
-    "@googlemaps/react-wrapper": "^1.1.35",
-    "dotenv": "^16.0.3",
-    "react-calendar": "^4.0.0",
-    "react-dates": "^21.8.0",
-    "react-slider": "^2.0.4"
+  "engines":{
+    "node":"18.10.0"
   }
 }
