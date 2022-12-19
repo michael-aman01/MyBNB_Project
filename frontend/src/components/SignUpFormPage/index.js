@@ -66,19 +66,19 @@ export default function SignUpFormPage({type}) {
         try {
     
           data = await res.clone().json();
-          console.log(data)
+       
         } catch {
           data = await res.text(); 
-          console.log(data)
+     
         }
         if (data?.errors){
           setErrors(data.errors);
         } else if (data){
-          console.log(data)
+
           setErrors([data]);
         }else{
           setErrors([res.statusText]);
-          console.log(data)
+
         }
       });
     }

@@ -7,7 +7,7 @@ import nyMap from '../../assets/ny-map-icon.jpg'
 import sfMap from  '../../assets/sf-map-icon.jpg'
 import miaMap from  '../../assets/miami-map-icon.jpg'
 import flexMap from  '../../assets/flexible-map-icon.jpg'
-import { useHistory } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import { useDispatch } from "react-redux"
 
 export default function SearchBar(){
@@ -19,6 +19,10 @@ export default function SearchBar(){
     const [city, setCity] = useState("where")
     const dispatch = useDispatch()
     const history = useHistory()
+  
+    useEffect(() => {
+
+    },[])
 
     const cityOptions = {
         "ny": "New York, NY",

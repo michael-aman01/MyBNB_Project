@@ -8,6 +8,7 @@ import {  useHistory } from "react-router-dom";
 export default function ListingsIndexItem({listing}){
     //add image fetch here
 
+
    const [distance, setDistance] = useState()
    const [currentImage, setCurrentImage] = useState(1)
     const history = useHistory()
@@ -42,7 +43,10 @@ export default function ListingsIndexItem({listing}){
         return stats
     }
 
-
+const closeOptions = (e) => {
+    const options = Array.from(document.getElementsByClassName("nav-selection"))
+    options.map(tag => tag.style.display = "none")
+}
     
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
@@ -56,6 +60,8 @@ export default function ListingsIndexItem({listing}){
 
 
     const handleClick = (e) => {
+        const navBar = document.getElementById("nav-container")
+
         history.push(`/listings/${listing.id}`)
     }
     if(!listing){
@@ -66,7 +72,7 @@ export default function ListingsIndexItem({listing}){
         return(
             <>
 
-            <div className="listing">
+            <div className="listing" onClick={closeOptions}>
                  <div className="image-container">
                     <div>
                         <div id="image-button-container">

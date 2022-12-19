@@ -65,7 +65,7 @@ export default function NavOptionsDropdown(){
             }
         })
     }
-    const handleLogin = () => {
+    const handleDemoLogin = () => {
         setErrors([]);
         dispatch(sessionActions.login({ credential: "test@gmail.com", password: "password" }))
         history.push("/listings")
@@ -84,11 +84,15 @@ export default function NavOptionsDropdown(){
       }
       
     const handleSelect = (e) => {
+        const options = Array.from(document.getElementsByClassName("nav-selection"))
+        options.map(tag => {tag.style.display = "none"})
+     
         if(e.target.innerHTML === "logout"){
             dispatch(logout())
+      
         }
         if(e.target.innerHTML === "demo-login"){
-            handleLogin()  
+            handleDemoLogin()  
         }
 
     }
@@ -102,7 +106,7 @@ export default function NavOptionsDropdown(){
                 </div>
                 {Object.keys(options).map((key,i) => 
                     <div style={{display: "none"}} key={i}  onClick={handleSelect} className="nav-selection">
-                            <NavLink to={options[key].path}>{key}</NavLink>
+                            <span><NavLink to={options[key].path}>{key}</NavLink></span>
                     </div>
                         )}
                         </div>

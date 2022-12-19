@@ -32,6 +32,8 @@ export default function NavigationBar(){
         
     }
     const handleClick = () => {
+        const options = Array.from(document.getElementsByClassName("nav-selection"))
+        options.map(tag => {tag.style.display = "none"})
         history.push("/listings")
 
     }
