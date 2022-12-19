@@ -5,5 +5,6 @@ set -o errexit
 
 npm run build
 bundle install
+rails db:drop:all
 rails db:migrate
 rails db:seed #if needed
