@@ -14,7 +14,6 @@ function SignupFormPage() {
   const [errors, setErrors] = useState([]);
   const [show, setShow] = useState(true)
   const history = useHistory()
-  console.log(show)
 
 
   useEffect(() => {
@@ -22,14 +21,13 @@ function SignupFormPage() {
     let i = 100
     const slideIn = setInterval(() => {
       let newVal = `${i}vh`
-      console.log(newVal)
+
       tag.style.marginTop = newVal
       i -= 1
       if(newVal === "20vh"){
         clearInterval(slideIn)
       }
     },1)
-    console.log(tag.style.marginTop)
 
   },[])
 

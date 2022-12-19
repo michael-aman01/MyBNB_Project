@@ -23,14 +23,14 @@ function LoginFormPage() {
       let i = 100
       const slideIn = setInterval(() => {
         let newVal = `${i}vh`
-        console.log(newVal)
+      
         tag.style.marginTop = newVal
         i -= 1
         if(newVal === "20vh"){
           clearInterval(slideIn)
         }
       },1)
-      console.log(tag.style.marginTop)
+
   
     }
 

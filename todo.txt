@@ -1,9 +1,0 @@
-- signup and take pics of login page
-- google api
-- do 10 properties for widget component
-
-
-first
-last
-email 
-password

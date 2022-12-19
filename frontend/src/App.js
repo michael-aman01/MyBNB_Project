@@ -14,7 +14,7 @@ import SearchResults from "./components/SearchResults";
 
 function App() {
   const currentUser = useSelector(getUser)
-  console.log(currentUser === null)
+
   useEffect(() =>{
     const navBar = document.getElementById("nav-container")
     if(window.location.toString().split("/").includes("create")){

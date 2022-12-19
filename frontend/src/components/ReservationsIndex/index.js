@@ -47,7 +47,6 @@ export default function ReservationIndexPage(){
     const reservations = user.reservations
     const images = user.reservations_listings.map(r => r.photo_urls)
     const listings = user.reservations_listings
-    reservations.map(res => console.log(new Date(res.start_date).toDateString()))
     if(reservations.length === 0){
         return (
         <div id="reservation-containers"> 
@@ -57,8 +56,6 @@ export default function ReservationIndexPage(){
         </div>
         )
     }else{
-        console.log(images)
-
     return (
         
         <>

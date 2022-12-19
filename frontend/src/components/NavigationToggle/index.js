@@ -16,7 +16,7 @@ export default function NavigationToggle(){
             let nav = document.getElementById("nav-container")
             nav.style.display = "None"
             history.push("/create")
-            console.log(currentUser.id)
+
             dispatch(addActiveForm({user_id: currentUser.id,photos: []}))
         }
 

@@ -47,9 +47,7 @@ export default function ReviewForm({review, type}){
         e.preventDefault()
 
         let check = Object.values(reviewBody).filter(val => val === undefined).length === 0 ? true : false
-        console.log(check  && reviewBody.text !== '')
         if(check){
-            console.log(reviewBody)
             const res = await dispatch(updateReview(reviewBody))
           
             closeModal()

@@ -74,7 +74,7 @@ export default function DateSelector({listing, initialDates=[null, null]}){
       setCheckInDate(checkOutDate)
       setDatesStatus(false)
  
-      console.log("reset")
+
     }else if(checkOutDate !== undefined){
       dispatch(addCheckout(checkOutDate))
       

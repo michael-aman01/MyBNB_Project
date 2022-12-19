@@ -51,8 +51,6 @@ export default function Map({listings={},listing={}, mapStyles={}}){
         let listingMarkers = coordsArray.map((coords,index) => {
           
           coords.label = {"text":`$${listingsArray[index].price}`,"color":"white"}
-          console.log(listings)
-          console.log(coords.label)
            return  <Marker 
             key={index} 
             position={coords.position}
@@ -69,7 +67,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
         })
         setCurrentPosition(coordsArray[0].position)
         setMarkers(listingMarkers)
-        console.log(listingMarkers)
+
     }
 
     
@@ -116,10 +114,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
         keyboardShortcut:false
       }
     if(listings !== null){
-      console.log(currentPosition)
       return ( 
-
-
         <>
       
             {markers}

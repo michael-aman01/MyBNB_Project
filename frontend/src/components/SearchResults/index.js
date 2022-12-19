@@ -1,12 +1,9 @@
 import "./SearchResults.css"
-import {useSelector} from 'react-redux'
 import { useState } from "react"
-import ListingIndexItem from '../ListingsIndexItem'
 import { fetchListings } from "../../store/data"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
-import { Circle } from "@react-google-maps/api"
 import Map from "../Map"
 import ListingsIndexItem from "../ListingsIndexItem"
 

@@ -22,7 +22,7 @@ export default function ListingsIndex(){
         }
         
     },[dispatch,sessionUser])
-    console.log(listings)
+
     if(!listings){
         return null
     }else{

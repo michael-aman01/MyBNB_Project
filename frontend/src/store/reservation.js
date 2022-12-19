@@ -73,7 +73,7 @@ export const getCheckOut = () => state => {
 export const fetchRerservations = listingId => async dispatch => {
     const res = await fetch(`/api/listings/${listingId}/reservations`)
     const data  = await res.json()
-    console.log(data)
+
     if(data){
         return dispatch(addReservations(data))
     }

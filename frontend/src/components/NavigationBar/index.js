@@ -21,8 +21,6 @@ export default function NavigationBar(){
             currentOpacity = currentOpacity - step
             tag.style.opacity = `${currentOpacity - step}%`
             tag.style.height = `${currentHeight + step}px`
-            console.log(currentOpacity)
-            console.log(tag.style.height)
     
             if(currentHeight === targetHeight){
                 clearInterval(transition)

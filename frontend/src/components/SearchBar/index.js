@@ -7,9 +7,9 @@ import nyMap from '../../assets/ny-map-icon.jpg'
 import sfMap from  '../../assets/sf-map-icon.jpg'
 import miaMap from  '../../assets/miami-map-icon.jpg'
 import flexMap from  '../../assets/flexible-map-icon.jpg'
-import { addSearchParams } from "../../store/search"
 import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux"
+
 export default function SearchBar(){
     const [open, setOpen] = useState(false)
     const [content, setContent] = useState("where")
@@ -91,7 +91,7 @@ export default function SearchBar(){
         
                 history.push(searchQueryStr)
                 window.location.reload()
-                dispatch(addSearchParams(searchParams))
+              
             
                 
             }
@@ -102,7 +102,7 @@ export default function SearchBar(){
             setCity(city)
    
             const checkInTab = document.getElementById("checkInDateButton")
-            console.log(checkInTab)
+       
             if(checkInTab){
                 checkInTab.click()
             }
