@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/michael-aman01/MyBNB_Project#readme",
   "dependencies": {
-    "@bcad1591/react-date-picker": "^0.1.1",
     "@googlemaps/react-wrapper": "^1.1.35",
     "dotenv": "^16.0.3",
     "react-calendar": "^4.0.0",
