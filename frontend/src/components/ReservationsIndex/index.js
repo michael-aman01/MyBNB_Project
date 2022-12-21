@@ -58,7 +58,7 @@ export default function ReservationIndexPage(){
         <div id="reservation-containers"> 
             <p>No trips booked yet...</p>
             <p>start searching: </p>
-            <button id="profileh-search-button" onClick={() => history.push("/listings")}>search</button>
+            <button id="profile-search-button" onClick={() => history.push("/listings")}>search</button>
         </div>
         )
     }else{
