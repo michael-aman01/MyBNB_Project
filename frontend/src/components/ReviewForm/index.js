@@ -100,15 +100,15 @@ export default function ReviewForm({review, type}){
                         {type === "update" ? "Update Review" : "Write a Review"}
                     </div>
                     </div>
-                    <div>
+                    <div id="review-items-container">
                             {Object.keys(review).filter(reviewItem => ["id","created_at","updated_at","listing_id","user_id"].includes(reviewItem) === false).map((reviewItem,i) => 
                             <>
-                            
+            
                             <div key={i} className="review-rating-item">
                             
                                 {   reviewItem !== "text" ? (
                                     <>
-                            <div className='review-update-option'>{reviewItem}</div>
+                            <div className='review-update-option'>{reviewItem}:</div>
                                <div className="slide-container">
                                         <ReactSlider
                                             className='review-slider'
@@ -125,15 +125,18 @@ export default function ReviewForm({review, type}){
                               
                                     : 
                                     <>
-                     
+                             
                                   <div className='review-update-option'>
-                                    {reviewItem}
-                                    </div>
+                                    <div>additional comments</div>
+                                    <br></br>
                                     <div>
-                                        <textarea onChange={(e) => setText(e.target.value)}>
-                                          {reviewBody["text"]}
-                                        </textarea>
+                                    <textarea id="review-textbox" onChange={(e) => setText(e.target.value)}>
+                                        {reviewBody["text"]}
+                                    </textarea>
                                     </div>
+                                    </div>
+                                    <br></br>
+                   
                                     </>
                     }
                             </div>

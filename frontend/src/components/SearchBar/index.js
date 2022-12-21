@@ -15,6 +15,7 @@ export default function SearchBar(){
     const [content, setContent] = useState("where")
     const [checkInDate, setCheckInDate] = useState("check-in")
     const [checkOutDate, setCheckOutDate] = useState("check-out")
+    const [calendarMarkers, setCalendarMarkers] = useState(null)
     const [minDate, setMinDate] = useState(new Date())
     const [city, setCity] = useState("where")
     const dispatch = useDispatch()
@@ -57,7 +58,17 @@ export default function SearchBar(){
     },[checkInDate])
 
 
-
+        const handleDates = date => {
+            if(content === "checkInDate"){
+                setCheckInDate(date[0].toDateString())
+   
+                checkOutDate === 'check-out' ?  setCalendarMarkers([date[0],null]) : setCalendarMarkers([date[0], new Date(checkOutDate)])
+            }else{
+                setCheckOutDate(date[0].toDateString())
+                checkInDate === 'check-in' ? setCalendarMarkers([null, date[0]]) : setCalendarMarkers([new Date(checkInDate), date[0]])
+                
+            }
+        }
     
         const handleClick = (e) => {
             const navBar = document.getElementById("nav-container")
@@ -80,6 +91,10 @@ export default function SearchBar(){
 
         const handleSearch = (e) => {
             e.preventDefault()
+            if(city === undefined){
+                alert("please select a location first")
+                return null
+            }
 
             if(checkInDate !== "check-in" && checkOutDate !== "check-out" && city !== "where"){
                 let searchParams = {
@@ -98,8 +113,20 @@ export default function SearchBar(){
               
             
                 
+            }else{
+                alert("Please select valid dates")
             }
         }
+
+        useEffect(() => {
+            if(checkInDate !== "check-in"){
+            const checkoutButton = Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "checkOutDate")[0]
+            
+            checkoutButton.setAttribute("id", "active-option")
+            }
+
+
+        },[checkInDate])
 
         const handleCity = (e,city) => {
             e.preventDefault()
@@ -112,7 +139,14 @@ export default function SearchBar(){
             }
         }
         const closeSearch = e => {
+            const whereButton = Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "where")[0]
+            whereButton.setAttribute("id", "active-option")
+        
             setOpen(false)
+            setCheckInDate("check-in")
+            setCheckOutDate("check-out")
+            setContent("where")
+            setCalendarMarkers(null)
             document.getElementById("nav-container").style.height = "90px"
         }
 
@@ -169,12 +203,12 @@ export default function SearchBar(){
                                     <div class="search-city-text">Miami, FL</div>
                                     </div>
                                 </div>
-                                <div className="city-selection-option" id="flex" onClick={(e) => handleCity(e,"flex")}>
+                                {/* <div className="city-selection-option" id="flex" onClick={(e) => handleCity(e,"flex")}>
                                 <div class="search-map-icon-container">
                                     <img class="search-map-icon" src={flexMap}></img>
                                     <div class="search-city-text">I'm Flexible</div>
                                     </div>
-                                </div>
+                                </div> */}
                                 <div>
                                     <div>
 
@@ -189,12 +223,15 @@ export default function SearchBar(){
                         :
                         <div className='calendar-container' id="search-calendar">
                             <Calendar
+                          
                                 selectRange={true}
                                 showDoubleView={true}
+                                value={calendarMarkers}
                                 minDate={checkInDate === "check-in" ? new Date() : new Date(checkInDate)}
                                 defaultView={"month"}
                                 onClickMonth={date => alert(date)}
-                                onChange={(date) => content === "checkInDate" ? setCheckInDate(date[0].toDateString()) : setCheckOutDate(date[0].toDateString())}
+                                onChange={(date) => handleDates(date)}
+                                tileClassName={date => new Date(checkInDate).toDateString() === date.date.toDateString() ? "start" : "not"}
                                 tileDisabled={date => date.date.toDateString() === checkInDate}
                                 />
                                     <div id="close-open-search">

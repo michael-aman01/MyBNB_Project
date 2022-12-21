@@ -28,7 +28,7 @@
   #login-modal-content {
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 550px;
     width: 400px;
     margin-left: 33vw;
     margin-top: 0vh;
@@ -43,10 +43,10 @@
   #signup-modal-content {
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 750px;
     width: 400px;
     margin-left: 33vw;
-    margin-top: 0vh;
+    margin-top: 10%;
     position: absolute;
     background-color:white;
     padding: 40px;

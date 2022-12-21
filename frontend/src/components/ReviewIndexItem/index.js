@@ -48,24 +48,17 @@ if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !
             <>
             <div id="review-detail-container">
                    <div className="reviewer-info">
-                        <div className="reviewer-name" >
-                            <p> {reviewer.first_name}</p>
-                             {/* <p id="review-date"> {months[new Date(review.created_at).getMonth()].toLowerCase()} {new Date(review.created_at).getFullYear()}</p> */}
-                        </div>
-                        
-                        <div className="review-text" >
-                            {review["text"] }
-                     
-                        </div>
-                        <br></br>
-                        {
+                    <div id="review-details-header">
+                            <div id="reviewer-name"> {reviewer.first_name}</div>
+                            {
                             reviewer.id === user.id ? 
                             <>
-                            <div  data-id={review.id} onClick={openUpdateModal} id="review-options-container">
-                                    update
-                                    
+          
+                        <div  id="review-options-container">
+                                <div   data-id={review.id}  onClick={openUpdateModal}>update</div>
                                 <div id={review.id} onClick={handleDelete} className="delete-review">delete</div>
                             </div>
+                         
                             <div id="reviews-container" >
                             <ReviewForm review={review}  type={'update'}></ReviewForm>
                             </div>  
@@ -74,6 +67,16 @@ if(reviewer !== undefined && Object.values(review).length > 0 && currentReview !
                             :
                             null
                         }
+   
+                    </div>
+                    <div id="review-date">{new Date(review.updated_at).toISOString().split("T")[0]}</div>
+                        
+                        <div className="review-text" >
+                            {review["text"] }
+                     
+                        </div>
+                        <br></br>
+        
                         
                  </div>
                 </div>

@@ -30,10 +30,6 @@ export default function ReservationForm({listing,checkOut,checkIn}){
 
 
 
-    useEffect(() => {
-        let avg = calcStats(listing.reviews)["avg"]
-        setAvgReview(avg)
-    },[listing])
 
     const toggleModal = () => {
         setShow(false)
@@ -74,6 +70,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
     }
 
     function calcStats(reviewsArr){
+        if(reviewsArr.length > 0){
         const keys = Object.keys(reviewsArr[0])
         const stats = {}
         const unwanted = ["id","created_at","updated_at","text","user_id","listing_id"]
@@ -86,6 +83,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
         const avg = Object.values(stats).map(val => parseInt(val)).reduce((a,b) => a +b, 0)/5
         stats["avg"] = avg
         return stats
+    }
     }
 
 
@@ -195,6 +193,15 @@ export default function ReservationForm({listing,checkOut,checkIn}){
       },[checkOut])
       
     
+      useEffect(() => {
+        if(listing.reviews !== undefined && listing.reviews.length > 0){
+            let avg = calcStats(listing.reviews)["avg"]
+            setAvgReview(avg)
+        }else{
+            setAvgReview("N/A")
+        }
+
+    },[listing])
 
 
     return (

@@ -19,6 +19,7 @@ export default function ReservationIndexPage(){
     const [tag, setTag] = useState()
 
 
+
     useEffect(() => {
         dispatch(fetchUser(currentUser.id))
     },[dispatch])
@@ -30,7 +31,10 @@ export default function ReservationIndexPage(){
         alert("canceled")
         dispatch(fetchUser(currentUser.id))
     }
-
+    const handleShowPage = listing => {
+    
+        history.push(`/listings/${listing.id}`)
+    }
     const handleUpdate = e => {
         e.preventDefault()
         const selected = reservations[e.target.id]
@@ -103,7 +107,7 @@ export default function ReservationIndexPage(){
 
                     </div>
                     <div class="rigth">
-                        <div class="trip-image">
+                        <div class="trip-image"  onClick={() => handleShowPage(listings[i])}>
                             <img  class="trip-image" src={images[i][1]}></img>
                         </div>
                     </div>

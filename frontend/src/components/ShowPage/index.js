@@ -81,6 +81,7 @@ export default function ShowPage(){
 
         <div id="show-details-container">
         <div id="description-title">{listing.sub_title}</div>
+        {/* <div><img src={listing.photo_urls[listing.photo_urls.length]}></img></div> */}
         <br></br>
         <div className="details-items">
             <p>{listing.min_guests} guests • {listing.num_bedrooms} bedrooms •  {listing.num_baths} bathrooms</p>    

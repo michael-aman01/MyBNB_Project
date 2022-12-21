@@ -173,10 +173,11 @@ font-family: 'Montserrat', sans-serif;
   .modal-content {
     display: flex;
     flex-direction: column;
-    height: 500px;
-    width: 400px;
+    height: fit-content;
+    width: 500px;
+  
     margin-left: 33vw;
-    margin-top: 0vh;
+    margin-top: 5%;
     position: absolute;
     background-color:white;
     padding: 40px;

@@ -1,0 +1,38 @@
+#edit-dates-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dates-update-button {
+    cursor: pointer;
+    color: #FF5A5F;
+    text-decoration: underline;
+  }
+
+  #reservation-confirmation {
+    
+    width: 40%;
+    height: 50%;
+    margin-left: 500px;
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 100px;
+ 
+    display: flex;
+    justify-content: space-between;
+}
+
+#calendar-container-confirmation {
+    
+    width: 40%;
+    height: 30%;
+    margin-left: 500px;
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 100px;
+ 
+    display: none;
+    justify-content: space-between;
+}

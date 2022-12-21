@@ -85,7 +85,23 @@ export default function SignUpFormPage({type}) {
       
   };
 
-
+  const handleDemoLogin = () => {
+    setErrors([]);
+    dispatch(sessionActions.login({ credential: "test@gmail.com", password: "password" }))
+    history.push("/listings")
+      .catch(async (res) => {
+        let data;
+        try {
+          // .clone() essentially allows you to read the response body twice
+          data = await res.clone().json();
+        } catch {
+          data = await res.text(); // Will hit this case if the server is down
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
+  }
 
   const toggleModal = () => {
     setShow(false)
@@ -99,9 +115,9 @@ export default function SignUpFormPage({type}) {
     <div id="login-modal-background">
       <div id="signup-modal-content">
         <div id="login-modal-header">
-          <div id="close-modal-button-container" onClick={toggleModal}>
+          {/* <div id="close-modal-button-container" onClick={toggleModal}>
             <img width="20px" heigh="20px" alt="" src={xMark}></img>
-          </div>
+          </div> */}
           <div id="login-banner">Sign Up</div>
      
         </div>
@@ -155,6 +171,13 @@ export default function SignUpFormPage({type}) {
             </button>
           </div>
         </div>
+        <br></br>
+        <div id="login-submit-container" >
+            <button id="login-submit-button" onClick={handleDemoLogin}>
+              <span>Demo Login</span>
+            </button>
+          </div>
+
         <br></br>
         <br></br>
         <div id="login-submit-container">
