@@ -9,6 +9,7 @@ import { useEffect } from "react"
 import { fetchUsers, getUser } from "../../store/user"
 import ReviewForm from "../ReviewForm"
 import reviewStar from '../../assets/Five_Pointed_Star_Solid.svg'
+import LoadingSpinner from "../LoadingSpinner"
 
 
 export default function ReviewsIndex(){
@@ -196,9 +197,7 @@ export default function ReviewsIndex(){
         )
     }else{
         return (
-            <div>
-                loading
-            </div>
+            <LoadingSpinner></LoadingSpinner>
         )
     }
 
