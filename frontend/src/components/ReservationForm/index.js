@@ -10,12 +10,12 @@ import reviewStar from "../../assets/Five_Pointed_Star_Solid.svg"
 import downArrow from "../../assets/down-arrow.png"
 import leftArrow from "../../assets/left-arrow.png"
 import { addCheckin, addCheckout} from '../../store/reservation'
-import x from '../../assets/iconmonstr-x-mark-1.svg'
+import xMark from '../../assets/iconmonstr-x-mark-1.svg'
 import ReservationConfirmationForm from "../ReservationConfirmationForm";
 
 export default function ReservationForm({listing,checkOut,checkIn}){
 
- 
+    const [updateCalendar, setUpdateCalendar] = useState()
     const [checkInDate,setCheckInDate] = useState()
     const [checkOutDate, setCheckOutDate] = useState()
     const [avgReview, setAvgReview] = useState()
@@ -146,7 +146,8 @@ export default function ReservationForm({listing,checkOut,checkIn}){
         const calendarContainer = document.getElementById("show-calendar-container")
         const calendarDescription = document.getElementById("calendar-description")
         const calendarContent = Array.from(document.getElementsByClassName("calendar-container"))[0]
-
+        const cal = document.getElementById("reservation-confirmation-calendar")
+        
 
         const calendarModal = document.createElement("div") 
         const calendarModalBackground = document.createElement("div")
@@ -155,7 +156,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
         const calendarModalBanner = document.createElement("div")
 
         const calendarX = document.createElement("img")
-        calendarX.setAttribute("src",x)
+        calendarX.setAttribute("src",xMark)
         calendarX.addEventListener("click",closeCalendarModal)
         calendarModalBanner.appendChild(calendarX)
         
@@ -194,11 +195,24 @@ export default function ReservationForm({listing,checkOut,checkIn}){
         }
       },[checkOut])
       
-    
+      const toggleCalendar = () => {
+        document.getElementById("confirmation-booking-details").hidden = false
+        document.getElementById("confirmation-price-details").hidden = false
+        Array.from(document.getElementsByClassName("reservation-details-modal"))[0].hidden = false
+        Array.from(document.getElementsByClassName("reservation-details-modal"))[0].style.display = "flex"
+        const calendarContainer = Array.from(document.getElementsByClassName("calendar-container"))[0]
+        calendarContainer.style.display = "none"
+      }
+
 
 
     return (
         <>
+        <div  id="reservation-confirmation-calendar" className= "calendar-container">
+    
+            <div onClick={toggleCalendar}><img src={xMark}></img></div>
+                 {updateCalendar}
+        </div>
               <div id="show-reservation-container" className="sticky">
             <div className="reservation-item" id="reservation-price">
                <div><span>${listing.price} </span>night</div>
@@ -317,7 +331,7 @@ export default function ReservationForm({listing,checkOut,checkIn}){
           <div id="reservation-confirmation-overlay">
           <ReservationConfirmationForm listing={listing}  checkIn={checkIn} checkOut={checkOut} adults={adults} children={children} infants={infants} pets={pets} startDate={startDate} endDate={endDate} />     
 
-</div>
+        </div>
           <br></br>
           <div id="max-message">
             <span> {maxMessage === undefined ? 

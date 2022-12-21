@@ -54,7 +54,8 @@ export default function ReservationIndexPage(){
         <div id="reservation-containers"> 
             <p>No trips booked yet...</p>
             <p>start searching: </p>
-            <button id="profileh-search-button" onClick={() => history.push("/listings")}>search</button>
+            <br></br>
+            <button id="profile-search-button" onClick={() => history.push("/listings")}>search</button>
         </div>
         )
     }else{
@@ -105,6 +106,7 @@ export default function ReservationIndexPage(){
                     <div class="rigth">
                         <div class="trip-image">
                             <img  class="trip-image" src={images[i][1]}></img>
+
                         </div>
                     </div>
                 </div>

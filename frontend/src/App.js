@@ -43,17 +43,29 @@ function App() {
       {
           currentUser !== null ?    <ListingsIndex></ListingsIndex> :   <LoginFormPage type={"login"}></LoginFormPage>
         }
-      
+
       </Route>
       <Route path={`/listings/:id`}>
-        <ShowPage />
+      {
+          currentUser !== null ?    <ShowPage /> :    <LoginFormPage type={"login"}></LoginFormPage>
+        }
+
       </Route>
       <Route path="/account/:user_id">
-        <ProfilePage />
+      {
+          currentUser !== null ?           <ProfilePage /> :    <LoginFormPage type={"login"}></LoginFormPage>
+        }
+
+
       </Route>
+
       <Route path="/search/:search_params">
-        <SearchResults></SearchResults>
+      {
+          currentUser !== null ?       <SearchResults></SearchResults> :  <LoginFormPage type={"login"}></LoginFormPage>
+        }
+
       </Route>
+
     </Switch>
     </>
 

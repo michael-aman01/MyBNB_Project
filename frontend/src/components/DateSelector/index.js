@@ -8,7 +8,7 @@ import { compose } from 'redux';
 
 export default function DateSelector({listing, initialDates=[null, null]}){
   const dispatch = useDispatch()
-
+  
   const [date, setDate] = useState(initialDates);
   const [minDate, setMinDate] = useState(new Date())
   const [checkinDate,setCheckInDate] = useState()

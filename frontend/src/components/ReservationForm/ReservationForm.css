@@ -21,6 +21,8 @@
     background-color: orange;
     padding: 20px;
 }
+
+
 #guests{
     display: flex;
     justify-content: space-between;
@@ -103,9 +105,11 @@
     padding: 10px;
 }
 #confirmation-title {
-    font-size: 40px;
+    font-size: 35px;
+    text-align: center;
     margin-bottom: 100px;
     text-decoration: underline;
+    width: fit-content;
 }
 
 #confirmation-booking-title {
@@ -166,3 +170,42 @@ input::-webkit-calendar-picker-indicator{
   #max-message {
     color: red;
   }
+
+  #edit-dates-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dates-update-button {
+    cursor: pointer;
+    color: #FF5A5F;
+    text-decoration: underline;
+  }
+
+  #reservation-confirmation {
+    
+    width: 40%;
+    height: 50%;
+    margin-left: 500px;
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 100px;
+ 
+    display: flex;
+    justify-content: space-between;
+}
+
+#reservation-confirmation-calendar {
+    
+    width: 40%;
+    height: 30%;
+    margin-left: 500px;
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 100px;
+ 
+    display: flex;
+    justify-content: space-between;
+}
