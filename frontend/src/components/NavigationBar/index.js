@@ -10,6 +10,10 @@ import LinkedInLogo from "../../assets/linkedin.png"
 export default function NavigationBar(){
 
     const history = useHistory()
+
+    const handleSocial = link => {
+        window.open(link, "_blank")
+    }
     const expandNav =(e) => {
         const tag = e.target
         let i = 1
@@ -47,13 +51,14 @@ export default function NavigationBar(){
         </div>
    
                 <SearchBar />
-                <div id="navbar-social-media-container" className="grid-item">
-                    <div>
-                    <a  href="https://github.com/michael-aman01/MyBNB_Project/wiki"><img width="30px" height="30px" src={GithubLogo}></img></a>
+                <div id="navbar-social-media-container">
+                <div onClick={() => handleSocial("https://www.linkedin.com/in/michael-aman-ba1086258/")}>
+                        <img onClick={() => handleSocial("https://www.linkedin.com/in/michael-aman-ba1086258/")} width="40px" height="40px" src={LinkedInLogo}></img>
                     </div>
-                    <div>
-                        <a href="https://www.linkedin.com/in/michael-aman-ba1086258/"><img width="30px" height="30px" src={LinkedInLogo}></img></a>
+                    <div onClick={() => handleSocial("https://github.com/michael-aman01/MyBNB_Project/wiki")} >
+                            <img onClick={() => handleSocial("https://github.com/michael-aman01/MyBNB_Project/wiki")} width="40px" height="40px" src={GithubLogo}></img>
                     </div>
+        
                 
                 </div>
                 <NavOptionsDropdown />
