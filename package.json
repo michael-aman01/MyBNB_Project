@@ -19,7 +19,10 @@
     "url": "https://github.com/michael-aman01/MyBNB_Project/issues"
   },
   "homepage": "https://github.com/michael-aman01/MyBNB_Project#readme",
-  "engines":{
-    "node":"18.10.0"
+  "engines": {
+    "node": "18.10.0"
+  },
+  "dependencies": {
+    "react-loader-spinner": "^5.3.4"
   }
 }
