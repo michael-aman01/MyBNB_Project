@@ -40,14 +40,14 @@ export default function NavigationBar(){
     return(
         <>
       <div id="nav-container">
-         <div class="grid-item" id="logo-box">
+         <div className="grid-item" id="logo-box">
             <div id="nav-logo" onClick={handleClick}>
                 <img src={bnbLogo} height="35px" width="130px"/>
             </div>
         </div>
    
                 <SearchBar />
-                <div id="navbar-social-media-container">
+                <div id="navbar-social-media-container" className="grid-item">
                     <div>
                     <a  href="https://github.com/michael-aman01/MyBNB_Project/wiki"><img width="30px" height="30px" src={GithubLogo}></img></a>
                     </div>

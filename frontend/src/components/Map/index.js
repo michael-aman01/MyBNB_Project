@@ -90,7 +90,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
                 }
                 clearInterval(dataLoad)
             }
-        },150)
+        },100)
     },[])
 
 

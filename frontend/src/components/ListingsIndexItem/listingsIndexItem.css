@@ -48,11 +48,12 @@
     min-width: 250px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
+
     box-sizing: border-box;
   }
   
   .image-container {
-    height: 60%;
+    height: 70%;
     width: 100%;
     display: flex;
     cursor: pointer;
@@ -87,6 +88,8 @@
     max-width: 100%;
     width: 650px;
     height: 650px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     object-fit: fill;
     position: relative;
   }

@@ -58,14 +58,15 @@ export default function SearchBar(){
     },[checkInDate])
 
 
-        const handleDates = date => {
+        const handleDates = e => {
+            const date = e
             if(content === "checkInDate"){
-                setCheckInDate(date[0].toDateString())
+                setCheckInDate(date.toDateString())
    
-                checkOutDate === 'check-out' ?  setCalendarMarkers([date[0],null]) : setCalendarMarkers([date[0], new Date(checkOutDate)])
+                checkOutDate === 'check-out' ?  setCalendarMarkers([date,null]) : setCalendarMarkers([date, new Date(checkOutDate)])
             }else{
-                setCheckOutDate(date[0].toDateString())
-                checkInDate === 'check-in' ? setCalendarMarkers([null, date[0]]) : setCalendarMarkers([new Date(checkInDate), date[0]])
+                setCheckOutDate(date.toDateString())
+                checkInDate === 'check-in' ? setCalendarMarkers([null, date]) : setCalendarMarkers([new Date(checkInDate), date])
                 
             }
         }
@@ -83,15 +84,23 @@ export default function SearchBar(){
 
         const handleOption = (e) => {
             e.preventDefault()
+            const options = {
+                "checkOutDate": Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "checkOutDate")[0],
+                "checkInDate": Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "checkInDate")[0],
+                "where": Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "where")[0]
+            }
+            const tag = options[e.target.getAttribute("value")]
+         
             const currentlyActive = document.getElementById("active-option")
             let change = currentlyActive !== null ? currentlyActive.setAttribute("id",null) : null
-            e.target.className === 'search-option-open.active' ? e.target.setAttribute("id","active-option") : e.target.setAttribute("id","active-option")
+            e.target.className === 'search-option-open.active' ? tag.setAttribute("id","active-option") : tag.setAttribute("id","active-option")
             setContent(e.target.value)
+            
         }
 
         const handleSearch = (e) => {
             e.preventDefault()
-            if(city === undefined){
+            if(city === "where"){
                 alert("please select a location first")
                 return null
             }
@@ -168,9 +177,18 @@ export default function SearchBar(){
 
             <div id="open-search-container">
             <div  id="search-box-open">
-                <button className="search-option-open" id="active-option" onClick={handleOption} value="where">{city === "where" ? city : cityOptions[city]}</button>
-                <button className="search-option-open" onClick={handleOption} value="checkInDate" id="checkInDateButton">{checkInDate}</button>
-                <button className="search-option-open" onClick={handleOption} value="checkOutDate" id="checkOutDateButton">{checkOutDate}</button>
+                <button className="search-option-open" id="active-option" onClick={handleOption} value="where">
+                    <div style={{"fontSize":"15px", "fontWeight":"600"}} value="where">{city === "where" ? city : cityOptions[city]}</div>
+                    <div style={{"fontSize":"15px"}} value="where">select a destination</div>
+                </button>
+                <button className="search-option-open" onClick={handleOption} value="checkInDate" id="checkInDateButton">
+                <div style={{"fontSize":"15px", "fontWeight":"600"}} >  {checkInDate} </div>
+                <div style={{"fontSize":"15px"}} value="checkInDate">select a check-in date</div>
+                </button>
+                <button className="search-option-open" onClick={handleOption} value="checkOutDate" id="checkOutDateButton">
+                <div style={{"fontSize":"15px", "fontWeight":"600"}} value="checkOutDate"> {checkOutDate}</div>
+                    <div style={{"fontSize":"15px"}} value="checkOutDate">select a check-in date</div>
+                </button>
                 <button className="search-option-open" id="search-submit-button" onClick={handleSearch}>
                 <div id="open-search-icon-button">
                 
@@ -203,12 +221,7 @@ export default function SearchBar(){
                                     <div class="search-city-text">Miami, FL</div>
                                     </div>
                                 </div>
-                                {/* <div className="city-selection-option" id="flex" onClick={(e) => handleCity(e,"flex")}>
-                                <div class="search-map-icon-container">
-                                    <img class="search-map-icon" src={flexMap}></img>
-                                    <div class="search-city-text">I'm Flexible</div>
-                                    </div>
-                                </div> */}
+                        
                                 <div>
                                     <div>
 
@@ -229,8 +242,8 @@ export default function SearchBar(){
                                 value={calendarMarkers}
                                 minDate={checkInDate === "check-in" ? new Date() : new Date(checkInDate)}
                                 defaultView={"month"}
-                                onClickMonth={date => alert(date)}
-                                onChange={(date) => handleDates(date)}
+                                onClickDay={handleDates}
+                                
                                 tileClassName={date => new Date(checkInDate).toDateString() === date.date.toDateString() ? "start" : "not"}
                                 tileDisabled={date => date.date.toDateString() === checkInDate}
                                 />
