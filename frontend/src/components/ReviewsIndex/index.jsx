@@ -177,9 +177,9 @@ export default function ReviewsIndex(){
 
                 }
 
-            {reviews.map((review,i) => 
+            {reviews.slice(reviews.length/2).map((review,j) => 
                 <div className="review-details-item">
-                            <ReviewsIndexItem review={review}  reviewer={reviewers[i]}></ReviewsIndexItem>
+                            <ReviewsIndexItem review={review}  reviewer={reviewers[j]}></ReviewsIndexItem>
                     </div>
                 )
 
