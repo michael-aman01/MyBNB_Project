@@ -3,7 +3,7 @@
 
   #options-button {
 
-    margin-left: 100px;
+    margin-left: 35%;
     display: grid; 
     grid-template-columns: 1fr 1fr;
     justify-content: center;

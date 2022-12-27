@@ -44,25 +44,29 @@ export default function NavigationBar(){
     return(
         <>
       <div id="nav-container">
-         <div className="grid-item" id="logo-box">
+
+        <div className="nav-item" id="logo-container">
+        <div id="logo-box">
             <div id="nav-logo" onClick={handleClick}>
                 <img src={bnbLogo} height="35px" width="130px"/>
             </div>
         </div>
-   
-                <SearchBar />
-                <div id="navbar-social-media-container">
-                <div onClick={() => handleSocial("https://www.linkedin.com/in/michael-aman-ba1086258/")}>
+        </div>
+        <div className="nav-item" id="search">
+            <SearchBar></SearchBar>
+        </div>
+        <div className="nav-item" id="social">
+        <div onClick={() => handleSocial("https://www.linkedin.com/in/michael-aman-ba1086258/")} className="social-link">
                         <img onClick={() => handleSocial("https://www.linkedin.com/in/michael-aman-ba1086258/")} width="40px" height="40px" src={LinkedInLogo}></img>
                     </div>
-                    <div onClick={() => handleSocial("https://github.com/michael-aman01/MyBNB_Project/wiki")} >
+                    <div onClick={() => handleSocial("https://github.com/michael-aman01/MyBNB_Project/wiki")} className="social-link">
                             <img onClick={() => handleSocial("https://github.com/michael-aman01/MyBNB_Project/wiki")} width="40px" height="40px" src={GithubLogo}></img>
                     </div>
         
-                
-                </div>
-                <NavOptionsDropdown />
-       
+        </div>
+        <div className="nav-item" id="drop-down">
+            <NavOptionsDropdown></NavOptionsDropdown>
+        </div>
         </div>
 
         </>

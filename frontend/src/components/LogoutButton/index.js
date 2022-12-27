@@ -1,5 +1,5 @@
 import { useSelector, useDispatch  } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {getUser} from "../../store/user"
 import { logout } from "../../store/session";
 
