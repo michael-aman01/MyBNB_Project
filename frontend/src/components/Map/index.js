@@ -1,17 +1,18 @@
 import React, { useState, useEffect} from "react";
 import LoadingSpinner from "../LoadingSpinner";
-import { GoogleMap, InfoWindow, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, InfoBox, InfoWindow, LoadScript, Marker, Size} from "@react-google-maps/api";
 import { fetchListings  } from "../../store/data";
-
-import { useDispatch } from "react-redux";
+import ListingIndexItem from '../ListingsIndexItem'
+import { useDispatch, useSelector } from "react-redux";
 import "./map.css"
 import { useRef } from "react";
 import { useParams } from "react-router-dom";
 
 
 
+
 export default function Map({listings={},listing={}, mapStyles={}}){
-    const [activeInfoWindow, setActiveInfoWindow] = useState("");
+
     const dispatch = useDispatch()
     const ref = useRef(null)
     const [center, setCenter] = useState()
@@ -25,7 +26,11 @@ export default function Map({listings={},listing={}, mapStyles={}}){
       "FLEX":[" California","NY","FL"]
     }
     const [markers, setMarkers] = useState(null)
+
     const [ currentPosition, setCurrentPosition ] = useState({});
+    const [openInfoWindow, setOpenInfoWindow] = useState(null)
+    const [currentMarker,setCurrentMarker] = useState()
+    const currentListings = useSelector(state => state.listings)
 
     function calcCenter(someCoords){
       const positions = someCoords.map(val => val.position)
@@ -46,25 +51,38 @@ export default function Map({listings={},listing={}, mapStyles={}}){
       setCurrentPosition(currentPosition);
     };
 
+    const markerClick = (index) => {
+      console.log(markers.length)
+ 
+  
+    }
+
     const getCoords = (coordsArray,listingsArray) => {
-      
+        let boxes = []
         let listingMarkers = coordsArray.map((coords,index) => {
           
           coords.label = {"text":`$${listingsArray[index].price}`,"color":"white"}
-           return  <Marker 
-            key={index} 
-            position={coords.position}
-            label={coords.label}
-        >
-            {
-                (activeInfoWindow === index)
-                &&
-                <InfoWindow position={coords.position}>
-                    <div>{coords.position.lat}, {coords.position.lng}</div>
-                </InfoWindow>
-            }  
-        </Marker>
+
+          const marker =  <Marker
+                                          id={index}
+                                          key={index} 
+                                          position={coords.position}
+                                          label={coords.label}
+                                          clickable={true}
+                                          onClick={() => setCurrentMarker({"pos":coords.position,"listing":listingsArray[index]})}
+                    
+                                      >
+                            
+  
+      
+                                      </Marker>
+
+
+        
+            return marker
+   
         })
+
         setCurrentPosition(coordsArray[0].position)
         setMarkers(listingMarkers)
 
@@ -93,17 +111,34 @@ export default function Map({listings={},listing={}, mapStyles={}}){
         },100)
     },[])
 
+    useEffect(() => {
+      if(currentMarker !== undefined && markers !== null){
+     
+       
+                  const info =     <InfoWindow
+                                position={currentMarker.pos}
+                                visible={currentMarker !== undefined ? true : false}
+                                onCloseClick={() => setCurrentMarker(undefined)}
+                            >
+                    
+                                <ListingIndexItem listing={currentMarker.listing}></ListingIndexItem>
+                        </InfoWindow>
+                      console.log(currentMarker)
+                      setOpenInfoWindow(info)
+      
+      }
+    },[currentMarker])
+
+
+
+
 
   
 
-    const onMarkerDragEnd = (e) => {
-        const lat = e.latLng.lat();
-        const lng = e.latLng.lng();
-        setCurrentPosition({ lat, lng})
-      };
+
 
       const mapOptions = {
-        disableDefaultUI: true,
+        disableDefaultUI: false,
         scrollwheel: false,
         navigationControl: false,
         mapTypeControl: false,
@@ -126,6 +161,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
               options={mapOptions}
               center={currentPosition}>
               {markers}
+              {openInfoWindow}
             </GoogleMap>
         </LoadScript>
         </>
