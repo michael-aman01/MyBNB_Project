@@ -84,6 +84,7 @@ export default function SearchBar(){
 
         const handleOption = (e) => {
             e.preventDefault()
+
             const options = {
                 "checkOutDate": Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "checkOutDate")[0],
                 "checkInDate": Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "checkInDate")[0],
@@ -187,7 +188,7 @@ export default function SearchBar(){
                 </button>
                 <button className="search-option-open" onClick={handleOption} value="checkOutDate" id="checkOutDateButton">
                 <div style={{"fontSize":"15px", "fontWeight":"600"}} value="checkOutDate"> {checkOutDate}</div>
-                    <div style={{"fontSize":"15px"}} value="checkOutDate">select a check-in date</div>
+                    <div style={{"fontSize":"15px"}} value="checkOutDate">select a check-out date</div>
                 </button>
                 <button className="search-option-open" id="search-submit-button" onClick={handleSearch}>
                 <div id="open-search-icon-button">
