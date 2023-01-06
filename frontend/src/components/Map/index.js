@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import LoadingSpinner from "../LoadingSpinner";
-import { GoogleMap, InfoBox, InfoWindow, LoadScript, Marker, Size} from "@react-google-maps/api";
+import { GoogleMap, InfoWindow, LoadScript, Marker} from "@react-google-maps/api";
 import { fetchListings  } from "../../store/data";
 import ListingIndexItem from '../ListingsIndexItem'
 import { useDispatch, useSelector } from "react-redux";
@@ -39,6 +39,8 @@ export default function Map({listings={},listing={}, mapStyles={}}){
       const latsAvg = lats.reduce((a,b) => a + b, 0)/lats.length
       const lngAvg = lngs.reduce((a,b) => a + b, 0)/lngs.length
       const newCenter = {lat: latsAvg, lng: lngAvg}
+      console.log(newCenter)
+
       setCenter(newCenter)
 
     }
@@ -69,8 +71,8 @@ export default function Map({listings={},listing={}, mapStyles={}}){
                                           position={coords.position}
                                           label={coords.label}
                                           clickable={true}
-                                          onClick={() => setCurrentMarker({"pos":coords.position,"listing":listingsArray[index]})}
-                    
+                                          onClick={() => {setCurrentMarker( {"pos":coords.position,"listing":listingsArray[index]})}}
+                                          showInfoWindow={true}
                                       >
                             
   
@@ -116,14 +118,19 @@ export default function Map({listings={},listing={}, mapStyles={}}){
      
        
                   const info =     <InfoWindow
+                                marker={currentMarker}
                                 position={currentMarker.pos}
                                 visible={currentMarker !== undefined ? true : false}
-                                onCloseClick={() => setCurrentMarker(undefined)}
+                                onCloseClick={() =>{
+                                  setCurrentMarker(undefined)
+                                  setOpenInfoWindow(null)
+                                }
+                                }
                             >
                     
                                 <ListingIndexItem listing={currentMarker.listing}></ListingIndexItem>
                         </InfoWindow>
-                      console.log(currentMarker)
+                     
                       setOpenInfoWindow(info)
       
       }
@@ -156,7 +163,6 @@ export default function Map({listings={},listing={}, mapStyles={}}){
         <LoadScript googleMapsApiKey={mapsKey}>
             <GoogleMap
               mapContainerStyle={mapStyles}
-
 
               options={mapOptions}
               center={currentPosition}>

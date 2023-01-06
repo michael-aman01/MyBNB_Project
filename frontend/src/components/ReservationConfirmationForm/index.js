@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import leftArrow from "../../assets/left-arrow.png"
 import { useParams } from "react-router-dom";
-import { getUser } from "../../store/user";
+import { fetchUser, getUser } from "../../store/user";
 import { fetchRerservations, makeReservation, updateReservation} from "../../store/reservation";
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -116,7 +116,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
 
             alert("reservation updated!")
             closeConfirmation()
-            window.location.reload()
+            dispatch(fetchUser(userId))
             
         }
     }
