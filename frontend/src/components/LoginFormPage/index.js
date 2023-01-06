@@ -142,13 +142,13 @@ function LoginFormPage() {
             <button id="social-media-auth-link" style={{"background-color":"white", "border":"1px solid black"}}>
             <div><img width="30px" height="30px" src={GithubLogo}></img></div>
               <div>
-                <a style={{"color":"black" ,"text-decoration":"none" , "margin-left":"50px", "text-align":"center", "font-size":"20px", "padding-top":"10px"}} href="https://github.com/michael-aman01/MyBNB_Project/wiki">@michael-aman01</a>
+                <a style={{"color":"black" ,"text-decoration":"none" , "margin-left":"50px", "text-align":"center", "font-size":"20px", "padding-top":"10px"}} href="https://github.com/michael-aman01/MyBNB_Project/wiki" target="_blank">@michael-aman01</a>
               </div>
             </button>
             <button  id="social-media-auth-link" style={{"border":"1px solid blue", "background-color":"white"}} >
             <div><img width="30px" height="30px" src={LinkedInLogo}></img></div>
               <div>
-                <a style={{"color":"#0072b1","text-decoration":"none" , "margin-left":"50px", "text-align":"center", "font-size":"20px", "padding-top":"10px"}} href="https://www.linkedin.com/in/michael-aman-ba1086258/">Michael Aman</a>
+                <a style={{"color":"#0072b1","text-decoration":"none" , "margin-left":"50px", "text-align":"center", "font-size":"20px", "padding-top":"10px"}} href="https://www.linkedin.com/in/michael-aman-ba1086258/"  target="_blank">Michael Aman</a>
               </div>
             </button>
           </div>
