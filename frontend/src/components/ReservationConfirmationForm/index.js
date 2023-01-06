@@ -24,7 +24,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
     const [currentCheckIn, setCurrentCheckIn] = useState(checkIn)
     const [currentCheckOut, setCurrentCheckOut] = useState(checkOut)
     const [maxMessage, setMaxMessage] = useState()
-    const [date, setDate] = useState(initialDates);
+    const [date, setDate] = useState(initialDates)
     const [minDate, setMinDate] = useState(new Date())
     const [checkinDate,setCheckInDate] = useState()
     const [checkOutDate, setCheckOutDate] = useState()
