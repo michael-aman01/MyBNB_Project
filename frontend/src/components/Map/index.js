@@ -39,8 +39,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
       const latsAvg = lats.reduce((a,b) => a + b, 0)/lats.length
       const lngAvg = lngs.reduce((a,b) => a + b, 0)/lngs.length
       const newCenter = {lat: latsAvg, lng: lngAvg}
-      console.log(newCenter)
-
+ 
       setCenter(newCenter)
 
     }
@@ -53,11 +52,7 @@ export default function Map({listings={},listing={}, mapStyles={}}){
       setCurrentPosition(currentPosition);
     };
 
-    const markerClick = (index) => {
-      console.log(markers.length)
- 
-  
-    }
+
 
     const getCoords = (coordsArray,listingsArray) => {
         let boxes = []

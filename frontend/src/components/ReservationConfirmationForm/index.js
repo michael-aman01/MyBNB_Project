@@ -191,7 +191,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
         Array.from(document.getElementsByClassName("reservation-details-modal"))[0].style.display = "none"
         const calendarContainer = document.getElementById("calendar-container-confirmation")
         calendarContainer.style.display = "flex"
-        console.log(calendarContainer)
+    
     }
 
     const toggleCalendar = () => {
@@ -207,7 +207,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
         let takenDates = Object.values(reservations).map(res => getDisabledDates([new Date(res.startDate), new Date(res.endDate)])).flat().map(date => date.toDateString())
         setDisabledDates(takenDates)
         const viewTag = Array.from(document.getElementsByClassName("react-calendar__navigation__label"))[0]
-        console.log(viewTag)
+      
         if(viewTag !==  undefined){
             viewTag.addEventListener("click", function(e){
                 e.preventDefault()
