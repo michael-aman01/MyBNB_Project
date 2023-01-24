@@ -169,7 +169,7 @@ export default function ReviewsIndex(){
                 </div> 
                 <div id="reviews-grid">
 
-                {reviews.slice(0,reviews.length/2).map((review,i) => 
+                {reviews.slice(0, Math.floor(reviews.length/2)).map((review,i) => 
                 <div id="review-details-item">
                             <ReviewsIndexItem review={review}  reviewer={reviewers[i]}></ReviewsIndexItem>
                     </div>
@@ -177,9 +177,9 @@ export default function ReviewsIndex(){
 
                 }
 
-            {reviews.slice(reviews.length/2).map((review,j) => 
+            {reviews.slice(Math.floor(reviews.length/2)).map((review,j) => 
                 <div className="review-details-item">
-                            <ReviewsIndexItem review={review}  reviewer={reviewers[j]}></ReviewsIndexItem>
+                            <ReviewsIndexItem review={review}  reviewer={reviewers[Math.floor(reviews.length/2) + j]}></ReviewsIndexItem>
                     </div>
                 )
 
