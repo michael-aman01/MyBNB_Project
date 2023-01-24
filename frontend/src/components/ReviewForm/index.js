@@ -51,6 +51,8 @@ export default function ReviewForm({review, type}){
             const res = await dispatch(updateReview(reviewBody))
           
             closeModal()
+            alert("review updated")
+            window.location.reload()
             return res
          
         }else{
