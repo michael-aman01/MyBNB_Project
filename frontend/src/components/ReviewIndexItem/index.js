@@ -36,6 +36,7 @@ export default function ReviewsIndexItem({review, reviewer}){
         e.preventDefault()
         dispatch(deleteReview(e.target.id))
         setCurrentReview(null)
+        window.location.reload()
     }
 
 const months = ["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov","Dec"]
