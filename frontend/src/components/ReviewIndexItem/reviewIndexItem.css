@@ -3,7 +3,7 @@
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     justify-content: space-between;
-  
+    border-top-left-radius: 20px;
   }
 
   #reviews-header {

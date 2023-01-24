@@ -175,8 +175,8 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
 
     const handleDatesUpdate = e => {
         e.preventDefault()
-
-        let dates = currentUser.reservations
+        console.log(reservations)
+        let dates = currentUser  === null ? reservations : currentUser.reservations
         let takenDates = Object.values(dates).map(res => getDisabledDates([new Date(res.start_date), new Date(res.end_date)])).flat().map(date => date.toDateString())
         setDisabledDates(takenDates)
         console.log(takenDates)

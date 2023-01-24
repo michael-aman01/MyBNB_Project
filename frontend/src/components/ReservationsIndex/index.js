@@ -73,8 +73,9 @@ export default function ReservationIndexPage(){
                 <div class="trip-widget-container">
                     <div id="left">
                         <div class="trip-details">
-                            <p className="trip-details-large">{listings[i].city}</p>
-                            <p className="trip-details-small">{listings[i].sub_title}</p>
+                     <p className="trip-details-large">{listings[i].sub_title}</p>
+                        <p style={{"fontSize":"20px", "fontWeight":"400"}}> {listings[i].city}</p>
+                    
                         </div>  
                         <div class="trip-detail-bottom">
                       
@@ -100,9 +101,7 @@ export default function ReservationIndexPage(){
 
                                 </div>
                             </div>
-                            <div class="trip-location">
-                            {listings[i].city}, {listings[i].state}
-                            </div>
+      
                         </div>
 
                     </div>

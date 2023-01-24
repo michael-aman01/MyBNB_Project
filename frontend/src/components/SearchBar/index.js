@@ -9,6 +9,7 @@ import miaMap from  '../../assets/miami-map-icon.jpg'
 import flexMap from  '../../assets/flexible-map-icon.jpg'
 import { useHistory, useParams } from "react-router-dom"
 import { useDispatch } from "react-redux"
+import { FallingLines } from "react-loader-spinner"
 
 export default function SearchBar(){
     const [open, setOpen] = useState(false)
@@ -20,10 +21,9 @@ export default function SearchBar(){
     const [city, setCity] = useState("where")
     const dispatch = useDispatch()
     const history = useHistory()
-  
-    useEffect(() => {
+    const [currentPage,setCurrentPage] = useState()
 
-    },[])
+
 
     const cityOptions = {
         "ny": "New York, NY",
@@ -32,9 +32,28 @@ export default function SearchBar(){
         "flex" : "I'm Flexible" 
     }
 
+    useEffect(() => {
+
+        setCurrentPage(window.location.pathname)
+        
+
+    },[])
+
+    useEffect(() => {
+        if(currentPage !== window.location.pathname){
+            setCity("where")
+            setCheckInDate("check-in")
+            setCheckOutDate("check-out")
+            setOpen(false)
+            document.getElementById("nav-container").style.height = "90px"
+        }
+    },[currentPage])
+
+
 
 
     useEffect(() => {
+
         const viewTag = Array.from(document.getElementsByClassName("react-calendar__navigation__label"))[0]
         if(viewTag !==  undefined){
             viewTag.addEventListener("click", function(e){
@@ -48,10 +67,22 @@ export default function SearchBar(){
     },[open,content])
 
     useEffect(() => {
+        if(checkOutDate !== 'check-out'){
+            const currentOption = document.getElementById("active-option")
+            if(currentOption.getAttribute("value") === "checkInDate"){
+                currentOption.setAttribute("id", "search-option-open")
+                setContent("checkOutDate")
+            }
+        }
+    },[checkInDate])
+
+
+    useEffect(() => {
 
         setMinDate(new Date(checkInDate))
+        setCheckOutDate("check-in")
         const checkoutButton = document.getElementById("checkOutDateButton")
-        if(checkoutButton !== null){
+        if(checkoutButton !== null && checkOutDate === "check-out"){
             checkoutButton.click()
         }
    
@@ -72,14 +103,23 @@ export default function SearchBar(){
         }
     
         const handleClick = (e) => {
+
             const navBar = document.getElementById("nav-container")
-            if(open === false){
-                navBar.style.height = "250px"
-                setOpen(true)
+            if(navBar && open === true){
+                document.addEventListener("click",(e) => {
+                    if(currentPage !== window.location.pathname && currentPage !== undefined){
+                        setOpen(false)
+                        navBar.style.height = "90px"
+                    }
+                })
             }else{
-                navBar.style.height = "90px"
-                setOpen(false)
-            }
+                    navBar.style.height = "250px"
+                    setOpen(true)
+                }
+            
+    
+      
+            
         }
 
         const handleOption = (e) => {
@@ -90,12 +130,23 @@ export default function SearchBar(){
                 "checkInDate": Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "checkInDate")[0],
                 "where": Array.from(document.getElementsByClassName("search-option-open")).filter(tag => tag.value === "where")[0]
             }
-            const tag = options[e.target.getAttribute("value")]
-         
+            let selection = e.target.getAttribute("value")
+
+            const tag = options[selection]
+            if(checkInDate === "check-in" && city === "where" && e.target.getAttribute("class") !== "search-option-open" || checkOutDate === "check-out" && city === "where" && e.target.getAttribute("class") !== "search-option-open" ){
+                alert("please select a destination first")
+                return null
+       
+            }
+
+            if(checkInDate === "check-in" && selection === "checkOutDate"){
+                alert("Select a check-in date first")
+                return null
+            }
             const currentlyActive = document.getElementById("active-option")
-            let change = currentlyActive !== null ? currentlyActive.setAttribute("id",null) : null
-            e.target.className === 'search-option-open.active' ? tag.setAttribute("id","active-option") : tag.setAttribute("id","active-option")
-            setContent(e.target.value)
+            if(currentlyActive !== null && currentlyActive !== tag) currentlyActive.setAttribute("id","search-option-open")
+            tag.setAttribute("id","active-option")
+            setContent(selection)
             
         }
 
@@ -179,22 +230,22 @@ export default function SearchBar(){
             <div id="open-search-container">
             <div  id="search-box-open">
                 <button className="search-option-open" id="active-option" onClick={handleOption} value="where">
-                    <div style={{"fontSize":"15px", "fontWeight":"600"}} value="where">{city === "where" ? city : cityOptions[city]}</div>
+                    <div style={{"fontSize":"17px", "fontWeight":"600"}} value="where">{city === "where" ? city : cityOptions[city]}</div>
                     <div style={{"fontSize":"15px"}} value="where">select a destination</div>
                 </button>
                 <button className="search-option-open" onClick={handleOption} value="checkInDate" id="checkInDateButton">
-                <div style={{"fontSize":"15px", "fontWeight":"600"}} >  {checkInDate} </div>
-                <div style={{"fontSize":"15px"}} value="checkInDate">select a check-in date</div>
+                <div style={{"fontSize":"17px", "fontWeight":"600"}} >  {checkInDate} </div>
+                <div style={{"fontSize":"15px"}} value="checkInDate">select a check-in </div>
                 </button>
                 <button className="search-option-open" onClick={handleOption} value="checkOutDate" id="checkOutDateButton">
-                <div style={{"fontSize":"15px", "fontWeight":"600"}} value="checkOutDate"> {checkOutDate}</div>
-                    <div style={{"fontSize":"15px"}} value="checkOutDate">select a check-out date</div>
+                <div style={{"fontSize":"17px", "fontWeight":"600"}} value="checkOutDate"> {checkOutDate}</div>
+                    <div style={{"fontSize":"15px"}} value="checkOutDate">select a check-out</div>
                 </button>
                 <button className="search-option-open" id="search-submit-button" onClick={handleSearch}>
-                <div id="open-search-icon-button">
+                <div id="open-search-icon-button" style={{"height":"100%"}}>
                 
                 <img id="open-search-icon" src={searchIcon} ></img>
-                <div> search</div>
+                <div style={{"textAlign":"center","marginLeft":"10%"}}> search</div>
               </div>
                 </button>
             </div> 
