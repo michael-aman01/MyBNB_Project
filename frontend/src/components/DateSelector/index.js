@@ -40,7 +40,13 @@ export default function DateSelector({listing, initialDates=[null, null]}){
 
     // setDisabledDates(takenDates)
   }
+  useEffect(() => {
+    if(reservations !== undefined){
 
+        let takenDates = Object.values(reservations).map(res => getDisabledDates([new Date(res.startDate), new Date(res.endDate)])).flat().map(date => date.toDateString())
+        setDisabledDates(takenDates)
+    }
+},[reservations])
   useEffect(() => {
     let takenDates = Object.values(reservations).map(res => getDisabledDates([new Date(res.startDate), new Date(res.endDate)])).flat().map(date => date.toDateString())
     setDisabledDates(takenDates)

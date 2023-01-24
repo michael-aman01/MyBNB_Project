@@ -33,6 +33,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
     const reservations = useSelector(state => state.reservations)
     const [maxDate, setMaxDate] = useState()
     const [updateCalendar, setUpdateCalendar] = useState()
+    const currentUser = useSelector(state => state.user.user)
 
     function getDisabledDates(resDates){
     
@@ -42,6 +43,8 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
         takenDates.push(startDate)
         const diffDates = Math.abs(endDate - startDate)
         const diffDays = Math.ceil(diffDates)/(1000 * 3600 * 24)
+
+
         
         for(let i = 1; i < diffDays; i++){
     
@@ -56,7 +59,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
         // setDisabledDates(takenDates)
       }
     
-  
+
     useEffect(() => {
         setCurrentAdults(adults)
         setCurrentChildren(children)
@@ -87,7 +90,8 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
             dispatch(makeReservation(reservationData))
             dispatch(fetchRerservations(id))
             alert("reservation made!")
-            history.push(`/listings`)
+            history.push(`/account/${userId}`)
+            window.location.reload()
         }
   
     }
@@ -113,7 +117,9 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
         }else{
           
             dispatch(updateReservation(reservationData))
-
+            let takenDates = Object.values(reservations).map(res => getDisabledDates([new Date(res.startDate), new Date(res.endDate)])).flat().map(date => date.toDateString())
+   
+            setDisabledDates(takenDates)
             alert("reservation updated!")
             closeConfirmation()
             dispatch(fetchUser(userId))
@@ -170,8 +176,11 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
     const handleDatesUpdate = e => {
         e.preventDefault()
 
-
-        let currentCalendar =     
+        let dates = currentUser.reservations
+        let takenDates = Object.values(dates).map(res => getDisabledDates([new Date(res.start_date), new Date(res.end_date)])).flat().map(date => date.toDateString())
+        setDisabledDates(takenDates)
+        console.log(takenDates)
+        let currentCalendar =
                 <Calendar
                 onChange={setDate}
                 value={[currentCheckIn, currentCheckOut]}
@@ -181,7 +190,7 @@ export default function ReservationConfirmationForm({listing,checkIn,checkOut,ad
                 minDate={e.target.id === "check-in" ? new Date() : new Date(currentCheckIn.getTime()  +  (60*60*24* 1000))}
                 onClickDay={(d) => updateDates(e.target.id,d)}
                 showDoubleView={true}
-                tileDisabled={(date) => disabledDates.includes(date.date.toDateString())}    
+                tileDisabled={(date) => takenDates.includes(date.date.toDateString())}    
             />
         setUpdateCalendar(currentCalendar)
         
