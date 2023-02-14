@@ -36,7 +36,7 @@ class Api::UsersController < ApplicationController
         reviews: @user.reviews, 
         session_token: @user.session_token,
         updated_at: @user.updated_at,
-        created_at: @user.created_at
+        created_at: @user.created_at,
         last_login: @user.last_login
       }
       render json: data
