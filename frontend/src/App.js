@@ -8,15 +8,16 @@ import ProfilePage from "./components/ProfilePage";
 import LoginFormPage from "./components/LoginFormPage";
 import { useSelector } from "react-redux";
 import { getUser } from "./store/user";
-import ReactGA from 'react-ga'
+import ReactGA from "react-ga4";
+
+
 
 import SearchResults from "./components/SearchResults";
 
 function App() {
-
+  ReactGA.initialize(process.env.REACT_APP_GA);
   const currentUser = useSelector(getUser)
-  ReactGA.initialize(process.env.REACT_APP_GA)
-  ReactGA.pageview(window.location.pathname);
+  ReactGA.send({ hitType: "pageview", page: "/login" });
   useEffect(() =>{
     const navBar = document.getElementById("nav-container")
     if(window.location.toString().split("/").includes("create")){
