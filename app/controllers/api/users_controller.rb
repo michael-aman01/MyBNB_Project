@@ -13,6 +13,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+  
     if @user && @user.save
       login!(@user)
       render :show
@@ -36,6 +37,7 @@ class Api::UsersController < ApplicationController
         session_token: @user.session_token,
         updated_at: @user.updated_at,
         created_at: @user.created_at
+        last_login: @user.last_login
       }
       render json: data
     else

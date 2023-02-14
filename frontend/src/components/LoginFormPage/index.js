@@ -6,8 +6,7 @@ import xMark from "../../assets/iconmonstr-x-mark-1.svg"
 import GithubLogo from "../../assets/github-logo.png"
 import LinkedInLogo from "../../assets/linkedin.png"
 import { useHistory } from 'react-router-dom';
-
-
+import ReactGA from 'react-ga'
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -18,6 +17,8 @@ function LoginFormPage() {
   const [show, setShow] = useState(true)
   const history = useHistory()
 
+  ReactGA.initialize(process.env.REACT_APP_GA)
+  ReactGA.pageview(window.location.pathname);
   useEffect(() => {
     let tag = document.getElementById("login-modal-content")
     if(tag){

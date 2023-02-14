@@ -13,10 +13,10 @@ import ReactGA from 'react-ga'
 import SearchResults from "./components/SearchResults";
 
 function App() {
-  ReactGA.pageview(window.location.pathname + window.location.search);
+
   const currentUser = useSelector(getUser)
   ReactGA.initialize(process.env.REACT_APP_GA)
-
+  ReactGA.pageview(window.location.pathname);
   useEffect(() =>{
     const navBar = document.getElementById("nav-container")
     if(window.location.toString().split("/").includes("create")){
