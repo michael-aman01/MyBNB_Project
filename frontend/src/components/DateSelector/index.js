@@ -15,41 +15,64 @@ export default function DateSelector({listing, initialDates=[null, null]}){
   const [checkOutDate, setCheckOutDate] = useState()
   const [disabledDates, setDisabledDates] = useState([])
   const [datesStatus, setDatesStatus] = useState(false)
-  const reservations = useSelector(state => state.reservations)
+  const reservations = useSelector(state => Object.values(state.reservations))
   const [maxDate, setMaxDate] = useState()
 
 
+
   function getDisabledDates(resDates){
-    
+
     const takenDates = []
     const startDate = resDates[0]
     const endDate = resDates[1]
-    takenDates.push(startDate)
+    takenDates.push(startDate.toDateString())
+
     const diffDates = Math.abs(endDate - startDate)
     const diffDays = Math.ceil(diffDates)/(1000 * 3600 * 24)
-    
+
     for(let i = 1; i < diffDays; i++){
 
    
-      takenDates.push(new Date(startDate.getTime()  +  (60*60*24* i * 1000)))
+      let d = new Date(startDate.getTime()  +  (60*60*24* i * 1000))
+      d = d.toDateString()
+      takenDates.push(d)
 
     }
-    takenDates.push(endDate)
+    takenDates.push(endDate.toDateString())
 
     return takenDates
 
-    // setDisabledDates(takenDates)
-  }
-  useEffect(() => {
-    if(reservations !== undefined){
 
-        let takenDates = Object.values(reservations).map(res => getDisabledDates([new Date(res.startDate), new Date(res.endDate)])).flat().map(date => date.toDateString())
-        setDisabledDates(takenDates)
-    }
-},[reservations])
+  }
+
   useEffect(() => {
-    let takenDates = Object.values(reservations).map(res => getDisabledDates([new Date(res.startDate), new Date(res.endDate)])).flat().map(date => date.toDateString())
-    setDisabledDates(takenDates)
+    if(reservations.length > 0){
+
+      try{
+
+        let reservationRanges = Object.values(reservations).map(res => [new Date(res.startDate), new Date(res.endDate)])
+        let takenDates = []
+        for(let i = 0; i < reservationRanges.length; i++){
+          let selectedDates = getDisabledDates(reservationRanges[i])
+          takenDates = [...takenDates, ...selectedDates]
+        }
+        setDisabledDates(takenDates)
+      }catch{
+        console.log(null)
+      }
+   
+
+
+    }
+
+
+  },[reservations])
+
+
+
+
+  useEffect(() => {
+
     const viewTag = Array.from(document.getElementsByClassName("react-calendar__navigation__label"))[0]
     if(viewTag !==  undefined){
         viewTag.addEventListener("click", function(e){
@@ -140,7 +163,7 @@ useEffect(() =>{
           minDate={checkinDate === undefined ? new Date() : new Date(checkinDate.getTime()  +  (60*60*24* 1000))}
           onClickDay={(e) => checkinDate === undefined ? setCheckInDate(e) : setCheckOutDate(e)}
           showDoubleView={true}
-          tileDisabled={(date) => disabledDates.includes(date.date.toDateString())}        />
+          tileDisabled={date => disabledDates.includes(date.date.toDateString())}        />
    </div>
       </div>
 
