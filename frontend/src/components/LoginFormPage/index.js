@@ -6,11 +6,9 @@ import xMark from "../../assets/iconmonstr-x-mark-1.svg"
 import GithubLogo from "../../assets/github-logo.png"
 import LinkedInLogo from "../../assets/linkedin.png"
 import { useHistory } from 'react-router-dom';
-import ReactGA from "react-ga4";
-function LoginFormPage() {
-  ReactGA.initialize(process.env.REACT_APP_GA);
 
-  ReactGA.send({ hitType: "pageview", page: "/login" });
+function LoginFormPage() {
+
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
