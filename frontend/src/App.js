@@ -11,10 +11,11 @@ import { getUser } from "./store/user";
 
 
 
-
 import SearchResults from "./components/SearchResults";
 
 function App() {
+
+  const currentUser = useSelector(getUser)
 
   useEffect(() =>{
     const navBar = document.getElementById("nav-container")
