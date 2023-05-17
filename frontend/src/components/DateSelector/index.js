@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import './DateSelector.css'
 import ReservationForm from '../ReservationForm';
 import { addCheckin, addCheckout} from '../../store/reservation'
-import { compose } from 'redux';
+
 
 export default function DateSelector({listing, initialDates=[null, null]}){
   const dispatch = useDispatch()
